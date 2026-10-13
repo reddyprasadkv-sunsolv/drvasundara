@@ -1,0 +1,7 @@
+{
+  "name": "AI-assisted editorial preparation",
+  "role": "Draft planning only; not clinician-authored or medically reviewed",
+  "verified": false,
+  "canReviewMedicalContent": false,
+  "qualifications": []
+}

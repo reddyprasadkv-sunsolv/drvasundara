@@ -1,0 +1,156 @@
+---
+import type { Service } from '../../data/services';
+import { approvedServices, serviceCategories } from '../../data/services';
+import { publicArticles } from '../../utils/articles';
+import AppointmentCTA from '../ui/AppointmentCTA.astro';
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+const relatedServices = approvedServices.filter((s) =>
+  service.relatedServices.includes(s.slug),
+);
+const reading = (await publicArticles()).filter((a) =>
+  service.relatedArticles.includes(a.data.slug),
+);
+const category = serviceCategories.find((c) => c.id === service.category)?.name;
+---
+
+<section class="service-hero container">
+  <div>
+    <span class="eyebrow">{category}</span>
+    <h1>{service.name}</h1>
+    <p class="lead">{service.description}</p>
+    <AppointmentCTA />
+  </div>
+  <div class="service-visual">
+    {service.image ? (
+      <img
+        src={service.image.src}
+        alt={service.image.alt}
+        width={service.image.width}
+        height={service.image.height}
+        loading="eager"
+      />
+    ) : (
+      <>
+        <span class="eyebrow">INFORMATION WITH CONTEXT</span>
+        <p>
+          Informed decisions.
+          <br />
+          <em>Individual needs.</em>
+        </p>
+        <span class="service-visual-line" aria-hidden="true"></span>
+      </>
+    )}
+  </div>
+</section>
+<div class="container service-editorial">
+  <nav class="service-contents" aria-label="On this page">
+    <span class="eyebrow">ON THIS PAGE</span>
+    <a href="#understanding">Understanding</a>
+    <a href="#reasons">Reasons to consult</a>
+    <a href="#medical-advice">Seeking advice</a>
+    <a href="#evaluation">Evaluation</a>
+    <a href="#risks">Benefits & limitations</a>
+    <a href="#service-faqs">Questions</a>
+  </nav>
+  <div class="service-sections prose">
+    <section id="understanding">
+      <span class="eyebrow">01 · UNDERSTANDING</span>
+      <h2>Understanding the condition or procedure.</h2>
+      <p>{service.introduction}</p>
+      <p>{service.understanding}</p>
+    </section>
+    <section id="reasons">
+      <span class="eyebrow">02 · YOUR CONCERNS</span>
+      <h2>Reasons for a consultation.</h2>
+      <p>
+        Symptoms can have different causes. These are reasons to seek an
+        assessment, not a way to make a diagnosis online.
+      </p>
+      <ul>
+        {service.reasons.map((reason) => (
+          <li>{reason}</li>
+        ))}
+      </ul>
+    </section>
+    <section id="medical-advice">
+      <span class="eyebrow">03 · SEEKING GUIDANCE</span>
+      <h2>When to seek medical advice.</h2>
+      <p>{service.whenToSeek}</p>
+    </section>
+    <section id="evaluation">
+      <span class="eyebrow">04 · CLINICAL CONTEXT</span>
+      <h2>Evaluation and management.</h2>
+      <p>{service.evaluation}</p>
+    </section>
+    <section id="risks">
+      <span class="eyebrow">05 · INFORMED DECISIONS</span>
+      <h2>Benefits, risks and limitations.</h2>
+      <p>{service.benefitsRisks}</p>
+    </section>
+    <section id="service-faqs">
+      <span class="eyebrow">06 · YOUR QUESTIONS</span>
+      <h2>Frequently asked questions.</h2>
+      <div class="faq-list">
+        {service.faqs.map((faq) => (
+          <details>
+            <summary>
+              {faq.question}
+              <span aria-hidden="true">+</span>
+            </summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+    {reading.length > 0 && (
+      <section>
+        <h2>Related reading.</h2>
+        {reading.map((article) => (
+          <p>
+            <a href={`/blog/${article.data.slug}/`}>{article.data.title}</a>
+          </p>
+        ))}
+      </section>
+    )}
+    {relatedServices.length > 0 && (
+      <section>
+        <h2>Related services.</h2>
+        <ul>
+          {relatedServices.map((s) => (
+            <li>
+              <a href={`/services/${s.slug}/`}>{s.name}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+    <section class="medical-reference-list">
+      <h2>Sources and medical review.</h2>
+      <p>
+        Reviewed by {service.medicalReviewedBy} · {service.medicalReviewedAt}
+      </p>
+      <ul>
+        {service.sources.map((source) => (
+          <li>
+            <a href={source.url} target="_blank" rel="noopener noreferrer">
+              {source.title}
+              <span class="sr-only"> (opens a new tab)</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <section class="service-appointment">
+      <h2>Your questions deserve attention.</h2>
+      <p>
+        Request an appointment to discuss your individual concerns. Requests are
+        subject to clinic confirmation and are not intended for medical
+        emergencies.
+      </p>
+      <AppointmentCTA />
+    </section>
+  </div>
+</div>

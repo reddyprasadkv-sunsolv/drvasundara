@@ -1,0 +1,66 @@
+{
+  "pcos": {
+    "title": "WHO: Polycystic ovary syndrome",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+  },
+  "bleeding": {
+    "title": "NICE NG88: Heavy menstrual bleeding",
+    "url": "https://www.nice.org.uk/guidance/ng88/chapter/Recommendations"
+  },
+  "periods": {
+    "title": "NHS: Irregular periods",
+    "url": "https://www.nhs.uk/symptoms/irregular-periods/"
+  },
+  "cysts": {
+    "title": "NHS: Ovarian cyst",
+    "url": "https://www.nhs.uk/conditions/ovarian-cyst/"
+  },
+  "menopause": {
+    "title": "NHS: Menopause and perimenopause",
+    "url": "https://www.nhs.uk/conditions/menopause-and-perimenopause/"
+  },
+  "contraception": {
+    "title": "NHS: Contraception",
+    "url": "https://www.nhs.uk/contraception/"
+  },
+  "iud": {
+    "title": "NHS: IUD or copper coil",
+    "url": "https://www.nhs.uk/contraception/methods-of-contraception/iud-coil/"
+  },
+  "antenatal": {
+    "title": "NICE NG201: Antenatal care",
+    "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
+  },
+  "caesarean": {
+    "title": "NICE NG192: Caesarean birth",
+    "url": "https://www.nice.org.uk/guidance/ng192/chapter/recommendations"
+  },
+  "ectopic": {
+    "title": "NHS: Ectopic pregnancy",
+    "url": "https://www.nhs.uk/conditions/ectopic-pregnancy/"
+  },
+  "postnatal": {
+    "title": "NICE NG194: Postnatal care",
+    "url": "https://www.nice.org.uk/guidance/ng194/chapter/recommendations"
+  },
+  "fertility": {
+    "title": "WHO: Infertility",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+  },
+  "laparoscopy": {
+    "title": "ACOG: Laparoscopy",
+    "url": "https://www.acog.org/womens-health/faqs/laparoscopy"
+  },
+  "hysterectomy": {
+    "title": "ACOG: Hysterectomy",
+    "url": "https://www.acog.org/womens-health/faqs/hysterectomy"
+  },
+  "robotic": {
+    "title": "ACOG/SGS: Robot-assisted surgery for noncancerous gynecologic conditions",
+    "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/09/robot-assisted-surgery-for-noncancerous-gynecologic-conditions"
+  },
+  "cosmetic": {
+    "title": "ACOG Committee Opinion 795: Elective female genital cosmetic surgery",
+    "url": "https://doi.org/10.1097/AOG.0000000000003617"
+  }
+}

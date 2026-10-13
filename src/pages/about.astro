@@ -1,34 +1,125 @@
 ---
 import Page from '../layouts/Page.astro';
 import DoctorPortrait from '../components/medical/DoctorPortrait.astro';
+import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
+import ProfessionalTimeline from '../components/medical/ProfessionalTimeline.astro';
 import { site } from '../config/site';
+import { publicProfile } from '../data/professional';
+import { personProfileSchema, physicianSchema } from '../utils/schema';
+const schema = publicProfile.title
+  ? physicianSchema({
+      name: site.doctor.name,
+      title: publicProfile.title,
+      affiliations: publicProfile.affiliations,
+    })
+  : personProfileSchema();
 ---
 
 <Page
   title="Meet Dr. Vasundara Cheepurupalli"
   eyebrow="THE DOCTOR BEHIND THE CARE"
-  description="A personal introduction to the doctor behind Dr. Vasundara Cheepurupalli."
+  description="Explore the professional profile of Dr. Vasundara Cheepurupalli and information to help you prepare for a consultation."
+  schema={schema}
 >
   <div class="about-grid">
     <DoctorPortrait small />
-    <div class="prose">
-      <h2>A considered introduction.</h2>
-      {site.doctor.qualifications.length > 0 && (
-        <p>{site.doctor.qualifications.join(', ')}</p>
+    <div class="prose profile-introduction">
+      <span class="eyebrow">
+        {publicProfile.title || 'A PERSONAL INTRODUCTION'}
+      </span>
+      <h2>
+        Understanding comes
+        <br />
+        <em>before answers.</em>
+      </h2>
+      <p class="lead">
+        Women’s health deserves careful understanding and guidance that respects
+        each woman’s individual journey.
+      </p>
+      <p>
+        {publicProfile.introduction ||
+          'This profile brings together approved information about Dr. Vasundara Cheepurupalli. Professional background, qualifications and practice details will be added following source verification and doctor confirmation.'}
+      </p>
+      {publicProfile.qualifications.length > 0 && (
+        <p class="profile-credentials">
+          {publicProfile.qualifications.join(' · ')}
+        </p>
       )}
-      {site.doctor.specialization && <p>{site.doctor.specialization}</p>}
-      {site.doctor.experience && <p>{site.doctor.experience}</p>}
-      <p>
-        {site.doctor.clinicalApproach ||
-          'The doctor’s full professional profile is being prepared. Qualifications, clinical experience and affiliations will appear here once verified and approved.'}
-      </p>
-      <p>
-        For information about appointments, start with our appointment request
-        guide.
-      </p>
-      <a class="text-link" href="/appointment/">
-        Appointment information ↗
-      </a>
+      {publicProfile.experience && <p>{publicProfile.experience}</p>}
+      <AppointmentCTA />
     </div>
   </div>
+  {publicProfile.interests.length > 0 && (
+    <section class="profile-section">
+      <span class="eyebrow">CLINICAL EXPERTISE</span>
+      <h2>Areas of clinical interest.</h2>
+      <ul class="profile-interests">
+        {publicProfile.interests.map((interest) => (
+          <li>{interest}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {publicProfile.timeline.length > 0 && (
+    <section class="profile-section">
+      <span class="eyebrow">PROFESSIONAL JOURNEY</span>
+      <h2>Experience, with context.</h2>
+      <ProfessionalTimeline entries={publicProfile.timeline} />
+    </section>
+  )}
+  {publicProfile.education.length > 0 && (
+    <section class="profile-section prose">
+      <span class="eyebrow">EDUCATION & TRAINING</span>
+      <h2>Professional foundations.</h2>
+      <ul>
+        {publicProfile.education.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {publicProfile.registration && (
+    <section class="profile-section prose">
+      <h2>Medical registration.</h2>
+      <p>
+        {publicProfile.registration.authority} ·{' '}
+        {publicProfile.registration.number}
+      </p>
+    </section>
+  )}
+  {publicProfile.affiliations.length > 0 && (
+    <section class="profile-section prose">
+      <h2>Hospital affiliations.</h2>
+      <ul>
+        {publicProfile.affiliations.map((name) => (
+          <li>{name}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+  <section class="profile-section profile-guidance">
+    <div>
+      <span class="eyebrow">PREPARING FOR A CONVERSATION</span>
+      <h2>
+        Your questions.
+        <br />
+        <em>Your individual context.</em>
+      </h2>
+      <p>
+        {publicProfile.approach ||
+          'Before a consultation, it can help to note the questions you would like to discuss and gather any relevant reports. The clinic will confirm appointment-specific arrangements.'}
+      </p>
+    </div>
+    <nav aria-label="Profile next steps">
+      <a href="/services/">
+        Explore the care guide <span aria-hidden="true">↗</span>
+      </a>
+      <a href="/blog/">
+        The Women’s Health Journal <span aria-hidden="true">↗</span>
+      </a>
+      <a href="/contact/">
+        Clinic contact information <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </section>
 </Page>

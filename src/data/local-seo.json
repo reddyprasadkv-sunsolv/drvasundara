@@ -1,0 +1,50 @@
+{
+  "publication": {
+    "approved": false,
+    "approvedBy": null,
+    "approvedAt": null,
+    "verificationRecord": null
+  },
+  "candidate": {
+    "practiceName": "KIMS Hospitals & KIMS Cuddles",
+    "city": "Secunderabad",
+    "region": "Telangana",
+    "country": "IN",
+    "streetAddress": "",
+    "postalCode": "",
+    "phone": "+919346825723",
+    "email": "",
+    "mapUrl": "https://maps.app.goo.gl/Mp7sSuD7TtSdGEd48",
+    "googleBusinessProfileUrl": "",
+    "coordinates": null,
+    "oldWebsiteHours": "Monday–Friday, 09:00–16:00",
+    "hospitalProfileHours": "Monday–Saturday, 08:00–16:00",
+    "sources": [
+      "https://drvasundaragynec.com/contact/",
+      "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+    ]
+  },
+  "approved": {
+    "practiceName": "",
+    "city": "",
+    "region": "",
+    "country": "IN",
+    "streetAddress": "",
+    "postalCode": "",
+    "phone": "",
+    "email": "",
+    "mapUrl": "",
+    "googleBusinessProfileUrl": "",
+    "coordinates": null,
+    "openingHours": []
+  },
+  "keywordThemes": [
+    "Gynecologist in Secunderabad",
+    "Obstetrician in Secunderabad",
+    "Gynecologist in Hyderabad",
+    "Laparoscopic gynecological surgery in Hyderabad",
+    "Robotic gynecological surgery in Hyderabad",
+    "PCOS consultation in Hyderabad",
+    "Pregnancy care in Secunderabad"
+  ]
+}

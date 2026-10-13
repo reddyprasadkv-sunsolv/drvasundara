@@ -1,7 +1,9 @@
 ---
-import Page from '../../layouts/Page.astro';
-import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import ServiceEditorial from '../../components/medical/ServiceEditorial.astro';
 import { approvedServices } from '../../data/services';
+import { medicalPageSchema, breadcrumbSchema } from '../../utils/schema';
 export function getStaticPaths() {
   return approvedServices.map((service) => ({
     params: { slug: service.slug },
@@ -9,11 +11,39 @@ export function getStaticPaths() {
   }));
 }
 const { service } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Services', path: '/services/' },
+      { name: service.name, path: Astro.url.pathname },
+    ]),
+    medicalPageSchema({
+      title: service.name,
+      description: service.description,
+      path: Astro.url.pathname,
+      reviewer: service.medicalReviewedBy!,
+      reviewedAt: service.medicalReviewedAt!,
+      sources: service.sources,
+    }),
+  ],
+};
 ---
 
-<Page title={service.name} description={service.description}>
-  <div class="prose">
-    <p>{service.body}</p>
-    <AppointmentCTA />
+<Base
+  title={service.name}
+  description={service.seo.description}
+  schema={schema}
+>
+  <div class="container">
+    <Breadcrumbs
+      label={service.name}
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+      ]}
+    />
   </div>
-</Page>
+  <ServiceEditorial service={service} />
+</Base>

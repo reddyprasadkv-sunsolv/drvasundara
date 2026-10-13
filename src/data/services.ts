@@ -1,75 +1,53 @@
-export type Service = {
-  slug: string;
-  name: string;
-  description: string;
-  approved: boolean;
-  body: string;
-  icon: string;
-};
-// Proposed categories: these do NOT represent confirmed offerings.
-export const services: Service[] = [
-  {
-    slug: 'general-gynecology',
-    name: 'General Gynecology',
-    description:
-      'Consultations about gynecological health and individual concerns.',
-    approved: false,
-    body: '',
-    icon: 'flower',
-  },
-  {
-    slug: 'pregnancy-antenatal-care',
-    name: 'Pregnancy & Antenatal Care',
-    description:
-      'Consultations during pregnancy, with care planned around individual needs.',
-    approved: false,
-    body: '',
-    icon: 'circle',
-  },
-  {
-    slug: 'menstrual-health',
-    name: 'Menstrual Health',
-    description: 'Conversations about menstrual patterns and related concerns.',
-    approved: false,
-    body: '',
-    icon: 'flower',
-  },
-  {
-    slug: 'pcos',
-    name: 'PCOS',
-    description:
-      'Individual assessment and discussion of polycystic ovary syndrome.',
-    approved: false,
-    body: '',
-    icon: 'circle',
-  },
-  {
-    slug: 'menopause-care',
-    name: 'Menopause Care',
-    description: 'Consultations about health during the menopause transition.',
-    approved: false,
-    body: '',
-    icon: 'flower',
-  },
-  {
-    slug: 'fertility-consultation',
-    name: 'Fertility Consultation',
-    description:
-      'A consultation to discuss fertility questions and next steps.',
-    approved: false,
-    body: '',
-    icon: 'circle',
-  },
-  {
-    slug: 'preventive-womens-health',
-    name: 'Preventive Women’s Health',
-    description:
-      'Discussion of appropriate preventive care for individual needs.',
-    approved: false,
-    body: '',
-    icon: 'flower',
-  },
-];
-export const approvedServices = services.filter(
-  (s) => s.approved && s.body.trim(),
-);
+import { z } from 'zod';
+import drafts from './services.json';
+import categories from './service-categories.json';
+import { isPublicService } from '../utils/medical-gates.mjs';
+const serviceSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  name: z.string(),
+  category: z.string(),
+  kind: z.enum(['condition', 'procedure', 'consultation']),
+  description: z.string(),
+  approved: z.boolean(),
+  availabilityConfirmed: z.boolean(),
+  contentReviewed: z.boolean(),
+  status: z.enum(['draft', 'medical-review', 'approved', 'published']),
+  approvedBy: z.string().nullable(),
+  approvedAt: z.string().nullable(),
+  medicalReviewedBy: z.string().nullable(),
+  medicalReviewedAt: z.string().nullable(),
+  approvalRecord: z.url().nullable(),
+  aliasOf: z.string().nullable(),
+  introduction: z.string(),
+  understanding: z.string(),
+  reasons: z.array(z.string()),
+  whenToSeek: z.string(),
+  evaluation: z.string(),
+  benefitsRisks: z.string(),
+  faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+  sources: z.array(z.object({ title: z.string(), url: z.url() })),
+  relatedArticles: z.array(z.string()),
+  relatedServices: z.array(z.string()),
+  image: z
+    .object({
+      src: z.string(),
+      alt: z.string().min(1),
+      width: z.number().int().positive(),
+      height: z.number().int().positive(),
+    })
+    .nullable(),
+  seo: z.object({ title: z.string(), description: z.string() }),
+  reviewNotes: z.array(z.string()),
+});
+export type Service = z.infer<typeof serviceSchema>;
+export const services = z.array(serviceSchema).parse(drafts);
+if (new Set(services.map((s) => s.slug)).size !== services.length)
+  throw new Error('Duplicate service slugs');
+export const serviceCategories = categories;
+export const approvedServices = services.filter((s) => isPublicService(s));
+export const approvedServiceGroups = categories
+  .map((category) => ({
+    ...category,
+    services: approvedServices.filter((s) => s.category === category.id),
+  }))
+  .filter((category) => category.services.length > 0);

@@ -2110,3 +2110,307 @@ h3 {
     padding-inline: 8px;
   }
 }
+
+/* Phase 2 extends the existing editorial system without changing its identity. */
+.phase-two-headline > span,
+.phase-two-headline > em {
+  display: block;
+}
+.hero .phase-two-headline {
+  font-size: clamp(34px, 4.1vw, 60px);
+  line-height: 1.18;
+}
+.hero-doctor-identity {
+  font-size: 13px !important;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 19px;
+}
+.hero-doctor-identity > span {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.profile-introduction > .eyebrow {
+  margin-bottom: 20px;
+}
+.profile-introduction .button {
+  margin-top: 8px;
+}
+.profile-section {
+  margin-top: 75px;
+  padding-top: 45px;
+  border-top: 1px solid var(--line);
+}
+.profile-section > .eyebrow {
+  margin-bottom: 20px;
+}
+.profile-section h2 {
+  font-size: clamp(30px, 3.2vw, 46px);
+  margin-bottom: 25px;
+}
+.professional-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 35px 0 0;
+}
+.professional-timeline > li {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 30px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+.professional-timeline h3 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.professional-timeline p {
+  margin: 0;
+  font-size: 16px;
+}
+.profile-interests {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  padding: 0;
+  gap: 0 40px;
+}
+.profile-interests li {
+  font-size: 16px;
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.profile-guidance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+.profile-guidance p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.profile-guidance nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-guidance nav a {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.service-group-title {
+  font-size: 32px;
+  margin: 35px 0 25px;
+}
+.service-groups > section + section {
+  margin-top: 50px;
+}
+.service-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding-block: 55px 70px;
+}
+.service-hero h1 {
+  font-size: clamp(38px, 4.6vw, 66px);
+  margin: 25px 0;
+}
+.service-hero .lead {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.service-visual {
+  aspect-ratio: 1;
+  background: var(--lavender);
+  padding: 38px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0 45px 0 0;
+  overflow: hidden;
+}
+.service-visual p {
+  font: 32px/1.4 var(--font-serif);
+  color: var(--ink);
+  margin-top: 35px;
+}
+.service-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service-visual-line {
+  width: 80px;
+  height: 2px;
+  background: var(--ink);
+}
+.service-editorial {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 70px;
+  padding-bottom: 100px;
+}
+.service-contents {
+  position: sticky;
+  top: 125px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  border-right: 1px solid var(--line);
+}
+.service-contents > .eyebrow {
+  margin-bottom: 15px;
+}
+.service-contents a {
+  font-size: 13px;
+  min-height: 44px;
+  padding-block: 9px;
+  display: flex;
+  align-items: center;
+}
+.service-sections {
+  max-width: 740px;
+}
+.service-sections > section {
+  margin-bottom: 55px;
+  scroll-margin-top: 120px;
+}
+.service-sections .eyebrow {
+  margin-bottom: 18px;
+}
+.service-sections h2 {
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.25;
+  margin-top: 0;
+}
+.prose ul,
+.profile-section ul,
+.article-takeaways ul {
+  list-style: disc;
+  padding-left: 22px;
+}
+.prose li,
+.article-takeaways li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.service-appointment {
+  background: var(--pink);
+  padding: 35px;
+}
+.article-takeaways {
+  background: #efe5f5;
+  padding: 30px;
+  margin: 35px 0;
+}
+.article-takeaways .eyebrow {
+  margin-bottom: 18px;
+}
+.article-introduction {
+  font-size: 18px;
+  line-height: 1.75;
+}
+.article-faqs,
+.article-appointment {
+  margin-block: 45px;
+}
+.authorship-disclosure {
+  font-size: 13px;
+  font-style: italic;
+}
+@media (max-width: 850px) {
+  .service-hero {
+    gap: 35px;
+  }
+  .service-editorial {
+    grid-template-columns: 165px 1fr;
+    gap: 35px;
+  }
+  .service-visual {
+    padding: 25px;
+  }
+  .service-visual p {
+    font-size: 26px;
+  }
+  .profile-guidance {
+    gap: 35px;
+  }
+  .hero .phase-two-headline {
+    font-size: clamp(29px, 4vw, 37px);
+  }
+}
+@media (max-width: 600px) {
+  .hero .phase-two-headline {
+    font-size: clamp(30px, 8.2vw, 43px);
+  }
+  .hero-doctor-identity {
+    font-size: 13px !important;
+  }
+  .profile-section {
+    margin-top: 50px;
+    padding-top: 35px;
+  }
+  .professional-timeline > li {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .professional-timeline h3 {
+    font-size: 27px;
+  }
+  .profile-interests,
+  .profile-guidance,
+  .service-hero,
+  .service-editorial {
+    grid-template-columns: 1fr;
+  }
+  .service-hero {
+    padding-block: 35px 50px;
+    gap: 30px;
+  }
+  .service-hero h1 {
+    font-size: 38px;
+  }
+  .service-visual {
+    aspect-ratio: 1.6;
+    padding: 25px;
+  }
+  .service-visual p {
+    font-size: 27px;
+    margin-top: 20px;
+  }
+  .service-contents {
+    position: static;
+    border: 0;
+    border-block: 1px solid var(--line);
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 15px;
+  }
+  .service-contents > .eyebrow {
+    grid-column: 1/-1;
+  }
+  .service-sections h2 {
+    font-size: 30px;
+  }
+  .service-sections > section {
+    margin-bottom: 40px;
+  }
+  .service-appointment,
+  .article-takeaways {
+    padding: 25px;
+  }
+  .profile-guidance {
+    gap: 20px;
+  }
+}

@@ -1,3 +1,5 @@
+import { publicProfile } from '../data/professional';
+import { publicPractice } from './local-seo';
 export const site = {
   name: 'Dr. Vasundara Cheepurupalli',
   url: 'https://drvasundaragynec.com',
@@ -6,14 +8,21 @@ export const site = {
   // Add only clinic-verified information. Empty fields are never rendered.
   doctor: {
     name: 'Dr. Vasundara Cheepurupalli',
-    qualifications: [] as string[],
-    specialization: '',
-    experience: '',
-    clinicalApproach: '',
+    qualifications: publicProfile.qualifications,
+    specialization: publicProfile.title,
+    experience: publicProfile.experience,
+    clinicalApproach: publicProfile.approach,
     portraitApproved: true,
   },
   appointmentFormUrl: '',
-  contact: { phone: '', email: '', address: '', mapUrl: '' },
+  contact: {
+    phone: publicPractice?.phone || '',
+    email: publicPractice?.email || '',
+    address: publicPractice
+      ? `${publicPractice.streetAddress}, ${publicPractice.city}, ${publicPractice.region} ${publicPractice.postalCode}`
+      : '',
+    mapUrl: publicPractice?.mapUrl || '',
+  },
   socials: [] as { label: string; url: string }[],
   productionIndexing: false,
 };

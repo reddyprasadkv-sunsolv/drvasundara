@@ -5,6 +5,10 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import { publicArticles, readingTime } from '../../utils/articles';
 import { site } from '../../config/site';
+import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
+import { approvedServices } from '../../data/services';
+import { articleSchema } from '../../utils/schema';
+import { publicAssetUrl } from '../../utils/urls';
 export async function getStaticPaths() {
   return (await publicArticles()).map((entry) => ({
     params: { slug: entry.data.slug },
@@ -20,33 +24,39 @@ const reviewer = entry.data.reviewer
 const related = (await publicArticles()).filter((a) =>
   entry.data.relatedArticles.includes(a.data.slug),
 );
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: entry.data.title,
-  description: entry.data.excerpt,
-  datePublished: entry.data.publishedAt.toISOString(),
-  dateModified: (entry.data.updatedAt || entry.data.publishedAt).toISOString(),
-  author: { '@type': 'Person', name: author?.data.name },
-  reviewedBy: { '@type': 'Person', name: reviewer?.data.name },
-  lastReviewed: entry.data.medicalReviewedAt?.toISOString(),
-  mainEntityOfPage: new URL(Astro.url.pathname, site.url).href,
-  ...(entry.data.featuredImage
-    ? { image: new URL(entry.data.featuredImage.src, site.url).href }
-    : {}),
-};
+const socialImage = entry.data.featuredImage
+  ? publicAssetUrl(entry.data.featuredImage.src, Astro.site || site.url)
+  : undefined;
+const schema = articleSchema(
+  entry.data,
+  Astro.url.pathname,
+  author!.data.name,
+  reviewer!.data.name,
+  socialImage,
+  author!.data.entityType,
+);
+const relatedServices = approvedServices.filter((s) =>
+  entry.data.relatedServices.includes(s.slug),
+);
 ---
 
 <Base
   title={entry.data.seo.title || entry.data.title}
   description={entry.data.seo.description || entry.data.excerpt}
   schema={schema}
+  article
+  image={socialImage}
 >
   <article class="container article-page">
     <Breadcrumbs label={entry.data.title} />
     <span class="eyebrow">{entry.data.category}</span>
     <h1>{entry.data.title}</h1>
     <p class="lead">{entry.data.excerpt}</p>
+    {entry.data.authorship === 'ai-assisted' && (
+      <p class="authorship-disclosure">
+        Prepared with AI assistance; clinically reviewed as identified below.
+      </p>
+    )}
     <p>
       By {author?.data.name} · {readingTime(entry.body)} min read
     </p>
@@ -68,6 +78,13 @@ const schema = {
     <p>
       Medically reviewed by {reviewer?.data.name} on{' '}
       {entry.data.medicalReviewedAt?.toLocaleDateString('en-IN')}
+      {reviewer?.data.medicalRegistration && (
+        <span>
+          {' '}
+          · {reviewer.data.medicalRegistration.authority}:{' '}
+          {reviewer.data.medicalRegistration.number}
+        </span>
+      )}
     </p>
     {entry.data.featuredImage && (
       <Image
@@ -76,9 +93,36 @@ const schema = {
         width={1100}
       />
     )}
+    <div class="article-takeaways">
+      <span class="eyebrow">KEY TAKEAWAYS</span>
+      <ul>
+        {entry.data.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
+        ))}
+      </ul>
+    </div>
+    <p class="article-introduction">{entry.data.introduction}</p>
     <div class="prose">
       <Content />
     </div>
+    {entry.data.medicalFaqs.length > 0 && (
+      <section class="article-faqs">
+        <h2>Questions, with context.</h2>
+        <div class="faq-list">
+          {entry.data.medicalFaqs
+            .filter((f) => f.reviewed)
+            .map((f) => (
+              <details>
+                <summary>
+                  {f.question}
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>{f.answer}</p>
+              </details>
+            ))}
+        </div>
+      </section>
+    )}
     <h2>Sources & references</h2>
     <ol>
       {entry.data.sources.map((s) => (
@@ -100,5 +144,24 @@ const schema = {
         ))}
       </aside>
     )}
+    {relatedServices.length > 0 && (
+      <aside>
+        <h2>Related care information.</h2>
+        {relatedServices.map((service) => (
+          <p>
+            <a href={`/services/${service.slug}/`}>{service.name}</a>
+          </p>
+        ))}
+      </aside>
+    )}
+    <section class="article-appointment">
+      <h2>A conversation about your concerns.</h2>
+      <AppointmentCTA />
+    </section>
+    <p class="notice">
+      This article provides general educational information and cannot replace
+      individual medical advice. Seek professional assessment for your
+      circumstances. Appointment requests are not intended for emergencies.
+    </p>
   </article>
 </Base>

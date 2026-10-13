@@ -1,0 +1,17 @@
+---
+interface Props {
+  entries: { years: string; role: string; institution: string }[];
+}
+---
+
+<ol class="professional-timeline">
+  {Astro.props.entries.map((entry) => (
+    <li>
+      <span class="eyebrow">{entry.years}</span>
+      <div>
+        <h3>{entry.role}</h3>
+        <p>{entry.institution}</p>
+      </div>
+    </li>
+  ))}
+</ol>

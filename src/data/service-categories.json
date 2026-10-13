@@ -1,0 +1,26 @@
+[
+  {
+    "id": "gynecology",
+    "name": "Gynecology"
+  },
+  {
+    "id": "obstetrics",
+    "name": "Obstetrics"
+  },
+  {
+    "id": "reproductive-health",
+    "name": "Reproductive Health"
+  },
+  {
+    "id": "minimally-invasive-surgery",
+    "name": "Minimally Invasive Gynecological Surgery"
+  },
+  {
+    "id": "cosmetic-gynecology",
+    "name": "Cosmetic Gynecology"
+  },
+  {
+    "id": "preventive-care",
+    "name": "Preventive Women’s Healthcare"
+  }
+]

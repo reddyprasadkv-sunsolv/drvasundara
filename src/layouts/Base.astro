@@ -9,8 +9,10 @@ interface Props {
   description?: string;
   noindex?: boolean;
   schema?: unknown;
+  article?: boolean;
+  image?: string;
 }
-const { title, description, noindex, schema } = Astro.props;
+const { title, description, noindex, schema, article, image } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +21,13 @@ const { title, description, noindex, schema } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#352c46" />
-    <Meta title={title} description={description} noindex={noindex} />
+    <Meta
+      title={title}
+      description={description}
+      noindex={noindex}
+      article={article}
+      image={image}
+    />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <script type="application/ld+json" set:html={jsonLd(websiteSchema())} />
     {schema && <script type="application/ld+json" set:html={jsonLd(schema)} />}

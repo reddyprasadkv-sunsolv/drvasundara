@@ -1,12 +1,16 @@
+import { validPastDate } from './medical-gates.mjs';
 export function isPublicArticle(data, now = new Date()) {
   return (
     data.status === 'published' &&
+    data.contentType === 'article' &&
+    data.authorshipConfirmed === true &&
     !!data.approvedAt &&
     !!data.medicalReviewedAt &&
     !!data.reviewer &&
-    data.publishedAt <= now &&
-    data.approvedAt <= now &&
-    data.medicalReviewedAt <= now
+    validPastDate(data.publishedAt, now) &&
+    validPastDate(data.approvedAt, now) &&
+    validPastDate(data.medicalReviewedAt, now) &&
+    (!data.updatedAt || validPastDate(data.updatedAt, now))
   );
 }
 export function safeFormUrl(value) {

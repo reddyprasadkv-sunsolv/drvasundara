@@ -1,0 +1,1801 @@
+[
+  {
+    "slug": "general-gynecology",
+    "name": "General Gynecological Consultation",
+    "category": "gynecology",
+    "kind": "consultation",
+    "description": "A gynecological consultation offers an opportunity to discuss reproductive health, symptoms and questions in context.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A gynecological consultation offers an opportunity to discuss reproductive health, symptoms and questions in context. The assessment may include relevant history and an examination or investigation when appropriate.",
+    "understanding": "A gynecological consultation can cover menstrual patterns, pain, contraception, reproductive plans and changes during midlife. What is discussed and whether an examination is appropriate depend on the concern and consent. Bringing previous reports can help avoid repeating investigations unnecessarily.",
+    "reasons": [
+      "Changes in bleeding",
+      "Pelvic discomfort",
+      "Questions about reproductive health"
+    ],
+    "whenToSeek": "New or persistent symptoms deserve assessment. Severe pain, fainting or heavy bleeding needs urgent care rather than an online appointment request.",
+    "evaluation": "Discuss symptoms, medicines, previous investigations and personal priorities. Explain the purpose of any proposed examination and obtain consent before proceeding. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Not every concern requires a test or procedure. Discuss the reasons for each recommendation, possible discomfort, alternatives and follow-up.",
+    "faqs": [
+      {
+        "question": "Will every consultation include an examination?",
+        "answer": "Not necessarily. The clinician should explain why an examination is proposed and seek consent; assessment depends on the concern."
+      },
+      {
+        "question": "Should I bring previous test results?",
+        "answer": "Relevant reports, medicine details and a brief symptom history can help the clinician understand your circumstances."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Irregular periods",
+        "url": "https://www.nhs.uk/symptoms/irregular-periods/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "pcos",
+      "abnormal-uterine-bleeding",
+      "menstrual-disorders"
+    ],
+    "image": null,
+    "seo": {
+      "title": "General Gynecological Consultation",
+      "description": "A gynecological consultation offers an opportunity to discuss reproductive health, symptoms and questions in context. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "pcos",
+    "name": "PCOS / PCOD",
+    "category": "gynecology",
+    "kind": "condition",
+    "description": "PCOS involves hormonal and metabolic changes that can affect menstrual cycles and reproductive health.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "PCOS involves hormonal and metabolic changes that can affect menstrual cycles and reproductive health. Online labels such as PCOD do not replace an individual clinical assessment.",
+    "understanding": "PCOS is a hormonal and metabolic condition with features that vary between individuals. Irregular cycles, androgen-related symptoms and ovarian appearances need interpretation together; an ultrasound finding alone does not establish a diagnosis. Care may address menstrual health, metabolic risk, symptoms and reproductive plans rather than a single universal treatment.",
+    "reasons": [
+      "Infrequent or unpredictable periods",
+      "Skin or hair changes",
+      "Questions about ovulation"
+    ],
+    "whenToSeek": "Arrange a consultation for persistent menstrual changes or other concerns. A missed period can have more than one explanation and should not automatically be attributed to PCOS.",
+    "evaluation": "Review the pattern of symptoms and consider other explanations. Testing is selected according to the individual; management discussions should reflect health priorities and pregnancy plans. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "There is no single approach suitable for everyone. Discuss medicine suitability and monitoring, and avoid promises of a cure or guaranteed pregnancy.",
+    "faqs": [
+      {
+        "question": "Does an ultrasound alone diagnose PCOS?",
+        "answer": "No. Diagnosis considers clinical features and relevant investigations while excluding other explanations."
+      },
+      {
+        "question": "Are PCOS and PCOD separate diagnoses?",
+        "answer": "PCOD is commonly used informally. The clinician should explain the terminology and diagnostic criteria being used rather than assume two distinct diseases."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Polycystic ovary syndrome",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
+      }
+    ],
+    "relatedArticles": ["pcos-pcod-terms"],
+    "relatedServices": [
+      "general-gynecology",
+      "abnormal-uterine-bleeding",
+      "menstrual-disorders"
+    ],
+    "image": null,
+    "seo": {
+      "title": "PCOS / PCOD",
+      "description": "PCOS involves hormonal and metabolic changes that can affect menstrual cycles and reproductive health. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "abnormal-uterine-bleeding",
+    "name": "Abnormal Uterine Bleeding",
+    "category": "gynecology",
+    "kind": "condition",
+    "description": "Bleeding that differs from a usual pattern can have several causes.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Bleeding that differs from a usual pattern can have several causes. The pattern, associated symptoms and effect on daily life help guide the assessment.",
+    "understanding": "Abnormal uterine bleeding describes bleeding that differs in amount, frequency, duration or timing from the expected pattern. The causes vary with age, pregnancy possibility, medicines and other health factors. Bleeding between periods or after menopause should be discussed with a clinician; symptoms alone cannot determine the cause.",
+    "reasons": [
+      "Heavy or prolonged bleeding",
+      "Bleeding between periods",
+      "Bleeding after menopause"
+    ],
+    "whenToSeek": "Seek prompt assessment for unexplained or persistent bleeding. Heavy bleeding with faintness or feeling very unwell requires urgent assessment.",
+    "evaluation": "Document the bleeding pattern and discuss relevant history. Examination, blood tests or imaging may be considered according to symptoms and risk factors. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Management depends on the cause and personal priorities. Discuss medicine-related effects, procedural risks and alternatives when a treatment is proposed.",
+    "faqs": [
+      {
+        "question": "Is abnormal bleeding always due to hormones?",
+        "answer": "No. Pregnancy-related, structural, medicine-related and other causes may need consideration."
+      },
+      {
+        "question": "Can a bleeding diary help?",
+        "answer": "A record of timing, duration and associated symptoms can support assessment, but it should not delay urgent care for severe symptoms."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG88: Heavy menstrual bleeding",
+        "url": "https://www.nice.org.uk/guidance/ng88/chapter/Recommendations"
+      }
+    ],
+    "relatedArticles": ["abnormal-uterine-bleeding"],
+    "relatedServices": ["general-gynecology", "pcos", "menstrual-disorders"],
+    "image": null,
+    "seo": {
+      "title": "Abnormal Uterine Bleeding",
+      "description": "Bleeding that differs from a usual pattern can have several causes. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "menstrual-disorders",
+    "name": "Menstrual Disorders",
+    "category": "gynecology",
+    "kind": "condition",
+    "description": "Changes in menstrual timing, duration or comfort need to be understood in the context of life stage and health history.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Changes in menstrual timing, duration or comfort need to be understood in the context of life stage and health history. A symptom pattern alone cannot establish a diagnosis.",
+    "understanding": "Menstrual concerns include cycles that are unusually irregular, absent, painful or heavy. A change may have several explanations, including life-stage changes, pregnancy, medicines or underlying conditions. Tracking the pattern can support a conversation, but online descriptions cannot identify the cause or determine whether an investigation is necessary.",
+    "reasons": [
+      "Cycle changes",
+      "Missed or infrequent periods",
+      "Symptoms that disrupt daily activities"
+    ],
+    "whenToSeek": "Discuss changes that persist or concern you. Sudden severe symptoms should not be managed by waiting for a routine consultation.",
+    "evaluation": "A period diary can support the conversation. The clinician decides whether additional assessment is necessary rather than applying a single test to every menstrual concern. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "An explanation does not always mean that treatment is required. Where treatment is discussed, consider the goals, limitations and follow-up plan.",
+    "faqs": [
+      {
+        "question": "Are irregular periods always PCOS?",
+        "answer": "No. Irregular cycles have several possible explanations, so an individual assessment is needed."
+      },
+      {
+        "question": "What details should I record?",
+        "answer": "Note cycle dates, bleeding pattern, pain and relevant medicines or changes in health. Discuss what is useful with the clinician."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Irregular periods",
+        "url": "https://www.nhs.uk/symptoms/irregular-periods/"
+      }
+    ],
+    "relatedArticles": ["irregular-periods"],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "abnormal-uterine-bleeding"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Menstrual Disorders",
+      "description": "Changes in menstrual timing, duration or comfort need to be understood in the context of life stage and health history. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "ovarian-cysts",
+    "name": "Ovarian Cysts",
+    "category": "gynecology",
+    "kind": "condition",
+    "description": "An ovarian cyst is a fluid-containing structure associated with an ovary.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "An ovarian cyst is a fluid-containing structure associated with an ovary. Cysts vary in type and significance, and some are found incidentally on imaging.",
+    "understanding": "An ovarian cyst is a fluid-filled structure in or on an ovary. Some are related to the menstrual cycle, while others have different causes. Management depends on symptoms, imaging characteristics, age and clinical context. A cyst finding does not automatically mean cancer or that surgery is required.",
+    "reasons": [
+      "An imaging report describing a cyst",
+      "Pelvic discomfort",
+      "Questions about follow-up"
+    ],
+    "whenToSeek": "Sudden severe pelvic pain or pain with feeling very unwell needs urgent assessment. A scan finding should be interpreted alongside symptoms and individual risk factors.",
+    "evaluation": "Review imaging findings, symptoms and life stage. The discussion may include observation, repeat assessment or further investigation when appropriate. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Not every cyst needs an operation. If surgery is considered, discuss its purpose, alternatives, possible complications and implications for ovarian tissue.",
+    "faqs": [
+      {
+        "question": "Does every ovarian cyst require surgery?",
+        "answer": "No. Follow-up or intervention depends on the type, appearance, symptoms and individual risk assessment."
+      },
+      {
+        "question": "Can symptoms tell me what type of cyst I have?",
+        "answer": "No. Symptoms overlap with other conditions; examination and appropriate imaging may be needed."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Ovarian cyst",
+        "url": "https://www.nhs.uk/conditions/ovarian-cyst/"
+      }
+    ],
+    "relatedArticles": ["ovarian-cysts"],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "abnormal-uterine-bleeding"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Ovarian Cysts",
+      "description": "An ovarian cyst is a fluid-containing structure associated with an ovary. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "menopause-care",
+    "name": "Menopause Care",
+    "category": "gynecology",
+    "kind": "consultation",
+    "description": "The menopause transition can involve changes in periods and wellbeing.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "The menopause transition can involve changes in periods and wellbeing. A consultation considers symptoms alongside wider health needs and personal preferences.",
+    "understanding": "Menopause and the transition leading up to it can involve changes in cycles, temperature regulation, sleep, mood and genitourinary symptoms. Experiences vary widely. A review can also consider longer-term health and whether a symptom needs investigation rather than being attributed automatically to menopause.",
+    "reasons": [
+      "Changes in periods",
+      "Symptoms affecting sleep or comfort",
+      "Questions about midlife health"
+    ],
+    "whenToSeek": "Discuss symptoms that affect daily life. New bleeding after menopause needs clinical assessment rather than being assumed to be a normal transition.",
+    "evaluation": "Review the symptom pattern, medicines and relevant medical history. Discuss suitable support options and whether further assessment is indicated. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Hormonal and non-hormonal approaches have different considerations. Benefits, contraindications and follow-up should be explained without promising a particular result.",
+    "faqs": [
+      {
+        "question": "Does every woman need hormone treatment?",
+        "answer": "No. Support is individualized and may include different options after considering symptoms, preferences and relevant risks."
+      },
+      {
+        "question": "Should bleeding after menopause be assessed?",
+        "answer": "Yes. It should be discussed promptly with a clinician rather than assumed to be a normal menopausal change."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Menopause and perimenopause",
+        "url": "https://www.nhs.uk/conditions/menopause-and-perimenopause/"
+      }
+    ],
+    "relatedArticles": ["menopause-support"],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "abnormal-uterine-bleeding"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Menopause Care",
+      "description": "The menopause transition can involve changes in periods and wellbeing. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "contraception-family-planning",
+    "name": "Contraception and Family Planning",
+    "category": "gynecology",
+    "kind": "consultation",
+    "description": "Contraception is a personal choice informed by health history, preferences and future plans.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Contraception is a personal choice informed by health history, preferences and future plans. Methods differ in how they are used and what they can and cannot provide.",
+    "understanding": "Contraceptive choices differ in how they are used, their duration, effectiveness, side effects and suitability for an individual. Reproductive intentions, medical history, medicines and preferences are relevant. Counselling should support an informed choice without pressure and clarify what protection, follow-up and return-to-fertility considerations apply.",
+    "reasons": [
+      "Choosing or changing a method",
+      "Side-effect questions",
+      "Pregnancy planning"
+    ],
+    "whenToSeek": "Seek advice when a method no longer meets your needs or causes concerns. Time-sensitive questions about possible pregnancy or emergency contraception need prompt professional advice.",
+    "evaluation": "Compare suitable options, discuss practical use and consider medical eligibility. Clarify that pregnancy prevention and protection against sexually transmitted infections are separate questions. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Discuss relevant side effects, limitations and alternatives. Avoid presenting any method as the best choice for every individual.",
+    "faqs": [
+      {
+        "question": "Is one method suitable for everyone?",
+        "answer": "No. Suitability depends on health factors, preferences and correct use."
+      },
+      {
+        "question": "Do all methods protect against sexually transmitted infections?",
+        "answer": "No. Infection protection needs separate discussion; many contraceptive methods do not provide it."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Contraception",
+        "url": "https://www.nhs.uk/contraception/"
+      }
+    ],
+    "relatedArticles": ["contraception-choices"],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "abnormal-uterine-bleeding"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Contraception and Family Planning",
+      "description": "Contraception is a personal choice informed by health history, preferences and future plans. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "iud-consultation-insertion",
+    "name": "IUD Consultation and Insertion",
+    "category": "gynecology",
+    "kind": "procedure",
+    "description": "An intrauterine device is one form of contraception placed inside the uterus by a trained professional.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "An intrauterine device is one form of contraception placed inside the uterus by a trained professional. A consultation determines whether a particular device is suitable.",
+    "understanding": "An intrauterine device is placed in the uterus by an appropriately trained healthcare professional. Copper devices and hormone-releasing systems are different options with distinct effects on bleeding and suitability. A consultation should clarify the proposed device, consent, insertion expectations and how to obtain help if concerns develop afterwards.",
+    "reasons": [
+      "Questions about longer-acting contraception",
+      "Preparing for insertion or removal",
+      "Concerns about an existing device"
+    ],
+    "whenToSeek": "Pain, abnormal discharge, heavy bleeding or possible pregnancy with a device warrants clinical advice. Severe symptoms require urgent assessment.",
+    "evaluation": "Discuss device types, suitability, insertion, pain management, consent and aftercare. Do not assume a device can be inserted without an individual assessment. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Insertion can cause discomfort. Discuss bleeding changes, infection, displacement and other procedure-specific risks, together with alternatives and removal arrangements.",
+    "faqs": [
+      {
+        "question": "Are copper and hormonal devices the same?",
+        "answer": "No. They differ in composition, effects and suitability; ask which device is proposed."
+      },
+      {
+        "question": "What should be discussed before insertion?",
+        "answer": "Discuss pregnancy exclusion, relevant health history, possible discomfort, risks, alternatives and the follow-up plan with the clinician."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: IUD or copper coil",
+        "url": "https://www.nhs.uk/contraception/methods-of-contraception/iud-coil/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "abnormal-uterine-bleeding"
+    ],
+    "image": null,
+    "seo": {
+      "title": "IUD Consultation and Insertion",
+      "description": "An intrauterine device is one form of contraception placed inside the uterus by a trained professional. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "pregnancy-antenatal-care",
+    "name": "Pregnancy and Antenatal Care",
+    "category": "obstetrics",
+    "kind": "consultation",
+    "description": "Antenatal care reviews maternal and fetal health during pregnancy.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Antenatal care reviews maternal and fetal health during pregnancy. The plan should reflect the individual pregnancy rather than a universal schedule presented as local clinic policy.",
+    "understanding": "Antenatal care involves planned assessment and conversations during pregnancy. The schedule and investigations should reflect clinical guidance and individual needs, with attention to health history, screening choices, wellbeing and birth planning. A routine appointment schedule does not replace assessment when new concerning symptoms develop.",
+    "reasons": [
+      "Preparing for a first antenatal visit",
+      "Questions about pregnancy monitoring",
+      "Reviewing test results"
+    ],
+    "whenToSeek": "Discuss how to access timely pregnancy care. New concerning symptoms or reduced fetal movements need prompt assessment through appropriate maternity services.",
+    "evaluation": "Review health history, pregnancy progress and indicated tests. Prepare questions about monitoring, birth planning and who to contact when concerns arise. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Tests and screening have limitations and may involve choices. Discuss the purpose and implications of each recommendation and avoid guarantees about birth outcomes.",
+    "faqs": [
+      {
+        "question": "Will every pregnancy follow the same visit schedule?",
+        "answer": "No. Visits and assessments may change according to clinical findings and individual circumstances."
+      },
+      {
+        "question": "Can I decline a screening test?",
+        "answer": "Screening should involve an explanation of its purpose, limitations and choices so that informed consent is possible."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG201: Antenatal care",
+        "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
+      }
+    ],
+    "relatedArticles": ["antenatal-visit-questions"],
+    "relatedServices": [
+      "high-risk-pregnancy",
+      "caesarean-section",
+      "ectopic-pregnancy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Pregnancy and Antenatal Care",
+      "description": "Antenatal care reviews maternal and fetal health during pregnancy. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "high-risk-pregnancy",
+    "name": "High-Risk Pregnancy",
+    "category": "obstetrics",
+    "kind": "condition",
+    "description": "A pregnancy may need additional monitoring because of maternal health, pregnancy history or findings during the pregnancy.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A pregnancy may need additional monitoring because of maternal health, pregnancy history or findings during the pregnancy. The term describes a care need, not a guaranteed adverse outcome.",
+    "understanding": "A high-risk designation indicates that closer assessment or additional specialist input may be appropriate because of maternal, pregnancy or fetal factors. It is a description of care needs rather than a prediction of a particular outcome. Risk assessment can change during pregnancy and should be explained in understandable terms.",
+    "reasons": [
+      "A clinician has recommended closer monitoring",
+      "An existing health condition",
+      "Concerns after a previous pregnancy"
+    ],
+    "whenToSeek": "Do not delay urgent assessment for new concerning pregnancy symptoms while waiting for a routine appointment confirmation.",
+    "evaluation": "Identify the reasons for closer assessment and coordinate care with the appropriate maternity team. The frequency of visits and investigations is individualized. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Additional monitoring cannot remove every risk. Discuss the uncertainties, available options and circumstances that may change the care plan.",
+    "faqs": [
+      {
+        "question": "Does high risk mean a complication will definitely occur?",
+        "answer": "No. It indicates a need for individualized assessment and monitoring, not certainty about an outcome."
+      },
+      {
+        "question": "Can the care plan change during pregnancy?",
+        "answer": "Yes. New findings may affect monitoring, referrals or birth planning; the treating team should explain changes."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG201: Antenatal care",
+        "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
+      }
+    ],
+    "relatedArticles": ["high-risk-pregnancy"],
+    "relatedServices": [
+      "pregnancy-antenatal-care",
+      "caesarean-section",
+      "ectopic-pregnancy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "High-Risk Pregnancy",
+      "description": "A pregnancy may need additional monitoring because of maternal health, pregnancy history or findings during the pregnancy. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "caesarean-section",
+    "name": "Caesarean Section",
+    "category": "obstetrics",
+    "kind": "procedure",
+    "description": "A caesarean birth is an operation to deliver a baby through incisions in the abdomen and uterus.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A caesarean birth is an operation to deliver a baby through incisions in the abdomen and uterus. It may be planned or needed because circumstances change during pregnancy or labour.",
+    "understanding": "Caesarean birth is an operation to deliver a baby through incisions in the abdomen and uterus. It may be planned or required urgently for different reasons. Counselling should consider the indication, alternatives where appropriate, anaesthesia, recovery and implications for subsequent pregnancies without portraying either birth route as universally preferable.",
+    "reasons": [
+      "A recommended planned caesarean",
+      "Questions after a previous caesarean",
+      "Discussion of birth options"
+    ],
+    "whenToSeek": "Birth planning belongs in a clinical consultation. Labour symptoms or an urgent maternal or fetal concern should be assessed by maternity services.",
+    "evaluation": "Discuss the reason for considering surgery, anaesthesia, preparation and recovery. Explain alternatives where appropriate and obtain informed consent. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Consider potential benefits alongside bleeding, infection, anaesthetic and surgical risks and implications for future pregnancies. Do not promise a fixed recovery time.",
+    "faqs": [
+      {
+        "question": "Is caesarean birth always planned?",
+        "answer": "No. Some procedures are planned and others become necessary during pregnancy or labour."
+      },
+      {
+        "question": "What should I ask before a planned caesarean?",
+        "answer": "Ask about the indication, alternatives, anaesthesia, risks, recovery support and implications for future pregnancies."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG192: Caesarean birth",
+        "url": "https://www.nice.org.uk/guidance/ng192/chapter/recommendations"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "pregnancy-antenatal-care",
+      "high-risk-pregnancy",
+      "ectopic-pregnancy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Caesarean Section",
+      "description": "A caesarean birth is an operation to deliver a baby through incisions in the abdomen and uterus. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "ectopic-pregnancy",
+    "name": "Ectopic Pregnancy",
+    "category": "obstetrics",
+    "kind": "condition",
+    "description": "An ectopic pregnancy develops outside the usual location in the uterus.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "An ectopic pregnancy develops outside the usual location in the uterus. It can be serious and needs assessment by healthcare professionals.",
+    "understanding": "Most ectopic pregnancies occur in a fallopian tube, although other locations are possible. Early symptoms may overlap with other conditions, so pregnancy location requires clinical assessment. Pain, bleeding, shoulder-tip pain, dizziness or collapse in a possible pregnancy need appropriate urgent evaluation; do not wait for an online appointment response.",
+    "reasons": [
+      "Pain or bleeding in possible early pregnancy",
+      "A clinician’s concern about pregnancy location",
+      "Follow-up after assessment"
+    ],
+    "whenToSeek": "Severe abdominal pain, fainting or collapse in possible pregnancy requires emergency assessment. Do not use the appointment request form for an urgent concern.",
+    "evaluation": "Assessment may use clinical history, ultrasound and pregnancy hormone measurements. Management depends on the findings and requires an individualized follow-up plan. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Observation, medicines or surgery may be considered in selected circumstances. Each has limitations; ongoing symptoms and follow-up requirements must be explained by the treating team.",
+    "faqs": [
+      {
+        "question": "Can symptoms alone confirm an ectopic pregnancy?",
+        "answer": "No. Clinical assessment, ultrasound and sometimes repeated pregnancy hormone measurements are needed."
+      },
+      {
+        "question": "Can I wait for a routine appointment if pain is severe?",
+        "answer": "No. Severe pain, fainting or collapse requires emergency assessment. Appointment forms are not an urgent-care channel."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Ectopic pregnancy",
+        "url": "https://www.nhs.uk/conditions/ectopic-pregnancy/"
+      }
+    ],
+    "relatedArticles": ["ectopic-pregnancy-warning-signs"],
+    "relatedServices": ["pregnancy-antenatal-care", "high-risk-pregnancy"],
+    "image": null,
+    "seo": {
+      "title": "Ectopic Pregnancy",
+      "description": "An ectopic pregnancy develops outside the usual location in the uterus. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "pregnancy-complications",
+    "name": "Pregnancy Complications",
+    "category": "obstetrics",
+    "kind": "consultation",
+    "description": "Problems arising during pregnancy vary in their causes and urgency.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Problems arising during pregnancy vary in their causes and urgency. Clinical assessment considers symptoms, the stage of pregnancy and maternal and fetal wellbeing.",
+    "understanding": "Pregnancy complications cover many different conditions rather than a single diagnosis. The significance of pain, bleeding, blood-pressure changes or other findings depends on gestation and clinical context. The treating team should explain what has been identified, what remains uncertain and which symptoms need urgent assessment.",
+    "reasons": [
+      "A new symptom or test finding",
+      "A referral for additional assessment",
+      "Questions about an existing care plan"
+    ],
+    "whenToSeek": "New concerning pregnancy symptoms should be assessed promptly. The website cannot determine whether a situation is safe to wait.",
+    "evaluation": "Discuss the specific concern rather than grouping all complications into a single pathway. Care may involve obstetric, medical or other specialist teams. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "The likely options and risks depend on the diagnosis. Explain uncertainty, monitoring and escalation arrangements instead of promising an uncomplicated outcome.",
+    "faqs": [
+      {
+        "question": "Can an online symptom list identify a complication?",
+        "answer": "No. Symptoms require interpretation in context and may need prompt examination or investigations."
+      },
+      {
+        "question": "Should I wait for the next scheduled visit if I am concerned?",
+        "answer": "Ask the maternity team about the appropriate route for new concerns; urgent or severe symptoms should not wait for a routine request."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG201: Antenatal care",
+        "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "pregnancy-antenatal-care",
+      "high-risk-pregnancy",
+      "caesarean-section"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Pregnancy Complications",
+      "description": "Problems arising during pregnancy vary in their causes and urgency. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "postnatal-care",
+    "name": "Postnatal Care",
+    "category": "obstetrics",
+    "kind": "consultation",
+    "description": "Postnatal care considers recovery and wellbeing after birth.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Postnatal care considers recovery and wellbeing after birth. Physical health, emotional wellbeing and feeding questions can all be part of the conversation.",
+    "understanding": "Postnatal care considers physical recovery, emotional wellbeing, feeding-related concerns, contraception and follow-up after birth. Needs can differ after vaginal or caesarean birth and with pregnancy complications. A planned review is helpful, but new severe symptoms or concerns about mental health may need earlier assessment.",
+    "reasons": [
+      "Recovery concerns",
+      "Feeding or wellbeing questions",
+      "Contraception after birth"
+    ],
+    "whenToSeek": "Feeling very unwell, heavy bleeding or other severe symptoms after birth warrants urgent assessment. Routine request forms are not emergency channels.",
+    "evaluation": "Review symptoms, the birth experience and any ongoing conditions. Discuss appropriate follow-up and support with the relevant healthcare team. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Recovery differs between individuals and types of birth. Avoid fixed timelines or guarantees and explain when additional assessment may be needed.",
+    "faqs": [
+      {
+        "question": "Is postnatal care only about physical recovery?",
+        "answer": "No. Emotional wellbeing, support needs and reproductive health are also relevant."
+      },
+      {
+        "question": "Must I wait for a scheduled postnatal review?",
+        "answer": "No. New worrying or severe symptoms should be assessed through the appropriate clinical route sooner."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NICE NG194: Postnatal care",
+        "url": "https://www.nice.org.uk/guidance/ng194/chapter/recommendations"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "pregnancy-antenatal-care",
+      "high-risk-pregnancy",
+      "caesarean-section"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Postnatal Care",
+      "description": "Postnatal care considers recovery and wellbeing after birth. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "fertility-consultation",
+    "name": "Fertility Consultation",
+    "category": "reproductive-health",
+    "kind": "consultation",
+    "description": "A fertility consultation explores reproductive goals, relevant history and the possible need for evaluation.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A fertility consultation explores reproductive goals, relevant history and the possible need for evaluation. It does not imply that a particular treatment will be needed or successful.",
+    "understanding": "Fertility assessment considers reproductive history, menstrual patterns, relevant health factors and the duration of trying to conceive. Evaluation may involve both partners where relevant; this does not establish that the clinic offers a separate male-factor service. The appropriate timing and sequence of investigations should be explained individually.",
+    "reasons": [
+      "Questions about conceiving",
+      "Planning after a relevant diagnosis",
+      "Reviewing previous investigations"
+    ],
+    "whenToSeek": "Ask for individual advice about when evaluation is appropriate. Timing depends on circumstances rather than an online promise or universal deadline.",
+    "evaluation": "Review relevant reproductive history and discuss whether investigations or referrals are indicated. Evaluate the usefulness and limitations of previous results. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Investigations and treatments can have physical, emotional and financial implications. No test or consultation can guarantee pregnancy.",
+    "faqs": [
+      {
+        "question": "Will a first visit identify the cause immediately?",
+        "answer": "Not always. A staged evaluation may be needed, and some cases remain unexplained."
+      },
+      {
+        "question": "Does a consultation guarantee pregnancy?",
+        "answer": "No. Assessment can guide choices but cannot guarantee conception or any particular treatment outcome."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Infertility",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+      }
+    ],
+    "relatedArticles": ["fertility-first-steps"],
+    "relatedServices": [
+      "primary-secondary-infertility",
+      "reproductive-health-evaluation",
+      "fertility-related-investigations"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Fertility Consultation",
+      "description": "A fertility consultation explores reproductive goals, relevant history and the possible need for evaluation. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "primary-secondary-infertility",
+    "name": "Primary and Secondary Infertility",
+    "category": "reproductive-health",
+    "kind": "condition",
+    "description": "Fertility concerns can occur before any pregnancy or after a previous pregnancy.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Fertility concerns can occur before any pregnancy or after a previous pregnancy. The distinction helps describe history but does not establish the underlying cause.",
+    "understanding": "Primary and secondary infertility describe whether a pregnancy has occurred previously, rather than indicating a fixed treatment. Previous conception does not rule out later difficulty. Relevant reproductive history, duration, age and health factors guide assessment; the same test package or treatment is not appropriate for everyone.",
+    "reasons": [
+      "Difficulty conceiving",
+      "Questions following a previous pregnancy",
+      "Understanding a referral"
+    ],
+    "whenToSeek": "Seek individualized guidance when concerned about fertility. A past pregnancy does not rule out a current fertility concern.",
+    "evaluation": "Consider reproductive and medical history and discuss suitable next steps. Confirm referral pathways rather than assuming all investigations are available at the clinic. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Assessment may not identify a single cause. Discuss uncertainty, available options and the limits of what treatment can predict.",
+    "faqs": [
+      {
+        "question": "Can fertility difficulties occur after a previous pregnancy?",
+        "answer": "Yes. Prior conception does not exclude later difficulties, and an individual assessment may be appropriate."
+      },
+      {
+        "question": "Does the label determine the treatment?",
+        "answer": "No. Management depends on the findings, preferences and circumstances rather than the label alone."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Infertility",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "fertility-consultation",
+      "reproductive-health-evaluation",
+      "fertility-related-investigations"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Primary and Secondary Infertility",
+      "description": "Fertility concerns can occur before any pregnancy or after a previous pregnancy. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "reproductive-health-evaluation",
+    "name": "Reproductive Health Evaluation",
+    "category": "reproductive-health",
+    "kind": "consultation",
+    "description": "Reproductive health questions extend beyond fertility alone.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Reproductive health questions extend beyond fertility alone. An evaluation is guided by the concern, relevant history and the person’s priorities.",
+    "understanding": "A reproductive health review may explore menstrual history, reproductive plans, contraception, relevant symptoms and previous treatment. It should have a clear purpose rather than imply that every person needs extensive testing. Sensitive concerns should be discussed respectfully, with consent for any examination or investigation.",
+    "reasons": [
+      "Questions about menstrual or reproductive history",
+      "Preconception concerns",
+      "Follow-up of a previous finding"
+    ],
+    "whenToSeek": "Choose a consultation when concerns persist or decisions would benefit from professional guidance. Urgent symptoms need appropriate urgent care.",
+    "evaluation": "Start with the reason for consultation. Explain the rationale for any proposed examination or investigation and respect informed choices. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "More testing is not always more informative. Discuss the limitations of results and whether further assessment would change management.",
+    "faqs": [
+      {
+        "question": "Does everyone need extensive reproductive testing?",
+        "answer": "No. Investigations should respond to a clinical question and the individual context."
+      },
+      {
+        "question": "Can I discuss future reproductive plans without seeking treatment?",
+        "answer": "Yes. A consultation can clarify questions and appropriate next steps; the clinic should confirm the scope of its services."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Infertility",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "fertility-consultation",
+      "primary-secondary-infertility",
+      "fertility-related-investigations"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Reproductive Health Evaluation",
+      "description": "Reproductive health questions extend beyond fertility alone. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "fertility-related-investigations",
+    "name": "Fertility-Related Investigations",
+    "category": "reproductive-health",
+    "kind": "consultation",
+    "description": "Fertility investigations are selected to answer particular clinical questions.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Fertility investigations are selected to answer particular clinical questions. Results need interpretation in context and are not a stand-alone prediction of pregnancy.",
+    "understanding": "Fertility investigations answer specific questions about reproductive health. Some tests require particular timing or follow-up and may have limitations. Results need interpretation alongside history and other findings; a single result should not be presented as a definitive measure of future fertility or a guarantee of treatment response.",
+    "reasons": [
+      "Understanding a suggested test",
+      "Reviewing an existing report",
+      "Questions about a referral"
+    ],
+    "whenToSeek": "Consult the treating professional about the timing and purpose of tests. Do not order or interpret fertility investigations solely from online information.",
+    "evaluation": "Discuss what each test measures, preparation when relevant and how a result could affect next steps. Confirm local availability before naming clinic-delivered investigations. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Tests may have limitations, false reassurance or uncertain findings. Some involve procedures, costs or follow-up; explain these before proceeding.",
+    "faqs": [
+      {
+        "question": "Does one test determine my chance of pregnancy?",
+        "answer": "No. Results need interpretation in context and cannot guarantee future fertility or a treatment outcome."
+      },
+      {
+        "question": "Should I arrange a test package before consultation?",
+        "answer": "Ask the clinician which investigations are appropriate and when they should be performed rather than assuming a universal package is needed."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Infertility",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "fertility-consultation",
+      "primary-secondary-infertility",
+      "reproductive-health-evaluation"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Fertility-Related Investigations",
+      "description": "Fertility investigations are selected to answer particular clinical questions. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "laparoscopic-gynecological-surgery",
+    "name": "Laparoscopic Gynecological Surgery",
+    "category": "minimally-invasive-surgery",
+    "kind": "procedure",
+    "description": "Laparoscopy uses small incisions and a camera to view or treat problems within the abdomen and pelvis.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Laparoscopy uses small incisions and a camera to view or treat problems within the abdomen and pelvis. Suitability depends on the condition and the individual clinical assessment.",
+    "understanding": "Laparoscopy uses small abdominal incisions and a camera to examine or operate within the pelvis. It is one possible surgical approach, not a separate diagnosis or a guarantee of easier recovery. Suitability depends on the condition, surgical history, complexity and available expertise; an open operation or other approach may sometimes be appropriate.",
+    "reasons": [
+      "Discussion of a recommended procedure",
+      "Questions about surgical routes",
+      "Review of treatment alternatives"
+    ],
+    "whenToSeek": "A planned surgical consultation does not replace urgent assessment for acute symptoms. Ask the treating team about timely evaluation and preparation.",
+    "evaluation": "Discuss the indication, available alternatives, anaesthesia and expected follow-up. Surgical planning should consider the procedure’s complexity and individual risks. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Possible risks include bleeding, infection, injury to nearby organs and a need to change the surgical approach. Smaller incisions do not mean risk-free surgery.",
+    "faqs": [
+      {
+        "question": "Is laparoscopy suitable for every condition?",
+        "answer": "No. The approach depends on the indication, individual factors and the surgeon’s assessment."
+      },
+      {
+        "question": "Can the surgical approach change during an operation?",
+        "answer": "Sometimes. The consent discussion should address circumstances that may require a different approach and relevant risks."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG: Laparoscopy",
+        "url": "https://www.acog.org/womens-health/faqs/laparoscopy"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "laparoscopic-hysterectomy",
+      "robotic-gynecological-surgery",
+      "hysterectomy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Laparoscopic Gynecological Surgery",
+      "description": "Laparoscopy uses small incisions and a camera to view or treat problems within the abdomen and pelvis. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "laparoscopic-hysterectomy",
+    "name": "Laparoscopic Hysterectomy",
+    "category": "minimally-invasive-surgery",
+    "kind": "procedure",
+    "description": "A laparoscopic hysterectomy removes the uterus using a minimally invasive surgical approach.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A laparoscopic hysterectomy removes the uterus using a minimally invasive surgical approach. The reason for surgery and alternatives need careful discussion.",
+    "understanding": "Hysterectomy removes the uterus; whether the cervix, fallopian tubes or ovaries are also removed is a separate decision. The laparoscopic route uses a camera and small incisions. The indication, alternatives and reproductive implications should be clear before consent; ovary removal should not be implied automatically by the word hysterectomy.",
+    "reasons": [
+      "A recommendation to consider hysterectomy",
+      "Questions about alternatives",
+      "Understanding an operative plan"
+    ],
+    "whenToSeek": "Arrange a consultation to discuss an elective operation. New severe symptoms need urgent assessment rather than waiting for surgical counselling.",
+    "evaluation": "Clarify which organs would be removed, the reason for the recommended route and how the plan relates to reproductive goals and medical history. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Removal of the uterus prevents a future pregnancy carried in the uterus. Surgical, anaesthetic and recovery risks remain; alternatives and limitations must be discussed.",
+    "faqs": [
+      {
+        "question": "Does hysterectomy always remove the ovaries?",
+        "answer": "No. Ask exactly which organs are proposed for removal and why."
+      },
+      {
+        "question": "Can I become pregnant in the uterus afterwards?",
+        "answer": "Removal of the uterus means a future pregnancy cannot be carried there. Reproductive implications need discussion before surgery."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG: Hysterectomy",
+        "url": "https://www.acog.org/womens-health/faqs/hysterectomy"
+      }
+    ],
+    "relatedArticles": ["laparoscopic-hysterectomy"],
+    "relatedServices": [
+      "laparoscopic-gynecological-surgery",
+      "robotic-gynecological-surgery",
+      "hysterectomy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Laparoscopic Hysterectomy",
+      "description": "A laparoscopic hysterectomy removes the uterus using a minimally invasive surgical approach. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "robotic-gynecological-surgery",
+    "name": "Robotic Gynecological Surgery",
+    "category": "minimally-invasive-surgery",
+    "kind": "procedure",
+    "description": "Robot-assisted surgery is a surgical technique controlled by the surgeon.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Robot-assisted surgery is a surgical technique controlled by the surgeon. It is a tool for selected procedures rather than a guarantee of better results.",
+    "understanding": "Robot-assisted surgery uses a surgical system controlled by the surgeon. The equipment does not perform an operation independently. Its suitability depends on the indication, complexity, surgeon experience and alternatives. Evidence, costs and procedure-specific limitations should be discussed without assuming that the technology produces superior outcomes for every patient.",
+    "reasons": [
+      "A recommended robot-assisted procedure",
+      "Questions about other surgical routes",
+      "Understanding proposed costs and recovery"
+    ],
+    "whenToSeek": "Discuss a planned operation with the treating surgeon. The choice of technique should follow assessment rather than marketing claims.",
+    "evaluation": "Explain why a robot-assisted route is being considered, what alternatives exist and which factors influence suitability. Clarify the surgeon’s role and team arrangements. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Potential benefits and disadvantages depend on the procedure and circumstances. Discuss surgical risks, limitations and alternatives; do not imply universal superiority over laparoscopy.",
+    "faqs": [
+      {
+        "question": "Does the robot operate independently?",
+        "answer": "No. The surgeon controls the system."
+      },
+      {
+        "question": "Is robotic surgery always better than other approaches?",
+        "answer": "No. Any potential advantages and limitations must be considered for the particular operation and patient."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG/SGS: Robot-assisted surgery for noncancerous gynecologic conditions",
+        "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/09/robot-assisted-surgery-for-noncancerous-gynecologic-conditions"
+      }
+    ],
+    "relatedArticles": ["robotic-gynecological-surgery"],
+    "relatedServices": [
+      "laparoscopic-gynecological-surgery",
+      "laparoscopic-hysterectomy",
+      "hysterectomy"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Robotic Gynecological Surgery",
+      "description": "Robot-assisted surgery is a surgical technique controlled by the surgeon. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "hysterectomy",
+    "name": "Hysterectomy",
+    "category": "minimally-invasive-surgery",
+    "kind": "procedure",
+    "description": "Hysterectomy is surgery to remove the uterus.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Hysterectomy is surgery to remove the uterus. Different routes and variations exist, so the exact operation and its implications should be explained individually.",
+    "understanding": "A hysterectomy may be considered for different indications when appropriate alternatives have been assessed. The route and extent of the operation are separate decisions. Removing the uterus prevents a pregnancy from being carried in it, while removal of ovaries has additional implications that should be explained specifically.",
+    "reasons": [
+      "Considering a recommended operation",
+      "Discussing non-surgical alternatives",
+      "Questions about future health"
+    ],
+    "whenToSeek": "Discuss elective decisions in a consultation and seek urgent assessment for severe symptoms. An online description cannot determine whether surgery is necessary.",
+    "evaluation": "Review the underlying concern, alternatives and which organs would be removed. Discuss the operative route, consent, preparation and follow-up. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "The procedure affects reproductive possibilities and may have additional implications depending on what is removed. Discuss bleeding, infection, organ injury and other individual risks.",
+    "faqs": [
+      {
+        "question": "Are there alternatives to hysterectomy?",
+        "answer": "Alternatives depend on the condition and circumstances and should be discussed before deciding."
+      },
+      {
+        "question": "Does the term describe one identical operation?",
+        "answer": "No. The surgical route and organs removed can differ; clarify the planned operation."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG: Hysterectomy",
+        "url": "https://www.acog.org/womens-health/faqs/hysterectomy"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "laparoscopic-gynecological-surgery",
+      "laparoscopic-hysterectomy",
+      "robotic-gynecological-surgery"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Hysterectomy",
+      "description": "Hysterectomy is surgery to remove the uterus. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "ovarian-cyst-surgery",
+    "name": "Ovarian Cyst Surgery",
+    "category": "minimally-invasive-surgery",
+    "kind": "procedure",
+    "description": "Surgery may be considered for some ovarian cysts after assessing symptoms and imaging.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Surgery may be considered for some ovarian cysts after assessing symptoms and imaging. The purpose may be to remove a cyst, investigate a finding or address a complication.",
+    "understanding": "Surgery may be considered for an ovarian cyst based on symptoms, size, appearance and other clinical factors. Removing a cyst and removing an ovary are different procedures. Discussion should clarify the expected operation, uncertainty, preservation goals and the possibility that findings may alter the plan.",
+    "reasons": [
+      "A recommendation after imaging",
+      "Persistent symptoms",
+      "Questions about preserving ovarian tissue"
+    ],
+    "whenToSeek": "Sudden severe pelvic pain needs urgent assessment. Do not wait for a routine appointment when symptoms suggest an acute problem.",
+    "evaluation": "Review the reason for surgery and discuss whether observation or further assessment is an alternative. Explain the proposed extent and route of the operation. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Discuss surgical complications and possible effects on ovarian tissue and fertility. It may not be possible to confirm every operative finding in advance.",
+    "faqs": [
+      {
+        "question": "Does cyst surgery always remove the ovary?",
+        "answer": "No. The proposed operation and circumstances that could change it should be explained."
+      },
+      {
+        "question": "Can follow-up be an alternative to surgery?",
+        "answer": "Sometimes. Suitability depends on the cyst’s characteristics, symptoms and individual risk assessment."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Ovarian cyst",
+        "url": "https://www.nhs.uk/conditions/ovarian-cyst/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": [
+      "laparoscopic-gynecological-surgery",
+      "laparoscopic-hysterectomy",
+      "robotic-gynecological-surgery"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Ovarian Cyst Surgery",
+      "description": "Surgery may be considered for some ovarian cysts after assessing symptoms and imaging. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "cosmetic-gynecology-consultation",
+    "name": "Cosmetic Gynecology Consultation",
+    "category": "cosmetic-gynecology",
+    "kind": "consultation",
+    "description": "A consultation about genital appearance or function should begin with the person’s concerns and a respectful explanation of normal variation.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "A consultation about genital appearance or function should begin with the person’s concerns and a respectful explanation of normal variation. A procedure is not an automatic response to a concern.",
+    "understanding": "Normal genital appearance varies. Concerns about appearance should not be described as defects or used to pressure someone into a procedure. Functional symptoms deserve assessment for possible medical causes. Elective cosmetic interventions require careful discussion of limited evidence, alternatives, realistic expectations and potential harms.",
+    "reasons": [
+      "Questions about anatomy",
+      "Symptoms affecting comfort",
+      "Understanding a proposed elective procedure"
+    ],
+    "whenToSeek": "Clinical symptoms should be evaluated before assuming a cosmetic procedure is appropriate. There should be time to consider options without pressure.",
+    "evaluation": "Clarify whether the concern is cosmetic, functional or related to another condition. Discuss non-surgical alternatives, evidence limitations and informed consent. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Evidence for elective cosmetic benefits may be limited. Surgery can cause complications or fail to meet expectations; avoid appearance-based pressure and promised improvements.",
+    "faqs": [
+      {
+        "question": "Does variation in appearance mean a medical problem?",
+        "answer": "Not necessarily. Normal appearance varies, and concerns should be assessed without body-image pressure."
+      },
+      {
+        "question": "Are benefits of elective procedures guaranteed?",
+        "answer": "No. Evidence and outcomes vary, and risks and alternatives require careful discussion."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG Committee Opinion 795: Elective female genital cosmetic surgery",
+        "url": "https://doi.org/10.1097/AOG.0000000000003617"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["vaginoplasty"],
+    "image": null,
+    "seo": {
+      "title": "Cosmetic Gynecology Consultation",
+      "description": "A consultation about genital appearance or function should begin with the person’s concerns and a respectful explanation of normal variation. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "vaginoplasty",
+    "name": "Vaginoplasty",
+    "category": "cosmetic-gynecology",
+    "kind": "procedure",
+    "description": "The term vaginoplasty can describe different operations.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "The term vaginoplasty can describe different operations. The exact indication, technique and whether the purpose is reconstructive or elective must be clarified with the clinician.",
+    "understanding": "Vaginoplasty is used to describe different reconstructive or elective operations, so the term alone does not explain what is proposed. Counselling should clarify the indication and exact technique. Cosmetic marketing claims should not replace assessment of functional symptoms, evidence, alternatives, consent and possible changes in sensation or function.",
+    "reasons": [
+      "Understanding a proposed operation",
+      "Questions about functional concerns",
+      "Seeking an explanation of alternatives"
+    ],
+    "whenToSeek": "Arrange a consultation before considering an elective procedure. Investigate symptoms rather than assuming surgery is the appropriate answer.",
+    "evaluation": "Discuss the reason for the proposed procedure, alternatives, consent and realistic expectations. Avoid describing normal anatomy as a defect. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Potential risks include pain, bleeding, infection, scarring and changes in function or sensation. Evidence and outcomes vary by indication; benefits must not be guaranteed.",
+    "faqs": [
+      {
+        "question": "What does the proposed vaginoplasty involve?",
+        "answer": "Ask for the exact indication, technique and whether the purpose is reconstructive or elective; the term can refer to different operations."
+      },
+      {
+        "question": "Can a procedure guarantee improved sexual function?",
+        "answer": "No. Such outcomes must not be guaranteed; evidence, potential harms and alternatives should be discussed."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACOG Committee Opinion 795: Elective female genital cosmetic surgery",
+        "url": "https://doi.org/10.1097/AOG.0000000000003617"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["cosmetic-gynecology-consultation"],
+    "image": null,
+    "seo": {
+      "title": "Vaginoplasty",
+      "description": "The term vaginoplasty can describe different operations. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "preventive-womens-health",
+    "name": "Preventive Gynecological Consultation",
+    "category": "preventive-care",
+    "kind": "consultation",
+    "description": "Preventive care considers health history, life stage and individual risk.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Preventive care considers health history, life stage and individual risk. It is an opportunity to discuss relevant screening and health questions without suggesting every test is necessary.",
+    "understanding": "Preventive care should reflect age, relevant medical and family history, symptoms and applicable guidance. Screening and diagnostic investigations are different: a symptom may require assessment even if screening is up to date. Avoid universal test packages or implying that routine ovarian or uterine cancer screening is established for everyone.",
+    "reasons": [
+      "Questions about appropriate screening",
+      "Reviewing health risks",
+      "Planning preventive care"
+    ],
+    "whenToSeek": "Discuss preventive needs with a qualified professional. Symptoms should be evaluated as symptoms rather than managed only through screening.",
+    "evaluation": "Review history and prior results. Clarify the purpose, potential benefits and limitations of any screening recommendation before making a decision. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Screening can have false-positive or false-negative results and may lead to further tests. Do not promise that screening prevents or detects every condition.",
+    "faqs": [
+      {
+        "question": "Is screening the same as investigating symptoms?",
+        "answer": "No. Screening concerns people without symptoms; symptoms may need a different assessment."
+      },
+      {
+        "question": "Does everyone need the same annual tests?",
+        "answer": "No. Appropriate preventive measures depend on individual factors and applicable guidance."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Contraception",
+        "url": "https://www.nhs.uk/contraception/"
+      },
+      {
+        "title": "NHS: Cervical screening (UK context; adapt to applicable Indian guidance)",
+        "url": "https://www.nhs.uk/tests-and-treatments/cervical-screening/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["reproductive-wellness"],
+    "image": null,
+    "seo": {
+      "title": "Preventive Gynecological Consultation",
+      "description": "Preventive care considers health history, life stage and individual risk. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "reproductive-wellness",
+    "name": "Reproductive Wellness",
+    "category": "preventive-care",
+    "kind": "consultation",
+    "description": "Reproductive wellbeing includes informed choices and attention to personal health concerns.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": null,
+    "introduction": "Reproductive wellbeing includes informed choices and attention to personal health concerns. A consultation should respect different reproductive goals and circumstances.",
+    "understanding": "Reproductive wellness is a broad description, not a diagnosis or a promise of fertility. A useful conversation should identify a concrete concern such as menstrual health, contraception, reproductive plans or symptoms. Recommendations should have a clear rationale and avoid unnecessary tests or unsupported wellness claims.",
+    "reasons": [
+      "Preconception questions",
+      "Reviewing reproductive priorities",
+      "Questions about preventive support"
+    ],
+    "whenToSeek": "Seek guidance when a personal health concern or planning decision would benefit from a clinical discussion.",
+    "evaluation": "Review relevant history, current medicines and questions. Recommendations should be appropriate to the individual rather than a generic wellness package. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "General wellbeing advice cannot replace assessment of symptoms. Avoid unsupported supplement, fertility or disease-prevention promises.",
+    "faqs": [
+      {
+        "question": "Does reproductive wellness testing guarantee fertility?",
+        "answer": "No. No wellness package can guarantee fertility or pregnancy."
+      },
+      {
+        "question": "What can I ask about during a review?",
+        "answer": "Discuss specific concerns and plans so that any advice or investigation has a clear purpose."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "WHO: Infertility",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["preventive-womens-health"],
+    "image": null,
+    "seo": {
+      "title": "Reproductive Wellness",
+      "description": "Reproductive wellbeing includes informed choices and attention to personal health concerns. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "menopause-midlife-health",
+    "name": "Menopause and Midlife Health",
+    "category": "preventive-care",
+    "kind": "consultation",
+    "description": "Midlife health conversations can include menstrual changes and broader wellbeing.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": "menopause-care",
+    "introduction": "Midlife health conversations can include menstrual changes and broader wellbeing. This topic is planned within the menopause care pathway to avoid duplicate pages.",
+    "understanding": "This proposed preventive topic overlaps with Menopause Care. A single canonical page should address symptoms and broader midlife health considerations rather than create duplicate pages. Any statements about preventive investigations or treatment require individualized clinical review.",
+    "reasons": [
+      "Questions about midlife changes",
+      "Reviewing preventive needs",
+      "Discussing symptom support"
+    ],
+    "whenToSeek": "Use the menopause care consultation pathway once its clinical availability is confirmed.",
+    "evaluation": "Review symptoms and health history together, and discuss appropriate preventive questions. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Separate the potential benefits of support from promises about ageing or guaranteed wellbeing.",
+    "faqs": [
+      {
+        "question": "Will this have a separate service page?",
+        "answer": "No. The canonical Menopause Care page is intended to cover the overlap after approval."
+      },
+      {
+        "question": "Is every midlife symptom due to menopause?",
+        "answer": "No. Persistent or concerning symptoms need assessment rather than automatic attribution to menopause."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Menopause and perimenopause",
+        "url": "https://www.nhs.uk/conditions/menopause-and-perimenopause/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["preventive-womens-health", "reproductive-wellness"],
+    "image": null,
+    "seo": {
+      "title": "Menopause and Midlife Health",
+      "description": "Midlife health conversations can include menstrual changes and broader wellbeing. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  },
+  {
+    "slug": "contraception-counselling",
+    "name": "Contraception Counseling",
+    "category": "preventive-care",
+    "kind": "consultation",
+    "description": "Contraceptive counselling supports an informed choice about pregnancy prevention.",
+    "approved": false,
+    "availabilityConfirmed": false,
+    "contentReviewed": false,
+    "status": "draft",
+    "approvedBy": null,
+    "approvedAt": null,
+    "medicalReviewedBy": null,
+    "medicalReviewedAt": null,
+    "approvalRecord": null,
+    "aliasOf": "contraception-family-planning",
+    "introduction": "Contraceptive counselling supports an informed choice about pregnancy prevention. This topic is planned within the contraception and family planning pathway.",
+    "understanding": "This proposed counselling topic overlaps with Contraception and Family Planning. The canonical page should explain informed choice, suitability and follow-up without repeating a second service listing. Counselling does not establish that every method or insertion procedure is currently available at the clinic.",
+    "reasons": [
+      "Understanding available choices",
+      "Reviewing an existing method",
+      "Planning future pregnancy"
+    ],
+    "whenToSeek": "Use the family planning pathway once its clinical availability is confirmed.",
+    "evaluation": "Discuss suitable choices and practical use with the clinician, including the individual’s preferences. Questions about the purpose of a recommendation, reasonable alternatives and follow-up should be addressed before proceeding.",
+    "benefitsRisks": "Explain method-specific limitations and side effects rather than presenting a universal preferred method.",
+    "faqs": [
+      {
+        "question": "Will this duplicate the contraception page?",
+        "answer": "No. It is a planning alias of Contraception and Family Planning."
+      },
+      {
+        "question": "Does a counselling listing confirm every method is offered?",
+        "answer": "No. Current availability of each method or procedure must be confirmed with the clinic."
+      },
+      {
+        "question": "How is an appointment request confirmed?",
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Contraception",
+        "url": "https://www.nhs.uk/contraception/"
+      }
+    ],
+    "relatedArticles": [],
+    "relatedServices": ["preventive-womens-health", "reproductive-wellness"],
+    "image": null,
+    "seo": {
+      "title": "Contraception Counseling",
+      "description": "Contraceptive counselling supports an informed choice about pregnancy prevention. Explore evaluation, questions and balanced information for an individual consultation."
+    },
+    "reviewNotes": [
+      "Confirm current clinical availability.",
+      "Review every section and FAQ for Indian clinical practice.",
+      "Record genuine review and approval evidence before publication."
+    ]
+  }
+]

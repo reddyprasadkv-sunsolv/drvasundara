@@ -7,12 +7,14 @@ interface Props {
   eyebrow?: string;
   description: string;
   noindex?: boolean;
+  schema?: unknown;
 }
 const {
   title,
   eyebrow = 'DR. VASUNDARA CHEEPURUPALLI',
   description,
   noindex,
+  schema,
 } = Astro.props;
 ---
 
@@ -20,10 +22,16 @@ const {
   title={title}
   description={description}
   noindex={noindex}
-  schema={breadcrumbSchema([
-    { name: 'Home', path: '/' },
-    { name: title, path: Astro.url.pathname },
-  ])}
+  schema={{
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: title, path: Astro.url.pathname },
+      ]),
+      ...(schema ? [schema] : []),
+    ],
+  }}
 >
   <div class="container">
     <Breadcrumbs label={title} />

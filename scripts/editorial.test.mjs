@@ -4,15 +4,24 @@ import { isPublicArticle, safeFormUrl } from '../src/utils/editorial.mjs';
 const now = new Date('2026-10-13');
 const approved = {
   status: 'published',
+  contentType: 'article',
+  authorshipConfirmed: true,
   publishedAt: new Date('2026-10-01'),
   approvedAt: new Date('2026-09-30'),
   medicalReviewedAt: new Date('2026-09-30'),
   reviewer: 'verified-doctor',
 };
 test('editorial states and incomplete review cannot enter publication', () => {
-  for (const status of ['draft', 'doctor-review', 'approved'])
+  for (const status of ['draft', 'doctor-review', 'medical-review', 'approved'])
     assert.equal(isPublicArticle({ ...approved, status }, now), false);
-  for (const key of ['approvedAt', 'medicalReviewedAt', 'reviewer'])
+  for (const key of [
+    'publishedAt',
+    'approvedAt',
+    'medicalReviewedAt',
+    'reviewer',
+    'authorshipConfirmed',
+    'contentType',
+  ])
     assert.equal(
       isPublicArticle({ ...approved, [key]: undefined }, now),
       false,

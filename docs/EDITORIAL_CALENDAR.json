@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "pcos-pcod-terms",
+    "title": "PCOS vs PCOD: Understanding Commonly Used Terms",
+    "category": "PCOS",
+    "status": "draft",
+    "sources": ["pcos"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "irregular-periods",
+    "title": "Irregular Periods: Common Causes and When to Seek Advice",
+    "category": "Menstrual Health",
+    "status": "draft",
+    "sources": ["periods"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "high-risk-pregnancy",
+    "title": "High-Risk Pregnancy: What It Means and Why Monitoring Matters",
+    "category": "Pregnancy",
+    "status": "draft",
+    "sources": ["antenatal"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "laparoscopic-hysterectomy",
+    "title": "Laparoscopic Hysterectomy: Understanding the Procedure",
+    "category": "Women’s Wellness",
+    "status": "draft",
+    "sources": ["hysterectomy"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "robotic-gynecological-surgery",
+    "title": "Robotic Gynecological Surgery: Potential Uses and Limitations",
+    "category": "Women’s Wellness",
+    "status": "draft",
+    "sources": ["robotic"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "ovarian-cysts",
+    "title": "Ovarian Cysts: Symptoms, Evaluation and Treatment Considerations",
+    "category": "Women’s Wellness",
+    "status": "draft",
+    "sources": ["cysts"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "fertility-first-steps",
+    "title": "Fertility Evaluation: Understanding the First Steps",
+    "category": "Fertility",
+    "status": "draft",
+    "sources": ["fertility"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "menopause-support",
+    "title": "Menopause: Symptoms, Health Changes and Support Options",
+    "category": "Menopause",
+    "status": "draft",
+    "sources": ["menopause"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "ectopic-pregnancy-warning-signs",
+    "title": "Ectopic Pregnancy: Warning Signs and the Need for Prompt Evaluation",
+    "category": "Pregnancy",
+    "status": "draft",
+    "sources": ["ectopic"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "antenatal-visit-questions",
+    "title": "Antenatal Visits: Questions to Ask During Pregnancy",
+    "category": "Pregnancy",
+    "status": "draft",
+    "sources": ["antenatal"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "abnormal-uterine-bleeding",
+    "title": "Understanding Abnormal Uterine Bleeding",
+    "category": "Menstrual Health",
+    "status": "draft",
+    "sources": ["bleeding"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  },
+  {
+    "slug": "contraception-choices",
+    "title": "Contraception Choices: An Overview of Available Methods",
+    "category": "Preventive Care",
+    "status": "draft",
+    "sources": ["contraception"],
+    "doctorApproval": "pending",
+    "publishedAt": null,
+    "medicalReviewedAt": null
+  }
+]

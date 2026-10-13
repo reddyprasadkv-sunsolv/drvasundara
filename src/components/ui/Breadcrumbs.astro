@@ -1,11 +1,17 @@
 ---
 interface Props {
   label: string;
+  items?: { label: string; href: string }[];
 }
+const { label, items = [{ label: 'Home', href: '/' }] } = Astro.props;
 ---
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/">Home</a>
-  <span aria-hidden="true">/</span>
-  <span aria-current="page">{Astro.props.label}</span>
+  {items.map((item) => (
+    <>
+      <a href={item.href}>{item.label}</a>
+      <span aria-hidden="true">/</span>
+    </>
+  ))}
+  <span aria-current="page">{label}</span>
 </nav>

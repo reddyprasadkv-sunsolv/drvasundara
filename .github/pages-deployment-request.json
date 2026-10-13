@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-13",
-  "request": "Use stock photography in the hero and move the authentic doctor portrait to the Meet the Doctor section, as requested.",
-  "revision": "stock-hero-doctor-profile-2026-10-13"
+  "request": "Publish the approved Phase 2 development UI and content architecture to the existing GitHub Pages preview only; keep every unapproved medical service, article, credential and local claim unpublished.",
+  "revision": "phase2-content-governance-2026-10-13"
 }

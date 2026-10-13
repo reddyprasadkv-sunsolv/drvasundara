@@ -1,0 +1,242 @@
+{
+  "name": "Dr. Vasundara Cheepurupalli",
+  "identityApproved": true,
+  "claims": [
+    {
+      "id": "professional-title",
+      "value": "Gynecologist & Obstetrician | Robotic & Laparoscopic Surgeon",
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "senior-role",
+      "value": "Senior Consultant Gynaecologist",
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "qualifications",
+      "value": ["DNB", "DGO", "FMAS", "CIMP", "GCP"],
+      "sources": [
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "experience-label",
+      "value": "13+ years",
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://drvasundaragynec.com/about/"
+      ],
+      "verificationStatus": "source-only; time-sensitive",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "specializations",
+      "value": [
+        "Gynecology",
+        "Obstetrics and Pregnancy Care",
+        "Laparoscopic Gynecological Surgery",
+        "Robotic Gynecological Surgery",
+        "Reproductive Health",
+        "Cosmetic Gynecology"
+      ],
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://drvasundaragynec.com/about/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "hospital-affiliations",
+      "value": ["KIMS Hospitals, Secunderabad", "KIMS Cuddles, Secunderabad"],
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "education-mbbs",
+      "value": "MBBS, Andhra Medical College, Visakhapatnam, 2007",
+      "sources": ["https://drvasundaragynec.com/about/"],
+      "verificationStatus": "source-only",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "education-postgraduate",
+      "value": "Postgraduation, Kurnool Medical College, 2013",
+      "sources": ["https://drvasundaragynec.com/about/"],
+      "verificationStatus": "source-only; exact qualification not specified",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "robotic-training",
+      "value": "Robotic training described as Da Vinci USA board, 2017",
+      "sources": [
+        "https://drvasundaragynec.com/about/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "partially corroborated; wording and credential need confirmation",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "menopause-certification",
+      "value": "Menopause practitioner certification",
+      "sources": [
+        "https://drvasundaragynec.com/about/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "introduction",
+      "value": "Women’s health deserves careful understanding, clinical expertise and guidance that respects individual circumstances. Dr. Vasundara Cheepurupalli’s reference profiles describe a background in gynecology, obstetrics and minimally invasive gynecological surgery.",
+      "sources": [
+        "https://drvasundaragynec.com/about/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "clinical-approach",
+      "value": "Listening, individualized assessment, evidence-informed decisions, respectful conversations and clear patient education.",
+      "sources": ["https://drvasundaragynec.com/"],
+      "verificationStatus": "draft clinical philosophy; doctor approval required",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    }
+  ],
+  "experienceTimeline": [
+    {
+      "id": "experience-2018",
+      "value": {
+        "years": "2018 – Present",
+        "role": "Senior Consultant Gynaecologist",
+        "institution": "KIMS Hospitals & KIMS Cuddles, Secunderabad"
+      },
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "experience-2017",
+      "value": {
+        "years": "2017 – 2018",
+        "role": "Consultant Gynaecologist",
+        "institution": "Mahavir Hospital and Research Centre, Hyderabad"
+      },
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "experience-2015",
+      "value": {
+        "years": "2015 – 2017",
+        "role": "Senior Registrar",
+        "institution": "KIMS Hospitals and Independent Consultant"
+      },
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    },
+    {
+      "id": "experience-2014",
+      "value": {
+        "years": "2014 – 2015",
+        "role": "Consultant Gynaecologist",
+        "institution": "Community Health Centre, Vizag"
+      },
+      "sources": [
+        "https://drvasundaragynec.com/",
+        "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+      ],
+      "verificationStatus": "corroborated",
+      "doctorApprovalStatus": "pending",
+      "approvedForPublication": false,
+      "approvedBy": null,
+      "approvedAt": null
+    }
+  ],
+  "registration": {
+    "number": "",
+    "authority": "",
+    "approvedForPublication": false,
+    "id": "registration",
+    "sources": [],
+    "verificationStatus": "pending",
+    "doctorApprovalStatus": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "educationPublicationApproved": false
+}

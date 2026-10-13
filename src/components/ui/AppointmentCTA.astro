@@ -5,7 +5,7 @@ interface Props {
   label?: string;
   light?: boolean;
 }
-const { label = 'Request Appointment', light = false } = Astro.props;
+const { label = 'Request an Appointment', light = false } = Astro.props;
 const url = safeFormUrl(site.appointmentFormUrl);
 ---
 

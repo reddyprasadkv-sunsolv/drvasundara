@@ -9,10 +9,24 @@ const files = fs
   .filter((f) => String(f).endsWith('.html'));
 assert.ok(files.length >= 10, 'Expected complete public page set');
 let links = 0;
+const titles = new Set();
+const descriptions = new Set();
 for (const f of files) {
   const html = fs.readFileSync(path.join(root, String(f)), 'utf8');
   assert.match(html, /<title>[^<]+<\/title>/);
-  assert.match(html, /name="description"/);
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  const description = html.match(/name="description" content="([^"]+)"/)?.[1];
+  assert.ok(description, `Missing description in ${f}`);
+  assert.ok(!titles.has(title), `Duplicate title in ${f}`);
+  assert.ok(!descriptions.has(description), `Duplicate description in ${f}`);
+  titles.add(title);
+  descriptions.add(description);
+  assert.equal(
+    [...html.matchAll(/<h1(?:\s|>)/g)].length,
+    1,
+    `Expected one H1 in ${f}`,
+  );
+  assert.match(html, /name="robots" content="noindex, nofollow"/);
   assert.match(html, /rel="canonical"/);
   assert.match(html, /id="main"/);
   assert.match(html, /Skip to content/);

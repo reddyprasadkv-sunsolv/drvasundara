@@ -1,30 +1,39 @@
 ---
-import { approvedServices } from '../../data/services';
+import { approvedServices, approvedServiceGroups } from '../../data/services';
 ---
 
 {approvedServices.length ? (
-  <div class="service-list">
-    {approvedServices.map((s, i) => (
-      <a class="service-row" href={`/services/${s.slug}/`}>
-        <span class="service-number">0{i + 1}</span>
-        <div>
-          <h3>{s.name}</h3>
-          <p>{s.description}</p>
+  <div class="service-groups">
+    {approvedServiceGroups.map((group) => (
+      <section>
+        <h3 class="service-group-title">{group.name}</h3>
+        <div class="service-list">
+          {group.services.map((s, i) => (
+            <a class="service-row" href={`/services/${s.slug}/`}>
+              <span class="service-number">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3>{s.name}</h3>
+                <p>{s.description}</p>
+              </div>
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 18H30M18 6V30M9 9L27 27M9 27L27 9"
+                  stroke="currentColor"
+                />
+              </svg>
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
         </div>
-        <svg
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M6 18H30M18 6V30M9 9L27 27M9 27L27 9"
-            stroke="currentColor"
-          />
-        </svg>
-        <span aria-hidden="true">↗</span>
-      </a>
+      </section>
     ))}
   </div>
 ) : (

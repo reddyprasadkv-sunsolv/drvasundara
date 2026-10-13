@@ -1,4 +1,4 @@
-# Dr. Vasundhara Gynec — Phase 0 + Phase 1
+# Dr. Vasundara Cheepurupalli — Phase 2
 
 A static, doctor-led women’s healthcare website, built with Astro 7, Tailwind CSS 4, strict TypeScript 6 and MDX. Production origin: https://drvasundaragynec.com. Official repository: https://github.com/reddyprasadkv-sunsolv/drvasundara.git. Work is on `main`.
 
@@ -29,7 +29,7 @@ Set `ASTRO_TELEMETRY_DISABLED=1` if you prefer no Astro telemetry. Dependencies 
 - `src/components/seo`: page metadata.
 - `src/components/medical`: portrait, approved service list, editorial previews, FAQs and appointment section.
 - `src/layouts`: shared document shell and editorial inner-page layout.
-- `src/pages`: home, doctor profile, service index/detail, journal index/article, FAQs, contact, appointment guide, privacy information, disclaimer, 404 and robots endpoint.
+- `src/pages`: home, doctor profile, service index/detail, journal index/article, FAQs, contact, appointment guide, privacy information, 404 and robots endpoint.
 - `src/content`: schema-validated local blog and author collections.
 - `src/config`: clinic configuration, navigation, production origin and indexing switch.
 - `src/data`: approved FAQ and service data; proposed service categories stay unpublished.
@@ -42,7 +42,7 @@ Set `ASTRO_TELEMETRY_DISABLED=1` if you prefer no Astro telemetry. Dependencies 
 
 ## Design system
 
-Lavender `#CDB4DB`, blush `#FFC8DD`, rose `#FFAFCC`, sky `#BDE0FE` and blue `#A2D2FF`, with deep plum text `#352C46` and accent `#554165` for accessible contrast. Playfair Display headings and Open Sans text are self-hosted with font-display swap. Body text starts at 16px with a 1.75 line height. Fluid heading/spacing scales, original line botanicals, arched portrait framing, alternating editorial compositions and understated motion establish the visual identity. There are no animation frameworks or client islands.
+Lavender `#CDB4DB`, blush `#FFC8DD`, rose `#FFAFCC`, sky `#BDE0FE` and blue `#A2D2FF`, with deep plum text `#352C46` and accent `#554165` for accessible contrast. Playfair Display headings and Open Sans text are self-hosted with font-display swap. Body text starts at 16px with a 1.75 line height. Fluid heading/spacing scales, original line botanicals, offset rectangular portrait framing, alternating editorial compositions and understated motion establish the visual identity. There are no animation frameworks or client islands.
 
 Small screens use an independent single-column hero, compact header and native disclosure navigation. Tablet and desktop progressively expand to asymmetric two-column layouts. The content width is capped for ultrawide displays. Focus states, a skip link, native FAQ disclosures, Escape-to-close navigation and reduced-motion rules are included.
 
@@ -50,11 +50,11 @@ Small screens use an independent single-column hero, compact header and native d
 
 Edit `src/config/site.ts`. Leave unknown values empty. Qualifications, specialization, experience, clinical approach, telephone, email, address, map and verified social links render only when supplied. The original portrait was copied from the existing client workspace, whose image notes identify it as client-selected. No AI-edited portrait is used. Set `doctor.portraitApproved=false` for the neutral, botanical monogram fallback; the layout stays intact.
 
-Services live in `src/data/services.ts`. The seven proposed categories are not advertised as available. Approval plus nonempty doctor-approved body copy is required for a public service route. FAQs live in `src/data/faqs.ts`; only `approved:true` records render. No reviews, statistics, affiliations or credentials were fabricated.
+Services are schema-validated from src/data/services.json. Twenty-nine draft entries across six groups require availability, reviewed clinical sections and genuine approval evidence. Two aliases avoid duplicate pages. Profile and local practice data have separate evidence/approval gates; unknown data remain hidden. FAQs live in src/data/faqs.ts.
 
 ## Editorial workflow
 
-See [editorial guide](docs/EDITORIAL.md). Draft → Doctor Review → Approved → Published. A publication also requires approvedAt, medicalReviewedAt, a reviewer, sources, verified author/reviewer records and a publication date that is not in the future. Approved but unscheduled/unpublished drafts do not get pages. Routes, homepage previews, journal listings, related links and sitemaps use the same filter. No medical articles are included in this foundation.
+See [editorial guide](docs/EDITORIAL.md) and [clinic approval checklist](docs/MEDICAL_CONTENT_APPROVAL.md). Twelve AI-assisted outlines are unpublished. Actual article authorship, verified reviewer registration, complete content and real approval/review/publication dates are mandatory. Routes, lists, related links and sitemap use shared approval filters. Run pnpm review:export for a private local service/profile review pack.
 
 ## Appointments
 
@@ -66,13 +66,7 @@ Unique titles/descriptions, production canonical URLs, Open Graph and X metadata
 
 ## GitHub Pages and production safety
 
-Validation runs on main pushes and PRs. Deployment has no push trigger. It requires all of:
-
-1. Explicit production cutover approval.
-2. Repository variable `PRODUCTION_CUTOVER_APPROVED=true`.
-3. Manual dispatch on main with the exact approval input `APPROVED`.
-
-Before enabling it, configure required reviewers on the `github-pages` environment and confirm the approved domain/hosting plan. The variable is absent by default, so deployment jobs are skipped. `public/CNAME` prepares the custom domain locally; no DNS or hosting change was performed. No Cloudflare, GoDaddy or WordPress settings were changed. The privacy page is transparent foundation copy and needs clinic approval before public launch.
+GitHub Actions deploys only the authorized GitHub Pages preview, on a deliberate change to .github/pages-deployment-request.json or approved manual dispatch. The artifact uses /drvasundara/ and removes CNAME. Normal source pushes run validation. Production domain, DNS, WordPress and indexing remain unchanged. See the preview instructions below.
 
 Stack references: [Astro Tailwind setup](https://docs.astro.build/en/guides/styling/), [content loader API](https://docs.astro.build/en/reference/content-loader-reference/), [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
@@ -80,7 +74,7 @@ Stack references: [Astro Tailwind setup](https://docs.astro.build/en/guides/styl
 
 Verified professional profile and final portrait approval; approved service content and FAQs; reviewed journal content, author/reviewer details and references; clinic address/contact/map/socials; clinic-owned Google Form and consent policy; privacy contact and retention rules; explicit production cutover authorization.
 
-This delivery stays within Phase 0 and Phase 1. No later-phase medical content, search campaign, migration or production cutover is included.
+Phase 2 adds medical drafts, approval governance and search foundations. Read the four Phase 2 reports in docs; medical publication and production cutover remain pending.
 
 ## Patient experiences
 

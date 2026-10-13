@@ -1,12 +1,23 @@
 ---
 import Page from '../layouts/Page.astro';
 import { site } from '../config/site';
+import { publicPractice } from '../config/local-seo';
+import { clinicSchema } from '../utils/schema';
 ---
 
 <Page
   title="Get in touch"
   eyebrow="CONTACT THE PRACTICE"
-  description="Find verified clinic contact information and appointment request guidance."
+  description={
+    publicPractice
+      ? `Find approved contact and appointment information for ${site.name} in ${publicPractice.city}.`
+      : 'Find verified clinic contact information and appointment request guidance.'
+  }
+  schema={
+    publicPractice
+      ? clinicSchema({ name: publicPractice.practiceName, ...publicPractice })
+      : undefined
+  }
 >
   <div class="prose">
     <h2>Connect with the clinic.</h2>
