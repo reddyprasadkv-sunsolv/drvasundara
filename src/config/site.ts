@@ -1,11 +1,11 @@
 export const site = {
-  name: 'Dr. Vasundhara Gynec',
+  name: 'Dr. Vasundara Cheepurupalli',
   url: 'https://drvasundaragynec.com',
   description:
-    'A thoughtful introduction to Dr. Vasundhara Gynec and women’s healthcare. Explore the practice and appointment request information.',
+    'A thoughtful introduction to Dr. Vasundara Cheepurupalli and women’s healthcare. Explore the practice and appointment request information.',
   // Add only clinic-verified information. Empty fields are never rendered.
   doctor: {
-    name: 'Dr. Vasundhara',
+    name: 'Dr. Vasundara Cheepurupalli',
     qualifications: [] as string[],
     specialization: '',
     experience: '',

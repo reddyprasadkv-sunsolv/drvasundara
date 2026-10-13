@@ -1991,3 +1991,52 @@ h3 {
     gap: 10px;
   }
 }
+
+/* Full professional name remains readable in compact brand and portrait layouts. */
+.brand .brand-surname,
+.footer-brand .brand-surname {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+  line-height: 1.3;
+}
+.portrait-signature > div {
+  min-width: 0;
+  flex: 1;
+}
+.portrait-name {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.portrait-caption-detail {
+  flex-shrink: 0;
+}
+@media (max-width: 850px) {
+  .portrait-name {
+    font-size: 21px;
+  }
+  .brand .brand-surname {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .portrait-signature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .portrait-name {
+    font-size: 25px;
+  }
+  .portrait-caption-detail {
+    border: 0;
+    padding: 0;
+  }
+  .portrait-caption-detail br {
+    display: none;
+  }
+  .portrait-caption-detail {
+    font-size: 12px;
+  }
+}
