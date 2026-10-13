@@ -1,3 +1,5 @@
+> Current status: services, professional profile and twelve journal pages are approved for preview publication following user-confirmed medical review on 13 October 2026. See [PUBLICATION_APPROVAL.md](PUBLICATION_APPROVAL.md). Any “pending” labels below describe the initial Phase 2 review; missing contact fields and production authorization remain unresolved.
+
 # Phase 2 content verification
 
 Reviewed 13 October 2026. This is a source inventory, not a medical credential audit or clinician approval. The user confirmed the exact name and use of the authentic portrait; no AI face modification was performed.

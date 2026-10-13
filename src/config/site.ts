@@ -19,7 +19,14 @@ export const site = {
     phone: publicPractice?.phone || '',
     email: publicPractice?.email || '',
     address: publicPractice
-      ? `${publicPractice.streetAddress}, ${publicPractice.city}, ${publicPractice.region} ${publicPractice.postalCode}`
+      ? [
+          publicPractice.streetAddress || publicPractice.practiceName,
+          publicPractice.city,
+          publicPractice.region,
+          publicPractice.postalCode,
+        ]
+          .filter(Boolean)
+          .join(', ')
       : '',
     mapUrl: publicPractice?.mapUrl || '',
   },

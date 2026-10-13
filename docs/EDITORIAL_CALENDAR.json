@@ -3,120 +3,120 @@
     "slug": "pcos-pcod-terms",
     "title": "PCOS vs PCOD: Understanding Commonly Used Terms",
     "category": "PCOS",
-    "status": "draft",
+    "status": "published",
     "sources": ["pcos"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "irregular-periods",
     "title": "Irregular Periods: Common Causes and When to Seek Advice",
     "category": "Menstrual Health",
-    "status": "draft",
+    "status": "published",
     "sources": ["periods"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "high-risk-pregnancy",
     "title": "High-Risk Pregnancy: What It Means and Why Monitoring Matters",
     "category": "Pregnancy",
-    "status": "draft",
+    "status": "published",
     "sources": ["antenatal"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "laparoscopic-hysterectomy",
     "title": "Laparoscopic Hysterectomy: Understanding the Procedure",
     "category": "Women’s Wellness",
-    "status": "draft",
+    "status": "published",
     "sources": ["hysterectomy"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "robotic-gynecological-surgery",
     "title": "Robotic Gynecological Surgery: Potential Uses and Limitations",
     "category": "Women’s Wellness",
-    "status": "draft",
+    "status": "published",
     "sources": ["robotic"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "ovarian-cysts",
     "title": "Ovarian Cysts: Symptoms, Evaluation and Treatment Considerations",
     "category": "Women’s Wellness",
-    "status": "draft",
+    "status": "published",
     "sources": ["cysts"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "fertility-first-steps",
     "title": "Fertility Evaluation: Understanding the First Steps",
     "category": "Fertility",
-    "status": "draft",
+    "status": "published",
     "sources": ["fertility"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "menopause-support",
     "title": "Menopause: Symptoms, Health Changes and Support Options",
     "category": "Menopause",
-    "status": "draft",
+    "status": "published",
     "sources": ["menopause"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "ectopic-pregnancy-warning-signs",
     "title": "Ectopic Pregnancy: Warning Signs and the Need for Prompt Evaluation",
     "category": "Pregnancy",
-    "status": "draft",
+    "status": "published",
     "sources": ["ectopic"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "antenatal-visit-questions",
     "title": "Antenatal Visits: Questions to Ask During Pregnancy",
     "category": "Pregnancy",
-    "status": "draft",
+    "status": "published",
     "sources": ["antenatal"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "abnormal-uterine-bleeding",
     "title": "Understanding Abnormal Uterine Bleeding",
     "category": "Menstrual Health",
-    "status": "draft",
+    "status": "published",
     "sources": ["bleeding"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   },
   {
     "slug": "contraception-choices",
     "title": "Contraception Choices: An Overview of Available Methods",
     "category": "Preventive Care",
-    "status": "draft",
+    "status": "published",
     "sources": ["contraception"],
-    "doctorApproval": "pending",
-    "publishedAt": null,
-    "medicalReviewedAt": null
+    "doctorApproval": "confirmed via user",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13"
   }
 ]

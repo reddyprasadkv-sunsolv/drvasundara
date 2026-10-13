@@ -19,7 +19,9 @@ export function isApprovedClaim(claim, now = new Date()) {
     !!claim.approvedBy &&
     validPastDate(claim.approvedAt, now) &&
     claim.sources?.length > 0 &&
-    ['corroborated', 'document-verified'].includes(claim.verificationStatus)
+    ['corroborated', 'document-verified', 'clinician-confirmed'].includes(
+      claim.verificationStatus,
+    )
   );
 }
 export function isPublicService(service, now = new Date()) {

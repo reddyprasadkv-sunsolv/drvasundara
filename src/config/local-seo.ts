@@ -10,7 +10,6 @@ export const publicPractice =
   approved &&
   inventory.approved.practiceName &&
   inventory.approved.city &&
-  inventory.approved.phone &&
-  inventory.approved.streetAddress
+  inventory.approved.phone
     ? inventory.approved
     : null;

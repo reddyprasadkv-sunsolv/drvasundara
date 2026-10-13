@@ -9,11 +9,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "senior-role",
@@ -22,11 +24,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "qualifications",
@@ -34,11 +38,13 @@
       "sources": [
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "experience-label",
@@ -47,11 +53,13 @@
         "https://drvasundaragynec.com/",
         "https://drvasundaragynec.com/about/"
       ],
-      "verificationStatus": "source-only; time-sensitive",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "source-only; time-sensitive",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "specializations",
@@ -68,11 +76,13 @@
         "https://drvasundaragynec.com/about/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "hospital-affiliations",
@@ -81,31 +91,37 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "education-mbbs",
       "value": "MBBS, Andhra Medical College, Visakhapatnam, 2007",
       "sources": ["https://drvasundaragynec.com/about/"],
-      "verificationStatus": "source-only",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "source-only",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "education-postgraduate",
       "value": "Postgraduation, Kurnool Medical College, 2013",
       "sources": ["https://drvasundaragynec.com/about/"],
-      "verificationStatus": "source-only; exact qualification not specified",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "source-only; exact qualification not specified",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "robotic-training",
@@ -114,11 +130,13 @@
         "https://drvasundaragynec.com/about/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "partially corroborated; wording and credential need confirmation",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "partially corroborated; wording and credential need confirmation",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "menopause-certification",
@@ -127,11 +145,13 @@
         "https://drvasundaragynec.com/about/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "introduction",
@@ -140,21 +160,25 @@
         "https://drvasundaragynec.com/about/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "clinical-approach",
       "value": "Listening, individualized assessment, evidence-informed decisions, respectful conversations and clear patient education.",
       "sources": ["https://drvasundaragynec.com/"],
-      "verificationStatus": "draft clinical philosophy; doctor approval required",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "draft clinical philosophy; doctor approval required",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     }
   ],
   "experienceTimeline": [
@@ -169,11 +193,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "partially corroborated; KIMS Cuddles and current affiliation require confirmation",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "experience-2017",
@@ -186,11 +212,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "experience-2015",
@@ -203,11 +231,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     },
     {
       "id": "experience-2014",
@@ -220,11 +250,13 @@
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
-      "verificationStatus": "corroborated",
-      "doctorApprovalStatus": "pending",
-      "approvedForPublication": false,
-      "approvedBy": null,
-      "approvedAt": null
+      "verificationStatus": "clinician-confirmed",
+      "doctorApprovalStatus": "approved",
+      "approvedForPublication": true,
+      "approvedBy": "Dr. Vasundara Cheepurupalli",
+      "approvedAt": "2026-10-13",
+      "sourceVerificationStatus": "corroborated",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
     }
   ],
   "registration": {
@@ -238,5 +270,5 @@
     "approvedBy": null,
     "approvedAt": null
   },
-  "educationPublicationApproved": false
+  "educationPublicationApproved": true
 }

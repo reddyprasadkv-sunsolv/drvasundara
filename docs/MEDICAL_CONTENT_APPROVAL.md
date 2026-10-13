@@ -1,3 +1,13 @@
+# Current publication status
+
+Medical review and service availability were confirmed by the user on 13 October 2026. See [the approval record](PUBLICATION_APPROVAL.md). Services, journal articles assembled from reviewed prose, and professional profile claims are authorized for the GitHub Pages preview.
+
+Still missing: registration number/authority, exact street address/postcode, email, Google Forms URL and agreed consultation hours. Do not invent these fields. No new written patient testimonials were approved for migration. Production deployment/indexing is not authorized.
+
+## Historical Phase 2 checklist
+
+The following records the original pre-publication checklist; its medical approval items were resolved by the confirmation above.
+
 # Medical content approval and clinic handoff
 
 No Phase 2 service or article is medically approved. Public source corroboration does not substitute for clinician review. Drafts are stored in the repository, which is public, but excluded from website routes, listings, related links and sitemap.

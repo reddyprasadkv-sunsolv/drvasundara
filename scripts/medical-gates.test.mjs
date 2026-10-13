@@ -13,12 +13,16 @@ const profile = JSON.parse(
   readFileSync(new URL('../src/data/doctor-profile.json', import.meta.url)),
 );
 const now = new Date('2026-10-13T12:00:00Z');
-test('29 proposed services and reference profile claims remain unpublished', () => {
+test('approved service and profile records publish while aliases and missing records stay hidden', () => {
   assert.equal(services.length, 29);
   assert.equal(new Set(services.map((s) => s.slug)).size, 29);
-  assert.equal(services.filter((s) => isPublicService(s, now)).length, 0);
-  assert.ok(profile.claims.every((c) => !isApprovedClaim(c, now)));
-  assert.ok(profile.experienceTimeline.every((c) => !isApprovedClaim(c, now)));
+  assert.equal(services.filter((s) => isPublicService(s, now)).length, 27);
+  assert.ok(
+    services.filter((s) => s.aliasOf).every((s) => !isPublicService(s, now)),
+  );
+  assert.ok(!isApprovedClaim(profile.registration, now));
+  assert.ok(profile.claims.every((c) => isApprovedClaim(c, now)));
+  assert.ok(profile.experienceTimeline.every((c) => isApprovedClaim(c, now)));
 });
 test('service availability, clinical review and approval evidence are independently required', () => {
   const ready = {
@@ -95,7 +99,7 @@ test('invalid, missing and future dates never authorize publication', () => {
     assert.equal(validPastDate(value, now), false);
   assert.equal(validPastDate('2026-10-01', now), true);
 });
-test('all twelve outlines have honest authorship and no invented publication or review dates', () => {
+test('all twelve reviewed articles disclose assistance and use the confirmed review date', () => {
   const files = readdirSync(
     new URL('../src/content/blog/', import.meta.url),
   ).filter((f) => f.endsWith('.mdx'));
@@ -106,12 +110,24 @@ test('all twelve outlines have honest authorship and no invented publication or 
       'utf8',
     );
     const fm = text.split('---')[1];
-    assert.match(fm, /status:\s*['"]?draft/);
-    assert.match(fm, /contentType:\s*['"]?outline/);
+    assert.match(fm, /status:\s*['"]?published/);
+    assert.match(fm, /contentType:\s*['"]?article/);
     assert.match(fm, /authorship:\s*['"]?ai-assisted/);
+    assert.match(fm, /reviewer:\s*['"]?dr-vasundara/);
+    assert.match(fm, /medicalReviewedAt:\s*['"]?2026-10-13/);
+    const normalize = (v) => v.replace(/\s+/g, ' ').trim();
+    const body = normalize(text.split('---').slice(2).join('---'));
+    assert.ok(
+      services.some((s) =>
+        [s.understanding, s.whenToSeek, s.evaluation, s.benefitsRisks].every(
+          (p) => body.includes(normalize(p)),
+        ),
+      ),
+      'Article clinical prose must come from reviewed service copy',
+    );
     assert.doesNotMatch(
-      fm,
-      /^(publishedAt|medicalReviewedAt|approvedAt|reviewer):/m,
+      text,
+      /Unpublished editorial outline|Proposed introduction|Draft answer:/,
     );
   }
 });

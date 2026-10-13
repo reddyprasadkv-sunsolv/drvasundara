@@ -1,3 +1,5 @@
+> Current status: services, professional profile and twelve journal pages are approved for preview publication following user-confirmed medical review on 13 October 2026. See [PUBLICATION_APPROVAL.md](PUBLICATION_APPROVAL.md). Any “pending” labels below describe the initial Phase 2 review; missing contact fields and production authorization remain unresolved.
+
 # SEO, local search, GEO and AIO strategy
 
 This preview remains noindex/nofollow with robots disallow. Production canonical URLs are retained for eventual approved migration; GitHub Pages navigation/assets use /drvasundara/. No domain cutover or indexing is authorized.

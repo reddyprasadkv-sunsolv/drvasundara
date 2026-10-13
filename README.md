@@ -50,11 +50,11 @@ Small screens use an independent single-column hero, compact header and native d
 
 Edit `src/config/site.ts`. Leave unknown values empty. Qualifications, specialization, experience, clinical approach, telephone, email, address, map and verified social links render only when supplied. The original portrait was copied from the existing client workspace, whose image notes identify it as client-selected. No AI-edited portrait is used. Set `doctor.portraitApproved=false` for the neutral, botanical monogram fallback; the layout stays intact.
 
-Services are schema-validated from src/data/services.json. Twenty-nine draft entries across six groups require availability, reviewed clinical sections and genuine approval evidence. Two aliases avoid duplicate pages. Profile and local practice data have separate evidence/approval gates; unknown data remain hidden. FAQs live in src/data/faqs.ts.
+Services are schema-validated from src/data/services.json. Twenty-nine approved entries across six groups have confirmed availability, reviewed clinical sections and recorded approval; two aliases leave 27 canonical service pages. Two aliases avoid duplicate pages. Profile and local practice data have separate evidence/approval gates; unknown data remain hidden. FAQs live in src/data/faqs.ts.
 
 ## Editorial workflow
 
-See [editorial guide](docs/EDITORIAL.md) and [clinic approval checklist](docs/MEDICAL_CONTENT_APPROVAL.md). Twelve AI-assisted outlines are unpublished. Actual article authorship, verified reviewer registration, complete content and real approval/review/publication dates are mandatory. Routes, lists, related links and sitemap use shared approval filters. Run pnpm review:export for a private local service/profile review pack.
+See [editorial guide](docs/EDITORIAL.md) and [clinic approval checklist](docs/MEDICAL_CONTENT_APPROVAL.md). Twelve AI-assisted journal articles assembled from reviewed service prose are published following the confirmed 13 October 2026 medical review. Actual article authorship, verified reviewer identity and recorded review confirmation, complete content and real approval/review/publication dates are mandatory. Routes, lists, related links and sitemap use shared approval filters. Run pnpm review:export for a private local service/profile review pack.
 
 ## Appointments
 
@@ -74,7 +74,7 @@ Stack references: [Astro Tailwind setup](https://docs.astro.build/en/guides/styl
 
 Verified professional profile and final portrait approval; approved service content and FAQs; reviewed journal content, author/reviewer details and references; clinic address/contact/map/socials; clinic-owned Google Form and consent policy; privacy contact and retention rules; explicit production cutover authorization.
 
-Phase 2 adds medical drafts, approval governance and search foundations. Read the four Phase 2 reports in docs; medical publication and production cutover remain pending.
+Phase 2 adds medical drafts, approval governance and search foundations. Read the four Phase 2 reports in docs; medical publication is approved for the preview; production cutover remains pending.
 
 ## Patient experiences
 

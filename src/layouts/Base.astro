@@ -11,8 +11,10 @@ interface Props {
   schema?: unknown;
   article?: boolean;
   image?: string;
+  imageAlt?: string;
 }
-const { title, description, noindex, schema, article, image } = Astro.props;
+const { title, description, noindex, schema, article, image, imageAlt } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +29,7 @@ const { title, description, noindex, schema, article, image } = Astro.props;
       noindex={noindex}
       article={article}
       image={image}
+      imageAlt={imageAlt}
     />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <script type="application/ld+json" set:html={jsonLd(websiteSchema())} />

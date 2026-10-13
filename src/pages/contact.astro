@@ -14,7 +14,7 @@ import { clinicSchema } from '../utils/schema';
       : 'Find verified clinic contact information and appointment request guidance.'
   }
   schema={
-    publicPractice
+    publicPractice?.streetAddress && publicPractice.postalCode
       ? clinicSchema({ name: publicPractice.practiceName, ...publicPractice })
       : undefined
   }

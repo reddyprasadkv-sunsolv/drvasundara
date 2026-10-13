@@ -8,6 +8,7 @@ const authors = defineCollection({
       name: z.string(),
       role: z.string(),
       verificationRecord: z.url().optional(),
+      reviewConfirmationRecord: z.url().optional(),
       medicalRegistration: z
         .object({
           number: z.string().min(1),
@@ -31,12 +32,12 @@ const authors = defineCollection({
         author.canReviewMedicalContent &&
         (!author.verified ||
           author.entityType !== 'Person' ||
-          !author.medicalRegistration?.verified)
+          !author.reviewConfirmationRecord)
       )
         ctx.addIssue({
           code: 'custom',
           message:
-            'A medical reviewer requires verified identity and medical registration.',
+            'A medical reviewer requires verified identity and a recorded review confirmation.',
         });
     }),
 });

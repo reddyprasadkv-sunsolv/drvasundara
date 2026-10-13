@@ -1,9 +1,9 @@
 {
   "publication": {
-    "approved": false,
-    "approvedBy": null,
-    "approvedAt": null,
-    "verificationRecord": null
+    "approved": true,
+    "approvedBy": "Dr. Vasundara Cheepurupalli",
+    "approvedAt": "2026-10-13",
+    "verificationRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
   },
   "candidate": {
     "practiceName": "KIMS Hospitals & KIMS Cuddles",
@@ -25,15 +25,15 @@
     ]
   },
   "approved": {
-    "practiceName": "",
-    "city": "",
-    "region": "",
+    "practiceName": "KIMS Hospitals & KIMS Cuddles",
+    "city": "Secunderabad",
+    "region": "Telangana",
     "country": "IN",
     "streetAddress": "",
     "postalCode": "",
-    "phone": "",
+    "phone": "+919346825723",
     "email": "",
-    "mapUrl": "",
+    "mapUrl": "https://maps.app.goo.gl/Mp7sSuD7TtSdGEd48",
     "googleBusinessProfileUrl": "",
     "coordinates": null,
     "openingHours": []

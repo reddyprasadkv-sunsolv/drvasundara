@@ -39,13 +39,23 @@ for (const file of pages) {
       !String(file).includes('review-article'),
     'A review fixture escaped into the build',
   );
-  const html = readFileSync(join('dist', String(file)), 'utf8');
-  assert.doesNotMatch(
-    html,
-    /\bDNB\b|13\+ years|9346825723|Senior Consultant Gynaecologist/,
-    'Unapproved profile/contact data leaked',
-  );
 }
 console.log(
-  'Verified draft route/sitemap exclusion, profile and contact approval boundaries, and absence of review fixtures.',
+  'Verified draft route/sitemap exclusion, approved content and remaining draft boundaries, and absence of review fixtures.',
+);
+
+const home = readFileSync('dist/index.html', 'utf8');
+const about = readFileSync('dist/about/index.html', 'utf8');
+assert.match(home, /Expertise in women’s health/);
+assert.match(about, /Senior Consultant Gynaecologist/);
+assert.ok(
+  existsSync('dist/services/cosmetic-gynecology-consultation/index.html'),
+);
+assert.equal(services.filter((s) => isPublicService(s)).length, 27);
+for (const service of services.filter((s) => isPublicService(s))) {
+  assert.ok(existsSync(join('dist', 'services', service.slug, 'index.html')));
+  assert.ok(sitemap.includes('/services/' + service.slug + '/'));
+}
+console.log(
+  'Verified 27 approved canonical services, approved profile display and withdrawn-content exclusion.',
 );

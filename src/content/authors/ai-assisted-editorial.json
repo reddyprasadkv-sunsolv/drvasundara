@@ -1,7 +1,9 @@
 {
-  "name": "AI-assisted editorial preparation",
-  "role": "Draft planning only; not clinician-authored or medically reviewed",
-  "verified": false,
+  "name": "Dr. Vasundara Cheepurupalli website",
+  "role": "AI-assisted editorial publication; medical reviewer listed separately",
+  "verified": true,
   "canReviewMedicalContent": false,
+  "entityType": "Organization",
+  "verificationRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md",
   "qualifications": []
 }

@@ -1,0 +1,11 @@
+{
+  "name": "Dr. Vasundara Cheepurupalli",
+  "role": "Medical reviewer",
+  "verified": true,
+  "canReviewMedicalContent": true,
+  "entityType": "Person",
+  "verificationRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md",
+  "reviewConfirmationRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md",
+  "qualifications": ["DNB", "DGO", "FMAS", "CIMP", "GCP"],
+  "profileUrl": "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
+}
