@@ -1,38 +1,89 @@
 ---
 import { approvedServices, approvedServiceGroups } from '../../data/services';
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+const iconPaths: Record<string, string> = {
+  gynecology: 'M20 5C7 8 7 27 20 33C33 27 33 8 20 5ZM20 13V26M14 20H26',
+  obstetrics:
+    'M11 7C3 18 8 32 21 33C33 31 36 18 29 11M20 11C14 12 12 19 16 24C20 29 27 25 27 20C27 16 24 13 20 11Z',
+  'reproductive-health':
+    'M20 34V15M20 23C9 24 6 14 8 6C18 8 21 14 20 23ZM20 20C30 21 34 13 32 7C23 8 19 14 20 20Z',
+  'minimally-invasive-surgery':
+    'M7 12V7H12M28 7H33V12M33 28V33H28M12 33H7V28M14 20H26M20 14V26',
+  'cosmetic-gynecology':
+    'M20 5C24 15 25 16 35 20C25 24 24 25 20 35C16 25 15 24 5 20C15 16 16 15 20 5Z',
+  'preventive-care':
+    'M20 5L32 10V21C32 27 27 31 20 35C13 31 8 27 8 21V10L20 5ZM14 20L18 24L26 15',
+};
 ---
 
 {approvedServices.length ? (
-  <div class="service-groups">
+  <div
+    class:list={['service-groups', { 'specialization-highlights': compact }]}
+  >
     {approvedServiceGroups.map((group) => (
-      <section>
-        <h3 class="service-group-title">{group.name}</h3>
-        <div class="service-list">
-          {group.services.map((s, i) => (
-            <a class="service-row" href={`/services/${s.slug}/`}>
-              <span class="service-number">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <div>
-                <h3>{s.name}</h3>
-                <p>{s.description}</p>
-              </div>
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 18H30M18 6V30M9 9L27 27M9 27L27 9"
-                  stroke="currentColor"
-                />
-              </svg>
-              <span aria-hidden="true">↗</span>
-            </a>
-          ))}
-        </div>
+      <section id={group.id}>
+        {compact ? (
+          <a class="specialization-highlight" href={`/services/#${group.id}`}>
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d={iconPaths[group.id]}
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div>
+              <h3>{group.name}</h3>
+              <p>
+                {group.services
+                  .slice(0, 3)
+                  .map((s) => s.name)
+                  .join(' · ')}
+              </p>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <>
+            <h2 class="service-group-title">{group.name}</h2>
+            <div class="service-list">
+              {group.services.map((s, i) => (
+                <a class="service-row" href={`/services/${s.slug}/`}>
+                  <span class="service-number">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3>{s.name}</h3>
+                    <p>{s.description}</p>
+                  </div>
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 18H30M18 6V30M9 9L27 27M9 27L27 9"
+                      stroke="currentColor"
+                    />
+                  </svg>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
       </section>
     ))}
   </div>

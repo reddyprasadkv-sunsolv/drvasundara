@@ -9,6 +9,7 @@ Old website: broad marketing profile, four-position timeline, generic service de
 - Approval-aware homepage hero/welcome/approach/journal/appointment copy. Exact suggested professional hero appears only after title approval; current safe wording does not announce unapproved expertise.
 - Comprehensive About layout with portrait and conditional professional headline, qualifications, education, clinical interests, affiliations, registration and reusable timeline. Pending blocks are hidden.
 - 29 proposed service entries in six groups, including two duplicate-topic aliases. Full condition/procedure-specific clinical draft sections, three draft FAQs each, source references, related links and SEO fields. 27 potential canonical routes; none currently public.
+- Compact homepage specialization highlights with six original SVG motifs, approved-topic summaries and category links; the detailed service list stays on its index.
 - Reusable premium service editorial template with ten requested sections, semantic navigation, imagery fallback, balanced procedure information and approval-filtered related reading/services.
 - Twelve detailed MDX article outlines with truthful AI planning authorship, references, takeaways, FAQs, SEO and related topic plans. No fabricated publication/review dates. All unpublished.
 - Expanded article template supports actual author/reviewer/registration, genuine dates, image alt, sources, FAQs, related links, appointment CTA and inline disclaimer. Removed standalone disclaimer page remains removed.
