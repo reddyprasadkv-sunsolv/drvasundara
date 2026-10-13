@@ -2,32 +2,50 @@
 import { Image } from 'astro:assets';
 import doctor from '../../assets/doctor.png';
 import { site } from '../../config/site';
-import Botanical from '../ui/Botanical.astro';
 interface Props {
   small?: boolean;
 }
 ---
 
-<div class:list={['portrait-stage', { 'portrait-small': Astro.props.small }]}>
-  <span class="portrait-halo" aria-hidden="true"></span>
-  <Botanical class="portrait-botanical" />
-  {site.doctor.portraitApproved ? (
-    <Image
-      src={doctor}
-      alt="Dr. Vasundhara"
-      widths={[360, 540, 720, 1000]}
-      sizes="(max-width: 700px) 88vw, 45vw"
-      loading={Astro.props.small ? 'lazy' : 'eager'}
-      priority={!Astro.props.small}
-      class="doctor-photo"
-    />
-  ) : (
-    <div class="portrait-placeholder">
-      <span class="monogram">V</span>
-      <p>Dr. Vasundhara</p>
+<figure
+  class:list={[
+    'doctor-portrait',
+    { 'doctor-portrait-small': Astro.props.small },
+  ]}
+>
+  <div class="portrait-composition">
+    <span class="portrait-side-note" aria-hidden="true">
+      A PERSONAL INTRODUCTION
+    </span>
+    <div class="portrait-photograph">
+      {site.doctor.portraitApproved ? (
+        <Image
+          src={doctor}
+          alt="Dr. Vasundhara"
+          widths={[360, 540, 720]}
+          sizes="(max-width: 600px) 80vw, (max-width: 850px) 40vw, 420px"
+          loading={Astro.props.small ? 'lazy' : 'eager'}
+          priority={!Astro.props.small}
+          class="portrait-photo"
+        />
+      ) : (
+        <div class="portrait-neutral">
+          <span aria-hidden="true">V.</span>
+          <p>Dr. Vasundhara</p>
+        </div>
+      )}
     </div>
-  )}
-  <span class="portrait-label">
-    DR. VASUNDHARA <span>WOMEN’S HEALTHCARE</span>
-  </span>
-</div>
+    <span class="portrait-corner" aria-hidden="true"></span>
+  </div>
+  <figcaption class="portrait-signature">
+    <div>
+      <span class="eyebrow">MEET THE DOCTOR</span>
+      <span class="portrait-name">Dr. Vasundhara</span>
+    </div>
+    <span class="portrait-caption-detail">
+      Women’s
+      <br />
+      healthcare
+    </span>
+  </figcaption>
+</figure>

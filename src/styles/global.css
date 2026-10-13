@@ -341,61 +341,7 @@ img {
   position: relative;
   padding: 0 18px 42px 10px;
 }
-.portrait-stage {
-  position: relative;
-  isolation: isolate;
-  aspect-ratio: 1/1.12;
-  background: #bde0fe;
-  border-radius: 46% 46% 4px 4px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-}
-.portrait-halo {
-  position: absolute;
-  inset: 20px;
-  border: 1px solid #5541654d;
-  border-radius: 48% 48% 0 0;
-  z-index: 3;
-  pointer-events: none;
-}
-.doctor-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  mix-blend-mode: multiply;
-}
-.portrait-botanical {
-  position: absolute;
-  right: -80px;
-  bottom: 0;
-  width: 240px;
-  color: #55416580;
-  z-index: 2;
-  pointer-events: none;
-}
-.portrait-label {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  background: #352c46f0;
-  color: var(--surface);
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  padding: 17px 12px;
-  z-index: 4;
-}
-.portrait-label span {
-  display: block;
-  font-size: 7px;
-  letter-spacing: 0.2em;
-  margin-top: 5px;
-  color: #fff8fb;
-}
+
 .hero-caption {
   position: absolute;
   right: -3px;
@@ -410,18 +356,7 @@ img {
   font-family: var(--font-serif);
   font-size: 20px;
 }
-.portrait-placeholder {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.monogram {
-  font: 180px/1 var(--font-serif);
-  color: var(--accent);
-}
+
 .philosophy-strip {
   background: #ffe9f2;
   border-block: 1px solid #352c4612;
@@ -917,9 +852,7 @@ img {
   gap: 80px;
   align-items: center;
 }
-.portrait-small {
-  max-width: 440px;
-}
+
 .article-page {
   padding-block: 25px 90px;
   max-width: 1000px;
@@ -1075,9 +1008,7 @@ img {
   .hero-caption em {
     font-size: 17px;
   }
-  .portrait-label {
-    font-size: 9px;
-  }
+
   .welcome-layout {
     gap: 35px;
   }
@@ -1181,12 +1112,7 @@ img {
     justify-self: center;
     width: 100%;
   }
-  .portrait-stage {
-    aspect-ratio: 1/1.05;
-  }
-  .portrait-label {
-    font-size: 10px;
-  }
+
   .hero-caption {
     right: 0;
     font-size: 11px;
@@ -1195,9 +1121,7 @@ img {
   .hero-caption em {
     font-size: 19px;
   }
-  .portrait-halo {
-    inset: 14px;
-  }
+
   .philosophy-strip .container {
     padding: 17px 15px;
     gap: 8px;
@@ -1380,9 +1304,7 @@ img {
   .prose h2 {
     font-size: 35px;
   }
-  .portrait-small {
-    max-width: 420px;
-  }
+
   .article-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1903,9 +1825,169 @@ h3 {
 }
 
 /* Keep the original portrait's skin tones while using a blue frame. */
-.portrait-stage {
-  border: 10px solid var(--sky);
+
+/* An editorial portrait: offset color planes, a clear photograph and an outside caption. */
+.doctor-portrait {
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+  color: var(--ink);
 }
-.doctor-photo {
-  mix-blend-mode: normal;
+.portrait-composition {
+  position: relative;
+  padding: 32px 34px 24px 0;
+  isolation: isolate;
+}
+.portrait-composition::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 42px;
+  background: var(--lavender);
+  z-index: -1;
+  border-radius: 0 48px 0 0;
+}
+.portrait-composition::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 36%;
+  height: 9px;
+  background: var(--blue);
+}
+.portrait-photograph {
+  background: white;
+  aspect-ratio: 1/1.03;
+  overflow: hidden;
+  box-shadow: 0 14px 35px #352c4612;
+}
+.portrait-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+.portrait-side-note {
+  position: absolute;
+  right: 10px;
+  top: 46px;
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: var(--ink);
+}
+.portrait-corner {
+  position: absolute;
+  bottom: 9px;
+  left: 14px;
+  width: 43px;
+  height: 43px;
+  border-left: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  pointer-events: none;
+}
+.portrait-signature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 24px 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+.portrait-signature .eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  margin-bottom: 7px;
+}
+.portrait-name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 27px;
+  line-height: 1.35;
+}
+.portrait-caption-detail {
+  font-size: 11px;
+  line-height: 1.7;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+  color: var(--muted);
+}
+.portrait-neutral {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--surface);
+}
+.portrait-neutral > span {
+  font: 120px/1.2 var(--font-serif);
+  color: var(--accent);
+}
+.doctor-portrait-small {
+  max-width: 420px;
+}
+.hero-caption {
+  padding-top: 20px;
+  font-size: 12px;
+}
+@media (max-width: 850px) {
+  .portrait-composition {
+    padding: 24px 27px 20px 0;
+  }
+  .portrait-side-note {
+    font-size: 8px;
+    right: 8px;
+  }
+  .portrait-signature {
+    padding-top: 19px;
+  }
+  .portrait-name {
+    font-size: 22px;
+  }
+  .portrait-caption-detail {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-visual {
+    padding: 0 8px;
+    max-width: 400px;
+  }
+  .portrait-composition {
+    padding: 28px 30px 22px 0;
+  }
+  .portrait-name {
+    font-size: 26px;
+  }
+  .portrait-composition::before {
+    left: 28px;
+    border-radius: 0 36px 0 0;
+  }
+  .portrait-signature {
+    padding-top: 22px;
+  }
+  .portrait-side-note {
+    font-size: 9px;
+  }
+  .portrait-caption-detail {
+    font-size: 11px;
+  }
+  .hero-caption {
+    text-align: left;
+  }
+}
+@media (max-width: 360px) {
+  .portrait-name {
+    font-size: 22px;
+  }
+  .portrait-caption-detail {
+    font-size: 10px;
+  }
+  .portrait-signature {
+    gap: 10px;
+  }
 }
