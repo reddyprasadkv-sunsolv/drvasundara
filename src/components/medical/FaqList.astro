@@ -1,0 +1,28 @@
+---
+import { approvedFaqs } from '../../data/faqs';
+---
+
+{approvedFaqs.length ? (
+  <div class="faq-list">
+    {approvedFaqs.map((f) => (
+      <details>
+        <summary>
+          {f.question}
+          <span aria-hidden="true">+</span>
+        </summary>
+        <p>{f.answer}</p>
+      </details>
+    ))}
+  </div>
+) : (
+  <div class="faq-empty">
+    <p>Thoughtful answers take care.</p>
+    <span>
+      Our frequently asked questions are awaiting clinic approval. For questions
+      about appointments, please visit our appointment information page.
+    </span>
+    <a class="text-link" href="/appointment/">
+      Appointment information ↗
+    </a>
+  </div>
+)}

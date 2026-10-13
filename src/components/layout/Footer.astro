@@ -1,0 +1,60 @@
+---
+import { site, navigation } from '../../config/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="/">
+        Dr. Vasundhara<small>GYNEC</small>
+      </a>
+      <p>
+        A thoughtful space for
+        <br />
+        women’s healthcare.
+      </p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/testimonials/">Patient experiences</a>
+      {navigation.map((n) => (
+        <a href={n.href}>{n.label}</a>
+      ))}
+    </nav>
+    <div class="footer-contact">
+      <span class="eyebrow">GET IN TOUCH</span>
+      {site.contact.phone && (
+        <a href={`tel:${site.contact.phone}`}>{site.contact.phone}</a>
+      )}
+      {site.contact.email && (
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+      )}
+      {site.contact.address && <p>{site.contact.address}</p>}
+      {site.contact.mapUrl && (
+        <a href={site.contact.mapUrl}>Find the clinic ↗</a>
+      )}
+      {!site.contact.phone && !site.contact.email && (
+        <p>
+          Verified clinic details will
+          <br />
+          be available here soon.
+        </p>
+      )}
+      {site.socials.map((s) => (
+        <a href={s.url} rel="noopener noreferrer" target="_blank">
+          {s.label}
+          <span class="sr-only"> (new tab)</span>
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>
+      © {new Date().getFullYear()} {site.name}
+    </span>
+    <div>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/medical-disclaimer/">Medical Disclaimer</a>
+    </div>
+    <span>Care. Clarity. Confidence.</span>
+  </div>
+</footer>

@@ -1,0 +1,57 @@
+name: Deploy approved GitHub Pages preview
+on:
+  push:
+    branches: [main]
+    paths: ['.github/pages-deployment-request.json']
+  workflow_dispatch:
+    inputs:
+      approval:
+        description: 'Type APPROVED to deploy to the GitHub Pages address only'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.approval == 'APPROVED')
+    runs-on: ubuntu-latest
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: pnpm
+      - name: Verify explicit preview request
+        run: node -e "const r=require('./.github/pages-deployment-request.json'); if(r.approved!==true || r.target!=='github-pages-preview') process.exit(1)"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm build
+        env:
+          PAGES_PREVIEW: 'true'
+      - run: node scripts/prepare-pages-preview.mjs
+      - run: pnpm test
+        env:
+          VERIFY_PAGES_PREVIEW: 'true'
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy approved preview
+        id: deployment
+        uses: actions/deploy-pages@v4

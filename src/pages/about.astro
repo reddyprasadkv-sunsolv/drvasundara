@@ -1,0 +1,34 @@
+---
+import Page from '../layouts/Page.astro';
+import DoctorPortrait from '../components/medical/DoctorPortrait.astro';
+import { site } from '../config/site';
+---
+
+<Page
+  title="Meet Dr. Vasundhara"
+  eyebrow="THE DOCTOR BEHIND THE CARE"
+  description="A personal introduction to the doctor behind Dr. Vasundhara Gynec."
+>
+  <div class="about-grid">
+    <DoctorPortrait small />
+    <div class="prose">
+      <h2>A considered introduction.</h2>
+      {site.doctor.qualifications.length > 0 && (
+        <p>{site.doctor.qualifications.join(', ')}</p>
+      )}
+      {site.doctor.specialization && <p>{site.doctor.specialization}</p>}
+      {site.doctor.experience && <p>{site.doctor.experience}</p>}
+      <p>
+        {site.doctor.clinicalApproach ||
+          'The doctor’s full professional profile is being prepared. Qualifications, clinical experience and affiliations will appear here once verified and approved.'}
+      </p>
+      <p>
+        For information about appointments, start with our appointment request
+        guide.
+      </p>
+      <a class="text-link" href="/appointment/">
+        Appointment information ↗
+      </a>
+    </div>
+  </div>
+</Page>

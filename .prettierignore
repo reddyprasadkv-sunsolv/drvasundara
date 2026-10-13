@@ -1,0 +1,6 @@
+node_modules
+.astro
+dist
+qa
+qa-tools
+pnpm-lock.yaml

@@ -1,0 +1,19 @@
+---
+import Page from '../../layouts/Page.astro';
+import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
+import { approvedServices } from '../../data/services';
+export function getStaticPaths() {
+  return approvedServices.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+const { service } = Astro.props;
+---
+
+<Page title={service.name} description={service.description}>
+  <div class="prose">
+    <p>{service.body}</p>
+    <AppointmentCTA />
+  </div>
+</Page>

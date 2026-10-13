@@ -1,0 +1,45 @@
+---
+import { site } from '../../config/site';
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+}
+const { title, description = site.description, noindex = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const pathname =
+  base !== '/' && Astro.url.pathname.startsWith(base)
+    ? '/' + Astro.url.pathname.slice(base.length)
+    : Astro.url.pathname;
+const canonical = new URL(pathname, site.url).href;
+---
+
+<title>{title} | {site.name}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta
+  name="robots"
+  content={
+    !site.productionIndexing || noindex ? 'noindex, nofollow' : 'index, follow'
+  }
+/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={site.name} />
+<meta
+  property="og:image"
+  content={new URL('/images/social-preview.png', site.url).href}
+/>
+<meta
+  property="og:image:alt"
+  content="Dr. Vasundhara Gynec — Thoughtful care for every stage of womanhood"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta
+  name="twitter:image"
+  content={new URL('/images/social-preview.png', site.url).href}
+/>

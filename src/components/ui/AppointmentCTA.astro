@@ -1,0 +1,21 @@
+---
+import { site } from '../../config/site';
+import { safeFormUrl } from '../../utils/editorial.mjs';
+interface Props {
+  label?: string;
+  light?: boolean;
+}
+const { label = 'Request Appointment', light = false } = Astro.props;
+const url = safeFormUrl(site.appointmentFormUrl);
+---
+
+<a
+  class:list={['button', { 'button-light': light }]}
+  href={url || '/appointment/'}
+  target={url ? '_blank' : undefined}
+  rel={url ? 'noopener noreferrer' : undefined}
+>
+  {label}
+  <span aria-hidden="true">↗</span>
+  {url && <span class="sr-only"> (opens Google Forms in a new tab)</span>}
+</a>

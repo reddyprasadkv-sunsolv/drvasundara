@@ -1,0 +1,11 @@
+---
+interface Props {
+  label: string;
+}
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span aria-hidden="true">/</span>
+  <span aria-current="page">{Astro.props.label}</span>
+</nav>

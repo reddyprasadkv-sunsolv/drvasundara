@@ -1,0 +1,39 @@
+---
+import Base from './Base.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import { breadcrumbSchema } from '../utils/schema';
+interface Props {
+  title: string;
+  eyebrow?: string;
+  description: string;
+  noindex?: boolean;
+}
+const {
+  title,
+  eyebrow = 'DR. VASUNDHARA GYNEC',
+  description,
+  noindex,
+} = Astro.props;
+---
+
+<Base
+  title={title}
+  description={description}
+  noindex={noindex}
+  schema={breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: title, path: Astro.url.pathname },
+  ])}
+>
+  <div class="container">
+    <Breadcrumbs label={title} />
+  </div>
+  <section class="page-heading container">
+    <span class="eyebrow">{eyebrow}</span>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </section>
+  <div class="container page-content">
+    <slot />
+  </div>
+</Base>

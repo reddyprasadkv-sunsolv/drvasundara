@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Meta from '../components/seo/Meta.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { websiteSchema, jsonLd } from '../utils/schema';
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  schema?: unknown;
+}
+const { title, description, noindex, schema } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#352c46" />
+    <Meta title={title} description={description} noindex={noindex} />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <script type="application/ld+json" set:html={jsonLd(websiteSchema())} />
+    {schema && <script type="application/ld+json" set:html={jsonLd(schema)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -85,3 +85,9 @@ This delivery stays within Phase 0 and Phase 1. No later-phase medical content, 
 ## Patient experiences
 
 User-authorized existing videos are configured in `src/data/testimonials.ts`. Three featured videos appear on the homepage; `/testimonials/` contains all five distinct videos, with a footer link. Local graphic previews avoid third-party requests until clicked. The privacy-enhanced player has no autoplay; direct YouTube links work without JavaScript. No written testimonials or education videos were imported. See the delivery report addendum for verification limits.
+
+## Approved GitHub Pages preview deployment
+
+The user approved deployment to `https://reddyprasadkv-sunsolv.github.io/drvasundara/` while preserving the existing WordPress domain. Set Pages source to GitHub Actions and leave Custom domain empty. The Pages workflow runs only on a manual approved dispatch or a deliberate update to `.github/pages-deployment-request.json`; normal source pushes run validation only.
+
+The preview build sets `PAGES_PREVIEW=true` for Astro's asset base, then `scripts/prepare-pages-preview.mjs` prefixes internal navigation and removes CNAME from the artifact. Test it with `PAGES_PREVIEW=true pnpm build`, `node scripts/prepare-pages-preview.mjs`, and `VERIFY_PAGES_PREVIEW=true pnpm test`. Production builds still use the original production site configuration. Preview crawling remains disabled.

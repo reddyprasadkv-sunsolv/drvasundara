@@ -1,0 +1,44 @@
+---
+import { approvedServices } from '../../data/services';
+---
+
+{approvedServices.length ? (
+  <div class="service-list">
+    {approvedServices.map((s, i) => (
+      <a class="service-row" href={`/services/${s.slug}/`}>
+        <span class="service-number">0{i + 1}</span>
+        <div>
+          <h3>{s.name}</h3>
+          <p>{s.description}</p>
+        </div>
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 18H30M18 6V30M9 9L27 27M9 27L27 9"
+            stroke="currentColor"
+          />
+        </svg>
+        <span aria-hidden="true">↗</span>
+      </a>
+    ))}
+  </div>
+) : (
+  <div class="empty-state service-empty">
+    <span class="empty-emblem" aria-hidden="true">
+      ✳
+    </span>
+    <h3>Care begins with a conversation.</h3>
+    <p>
+      Our service guide is being prepared with the doctor’s approval. Please
+      check with the clinic about the care available to you.
+    </p>
+    <a class="text-link" href="/services/">
+      About our service guide <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+)}
