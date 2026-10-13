@@ -2040,3 +2040,73 @@ h3 {
     font-size: 12px;
   }
 }
+
+.wellness-visual {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.wellness-image-frame {
+  position: relative;
+  padding: 18px 0 0 18px;
+  isolation: isolate;
+}
+.wellness-image-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0 24px 24px 0;
+  background: var(--pink);
+  z-index: -1;
+}
+.wellness-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 0 44px 0 0;
+  box-shadow: 0 16px 40px #352c4612;
+}
+.wellness-corner {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  left: 7px;
+  bottom: -10px;
+  border-left: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  pointer-events: none;
+}
+.wellness-credit {
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 23px;
+  color: var(--muted);
+}
+.wellness-credit a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.doctor-profile-visual {
+  min-width: 0;
+}
+.doctor-profile-visual .portrait-composition::before {
+  background: var(--sky);
+}
+.doctor-profile-visual .portrait-composition::after {
+  background: var(--rose);
+}
+@media (max-width: 600px) {
+  .wellness-photo {
+    aspect-ratio: 4/4.7;
+    border-radius: 0 32px 0 0;
+  }
+  .wellness-image-frame {
+    padding: 15px 0 0 15px;
+  }
+  .wellness-credit {
+    font-size: 10px;
+  }
+  .doctor-profile-visual {
+    padding-inline: 8px;
+  }
+}

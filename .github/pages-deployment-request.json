@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-13",
-  "request": "Remove the medical disclaimer page and links as requested by the user and deploy the preview update.",
-  "revision": "remove-medical-disclaimer-2026-10-13"
+  "request": "Use stock photography in the hero and move the authentic doctor portrait to the Meet the Doctor section, as requested.",
+  "revision": "stock-hero-doctor-profile-2026-10-13"
 }

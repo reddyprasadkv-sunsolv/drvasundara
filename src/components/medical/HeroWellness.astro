@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import wellness from '../../assets/hero-wellness.jpg';
+---
+
+<figure class="wellness-visual">
+  <div class="wellness-image-frame">
+    <Image
+      src={wellness}
+      alt="Two women chatting while walking along a tree-lined path"
+      width={800}
+      height={1000}
+      fit="cover"
+      widths={[400, 600, 800]}
+      sizes="(max-width: 600px) 88vw, (max-width: 850px) 43vw, 520px"
+      priority
+      loading="eager"
+      class="wellness-photo"
+    />
+    <span class="wellness-corner" aria-hidden="true"></span>
+  </div>
+  <figcaption class="wellness-credit">
+    Illustrative stock photograph ·{' '}
+    <a
+      href="https://www.pexels.com/photo/cheerful-diverse-women-walking-along-alley-5538026/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Zen Chung / Pexels<span class="sr-only"> (opens a new tab)</span>
+    </a>
+  </figcaption>
+</figure>

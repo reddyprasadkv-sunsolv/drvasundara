@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import DoctorPortrait from '../components/medical/DoctorPortrait.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
-import Botanical from '../components/ui/Botanical.astro';
+import HeroWellness from '../components/medical/HeroWellness.astro';
 import ServiceList from '../components/medical/ServiceList.astro';
 import PatientVideos from '../components/medical/PatientVideos.astro';
 import Insights from '../components/medical/Insights.astro';
@@ -46,7 +46,7 @@ import { site } from '../config/site';
       </div>
     </div>
     <div class="hero-visual">
-      <DoctorPortrait />
+      <HeroWellness />
       <span class="hero-caption">
         For the woman you are.
         <br />
@@ -90,12 +90,8 @@ import { site } from '../config/site';
   </section>
   <section class="doctor-section">
     <div class="container doctor-layout">
-      <div class="doctor-art">
-        <Botanical class="doctor-branch" />
-        <span class="doctor-art-letter" aria-hidden="true">
-          V
-        </span>
-        <span class="eyebrow">A PERSONAL INTRODUCTION</span>
+      <div class="doctor-profile-visual">
+        <DoctorPortrait small />
       </div>
       <div class="doctor-copy">
         <span class="eyebrow">THE DOCTOR BEHIND THE CARE</span>
