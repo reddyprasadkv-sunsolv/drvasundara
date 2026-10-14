@@ -1,6 +1,6 @@
 # Urogynecology consultation — clinician review draft
 
-New draft, 14 October 2026. Prepared at the user’s request; no doctor review/availability confirmation is recorded. This document and JSON draft are excluded from visitor routes and sitemap. Homepage shows a neutral Urogynecology enquiry card linking to Contact.
+Reviewed guide, 14 October 2026. The user confirmed Dr. Vasundara Cheepurupalli reviewed this guide today and confirmed consultation availability. See UROGYNECOLOGY_PUBLICATION_APPROVAL.md for the scope of this user-relayed confirmation. The matching service record is approved for the GitHub Pages preview.
 
 ## Summary
 

@@ -1989,15 +1989,15 @@
     "category": "urogynecology",
     "kind": "consultation",
     "description": "Urogynecology focuses on bladder symptoms and pelvic floor concerns, including urinary leakage and pelvic organ prolapse.",
-    "approved": false,
-    "availabilityConfirmed": false,
-    "contentReviewed": false,
-    "status": "draft",
-    "approvedBy": null,
-    "approvedAt": null,
-    "medicalReviewedBy": null,
-    "medicalReviewedAt": null,
-    "approvalRecord": null,
+    "approved": true,
+    "availabilityConfirmed": true,
+    "contentReviewed": true,
+    "status": "published",
+    "approvedBy": "Dr. Vasundara Cheepurupalli",
+    "approvedAt": "2026-10-14",
+    "medicalReviewedBy": "Dr. Vasundara Cheepurupalli",
+    "medicalReviewedAt": "2026-10-14",
+    "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/UROGYNECOLOGY_PUBLICATION_APPROVAL.md",
     "aliasOf": null,
     "introduction": "Urogynecology brings together gynecological and urinary concerns affecting pelvic floor function. A consultation can explore symptoms, their effect on daily life and questions about assessment and care.",
     "understanding": "Urinary leakage may occur with coughing or activity, or alongside a sudden need to pass urine. Pelvic organ prolapse can cause a vaginal bulge or a feeling of pressure and may be associated with difficulty emptying the bladder. These symptoms can have different causes; an individual assessment helps clarify the concern.",
@@ -2051,12 +2051,10 @@
     "image": null,
     "seo": {
       "title": "Urogynecology Consultation",
-      "description": "A draft guide to bladder symptoms and pelvic floor concerns, with consultation preparation, assessment questions and balanced care information."
+      "description": "Understand bladder symptoms and pelvic floor concerns, with consultation preparation, assessment questions and balanced care information."
     },
     "reviewNotes": [
-      "New AI-assisted clinical draft requested on 14 October 2026. Not medically reviewed or approved; clinic availability remains unconfirmed.",
-      "Clinician to verify urgency wording and locally offered evaluation/treatment scope. No reviewer, approval or review date invented.",
-      "NHS incontinence reference shows a June 2026 review deadline that has passed; use as background and corroborate current guidance during clinician review."
+      "User-relayed confirmation on 14 October 2026: Dr. Vasundara reviewed this guide today and confirmed consultation availability."
     ]
   }
 ]

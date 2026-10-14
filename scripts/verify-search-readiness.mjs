@@ -173,7 +173,7 @@ assert.doesNotMatch(
   /requests are submitted|request submitted/,
 );
 assert.equal(articles, 12);
-assert.equal(services, 27);
+assert.equal(services, 28);
 console.log(
-  `Verified ${preview ? 'preview' : 'production-root'} SEO contracts: ${seen.size} canonicals, ${assets} asset references, 27 services, 12 article schemas, 5 expert videos, WhatsApp and disabled analytics.`,
+  `Verified ${preview ? 'preview' : 'production-root'} SEO contracts: ${seen.size} canonicals, ${assets} asset references, 28 services, 12 article schemas, 5 expert videos, WhatsApp and disabled analytics.`,
 );
