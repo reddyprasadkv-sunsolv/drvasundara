@@ -1,0 +1,13 @@
+# Phase 5A privacy and medical-use checklist
+
+Verified implementation: static site, no patient accounts/database/payments, no analytics or third-party chat widget, WhatsApp opens externally with no prefilled patient/symptom message, YouTube loads only on user activation through youtube-nocookie, Google Form remains blank/unavailable. Source and artifact checks exclude private directories/backups; existing public source approval note is user-relayed, not a signed clinical document. No patient intake is introduced.
+
+Standalone medical disclaimer was removed earlier at the user's direction; do not reintroduce it as a new page. Original inline educational disclaimers in articles and urgency language remain. Current privacy page truthfully describes static processing, WhatsApp and video external processing, plus pending clinic launch policy. Privacy-enhanced YouTube is not a claim of cookie-free processing after playback.
+
+Required clinic/legal review before production: applicable Indian privacy/consent and professional medical-advertising obligations; international third-party processing; actual clinic WhatsApp/device account access; minimization/retention/deletion policies; clinic privacy contact; patient video express permissions and ability to withdraw; confidentiality/de-identification; advertising/testimonial suitability and claims; image rights/releases; who handles emergencies; whether any consent banner/control is needed for the actual selected integrations. No legal-compliance certification is given.
+
+Google Forms only if separately requested: clinic-owned account/link, minimal fields, consent notice, secure Sheet sharing, authorized access/retention/deletion and no public response sheet. URL validator remains; no success message appears for an unconnected form. WhatsApp-only operation is allowed by current user preference; it does not eliminate clinic privacy responsibilities.
+
+GA4/Search integrations: existing optional real-token hooks are unchanged and preview suppresses verification meta. No GA4 ID or scripts inserted. Before any future tracking, decide consent, data minimization and whether aggregate counters are preferable. Do not send names, telephone numbers, symptoms, appointment notes, free text, medical-topic paths/titles, journal search queries or patient IDs as analytics payloads. GSC/engine coverage is different from onsite patient tracking.
+
+Keep private DNS/DB/file/media-consent/registration exports out of GitHub/Actions artifacts. The readiness bundle contains only generated visitor assets and non-sensitive build hashes. Clinic consent/rights/retention decisions remain blockers, not automatically approved by Phase5A.
