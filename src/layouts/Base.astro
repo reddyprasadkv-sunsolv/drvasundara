@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Meta from '../components/seo/Meta.astro';
+import WhatsAppFloat from '../components/ui/WhatsAppFloat.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { websiteSchema, jsonLd } from '../utils/schema';
@@ -44,5 +45,6 @@ const { title, description, noindex, schema, article, image, imageAlt } =
       <slot />
     </main>
     <Footer />
+    <WhatsAppFloat />
   </body>
 </html>

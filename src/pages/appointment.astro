@@ -1,45 +1,29 @@
 ---
 import Page from '../layouts/Page.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
-import { safeFormUrl } from '../utils/editorial.mjs';
-import { site } from '../config/site';
-const available = safeFormUrl(site.appointmentFormUrl);
 ---
 
 <Page
   title="Begin with a conversation"
-  eyebrow="APPOINTMENT REQUESTS"
-  description="Appointment requests are subject to confirmation by the clinic."
+  eyebrow="CONNECT WITH THE CLINIC"
+  description="Contact the clinic on WhatsApp to discuss consultation availability."
 >
   <div class="prose">
-    <h2>
-      {available
-        ? 'Request an appointment'
-        : 'Online requests are being prepared.'}
-    </h2>
+    <h2>Chat with the clinic on WhatsApp.</h2>
     <p>
-      {available
-        ? 'Use the clinic’s Google Form to request an appointment. The clinic will contact you to confirm availability.'
-        : 'The clinic’s appointment request form has not yet been connected. Online appointment requests are currently unavailable.'}
+      Message the clinic to ask about consultation availability and
+      arrangements. The clinic will confirm your appointment.
     </p>
-    {available && <AppointmentCTA />}
+    <AppointmentCTA />
     <p>
-      Submitting a request does not confirm an appointment. Please wait for
-      confirmation from the clinic.
-    </p>
-    <h3>Your privacy</h3>
-    <p>
-      The form opens on Google Forms in a new tab. Share only the information
-      needed to arrange a consultation. Please do not include detailed medical
-      histories, reports or sensitive health information in an appointment
-      request.
+      Share only the information needed to arrange a consultation. Avoid sending
+      detailed medical histories, reports or sensitive health information in an
+      initial message.
     </p>
     <p>
-      Review the form’s privacy and consent notice before submitting.{' '}
+      WhatsApp opens in a new tab and its privacy terms apply.{' '}
       <a href="/privacy/">Read our privacy information.</a>
     </p>
-    <p class="notice">
-      Appointment request forms are not monitored for emergencies.
-    </p>
+    <p class="notice">WhatsApp is not monitored for medical emergencies.</p>
   </div>
 </Page>

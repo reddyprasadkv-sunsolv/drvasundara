@@ -1,21 +1,19 @@
 ---
 import { site } from '../../config/site';
-import { safeFormUrl } from '../../utils/editorial.mjs';
 interface Props {
   label?: string;
   light?: boolean;
 }
-const { label = 'Request an Appointment', light = false } = Astro.props;
-const url = safeFormUrl(site.appointmentFormUrl);
+const { label = 'Chat on WhatsApp', light = false } = Astro.props;
 ---
 
 <a
   class:list={['button', { 'button-light': light }]}
-  href={url || '/appointment/'}
-  target={url ? '_blank' : undefined}
-  rel={url ? 'noopener noreferrer' : undefined}
+  href={site.whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
 >
   {label}
   <span aria-hidden="true">↗</span>
-  {url && <span class="sr-only"> (opens Google Forms in a new tab)</span>}
+  <span class="sr-only"> (opens WhatsApp in a new tab)</span>
 </a>

@@ -15,6 +15,7 @@ export const site = {
     portraitApproved: true,
   },
   appointmentFormUrl: '',
+  whatsappUrl: 'https://wa.me/919346825723',
   contact: {
     phone: publicPractice?.phone || '',
     email: publicPractice?.email || '',

@@ -1,11 +1,15 @@
 ---
+import { expertVideos } from '../../data/expert-videos';
 import { testimonials } from '../../data/testimonials';
 interface Props {
   featured?: boolean;
+  expert?: boolean;
 }
-const videos = Astro.props.featured
-  ? testimonials.filter((v) => v.featured)
-  : testimonials;
+const videos = Astro.props.expert
+  ? expertVideos
+  : Astro.props.featured
+    ? testimonials.filter((v) => v.featured)
+    : testimonials;
 ---
 
 <div class="patient-videos">
@@ -54,9 +58,11 @@ const videos = Astro.props.featured
   ))}
 </div>
 <p class="patient-note">
-  These videos share individual patient experiences. Experiences and outcomes
-  vary; they do not predict the care or outcome of another person. Playing a
-  video connects to YouTube. <a href="/privacy/">Privacy information</a>.
+  {Astro.props.expert
+    ? 'Watch educational videos linked from the clinic’s original website.'
+    : 'These videos share individual patient experiences. Experiences and outcomes vary; they do not predict the care or outcome of another person.'}{' '}
+  Playing a video connects to YouTube.{' '}
+  <a href="/privacy/">Privacy information</a>.
 </p>
 <script>
   document.querySelectorAll<HTMLDivElement>('.video-stage').forEach((stage) => {
