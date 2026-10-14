@@ -16,6 +16,7 @@ import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
 import { approvedServices } from '../../data/services';
 import doctor from '../../assets/doctor.png';
 import wellbeing from '../../assets/journal-wellbeing.jpg';
+import botanicalBanner from '../../assets/botanical-banner.svg';
 import { publicProfile } from '../../data/professional';
 const articles = await publicArticles();
 const featured = articles.find((a) => a.data.featured) || articles[0];
@@ -44,61 +45,68 @@ const discovery = approvedServices.filter((s) =>
   title="The Women’s Health Journal"
   description="Explore reviewed perspectives on gynecology, pregnancy and reproductive health. Find an article by topic and prepare questions for an informed consultation."
 >
-  <div class="container journal-page">
-    <Breadcrumbs label="The Women’s Health Journal" />
-    <section class="journal-hero">
-      <div class="journal-intro">
-        <span class="eyebrow">THE WOMEN’S HEALTH JOURNAL</span>
-        <h1>
-          Understanding your health,
-          <br />
-          <em>one conversation at a time.</em>
-        </h1>
-        <p class="lead">
-          Explore evidence-informed perspectives on gynecology, pregnancy,
-          reproductive health and women’s wellbeing, with clear explanations
-          designed to help you make informed health decisions.
-        </p>
-        <a class="text-link" href="#journal-collection">
-          Find your next read <span aria-hidden="true">↘</span>
-        </a>
-      </div>
-      {featured && (
-        <article class="journal-feature">
-          <span class="eyebrow">THE FEATURED READ</span>
-          {featured.data.featuredImage && (
-            <a
-              href={`/blog/${featured.data.slug}/`}
-              tabindex="-1"
-              aria-hidden="true"
-            >
-              <Image
-                src={wellbeing}
-                alt="Illustration of a woman relaxing by a sunny window with a cup and a notebook"
-                width={760}
-                widths={[400, 760]}
-                sizes="(max-width: 767px) 90vw, 42vw"
-                loading="eager"
-                fetchpriority="high"
-              />
-            </a>
-          )}
-          <a
-            class="journal-category-label"
-            href={categoryPath(featuredCategory!.id)}
-          >
-            {featuredCategory!.name}
+  <div
+    class="journal-banner"
+    style={`--banner-art: url("${botanicalBanner.src}")`}
+  >
+    <div class="container">
+      <Breadcrumbs label="The Women’s Health Journal" />
+      <section class="journal-hero">
+        <div class="journal-intro">
+          <span class="eyebrow">THE WOMEN’S HEALTH JOURNAL</span>
+          <h1>
+            Understanding your health,
+            <br />
+            <em>one conversation at a time.</em>
+          </h1>
+          <p class="lead">
+            Explore evidence-informed perspectives on gynecology, pregnancy,
+            reproductive health and women’s wellbeing, with clear explanations
+            designed to help you make informed health decisions.
+          </p>
+          <a class="text-link" href="#journal-collection">
+            Find your next read <span aria-hidden="true">↘</span>
           </a>
-          <h2>
-            <a href={`/blog/${featured.data.slug}/`}>{featured.data.title}</a>
-          </h2>
-          <p>{featured.data.excerpt}</p>
-          <span class="journal-feature-meta">
-            {articleReadingTime(featured)} min read · Medical review recorded
-          </span>
-        </article>
-      )}
-    </section>
+        </div>
+        {featured && (
+          <article class="journal-feature">
+            <span class="eyebrow">THE FEATURED READ</span>
+            {featured.data.featuredImage && (
+              <a
+                href={`/blog/${featured.data.slug}/`}
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <Image
+                  src={wellbeing}
+                  alt="Illustration of a woman relaxing by a sunny window with a cup and a notebook"
+                  width={760}
+                  widths={[400, 760]}
+                  sizes="(max-width: 767px) 90vw, 42vw"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </a>
+            )}
+            <a
+              class="journal-category-label"
+              href={categoryPath(featuredCategory!.id)}
+            >
+              {featuredCategory!.name}
+            </a>
+            <h2>
+              <a href={`/blog/${featured.data.slug}/`}>{featured.data.title}</a>
+            </h2>
+            <p>{featured.data.excerpt}</p>
+            <span class="journal-feature-meta">
+              {articleReadingTime(featured)} min read · Medical review recorded
+            </span>
+          </article>
+        )}
+      </section>
+    </div>
+  </div>
+  <div class="container journal-page">
     <CategoryNav />
     <section id="journal-collection" class="journal-collection">
       <div class="journal-section-heading">
@@ -193,3 +201,46 @@ const discovery = approvedServices.filter((s) =>
     </section>
   </div>
 </Base>
+
+<style>
+  .journal-banner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(110deg, #fff8fb 15%, #f8eef7 65%, #edf5ff);
+    margin-bottom: 50px;
+  }
+  .journal-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--banner-art) no-repeat right top / auto 650px;
+    opacity: 0.55;
+    mask-image: linear-gradient(to right, transparent 42%, black 78%);
+  }
+  .journal-banner .journal-hero {
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    .journal-banner {
+      margin-bottom: 36px;
+    }
+    .journal-banner::before {
+      opacity: 0.25;
+      background-size: auto 520px;
+      mask-image: linear-gradient(to right, transparent 25%, black);
+    }
+    .journal-banner .journal-hero {
+      padding-bottom: 38px;
+    }
+  }
+  @media print {
+    .journal-banner {
+      background: none;
+    }
+    .journal-banner::before {
+      display: none;
+    }
+  }
+</style>
