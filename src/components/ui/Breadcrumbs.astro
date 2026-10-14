@@ -10,7 +10,7 @@ const { label, items = [{ label: 'Home', href: '/' }] } = Astro.props;
   {items.map((item) => (
     <>
       <a href={item.href}>{item.label}</a>
-      <span aria-hidden="true">/</span>
+      <span class="breadcrumb-separator" aria-hidden="true">›</span>
     </>
   ))}
   <span aria-current="page">{label}</span>
