@@ -2,6 +2,23 @@
 import { publicArticles, readingTime } from '../../utils/articles';
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import menstrual from '../../assets/insights/menstrual-health.svg';
+import antenatal from '../../assets/insights/antenatal-care.svg';
+import contraception from '../../assets/insights/contraception.svg';
+const illustrations = {
+  'abnormal-uterine-bleeding': {
+    image: menstrual,
+    alt: 'Calendar and a drop illustrating menstrual bleeding',
+  },
+  'antenatal-visit-questions': {
+    image: antenatal,
+    alt: 'Appointment checklist with a heart illustrating preparation for antenatal visits',
+  },
+  'contraception-choices': {
+    image: contraception,
+    alt: 'Contraceptive pill pack and a shield illustrating contraceptive choices',
+  },
+};
 interface Props {
   limit?: number;
 }
@@ -14,15 +31,27 @@ const articles = (await publicArticles()).slice(0, limit);
     {await Promise.all(
       articles.map(async (a) => {
         const author = await getEntry(a.data.author);
+        const illustration =
+          illustrations[a.data.slug as keyof typeof illustrations];
         return (
           <article>
-            {a.data.featuredImage && (
+            {illustration ? (
               <Image
-                src={a.data.featuredImage}
-                alt={a.data.imageAlt || ''}
+                src={illustration.image}
+                alt={illustration.alt}
                 width={640}
+                height={420}
                 loading="lazy"
               />
+            ) : (
+              a.data.featuredImage && (
+                <Image
+                  src={a.data.featuredImage}
+                  alt={a.data.imageAlt || ''}
+                  width={640}
+                  loading="lazy"
+                />
+              )
             )}
             <span class="eyebrow">{a.data.category}</span>
             <h3>

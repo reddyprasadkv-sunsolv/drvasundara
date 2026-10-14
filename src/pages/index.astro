@@ -137,54 +137,8 @@ import { approvedServiceGroups } from '../data/services';
           <em>Your individual needs.</em>
         </h2>
       </div>
-      <p>
-        A clear guide to the practice,
-        <br />
-        with information approved by the doctor.
-      </p>
     </div>
     <ServiceList compact />
-  </section>
-  <section class="care-section">
-    <div class="container care-layout">
-      <div>
-        <span class="eyebrow">WHAT MATTERS MOST</span>
-        <h2>
-          Medical information.
-          <br />
-          <em>A personal approach.</em>
-        </h2>
-        <p>
-          We believe a healthcare experience should make room for the person
-          behind the questions.
-        </p>
-      </div>
-      <div class="care-principles">
-        {[
-          {
-            n: '01',
-            title: 'You, as an individual',
-            text: 'Your questions, preferences and personal circumstances matter.',
-          },
-          {
-            n: '02',
-            title: 'Understanding comes first',
-            text: 'Information should be clear, considered and easy to understand.',
-          },
-          {
-            n: '03',
-            title: 'Respect, always',
-            text: 'Privacy and dignity belong at the centre of every conversation.',
-          },
-        ].map((c) => (
-          <div>
-            <span>{c.n}</span>
-            <h3>{c.title}</h3>
-            <p>{c.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   </section>
   <section class="insights-section container" aria-labelledby="insights-title">
     <div class="section-heading">
