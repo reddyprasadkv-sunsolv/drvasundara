@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Replace the shared doctor portrait with the user-supplied hospital portrait on the approved GitHub Pages preview only.",
-  "revision": "doctor-hospital-portrait-2026-10-14"
+  "request": "Add user-requested Urogynecology and Fertility to the homepage specialty line on the approved GitHub Pages preview.",
+  "revision": "homepage-specialty-line-2026-10-14"
 }
