@@ -1545,7 +1545,7 @@ h3 {
   line-height: 1.7;
 }
 .desktop-nav a {
-  font-size: 12px;
+  font-size: 14px;
 }
 .header-cta .button,
 .button,
@@ -1693,7 +1693,7 @@ h3 {
     gap: 14px;
   }
   .desktop-nav a {
-    font-size: 11px;
+    font-size: 13px;
   }
   .brand {
     font-size: 20px;
@@ -3224,4 +3224,9 @@ h3 {
     background: none;
     border: 1px solid #888;
   }
+}
+
+@media (min-width: 851px) and (max-width: 1000px) {
+  .desktop-nav { display: none; }
+  .mobile-menu { display: block; }
 }
