@@ -14,194 +14,215 @@ import { approvedServiceGroups } from '../data/services';
 ---
 
 <Base title="Thoughtful Care for Every Stage of Womanhood">
-  <section class="hero container">
-    <div class="hero-copy">
-      <span class="eyebrow">
-        <span class="fine-line"></span>
-        {publicProfile.title
-          ? 'GYNECOLOGY • OBSTETRICS • WOMEN’S HEALTH'
-          : 'WOMEN’S HEALTH • INFORMATION • CONSULTATION'}
-      </span>
-      <h1 class="phase-two-headline">
-        <span>
+  <div class="homepage">
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="fine-line"></span>
           {publicProfile.title
-            ? 'Expertise in women’s health.'
-            : 'Your women’s health questions.'}
+            ? 'GYNECOLOGY • OBSTETRICS • WOMEN’S HEALTH'
+            : 'WOMEN’S HEALTH • INFORMATION • CONSULTATION'}
         </span>
-        <em>Care that understands you.</em>
-      </h1>
-      <p>
-        {approvedServiceGroups.some((g) => g.id === 'gynecology') &&
-        approvedServiceGroups.some((g) => g.id === 'obstetrics')
-          ? 'From everyday gynecological concerns to pregnancy care, explore a thoughtful approach informed by medical expertise and individual wellbeing.'
-          : 'Explore the doctor’s profile, prepare your questions and find clear information about requesting a consultation.'}
-      </p>
-      <p class="hero-doctor-identity">
-        {site.doctor.name}
-        {publicProfile.title && <span>{publicProfile.title}</span>}
-      </p>
-      <div class="hero-actions">
-        <AppointmentCTA />
-        <a class="text-link" href="/services/">
-          {approvedServiceGroups.length
-            ? 'Explore Specializations'
-            : 'Explore the Care Guide'}{' '}
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="hero-footnote">
-        <span class="small-flower" aria-hidden="true">
-          ✳
-        </span>
-        <span>
-          A doctor-led practice.
-          <br />A thoughtful approach to women’s health.
-        </span>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <HeroWellness />
-      <span class="hero-caption">
-        For the woman you are.
-        <br />
-        <em>And the woman you’re becoming.</em>
-      </span>
-    </div>
-  </section>
-  <div class="philosophy-strip">
-    <div class="container">
-      <span>Care with intention</span>
-      <span aria-hidden="true">✳</span>
-      <span>Space to feel heard</span>
-      <span aria-hidden="true">✳</span>
-      <span>Clarity at every step</span>
-    </div>
-  </div>
-  <section class="welcome container" aria-labelledby="welcome-title">
-    <span class="eyebrow">WELCOME TO DR. VASUNDARA CHEEPURUPALLI</span>
-    <div class="welcome-layout">
-      <h2 id="welcome-title">
-        Every woman’s health
-        <br />
-        <em>journey is unique.</em>
-      </h2>
-      <div>
-        <p class="lead">
-          Thoughtful conversations. Clear information. Individual context.
-        </p>
+        <h1 class="phase-two-headline">
+          <span>
+            {publicProfile.title
+              ? 'Expertise in women’s health.'
+              : 'Your women’s health questions.'}
+          </span>
+          <em>Care that understands you.</em>
+        </h1>
         <p>
-          Women’s health changes across different stages of life. Explore the
-          professional profile, explore the reviewed care guide and prepare
-          questions for an informed consultation.
+          {approvedServiceGroups.some((g) => g.id === 'gynecology') &&
+          approvedServiceGroups.some((g) => g.id === 'obstetrics')
+            ? 'From everyday gynecological concerns to pregnancy care, explore a thoughtful approach informed by medical expertise and individual wellbeing.'
+            : 'Explore the doctor’s profile, prepare your questions and find clear information about requesting a consultation.'}
         </p>
-        <a class="text-link" href="/about/">
-          Discover the practice <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="doctor-section">
-    <div class="container doctor-layout">
-      <div class="doctor-profile-visual">
-        <DoctorPortrait small />
-      </div>
-      <div class="doctor-copy">
-        <span class="eyebrow">THE DOCTOR BEHIND THE CARE</span>
-        <h2>
-          Meet
-          <br />
-          <em>{site.doctor.name}.</em>
-        </h2>
-        {site.doctor.qualifications.length > 0 && (
-          <p>{site.doctor.qualifications.join(' · ')}</p>
-        )}
-        {site.doctor.specialization && <p>{site.doctor.specialization}</p>}
-        {site.doctor.experience && <p>{site.doctor.experience}</p>}
-        <p>
-          {site.doctor.clinicalApproach ||
-            'Choosing a doctor is a personal decision. Get to know Dr. Vasundara Cheepurupalli through her profile as verified professional information becomes available.'}
+        <p class="hero-doctor-identity">
+          {site.doctor.name}
+          {publicProfile.title && <span>{publicProfile.title}</span>}
         </p>
-        <a class="text-link" href="/about/">
-          Meet the Doctor <span aria-hidden="true">↗</span>
-        </a>
+        <div class="hero-actions">
+          <AppointmentCTA />
+          <a class="text-link" href="/services/">
+            {approvedServiceGroups.length
+              ? 'Explore Specializations'
+              : 'Explore the Care Guide'}{' '}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="hero-footnote">
+          <span class="small-flower" aria-hidden="true">
+            ✳
+          </span>
+          <span>
+            A doctor-led practice.
+            <br />A thoughtful approach to women’s health.
+          </span>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="services-section container" aria-labelledby="services-title">
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">CARE, THROUGH LIFE’S CHAPTERS</span>
-        <h2 id="services-title">
-          Your health.
+      <div class="hero-visual">
+        <HeroWellness />
+        <span class="hero-caption">
+          For the woman you are.
           <br />
-          <em>Your individual needs.</em>
-        </h2>
+          <em>And the woman you’re becoming.</em>
+        </span>
+      </div>
+    </section>
+    <div class="philosophy-strip">
+      <div class="container">
+        <span>Care with intention</span>
+        <span aria-hidden="true">✳</span>
+        <span>Space to feel heard</span>
+        <span aria-hidden="true">✳</span>
+        <span>Clarity at every step</span>
       </div>
     </div>
-    <ServiceList compact />
-  </section>
-  <section class="insights-section container" aria-labelledby="insights-title">
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">THE WOMEN’S HEALTH JOURNAL</span>
-        <h2 id="insights-title">
-          Women’s health,
+    <section class="welcome container" aria-labelledby="welcome-title">
+      <span class="eyebrow">WELCOME TO DR. VASUNDARA CHEEPURUPALLI</span>
+      <div class="welcome-layout">
+        <h2 id="welcome-title">
+          Every woman’s health
           <br />
-          <em>explained with care.</em>
+          <em>journey is unique.</em>
         </h2>
+        <div>
+          <p class="lead">
+            Thoughtful conversations. Clear information. Individual context.
+          </p>
+          <p>
+            Women’s health changes across different stages of life. Explore the
+            professional profile, explore the reviewed care guide and prepare
+            questions for an informed consultation.
+          </p>
+          <a class="text-link" href="/about/">
+            Discover the practice <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
-      <a class="text-link" href="/blog/">
-        Explore Women’s Health Insights ↗
-      </a>
-    </div>
-    <Insights />
-  </section>
-  <section
-    class="insights-section container"
-    aria-labelledby="expert-insights-title"
-  >
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">WATCH & UNDERSTAND</span>
-        <h2 id="expert-insights-title">
-          Expert Insights <em>& Advice</em>
-        </h2>
+    </section>
+    <section class="doctor-section">
+      <div class="container doctor-layout">
+        <div class="doctor-profile-visual">
+          <DoctorPortrait small />
+        </div>
+        <div class="doctor-copy">
+          <span class="eyebrow">THE DOCTOR BEHIND THE CARE</span>
+          <h2>
+            Meet
+            <br />
+            <em>{site.doctor.name}.</em>
+          </h2>
+          {site.doctor.qualifications.length > 0 && (
+            <p>{site.doctor.qualifications.join(' · ')}</p>
+          )}
+          {site.doctor.specialization && <p>{site.doctor.specialization}</p>}
+          {site.doctor.experience && <p>{site.doctor.experience}</p>}
+          <p>
+            {site.doctor.clinicalApproach ||
+              'Choosing a doctor is a personal decision. Get to know Dr. Vasundara Cheepurupalli through her profile as verified professional information becomes available.'}
+          </p>
+          <a class="text-link" href="/about/">
+            Meet the Doctor <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
-      <p>
-        Explore conversations about pregnancy care, recovery and gynecological
-        surgery.
-      </p>
-    </div>
-    <PatientVideos expert />
-  </section>
-  <section class="patient-section" aria-labelledby="patient-title">
-    <div class="container">
+    </section>
+    <section
+      class="services-section container"
+      aria-labelledby="services-title"
+    >
       <div class="section-heading">
         <div>
-          <span class="eyebrow">IN THEIR OWN WORDS</span>
-          <h2 id="patient-title">
-            Personal stories.
+          <span class="eyebrow">CARE, THROUGH LIFE’S CHAPTERS</span>
+          <h2 id="services-title">
+            Your health.
             <br />
-            <em>Shared with you.</em>
+            <em>Your individual needs.</em>
           </h2>
         </div>
-        <a class="text-link" href="/testimonials/">
-          All patient experiences ↗
+      </div>
+      <ServiceList compact />
+    </section>
+    <section
+      class="insights-section container"
+      aria-labelledby="insights-title"
+    >
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE WOMEN’S HEALTH JOURNAL</span>
+          <h2 id="insights-title">
+            Women’s health,
+            <br />
+            <em>explained with care.</em>
+          </h2>
+        </div>
+        <a class="text-link" href="/blog/">
+          Explore Women’s Health Insights ↗
         </a>
       </div>
-      <PatientVideos featured />
-    </div>
-  </section>
-  <section class="faq-section container" aria-labelledby="faq-title">
-    <div>
-      <span class="eyebrow">A LITTLE MORE CLARITY</span>
-      <h2 id="faq-title">
-        Questions are
-        <br />
-        <em>always welcome.</em>
-      </h2>
-    </div>
-    <FaqList />
-  </section>
-  <AppointmentSection />
+      <Insights />
+    </section>
+    <section
+      class="insights-section container"
+      aria-labelledby="expert-insights-title"
+    >
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">WATCH & UNDERSTAND</span>
+          <h2 id="expert-insights-title">
+            Expert Insights <em>& Advice</em>
+          </h2>
+        </div>
+        <p>
+          Explore conversations about pregnancy care, recovery and gynecological
+          surgery.
+        </p>
+      </div>
+      <PatientVideos expert />
+    </section>
+    <section class="patient-section" aria-labelledby="patient-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">IN THEIR OWN WORDS</span>
+            <h2 id="patient-title">
+              Personal stories.
+              <br />
+              <em>Shared with you.</em>
+            </h2>
+          </div>
+          <a class="text-link" href="/testimonials/">
+            All patient experiences ↗
+          </a>
+        </div>
+        <PatientVideos featured />
+      </div>
+    </section>
+    <section class="faq-section container" aria-labelledby="faq-title">
+      <div>
+        <span class="eyebrow">A LITTLE MORE CLARITY</span>
+        <h2 id="faq-title">
+          Questions are
+          <br />
+          <em>always welcome.</em>
+        </h2>
+      </div>
+      <FaqList />
+    </section>
+    <AppointmentSection />
+  </div>
 </Base>
+
+<style>
+  .homepage {
+    --section: clamp(40px, 4.5vw, 64px);
+  }
+  .homepage .services-section + .insights-section,
+  .homepage .insights-section + .insights-section {
+    padding-top: 0;
+  }
+  .homepage .doctor-section {
+    padding-block: var(--section);
+  }
+</style>
