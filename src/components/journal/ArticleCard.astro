@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { PublicArticle } from '../../utils/articles';
 import { articleReadingTime } from '../../utils/articles';
 import { journalCategory, categoryPath } from '../../utils/journal-data';
@@ -11,10 +12,18 @@ const category = journalCategory(entry.data);
 ---
 
 <article class="journal-card" data-article-slug={entry.data.slug}>
-  <div class="journal-card-mark" aria-hidden="true">
-    <span>{String(number).padStart(2, '0')}</span>
-    <span>↗</span>
-  </div>
+  {entry.data.featuredImage && (
+    <a href={`/blog/${entry.data.slug}/`} tabindex="-1" aria-hidden="true">
+      <Image
+        class="journal-card-image"
+        src={entry.data.featuredImage}
+        alt=""
+        width={640}
+        height={420}
+        loading="lazy"
+      />
+    </a>
+  )}
   <a class="journal-category-label" href={categoryPath(category!.id)}>
     {category!.name}
   </a>
@@ -27,3 +36,15 @@ const category = journalCategory(entry.data);
     <span>Medical review recorded</span>
   </div>
 </article>
+
+<style>
+  .journal-card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 640/420;
+    object-fit: cover;
+    margin-bottom: 24px;
+    border-radius: 10px;
+  }
+</style>
