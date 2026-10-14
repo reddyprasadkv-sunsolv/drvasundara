@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Improve breadcrumb visibility with larger text, clear linked ancestors and a highlighted current page on the approved preview.",
-  "revision": "breadcrumb-visibility-2026-10-14"
+  "request": "Fix inherited vertical margins in the homepage service grid so card divider lines align across each row on the approved preview.",
+  "revision": "service-grid-alignment-2026-10-14"
 }
