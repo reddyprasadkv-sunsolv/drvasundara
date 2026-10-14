@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Remove unnecessary decorative section divider lines from the About page on the approved GitHub Pages preview.",
-  "revision": "about-divider-fix-2026-10-14"
+  "request": "Replace the featured journal image with the wellbeing image supplied by the user on the approved GitHub Pages preview.",
+  "revision": "journal-wellbeing-image-2026-10-14"
 }
