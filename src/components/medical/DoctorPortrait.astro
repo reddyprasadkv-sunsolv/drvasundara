@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import doctor from '../../assets/doctor.png';
+import doctor from '../../assets/doctor-hospital.jpg';
 import { site } from '../../config/site';
 interface Props {
   small?: boolean;
@@ -23,7 +23,7 @@ interface Props {
           sizes="(max-width: 600px) 80vw, (max-width: 850px) 40vw, 420px"
           loading={Astro.props.small ? 'lazy' : 'eager'}
           priority={!Astro.props.small}
-          class="portrait-photo"
+          class="portrait-photo portrait-hospital"
         />
       ) : (
         <div class="portrait-neutral">
@@ -46,3 +46,7 @@ interface Props {
     </span>
   </figcaption>
 </figure>
+
+<style>
+  .portrait-hospital { object-fit: cover; object-position: center 30%; }
+</style>
