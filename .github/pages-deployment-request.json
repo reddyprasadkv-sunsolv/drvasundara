@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Deploy completed Phase 3 journal design, static search, editorial governance and reading experience to the approved GitHub Pages preview only, preserving existing clinical content, dates, URLs and publication states.",
-  "revision": "phase3-medical-journal-2026-10-14"
+  "request": "Replace homepage hero with the user-supplied clinic conversation image on the approved GitHub Pages preview.",
+  "revision": "hero-clinic-image-2026-10-14"
 }

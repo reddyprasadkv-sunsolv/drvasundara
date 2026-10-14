@@ -1,13 +1,13 @@
 ---
 import { Image } from 'astro:assets';
-import wellness from '../../assets/hero-wellness.jpg';
+import wellness from '../../assets/hero-clinic.jpg';
 ---
 
 <figure class="wellness-visual">
   <div class="wellness-image-frame">
     <Image
       src={wellness}
-      alt="Two women chatting while walking along a tree-lined path"
+      alt="Illustrative scene of a doctor speaking with a woman in a bright clinic"
       width={800}
       height={1000}
       fit="cover"
@@ -19,14 +19,5 @@ import wellness from '../../assets/hero-wellness.jpg';
     />
     <span class="wellness-corner" aria-hidden="true"></span>
   </div>
-  <figcaption class="wellness-credit">
-    Illustrative stock photograph ·{' '}
-    <a
-      href="https://www.pexels.com/photo/cheerful-diverse-women-walking-along-alley-5538026/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Zen Chung / Pexels<span class="sr-only"> (opens a new tab)</span>
-    </a>
-  </figcaption>
+  <figcaption class="wellness-credit">Illustrative clinic image</figcaption>
 </figure>
