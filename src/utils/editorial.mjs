@@ -21,9 +21,30 @@ export function safeFormUrl(value) {
   try {
     const url = new URL(value);
     return url.protocol === 'https:' &&
+      !url.username &&
+      !url.password &&
+      !url.port &&
       (url.hostname === 'forms.gle' ||
         (url.hostname === 'docs.google.com' &&
           url.pathname.startsWith('/forms/')))
+      ? url.href
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+export function safeWhatsAppUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' &&
+      url.hostname === 'wa.me' &&
+      !url.username &&
+      !url.password &&
+      !url.port &&
+      /^\/[1-9][0-9]{7,14}$/.test(url.pathname) &&
+      !url.search &&
+      !url.hash
       ? url.href
       : null;
   } catch {

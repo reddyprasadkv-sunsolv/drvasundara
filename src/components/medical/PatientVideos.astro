@@ -1,10 +1,13 @@
 ---
+import { approvedServices } from '../../data/services';
+import { publicArticles } from '../../utils/articles';
 import { expertVideos } from '../../data/expert-videos';
 import { testimonials } from '../../data/testimonials';
 interface Props {
   featured?: boolean;
   expert?: boolean;
 }
+const articles = Astro.props.expert ? await publicArticles() : [];
 const videos = Astro.props.expert
   ? expertVideos
   : Astro.props.featured
@@ -14,7 +17,12 @@ const videos = Astro.props.expert
 
 <div class="patient-videos">
   {videos.map((video, index) => (
-    <article class="patient-video">
+    <article
+      class="patient-video"
+      data-video-kind={
+        Astro.props.expert ? 'educational' : 'patient-experience'
+      }
+    >
       <div
         class="video-stage"
         data-video-id={video.id}
@@ -54,6 +62,23 @@ const videos = Astro.props.expert
       >
         Watch on YouTube ↗<span class="sr-only"> (opens a new tab)</span>
       </a>
+      {Astro.props.expert && 'relatedServices' in video && (
+        <nav
+          class="expert-related"
+          aria-label={`Related reading for ${video.title}`}
+        >
+          {approvedServices
+            .filter((s) => video.relatedServices.includes(s.slug))
+            .map((s) => (
+              <a href={`/services/${s.slug}/`}>{s.name}</a>
+            ))}
+          {articles
+            .filter((a) => video.relatedArticles.includes(a.data.slug))
+            .map((a) => (
+              <a href={`/blog/${a.data.slug}/`}>{a.data.title}</a>
+            ))}
+        </nav>
+      )}
     </article>
   ))}
 </div>
@@ -79,7 +104,8 @@ const videos = Astro.props.expert
       if (!id || !/^[A-Za-z0-9_-]{11}$/.test(id)) return;
       const frame = document.createElement('iframe');
       frame.src = `https://www.youtube-nocookie.com/embed/${id}`;
-      frame.title = stage.dataset.videoTitle || 'Patient experience video';
+      frame.title = stage.dataset.videoTitle || 'Clinic video';
+      frame.loading = 'lazy';
       frame.allow = 'encrypted-media; picture-in-picture; fullscreen';
       frame.allowFullscreen = true;
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
@@ -88,3 +114,17 @@ const videos = Astro.props.expert
     });
   });
 </script>
+
+<style>
+  .expert-related {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 13px;
+  }
+  .expert-related a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

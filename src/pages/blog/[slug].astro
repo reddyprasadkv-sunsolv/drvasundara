@@ -42,7 +42,10 @@ const safetyNotice = [
   ? primary?.whenToSeek
   : undefined;
 const socialImage = entry.data.featuredImage
-  ? publicAssetUrl(entry.data.featuredImage.src, Astro.site || site.url)
+  ? publicAssetUrl(
+      `/images/journal/${entry.data.slug}.png`,
+      Astro.site || site.url,
+    )
   : undefined;
 const schema = articleSchema(
   entry.data,

@@ -1,10 +1,12 @@
 ---
+import { safeWhatsAppUrl } from '../../utils/editorial.mjs';
 import { site } from '../../config/site';
 ---
 
 <a
   class="whatsapp-float"
-  href={site.whatsappUrl}
+  data-contact-channel="whatsapp"
+  href={safeWhatsAppUrl(site.whatsappUrl) || '/appointment/'}
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Chat with the clinic on WhatsApp (opens a new tab)"
@@ -29,7 +31,7 @@ import { site } from '../../config/site';
   .whatsapp-float {
     position: fixed;
     right: 24px;
-    bottom: 24px;
+    bottom: max(24px, env(safe-area-inset-bottom));
     z-index: 30;
     display: flex;
     gap: 10px;
@@ -52,7 +54,7 @@ import { site } from '../../config/site';
   @media (max-width: 600px) {
     .whatsapp-float {
       right: 16px;
-      bottom: 16px;
+      bottom: max(16px, env(safe-area-inset-bottom));
       padding: 14px;
     }
     .whatsapp-float span {

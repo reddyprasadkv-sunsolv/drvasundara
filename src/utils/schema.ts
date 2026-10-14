@@ -1,11 +1,38 @@
 import { site } from '../config/site';
+import { publicProfile } from '../data/professional';
 import { canonicalUrl } from './urls';
+export const doctorId = site.url + '/#doctor';
+export const publisherId = site.url + '/#publisher';
+export const doctorEntity = () => ({
+  '@type': 'Person',
+  '@id': doctorId,
+  name: site.doctor.name,
+  url: site.url + '/about/',
+  ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
+  ...(publicProfile.affiliations.length
+    ? {
+        affiliation: publicProfile.affiliations.map((name) => ({
+          '@type': 'Organization',
+          name,
+        })),
+      }
+    : {}),
+});
+export const publisherEntity = () => ({
+  '@type': 'Organization',
+  '@id': publisherId,
+  name: site.name + ' website',
+  url: site.url,
+});
 export const websiteSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': site.url + '/#website',
   name: site.name,
   url: site.url,
+  inLanguage: 'en-IN',
+  publisher: publisherEntity(),
+  about: doctorEntity(),
 });
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
@@ -23,11 +50,7 @@ export function personProfileSchema() {
     '@type': 'ProfilePage',
     '@id': site.url + '/about/#profile',
     url: site.url + '/about/',
-    mainEntity: {
-      '@type': 'Person',
-      name: site.doctor.name,
-      '@id': site.url + '/about/#person',
-    },
+    mainEntity: doctorEntity(),
   };
 }
 // These builders must receive clinic-approved data; callers must not emit candidate records.
@@ -43,6 +66,7 @@ export function clinicSchema(verified: {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
+    '@id': site.url + '/#clinic',
     name: verified.name,
     url: site.url,
     telephone: verified.phone,
@@ -65,6 +89,7 @@ export function physicianSchema(verified: {
   return {
     '@context': 'https://schema.org',
     '@type': 'Physician',
+    '@id': site.url + '/#physician-practice',
     name: verified.name,
     url: site.url + '/about/',
     description: verified.title,
@@ -92,11 +117,17 @@ export function medicalPageSchema(page: {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
+    '@id': canonicalUrl(page.path) + '#webpage',
+    isPartOf: { '@id': site.url + '/#website' },
+    inLanguage: 'en-IN',
     name: page.title,
     description: page.description,
     url: canonicalUrl(page.path),
     lastReviewed: new Date(page.reviewedAt).toISOString().slice(0, 10),
-    reviewedBy: { '@type': 'Person', name: page.reviewer },
+    reviewedBy:
+      page.reviewer === site.doctor.name
+        ? doctorEntity()
+        : { '@type': 'Person', name: page.reviewer },
     citation: page.sources.map((source) => ({
       '@type': 'CreativeWork',
       name: source.title,
@@ -139,11 +170,19 @@ export function articleSchema(
         author: {
           '@type': authorType,
           name: author,
+          ...(authorType === 'Organization'
+            ? { '@id': publisherId }
+            : author === site.doctor.name
+              ? { '@id': doctorId }
+              : {}),
           ...(identityUrls.author ? { url: identityUrls.author } : {}),
         },
         ...(identityUrls.section
           ? { articleSection: identityUrls.section }
           : {}),
+        publisher: publisherEntity(),
+        inLanguage: 'en-IN',
+        isPartOf: { '@id': site.url + '/#website' },
         mainEntityOfPage: { '@id': url + '#webpage' },
         ...(image ? { image } : {}),
       },
@@ -161,6 +200,7 @@ export function articleSchema(
         reviewedBy: {
           '@type': 'Person',
           name: reviewer,
+          ...(reviewer === site.doctor.name ? { '@id': doctorId } : {}),
           ...(identityUrls.reviewer ? { url: identityUrls.reviewer } : {}),
         },
         mainEntity: { '@id': url + '#article' },

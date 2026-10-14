@@ -3,16 +3,9 @@ import Page from '../layouts/Page.astro';
 import DoctorPortrait from '../components/medical/DoctorPortrait.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
 import ProfessionalTimeline from '../components/medical/ProfessionalTimeline.astro';
-import { site } from '../config/site';
 import { publicProfile } from '../data/professional';
-import { personProfileSchema, physicianSchema } from '../utils/schema';
-const schema = publicProfile.title
-  ? physicianSchema({
-      name: site.doctor.name,
-      title: publicProfile.title,
-      affiliations: publicProfile.affiliations,
-    })
-  : personProfileSchema();
+import { personProfileSchema } from '../utils/schema';
+const schema = personProfileSchema();
 ---
 
 <Page

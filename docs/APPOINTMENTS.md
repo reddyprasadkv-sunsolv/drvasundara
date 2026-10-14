@@ -7,3 +7,7 @@ Use a clinic-managed linked Google Sheet only if needed. Limit Form and Sheet ed
 Put the final HTTPS Form link in `src/config/site.ts` under `appointmentFormUrl`. Supported hosts are exactly `forms.gle` and `docs.google.com` with `/forms/` paths. Test the final form in a private browser session, confirm accessibility and submission permissions, and check that the confirmation message explains clinic confirmation. Do not use a patient response as a QA fixture.
 
 Until the URL is set, all request CTAs point to the honest appointment information page. No functioning booking promise is made. A request form is not an emergency communication channel.
+
+## Current flow after user-approved WhatsApp replacement
+
+WhatsApp is the primary CTA at https://wa.me/919346825723. The top header CTA remains removed as requested; the floating and page CTAs remain. The configured form is still blank. Phase 4 preserves the Google Forms allowlist and a deliberate `useForm` option; `/appointment/` only shows the optional form button when a real allowed URL is configured. A future form activation requires accurate consent/privacy wording. No booking submission backend or success state is added.

@@ -21,3 +21,8 @@ jobs:
       - run: pnpm check
       - run: pnpm build
       - run: pnpm test
+      - name: Validate project preview mode
+        run: pnpm build && node scripts/prepare-pages-preview.mjs && pnpm test
+        env:
+          PAGES_PREVIEW: 'true'
+          VERIFY_PAGES_PREVIEW: 'true'

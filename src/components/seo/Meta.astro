@@ -17,22 +17,36 @@ const {
   image,
   imageAlt,
 } = Astro.props;
+const preview = import.meta.env.BASE_URL !== '/';
+const fullTitle = title.includes(site.doctor.name)
+  ? title
+  : `${title} | ${site.name}`;
+const googleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bingVerification = import.meta.env.PUBLIC_BING_SITE_VERIFICATION;
 const canonical = canonicalUrl(Astro.url.pathname);
 const socialImage =
   image || publicAssetUrl('/images/social-preview.png', Astro.site || site.url);
 ---
 
-<title>{title} | {site.name}</title>
+<title>{fullTitle}</title>
+{!preview && googleVerification && (
+  <meta name="google-site-verification" content={googleVerification} />
+)}
+{!preview && bingVerification && (
+  <meta name="msvalidate.01" content={bingVerification} />
+)}
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 <meta
   name="robots"
   content={
-    !site.productionIndexing || noindex ? 'noindex, nofollow' : 'index, follow'
+    preview || !site.productionIndexing || noindex
+      ? 'noindex, nofollow'
+      : 'index, follow'
   }
 />
 <meta property="og:type" content={article ? 'article' : 'website'} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:site_name" content={site.name} />
@@ -45,7 +59,7 @@ const socialImage =
   }
 />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImage} />
 

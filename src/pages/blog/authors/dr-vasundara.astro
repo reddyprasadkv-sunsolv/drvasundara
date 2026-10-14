@@ -1,4 +1,5 @@
 ---
+import { doctorEntity } from '../../../utils/schema';
 import Page from '../../../layouts/Page.astro';
 import DoctorPortrait from '../../../components/medical/DoctorPortrait.astro';
 import { publicProfile } from '../../../data/professional';
@@ -13,13 +14,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
   url: site.url + '/blog/authors/dr-vasundara/',
-  mainEntity: {
-    '@type': 'Person',
-    '@id': site.url + '/blog/authors/dr-vasundara/#person',
-    name: site.doctor.name,
-    url: site.url + '/blog/authors/dr-vasundara/',
-    ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
-  },
+  mainEntity: doctorEntity(),
 };
 ---
 

@@ -15,6 +15,7 @@ import JournalSearch from '../../components/journal/JournalSearch.astro';
 import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
 import { approvedServices } from '../../data/services';
 import doctor from '../../assets/doctor.png';
+import wellbeing from '../../assets/journal-wellbeing.jpg';
 import botanicalBanner from '../../assets/botanical-banner.svg';
 import { publicProfile } from '../../data/professional';
 const articles = await publicArticles();
@@ -77,8 +78,8 @@ const discovery = approvedServices.filter((s) =>
                 aria-hidden="true"
               >
                 <Image
-                  src={featured.data.featuredImage}
-                  alt={featured.data.imageAlt || ''}
+                  src={wellbeing}
+                  alt="Illustration of a woman relaxing by a sunny window with a cup and a notebook"
                   width={760}
                   widths={[400, 760]}
                   sizes="(max-width: 767px) 90vw, 42vw"

@@ -7,7 +7,7 @@ interface Props {
   entry: PublicArticle;
   number?: number;
 }
-const { entry, number = 1 } = Astro.props;
+const { entry } = Astro.props;
 const category = journalCategory(entry.data);
 ---
 

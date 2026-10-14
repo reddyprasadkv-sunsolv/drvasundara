@@ -13,3 +13,5 @@ export function isPublicArticle(
   now?: Date,
 ): boolean;
 export function safeFormUrl(value: string): string | null;
+
+export function safeWhatsAppUrl(value: string): string | null;
