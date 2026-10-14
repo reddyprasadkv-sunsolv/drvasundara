@@ -1,6 +1,5 @@
 ---
 import { navigation } from '../../config/site';
-import AppointmentCTA from '../ui/AppointmentCTA.astro';
 const base = import.meta.env.BASE_URL;
 const path =
   base !== '/' && Astro.url.pathname.startsWith(base)
@@ -25,9 +24,6 @@ const path =
         </a>
       ))}
     </nav>
-    <div class="header-cta">
-      <AppointmentCTA />
-    </div>
     <details class="mobile-menu">
       <summary aria-label="Menu — open navigation">
         <span>Menu</span>
@@ -41,7 +37,6 @@ const path =
             {n.label}
           </a>
         ))}
-        <AppointmentCTA />
       </nav>
     </details>
   </div>
