@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import botanicalBanner from '../assets/botanical-banner.svg';
 import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
 import { breadcrumbSchema } from '../utils/schema';
 interface Props {
@@ -35,15 +36,69 @@ const {
     ],
   }}
 >
-  <div class="container">
-    <Breadcrumbs label={title} items={breadcrumbs} />
+  <div
+    class="inner-page-banner"
+    style={`--banner-art: url("${botanicalBanner.src}")`}
+  >
+    <div class="container">
+      <Breadcrumbs label={title} items={breadcrumbs} />
+    </div>
+    <section class="page-heading container">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </section>
   </div>
-  <section class="page-heading container">
-    <span class="eyebrow">{eyebrow}</span>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </section>
   <div class="container page-content">
     <slot />
   </div>
 </Base>
+
+<style>
+  .inner-page-banner {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(110deg, #fff8fb 15%, #f8eef7 65%, #edf5ff);
+    margin-bottom: 60px;
+    overflow: hidden;
+  }
+  .inner-page-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--banner-art);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 115%;
+    opacity: 0.7;
+    mask-image: linear-gradient(to right, transparent 42%, black 78%);
+  }
+  .inner-page-banner .page-heading {
+    padding-top: 38px;
+    padding-bottom: 58px;
+  }
+  @media (max-width: 767px) {
+    .inner-page-banner {
+      margin-bottom: 36px;
+    }
+    .inner-page-banner::before {
+      opacity: 0.3;
+      background-position: right bottom;
+      mask-image: linear-gradient(to right, transparent 25%, black);
+    }
+    .inner-page-banner .page-heading {
+      padding-top: 28px;
+      padding-bottom: 38px;
+    }
+  }
+  @media print {
+    .inner-page-banner {
+      background: none;
+      margin-bottom: 20px;
+    }
+    .inner-page-banner::before {
+      display: none;
+    }
+  }
+</style>

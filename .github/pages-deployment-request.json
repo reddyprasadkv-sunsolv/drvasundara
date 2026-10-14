@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Increase desktop navigation text slightly and retain responsive header layout on the approved preview.",
-  "revision": "navigation-font-2026-10-14"
+  "request": "Add an understated botanical breadcrumb and title banner to shared inner pages, preserving focused journal article headers, on the approved preview.",
+  "revision": "botanical-inner-page-banner-2026-10-14"
 }
