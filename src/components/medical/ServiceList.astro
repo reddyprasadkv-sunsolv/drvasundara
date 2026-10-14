@@ -1,10 +1,27 @@
 ---
-import { approvedServices, approvedServiceGroups } from '../../data/services';
+import {
+  approvedServices,
+  approvedServiceGroups,
+  serviceCategories,
+} from '../../data/services';
 interface Props {
   compact?: boolean;
 }
 const { compact = false } = Astro.props;
+const groups = compact
+  ? serviceCategories
+      .map(
+        (category) =>
+          approvedServiceGroups.find((g) => g.id === category.id) ||
+          (category.id === 'urogynecology'
+            ? { ...category, services: [] }
+            : null),
+      )
+      .filter((g): g is NonNullable<typeof g> => g !== null)
+  : approvedServiceGroups;
 const iconPaths: Record<string, string> = {
+  urogynecology:
+    'M11 7C7 17 8 26 20 33C32 26 33 17 29 7M14 17C14 12 26 12 26 17V24C26 31 14 31 14 24ZM20 20V28',
   gynecology: 'M20 5C7 8 7 27 20 33C33 27 33 8 20 5ZM20 13V26M14 20H26',
   obstetrics:
     'M11 7C3 18 8 32 21 33C33 31 36 18 29 11M20 11C14 12 12 19 16 24C20 29 27 25 27 20C27 16 24 13 20 11Z',
@@ -23,10 +40,15 @@ const iconPaths: Record<string, string> = {
   <div
     class:list={['service-groups', { 'specialization-highlights': compact }]}
   >
-    {approvedServiceGroups.map((group) => (
+    {groups.map((group) => (
       <section id={group.id}>
         {compact ? (
-          <a class="specialization-highlight" href={`/services/#${group.id}`}>
+          <a
+            class="specialization-highlight"
+            href={
+              group.services.length ? `/services/#${group.id}` : '/contact/'
+            }
+          >
             <svg
               width="40"
               height="40"
@@ -45,10 +67,12 @@ const iconPaths: Record<string, string> = {
             <div>
               <h3>{group.name}</h3>
               <p>
-                {group.services
-                  .slice(0, 3)
-                  .map((s) => s.name)
-                  .join(' · ')}
+                {group.services.length
+                  ? group.services
+                      .slice(0, 3)
+                      .map((s) => s.name)
+                      .join(' · ')
+                  : 'Consultation enquiries · Speak with the clinic'}
               </p>
             </div>
             <span aria-hidden="true">↗</span>
