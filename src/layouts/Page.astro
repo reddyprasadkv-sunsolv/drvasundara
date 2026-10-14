@@ -8,6 +8,7 @@ interface Props {
   description: string;
   noindex?: boolean;
   schema?: unknown;
+  breadcrumbs?: { label: string; href: string }[];
 }
 const {
   title,
@@ -15,6 +16,7 @@ const {
   description,
   noindex,
   schema,
+  breadcrumbs = [{ label: 'Home', href: '/' }],
 } = Astro.props;
 ---
 
@@ -26,7 +28,7 @@ const {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbSchema([
-        { name: 'Home', path: '/' },
+        ...breadcrumbs.map((item) => ({ name: item.label, path: item.href })),
         { name: title, path: Astro.url.pathname },
       ]),
       ...(schema ? [schema] : []),
@@ -34,7 +36,7 @@ const {
   }}
 >
   <div class="container">
-    <Breadcrumbs label={title} />
+    <Breadcrumbs label={title} items={breadcrumbs} />
   </div>
   <section class="page-heading container">
     <span class="eyebrow">{eyebrow}</span>

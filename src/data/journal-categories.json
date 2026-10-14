@@ -1,0 +1,67 @@
+[
+  {
+    "id": "pregnancy-obstetrics",
+    "name": "Pregnancy & Obstetrics",
+    "description": "Information to help you prepare questions about pregnancy, antenatal care and changes in your care needs.",
+    "services": [
+      "pregnancy-antenatal-care",
+      "high-risk-pregnancy",
+      "ectopic-pregnancy",
+      "postnatal-care"
+    ]
+  },
+  {
+    "id": "menstrual-health",
+    "name": "Menstrual Health",
+    "description": "Explore explanations of menstrual patterns and bleeding concerns, with context for an individual assessment.",
+    "services": [
+      "menstrual-disorders",
+      "abnormal-uterine-bleeding",
+      "general-gynecology"
+    ]
+  },
+  {
+    "id": "pcos-hormonal-health",
+    "name": "PCOS & Hormonal Health",
+    "description": "Clear information about diagnostic terminology, symptoms and questions to discuss with your clinician.",
+    "services": ["pcos", "menstrual-disorders"]
+  },
+  {
+    "id": "fertility-reproductive-health",
+    "name": "Fertility & Reproductive Health",
+    "description": "Understand the purpose of a fertility conversation and the questions that can guide your next steps.",
+    "services": [
+      "fertility-consultation",
+      "primary-secondary-infertility",
+      "fertility-related-investigations",
+      "reproductive-health-evaluation"
+    ]
+  },
+  {
+    "id": "gynecological-surgery",
+    "name": "Gynecological Surgery",
+    "description": "Read about assessment, surgical approaches and the importance of discussing alternatives, risks and limitations.",
+    "services": [
+      "laparoscopic-gynecological-surgery",
+      "laparoscopic-hysterectomy",
+      "robotic-gynecological-surgery",
+      "ovarian-cyst-surgery"
+    ]
+  },
+  {
+    "id": "menopause-midlife-health",
+    "name": "Menopause & Midlife Health",
+    "description": "Perspectives on symptoms, health changes and an informed conversation about support during midlife.",
+    "services": ["menopause-care", "preventive-womens-health"]
+  },
+  {
+    "id": "preventive-healthcare",
+    "name": "Preventive Women’s Healthcare",
+    "description": "Information for thoughtful conversations about contraception, preventive care and personal health priorities.",
+    "services": [
+      "contraception-family-planning",
+      "iud-consultation-insertion",
+      "preventive-womens-health"
+    ]
+  }
+]

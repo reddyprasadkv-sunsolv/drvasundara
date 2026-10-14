@@ -12,9 +12,12 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
-    "test": "node --test scripts/*.test.mjs && node scripts/verify-build.mjs && node scripts/verify-approval-boundary.mjs",
+    "test": "node --test scripts/*.test.mjs && node scripts/verify-build.mjs && node scripts/verify-approval-boundary.mjs && node scripts/verify-journal.mjs && node scripts/editorial-report.mjs --check",
     "format": "prettier --write .",
-    "review:export": "node scripts/export-clinician-review.mjs"
+    "review:export": "node scripts/export-clinician-review.mjs",
+    "journal:report": "node scripts/editorial-report.mjs",
+    "journal:validate": "node scripts/editorial-report.mjs --check",
+    "journal:new": "node scripts/new-article.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "8.0.3",

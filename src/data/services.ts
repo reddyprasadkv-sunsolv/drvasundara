@@ -24,7 +24,14 @@ const serviceSchema = z.object({
   whenToSeek: z.string(),
   evaluation: z.string(),
   benefitsRisks: z.string(),
-  faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+  faqs: z.array(
+    z.object({
+      id: z.string().optional(),
+      kind: z.enum(['service', 'administrative']).optional(),
+      question: z.string(),
+      answer: z.string(),
+    }),
+  ),
   sources: z.array(z.object({ title: z.string(), url: z.url() })),
   relatedArticles: z.array(z.string()),
   relatedServices: z.array(z.string()),

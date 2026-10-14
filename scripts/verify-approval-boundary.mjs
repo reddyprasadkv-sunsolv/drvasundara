@@ -36,7 +36,8 @@ for (const file of pages) {
   assert.ok(
     !String(file).includes('__review') &&
       !String(file).includes('review-template') &&
-      !String(file).includes('review-article'),
+      !String(file).includes('review-article') &&
+      !String(file).startsWith('review-layout/'),
     'A review fixture escaped into the build',
   );
 }

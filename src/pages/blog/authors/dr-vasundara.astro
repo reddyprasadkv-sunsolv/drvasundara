@@ -1,0 +1,84 @@
+---
+import Page from '../../../layouts/Page.astro';
+import DoctorPortrait from '../../../components/medical/DoctorPortrait.astro';
+import { publicProfile } from '../../../data/professional';
+import { site } from '../../../config/site';
+import { publicArticles } from '../../../utils/articles';
+import ArticleCollection from '../../../components/journal/ArticleCollection.astro';
+import AppointmentCTA from '../../../components/ui/AppointmentCTA.astro';
+const all = await publicArticles();
+const reviewed = all.filter((a) => a.data.reviewer.id === 'dr-vasundara');
+const written = all.filter((a) => a.data.author.id === 'dr-vasundara');
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: site.url + '/blog/authors/dr-vasundara/',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': site.url + '/blog/authors/dr-vasundara/#person',
+    name: site.doctor.name,
+    url: site.url + '/blog/authors/dr-vasundara/',
+    ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
+  },
+};
+---
+
+<Page
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Journal', href: '/blog/' },
+  ]}
+  title="Dr. Vasundara Cheepurupalli"
+  eyebrow="MEDICAL REVIEWER"
+  description="Meet the medical reviewer of The Women’s Health Journal and explore articles with a recorded review by Dr. Vasundara Cheepurupalli."
+  schema={schema}
+>
+  <section class="journal-author-profile">
+    <DoctorPortrait small />
+    <div class="prose">
+      <h2>
+        A clinical perspective.
+        <br />
+        <em>A clear conversation.</em>
+      </h2>
+      {publicProfile.title && <p class="lead">{publicProfile.title}</p>}
+      {publicProfile.qualifications.length > 0 && (
+        <p>{publicProfile.qualifications.join(' · ')}</p>
+      )}
+      <p>{publicProfile.introduction}</p>
+      {publicProfile.interests.length > 0 && (
+        <ul>
+          {publicProfile.interests.map((i) => (
+            <li>{i}</li>
+          ))}
+        </ul>
+      )}
+      {publicProfile.registration && (
+        <p>
+          Medical registration: {publicProfile.registration.authority} ·{' '}
+          {publicProfile.registration.number}
+        </p>
+      )}
+      <p>
+        The articles below identify medical review separately from authorship.
+        AI-assisted material is labelled on each page.
+      </p>
+      <a class="text-link" href="/about/">
+        Full professional profile <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+  {written.length > 0 && (
+    <section class="journal-author-articles">
+      <h2>Written by Dr. Vasundara.</h2>
+      <ArticleCollection articles={written} />
+    </section>
+  )}
+  <section class="journal-author-articles">
+    <span class="eyebrow">REVIEWED READING</span>
+    <h2>Medically reviewed articles.</h2>
+    <p>{reviewed.length} guides with a recorded medical review.</p>
+    <ArticleCollection articles={reviewed} />
+  </section>
+  <AppointmentCTA />
+</Page>

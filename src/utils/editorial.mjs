@@ -10,7 +10,11 @@ export function isPublicArticle(data, now = new Date()) {
     validPastDate(data.publishedAt, now) &&
     validPastDate(data.approvedAt, now) &&
     validPastDate(data.medicalReviewedAt, now) &&
-    (!data.updatedAt || validPastDate(data.updatedAt, now))
+    (!data.updatedAt || validPastDate(data.updatedAt, now)) &&
+    (!data.lastUpdated || validPastDate(data.lastUpdated, now)) &&
+    new Date(data.medicalReviewedAt) <= new Date(data.approvedAt) &&
+    new Date(data.approvedAt) <=
+      new Date(data.updatedAt || data.lastUpdated || data.publishedAt)
   );
 }
 export function safeFormUrl(value) {

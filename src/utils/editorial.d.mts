@@ -3,6 +3,7 @@ export function isPublicArticle(
     status: string;
     contentType?: string;
     updatedAt?: Date;
+    lastUpdated?: Date;
     approvedAt?: Date;
     medicalReviewedAt?: Date;
     reviewer?: string;

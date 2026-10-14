@@ -1,19 +1,10 @@
 ---
 import { approvedFaqs } from '../../data/faqs';
+import MedicalFAQs from './MedicalFAQs.astro';
 ---
 
 {approvedFaqs.length ? (
-  <div class="faq-list">
-    {approvedFaqs.map((f) => (
-      <details>
-        <summary>
-          {f.question}
-          <span aria-hidden="true">+</span>
-        </summary>
-        <p>{f.answer}</p>
-      </details>
-    ))}
-  </div>
+  <MedicalFAQs items={approvedFaqs} />
 ) : (
   <div class="faq-empty">
     <p>Thoughtful answers take care.</p>

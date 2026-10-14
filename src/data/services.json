@@ -28,15 +28,21 @@
     "faqs": [
       {
         "question": "Will every consultation include an examination?",
-        "answer": "Not necessarily. The clinician should explain why an examination is proposed and seek consent; assessment depends on the concern."
+        "answer": "Not necessarily. The clinician should explain why an examination is proposed and seek consent; assessment depends on the concern.",
+        "id": "general-gynecology-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Should I bring previous test results?",
-        "answer": "Relevant reports, medicine details and a brief symptom history can help the clinician understand your circumstances."
+        "answer": "Relevant reports, medicine details and a brief symptom history can help the clinician understand your circumstances.",
+        "id": "general-gynecology-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "general-gynecology-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -89,15 +95,21 @@
     "faqs": [
       {
         "question": "Does an ultrasound alone diagnose PCOS?",
-        "answer": "No. Diagnosis considers clinical features and relevant investigations while excluding other explanations."
+        "answer": "No. Diagnosis considers clinical features and relevant investigations while excluding other explanations.",
+        "id": "pcos-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Are PCOS and PCOD separate diagnoses?",
-        "answer": "PCOD is commonly used informally. The clinician should explain the terminology and diagnostic criteria being used rather than assume two distinct diseases."
+        "answer": "PCOD is commonly used informally. The clinician should explain the terminology and diagnostic criteria being used rather than assume two distinct diseases.",
+        "id": "pcos-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "pcos-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -150,15 +162,21 @@
     "faqs": [
       {
         "question": "Is abnormal bleeding always due to hormones?",
-        "answer": "No. Pregnancy-related, structural, medicine-related and other causes may need consideration."
+        "answer": "No. Pregnancy-related, structural, medicine-related and other causes may need consideration.",
+        "id": "abnormal-uterine-bleeding-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can a bleeding diary help?",
-        "answer": "A record of timing, duration and associated symptoms can support assessment, but it should not delay urgent care for severe symptoms."
+        "answer": "A record of timing, duration and associated symptoms can support assessment, but it should not delay urgent care for severe symptoms.",
+        "id": "abnormal-uterine-bleeding-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "abnormal-uterine-bleeding-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -207,15 +225,21 @@
     "faqs": [
       {
         "question": "Are irregular periods always PCOS?",
-        "answer": "No. Irregular cycles have several possible explanations, so an individual assessment is needed."
+        "answer": "No. Irregular cycles have several possible explanations, so an individual assessment is needed.",
+        "id": "menstrual-disorders-clinical-1",
+        "kind": "service"
       },
       {
         "question": "What details should I record?",
-        "answer": "Note cycle dates, bleeding pattern, pain and relevant medicines or changes in health. Discuss what is useful with the clinician."
+        "answer": "Note cycle dates, bleeding pattern, pain and relevant medicines or changes in health. Discuss what is useful with the clinician.",
+        "id": "menstrual-disorders-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "menstrual-disorders-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -268,15 +292,21 @@
     "faqs": [
       {
         "question": "Does every ovarian cyst require surgery?",
-        "answer": "No. Follow-up or intervention depends on the type, appearance, symptoms and individual risk assessment."
+        "answer": "No. Follow-up or intervention depends on the type, appearance, symptoms and individual risk assessment.",
+        "id": "ovarian-cysts-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can symptoms tell me what type of cyst I have?",
-        "answer": "No. Symptoms overlap with other conditions; examination and appropriate imaging may be needed."
+        "answer": "No. Symptoms overlap with other conditions; examination and appropriate imaging may be needed.",
+        "id": "ovarian-cysts-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "ovarian-cysts-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -329,15 +359,21 @@
     "faqs": [
       {
         "question": "Does every woman need hormone treatment?",
-        "answer": "No. Support is individualized and may include different options after considering symptoms, preferences and relevant risks."
+        "answer": "No. Support is individualized and may include different options after considering symptoms, preferences and relevant risks.",
+        "id": "menopause-care-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Should bleeding after menopause be assessed?",
-        "answer": "Yes. It should be discussed promptly with a clinician rather than assumed to be a normal menopausal change."
+        "answer": "Yes. It should be discussed promptly with a clinician rather than assumed to be a normal menopausal change.",
+        "id": "menopause-care-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "menopause-care-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -390,15 +426,21 @@
     "faqs": [
       {
         "question": "Is one method suitable for everyone?",
-        "answer": "No. Suitability depends on health factors, preferences and correct use."
+        "answer": "No. Suitability depends on health factors, preferences and correct use.",
+        "id": "contraception-family-planning-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Do all methods protect against sexually transmitted infections?",
-        "answer": "No. Infection protection needs separate discussion; many contraceptive methods do not provide it."
+        "answer": "No. Infection protection needs separate discussion; many contraceptive methods do not provide it.",
+        "id": "contraception-family-planning-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "contraception-family-planning-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -451,15 +493,21 @@
     "faqs": [
       {
         "question": "Are copper and hormonal devices the same?",
-        "answer": "No. They differ in composition, effects and suitability; ask which device is proposed."
+        "answer": "No. They differ in composition, effects and suitability; ask which device is proposed.",
+        "id": "iud-consultation-insertion-clinical-1",
+        "kind": "service"
       },
       {
         "question": "What should be discussed before insertion?",
-        "answer": "Discuss pregnancy exclusion, relevant health history, possible discomfort, risks, alternatives and the follow-up plan with the clinician."
+        "answer": "Discuss pregnancy exclusion, relevant health history, possible discomfort, risks, alternatives and the follow-up plan with the clinician.",
+        "id": "iud-consultation-insertion-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "iud-consultation-insertion-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -512,15 +560,21 @@
     "faqs": [
       {
         "question": "Will every pregnancy follow the same visit schedule?",
-        "answer": "No. Visits and assessments may change according to clinical findings and individual circumstances."
+        "answer": "No. Visits and assessments may change according to clinical findings and individual circumstances.",
+        "id": "pregnancy-antenatal-care-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can I decline a screening test?",
-        "answer": "Screening should involve an explanation of its purpose, limitations and choices so that informed consent is possible."
+        "answer": "Screening should involve an explanation of its purpose, limitations and choices so that informed consent is possible.",
+        "id": "pregnancy-antenatal-care-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "pregnancy-antenatal-care-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -573,15 +627,21 @@
     "faqs": [
       {
         "question": "Does high risk mean a complication will definitely occur?",
-        "answer": "No. It indicates a need for individualized assessment and monitoring, not certainty about an outcome."
+        "answer": "No. It indicates a need for individualized assessment and monitoring, not certainty about an outcome.",
+        "id": "high-risk-pregnancy-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can the care plan change during pregnancy?",
-        "answer": "Yes. New findings may affect monitoring, referrals or birth planning; the treating team should explain changes."
+        "answer": "Yes. New findings may affect monitoring, referrals or birth planning; the treating team should explain changes.",
+        "id": "high-risk-pregnancy-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "high-risk-pregnancy-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -634,15 +694,21 @@
     "faqs": [
       {
         "question": "Is caesarean birth always planned?",
-        "answer": "No. Some procedures are planned and others become necessary during pregnancy or labour."
+        "answer": "No. Some procedures are planned and others become necessary during pregnancy or labour.",
+        "id": "caesarean-section-clinical-1",
+        "kind": "service"
       },
       {
         "question": "What should I ask before a planned caesarean?",
-        "answer": "Ask about the indication, alternatives, anaesthesia, risks, recovery support and implications for future pregnancies."
+        "answer": "Ask about the indication, alternatives, anaesthesia, risks, recovery support and implications for future pregnancies.",
+        "id": "caesarean-section-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "caesarean-section-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -695,15 +761,21 @@
     "faqs": [
       {
         "question": "Can symptoms alone confirm an ectopic pregnancy?",
-        "answer": "No. Clinical assessment, ultrasound and sometimes repeated pregnancy hormone measurements are needed."
+        "answer": "No. Clinical assessment, ultrasound and sometimes repeated pregnancy hormone measurements are needed.",
+        "id": "ectopic-pregnancy-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can I wait for a routine appointment if pain is severe?",
-        "answer": "No. Severe pain, fainting or collapse requires emergency assessment. Appointment forms are not an urgent-care channel."
+        "answer": "No. Severe pain, fainting or collapse requires emergency assessment. Appointment forms are not an urgent-care channel.",
+        "id": "ectopic-pregnancy-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "ectopic-pregnancy-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -752,15 +824,21 @@
     "faqs": [
       {
         "question": "Can an online symptom list identify a complication?",
-        "answer": "No. Symptoms require interpretation in context and may need prompt examination or investigations."
+        "answer": "No. Symptoms require interpretation in context and may need prompt examination or investigations.",
+        "id": "pregnancy-complications-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Should I wait for the next scheduled visit if I am concerned?",
-        "answer": "Ask the maternity team about the appropriate route for new concerns; urgent or severe symptoms should not wait for a routine request."
+        "answer": "Ask the maternity team about the appropriate route for new concerns; urgent or severe symptoms should not wait for a routine request.",
+        "id": "pregnancy-complications-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "pregnancy-complications-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -813,15 +891,21 @@
     "faqs": [
       {
         "question": "Is postnatal care only about physical recovery?",
-        "answer": "No. Emotional wellbeing, support needs and reproductive health are also relevant."
+        "answer": "No. Emotional wellbeing, support needs and reproductive health are also relevant.",
+        "id": "postnatal-care-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Must I wait for a scheduled postnatal review?",
-        "answer": "No. New worrying or severe symptoms should be assessed through the appropriate clinical route sooner."
+        "answer": "No. New worrying or severe symptoms should be assessed through the appropriate clinical route sooner.",
+        "id": "postnatal-care-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "postnatal-care-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -874,15 +958,21 @@
     "faqs": [
       {
         "question": "Will a first visit identify the cause immediately?",
-        "answer": "Not always. A staged evaluation may be needed, and some cases remain unexplained."
+        "answer": "Not always. A staged evaluation may be needed, and some cases remain unexplained.",
+        "id": "fertility-consultation-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Does a consultation guarantee pregnancy?",
-        "answer": "No. Assessment can guide choices but cannot guarantee conception or any particular treatment outcome."
+        "answer": "No. Assessment can guide choices but cannot guarantee conception or any particular treatment outcome.",
+        "id": "fertility-consultation-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "fertility-consultation-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -935,15 +1025,21 @@
     "faqs": [
       {
         "question": "Can fertility difficulties occur after a previous pregnancy?",
-        "answer": "Yes. Prior conception does not exclude later difficulties, and an individual assessment may be appropriate."
+        "answer": "Yes. Prior conception does not exclude later difficulties, and an individual assessment may be appropriate.",
+        "id": "primary-secondary-infertility-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Does the label determine the treatment?",
-        "answer": "No. Management depends on the findings, preferences and circumstances rather than the label alone."
+        "answer": "No. Management depends on the findings, preferences and circumstances rather than the label alone.",
+        "id": "primary-secondary-infertility-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "primary-secondary-infertility-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -996,15 +1092,21 @@
     "faqs": [
       {
         "question": "Does everyone need extensive reproductive testing?",
-        "answer": "No. Investigations should respond to a clinical question and the individual context."
+        "answer": "No. Investigations should respond to a clinical question and the individual context.",
+        "id": "reproductive-health-evaluation-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can I discuss future reproductive plans without seeking treatment?",
-        "answer": "Yes. A consultation can clarify questions and appropriate next steps; the clinic should confirm the scope of its services."
+        "answer": "Yes. A consultation can clarify questions and appropriate next steps; the clinic should confirm the scope of its services.",
+        "id": "reproductive-health-evaluation-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "reproductive-health-evaluation-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1057,15 +1159,21 @@
     "faqs": [
       {
         "question": "Does one test determine my chance of pregnancy?",
-        "answer": "No. Results need interpretation in context and cannot guarantee future fertility or a treatment outcome."
+        "answer": "No. Results need interpretation in context and cannot guarantee future fertility or a treatment outcome.",
+        "id": "fertility-related-investigations-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Should I arrange a test package before consultation?",
-        "answer": "Ask the clinician which investigations are appropriate and when they should be performed rather than assuming a universal package is needed."
+        "answer": "Ask the clinician which investigations are appropriate and when they should be performed rather than assuming a universal package is needed.",
+        "id": "fertility-related-investigations-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "fertility-related-investigations-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1118,21 +1226,31 @@
     "faqs": [
       {
         "question": "Is laparoscopy suitable for every condition?",
-        "answer": "No. The approach depends on the indication, individual factors and the surgeon’s assessment."
+        "answer": "No. The approach depends on the indication, individual factors and the surgeon’s assessment.",
+        "id": "laparoscopic-gynecological-surgery-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can the surgical approach change during an operation?",
-        "answer": "Sometimes. The consent discussion should address circumstances that may require a different approach and relevant risks."
+        "answer": "Sometimes. The consent discussion should address circumstances that may require a different approach and relevant risks.",
+        "id": "laparoscopic-gynecological-surgery-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "laparoscopic-gynecological-surgery-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG: Laparoscopy",
         "url": "https://www.acog.org/womens-health/faqs/laparoscopy"
+      },
+      {
+        "title": "NHS: Laparoscopy",
+        "url": "https://www.nhs.uk/tests-and-treatments/laparoscopy/"
       }
     ],
     "relatedArticles": [],
@@ -1179,21 +1297,31 @@
     "faqs": [
       {
         "question": "Does hysterectomy always remove the ovaries?",
-        "answer": "No. Ask exactly which organs are proposed for removal and why."
+        "answer": "No. Ask exactly which organs are proposed for removal and why.",
+        "id": "laparoscopic-hysterectomy-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can I become pregnant in the uterus afterwards?",
-        "answer": "Removal of the uterus means a future pregnancy cannot be carried there. Reproductive implications need discussion before surgery."
+        "answer": "Removal of the uterus means a future pregnancy cannot be carried there. Reproductive implications need discussion before surgery.",
+        "id": "laparoscopic-hysterectomy-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "laparoscopic-hysterectomy-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG: Hysterectomy",
         "url": "https://www.acog.org/womens-health/faqs/hysterectomy"
+      },
+      {
+        "title": "NHS: Hysterectomy",
+        "url": "https://www.nhs.uk/tests-and-treatments/hysterectomy/"
       }
     ],
     "relatedArticles": ["laparoscopic-hysterectomy"],
@@ -1240,21 +1368,31 @@
     "faqs": [
       {
         "question": "Does the robot operate independently?",
-        "answer": "No. The surgeon controls the system."
+        "answer": "No. The surgeon controls the system.",
+        "id": "robotic-gynecological-surgery-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Is robotic surgery always better than other approaches?",
-        "answer": "No. Any potential advantages and limitations must be considered for the particular operation and patient."
+        "answer": "No. Any potential advantages and limitations must be considered for the particular operation and patient.",
+        "id": "robotic-gynecological-surgery-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "robotic-gynecological-surgery-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG/SGS: Robot-assisted surgery for noncancerous gynecologic conditions",
         "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/09/robot-assisted-surgery-for-noncancerous-gynecologic-conditions"
+      },
+      {
+        "title": "ACOG Committee Opinion 810: primary publication abstract",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32826597/"
       }
     ],
     "relatedArticles": ["robotic-gynecological-surgery"],
@@ -1301,21 +1439,31 @@
     "faqs": [
       {
         "question": "Are there alternatives to hysterectomy?",
-        "answer": "Alternatives depend on the condition and circumstances and should be discussed before deciding."
+        "answer": "Alternatives depend on the condition and circumstances and should be discussed before deciding.",
+        "id": "hysterectomy-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Does the term describe one identical operation?",
-        "answer": "No. The surgical route and organs removed can differ; clarify the planned operation."
+        "answer": "No. The surgical route and organs removed can differ; clarify the planned operation.",
+        "id": "hysterectomy-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "hysterectomy-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG: Hysterectomy",
         "url": "https://www.acog.org/womens-health/faqs/hysterectomy"
+      },
+      {
+        "title": "NHS: Hysterectomy",
+        "url": "https://www.nhs.uk/tests-and-treatments/hysterectomy/"
       }
     ],
     "relatedArticles": [],
@@ -1362,15 +1510,21 @@
     "faqs": [
       {
         "question": "Does cyst surgery always remove the ovary?",
-        "answer": "No. The proposed operation and circumstances that could change it should be explained."
+        "answer": "No. The proposed operation and circumstances that could change it should be explained.",
+        "id": "ovarian-cyst-surgery-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can follow-up be an alternative to surgery?",
-        "answer": "Sometimes. Suitability depends on the cyst’s characteristics, symptoms and individual risk assessment."
+        "answer": "Sometimes. Suitability depends on the cyst’s characteristics, symptoms and individual risk assessment.",
+        "id": "ovarian-cyst-surgery-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "ovarian-cyst-surgery-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1423,21 +1577,31 @@
     "faqs": [
       {
         "question": "Does variation in appearance mean a medical problem?",
-        "answer": "Not necessarily. Normal appearance varies, and concerns should be assessed without body-image pressure."
+        "answer": "Not necessarily. Normal appearance varies, and concerns should be assessed without body-image pressure.",
+        "id": "cosmetic-gynecology-consultation-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Are benefits of elective procedures guaranteed?",
-        "answer": "No. Evidence and outcomes vary, and risks and alternatives require careful discussion."
+        "answer": "No. Evidence and outcomes vary, and risks and alternatives require careful discussion.",
+        "id": "cosmetic-gynecology-consultation-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "cosmetic-gynecology-consultation-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG Committee Opinion 795: Elective female genital cosmetic surgery",
         "url": "https://doi.org/10.1097/AOG.0000000000003617"
+      },
+      {
+        "title": "ACOG Committee Opinion 795: primary publication abstract",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31856125/"
       }
     ],
     "relatedArticles": [],
@@ -1480,21 +1644,31 @@
     "faqs": [
       {
         "question": "What does the proposed vaginoplasty involve?",
-        "answer": "Ask for the exact indication, technique and whether the purpose is reconstructive or elective; the term can refer to different operations."
+        "answer": "Ask for the exact indication, technique and whether the purpose is reconstructive or elective; the term can refer to different operations.",
+        "id": "vaginoplasty-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Can a procedure guarantee improved sexual function?",
-        "answer": "No. Such outcomes must not be guaranteed; evidence, potential harms and alternatives should be discussed."
+        "answer": "No. Such outcomes must not be guaranteed; evidence, potential harms and alternatives should be discussed.",
+        "id": "vaginoplasty-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "vaginoplasty-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
       {
         "title": "ACOG Committee Opinion 795: Elective female genital cosmetic surgery",
         "url": "https://doi.org/10.1097/AOG.0000000000003617"
+      },
+      {
+        "title": "ACOG Committee Opinion 795: primary publication abstract",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31856125/"
       }
     ],
     "relatedArticles": [],
@@ -1537,15 +1711,21 @@
     "faqs": [
       {
         "question": "Is screening the same as investigating symptoms?",
-        "answer": "No. Screening concerns people without symptoms; symptoms may need a different assessment."
+        "answer": "No. Screening concerns people without symptoms; symptoms may need a different assessment.",
+        "id": "preventive-womens-health-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Does everyone need the same annual tests?",
-        "answer": "No. Appropriate preventive measures depend on individual factors and applicable guidance."
+        "answer": "No. Appropriate preventive measures depend on individual factors and applicable guidance.",
+        "id": "preventive-womens-health-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "preventive-womens-health-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1598,15 +1778,21 @@
     "faqs": [
       {
         "question": "Does reproductive wellness testing guarantee fertility?",
-        "answer": "No. No wellness package can guarantee fertility or pregnancy."
+        "answer": "No. No wellness package can guarantee fertility or pregnancy.",
+        "id": "reproductive-wellness-clinical-1",
+        "kind": "service"
       },
       {
         "question": "What can I ask about during a review?",
-        "answer": "Discuss specific concerns and plans so that any advice or investigation has a clear purpose."
+        "answer": "Discuss specific concerns and plans so that any advice or investigation has a clear purpose.",
+        "id": "reproductive-wellness-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "reproductive-wellness-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1655,15 +1841,21 @@
     "faqs": [
       {
         "question": "Will this have a separate service page?",
-        "answer": "No. The canonical Menopause Care page is intended to cover the overlap after approval."
+        "answer": "No. The canonical Menopause Care page is intended to cover the overlap after approval.",
+        "id": "menopause-midlife-health-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Is every midlife symptom due to menopause?",
-        "answer": "No. Persistent or concerning symptoms need assessment rather than automatic attribution to menopause."
+        "answer": "No. Persistent or concerning symptoms need assessment rather than automatic attribution to menopause.",
+        "id": "menopause-midlife-health-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "menopause-midlife-health-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [
@@ -1712,15 +1904,21 @@
     "faqs": [
       {
         "question": "Will this duplicate the contraception page?",
-        "answer": "No. It is a planning alias of Contraception and Family Planning."
+        "answer": "No. It is a planning alias of Contraception and Family Planning.",
+        "id": "contraception-counselling-clinical-1",
+        "kind": "service"
       },
       {
         "question": "Does a counselling listing confirm every method is offered?",
-        "answer": "No. Current availability of each method or procedure must be confirmed with the clinic."
+        "answer": "No. Current availability of each method or procedure must be confirmed with the clinic.",
+        "id": "contraception-counselling-clinical-2",
+        "kind": "service"
       },
       {
         "question": "How is an appointment request confirmed?",
-        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route."
+        "answer": "The clinic must confirm the request. The online form is not an emergency communication channel; urgent concerns require the appropriate urgent-care route.",
+        "id": "contraception-counselling-administrative",
+        "kind": "administrative"
       }
     ],
     "sources": [

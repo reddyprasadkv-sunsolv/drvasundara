@@ -110,6 +110,7 @@ export function articleSchema(
     excerpt: string;
     publishedAt: Date;
     updatedAt?: Date;
+    lastUpdated?: Date;
     medicalReviewedAt: Date;
     sources: { title: string; url: string }[];
   },
@@ -118,6 +119,7 @@ export function articleSchema(
   reviewer: string,
   image?: string,
   authorType: 'Person' | 'Organization' = 'Person',
+  identityUrls: { author?: string; reviewer?: string; section?: string } = {},
 ) {
   const url = canonicalUrl(path);
   return {
@@ -129,8 +131,19 @@ export function articleSchema(
         headline: data.title,
         description: data.excerpt,
         datePublished: data.publishedAt.toISOString(),
-        dateModified: (data.updatedAt || data.publishedAt).toISOString(),
-        author: { '@type': authorType, name: author },
+        dateModified: (
+          data.updatedAt ||
+          data.lastUpdated ||
+          data.publishedAt
+        ).toISOString(),
+        author: {
+          '@type': authorType,
+          name: author,
+          ...(identityUrls.author ? { url: identityUrls.author } : {}),
+        },
+        ...(identityUrls.section
+          ? { articleSection: identityUrls.section }
+          : {}),
         mainEntityOfPage: { '@id': url + '#webpage' },
         ...(image ? { image } : {}),
       },
@@ -145,6 +158,11 @@ export function articleSchema(
         }),
         '@context': undefined,
         '@id': url + '#webpage',
+        reviewedBy: {
+          '@type': 'Person',
+          name: reviewer,
+          ...(identityUrls.reviewer ? { url: identityUrls.reviewer } : {}),
+        },
         mainEntity: { '@id': url + '#article' },
       },
     ],

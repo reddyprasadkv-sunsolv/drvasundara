@@ -2,6 +2,9 @@
 import type { Service } from '../../data/services';
 import { approvedServices, serviceCategories } from '../../data/services';
 import { publicArticles } from '../../utils/articles';
+import { relevantReading } from '../../utils/journal.mjs';
+import { serviceKnowledge } from '../../utils/faqs';
+import MedicalFAQs from './MedicalFAQs.astro';
 import AppointmentCTA from '../ui/AppointmentCTA.astro';
 interface Props {
   service: Service;
@@ -10,9 +13,7 @@ const { service } = Astro.props;
 const relatedServices = approvedServices.filter((s) =>
   service.relatedServices.includes(s.slug),
 );
-const reading = (await publicArticles()).filter((a) =>
-  service.relatedArticles.includes(a.data.slug),
-);
+const reading = relevantReading(service, await publicArticles());
 const category = serviceCategories.find((c) => c.id === service.category)?.name;
 ---
 
@@ -93,17 +94,7 @@ const category = serviceCategories.find((c) => c.id === service.category)?.name;
     <section id="service-faqs">
       <span class="eyebrow">06 · YOUR QUESTIONS</span>
       <h2>Frequently asked questions.</h2>
-      <div class="faq-list">
-        {service.faqs.map((faq) => (
-          <details>
-            <summary>
-              {faq.question}
-              <span aria-hidden="true">+</span>
-            </summary>
-            <p>{faq.answer}</p>
-          </details>
-        ))}
-      </div>
+      <MedicalFAQs items={serviceKnowledge(service)} />
     </section>
     {reading.length > 0 && (
       <section>

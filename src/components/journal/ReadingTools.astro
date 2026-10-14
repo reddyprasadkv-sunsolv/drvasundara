@@ -1,0 +1,73 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+  showToc: boolean;
+}
+const { headings, showToc } = Astro.props;
+---
+
+<div class="article-reading-tools">
+  <button type="button" class="text-link" data-copy-article>
+    Copy article link <span aria-hidden="true">↗</span>
+  </button>
+  <span role="status" data-copy-status aria-live="polite"></span>
+  <input
+    type="url"
+    data-copy-fallback
+    aria-label="Article link — select and copy"
+    readonly
+    hidden
+  />
+  {showToc && (
+    <details class="article-toc-mobile">
+      <summary>
+        On this page <span aria-hidden="true">+</span>
+      </summary>
+      <nav aria-label="Article sections on mobile">
+        {headings
+          .filter((h) => h.depth === 2 || h.depth === 3)
+          .map((h) => (
+            <a href={`#${h.slug}`}>{h.text}</a>
+          ))}
+        <a href="#article-references">References</a>
+      </nav>
+    </details>
+  )}
+</div>
+<script>
+  const button = document.querySelector<HTMLButtonElement>(
+    '[data-copy-article]',
+  );
+  button?.addEventListener('click', async () => {
+    const url = new URL(location.href);
+    url.search = '';
+    url.hash = '';
+    const status = document.querySelector<HTMLElement>('[data-copy-status]')!;
+    try {
+      await navigator.clipboard.writeText(url.href);
+      status.textContent = 'Article link copied.';
+    } catch {
+      const input = document.querySelector<HTMLInputElement>(
+        '[data-copy-fallback]',
+      )!;
+      input.hidden = false;
+      input.value = url.href;
+      input.focus();
+      input.select();
+      status.textContent = 'Select and copy the article link below.';
+    }
+  });
+  const printState = new Map<HTMLDetailsElement, boolean>();
+  window.addEventListener('beforeprint', () => {
+    document
+      .querySelectorAll<HTMLDetailsElement>('.faq-list details')
+      .forEach((detail) => {
+        if (!printState.has(detail)) printState.set(detail, detail.open);
+        detail.open = true;
+      });
+  });
+  window.addEventListener('afterprint', () => {
+    printState.forEach((open, detail) => (detail.open = open));
+    printState.clear();
+  });
+</script>

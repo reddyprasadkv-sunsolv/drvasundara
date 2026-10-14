@@ -1,6 +1,26 @@
 ---
 import Page from '../layouts/Page.astro';
+import { publicArticles } from '../utils/articles';
+import { articleKnowledge } from '../utils/faqs';
+import MedicalFAQs from '../components/medical/MedicalFAQs.astro';
 import FaqList from '../components/medical/FaqList.astro';
+const selected = (await publicArticles()).filter((a) =>
+  [
+    'pcos-pcod-terms',
+    'ovarian-cysts',
+    'contraception-choices',
+    'fertility-first-steps',
+  ].includes(a.data.slug),
+);
+const general = selected.flatMap((a) =>
+  articleKnowledge(a)
+    .slice(0, 1)
+    .map((f) => ({
+      ...f,
+      kind: 'general-medical' as const,
+      sourcePath: `/blog/${a.data.slug}/`,
+    })),
+);
 ---
 
 <Page
@@ -8,5 +28,15 @@ import FaqList from '../components/medical/FaqList.astro';
   eyebrow="FREQUENTLY ASKED QUESTIONS"
   description="A place for clear, clinic-approved answers to your questions."
 >
-  <FaqList />
+  <section class="faq-knowledge-section">
+    <h2>Appointment questions.</h2>
+    <FaqList />
+  </section>
+  {general.length > 0 && (
+    <section class="faq-knowledge-section">
+      <h2>General medical information.</h2>
+      <p>These answers come from the reviewed journal guides linked below.</p>
+      <MedicalFAQs items={general} />
+    </section>
+  )}
 </Page>

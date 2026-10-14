@@ -3,12 +3,19 @@ import { render, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
-import { publicArticles, readingTime } from '../../utils/articles';
+import { publicArticles, articleReadingTime } from '../../utils/articles';
+import { journalCategory, categoryPath } from '../../utils/journal-data';
+import { curatedArticles } from '../../utils/journal.mjs';
 import { site } from '../../config/site';
 import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
 import { approvedServices } from '../../data/services';
-import { articleSchema } from '../../utils/schema';
+import { articleSchema, breadcrumbSchema } from '../../utils/schema';
 import { publicAssetUrl } from '../../utils/urls';
+import ArticleCollection from '../../components/journal/ArticleCollection.astro';
+import EditorialByline from '../../components/journal/EditorialByline.astro';
+import ReadingTools from '../../components/journal/ReadingTools.astro';
+import MedicalFAQs from '../../components/medical/MedicalFAQs.astro';
+import { articleKnowledge } from '../../utils/faqs';
 export async function getStaticPaths() {
   return (await publicArticles()).map((entry) => ({
     params: { slug: entry.data.slug },
@@ -16,28 +23,57 @@ export async function getStaticPaths() {
   }));
 }
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const author = await getEntry(entry.data.author);
-const reviewer = entry.data.reviewer
-  ? await getEntry(entry.data.reviewer)
-  : undefined;
-const related = (await publicArticles()).filter((a) =>
-  entry.data.relatedArticles.includes(a.data.slug),
+const { Content, headings } = await render(entry);
+const author = (await getEntry(entry.data.author))!;
+const reviewer = (await getEntry(entry.data.reviewer))!;
+const category = journalCategory(entry.data)!;
+const related = curatedArticles(entry, await publicArticles());
+const services = approvedServices.filter((s) =>
+  entry.data.relatedServices.includes(s.slug),
 );
+const primary = approvedServices.find(
+  (s) => s.slug === entry.data.relatedServices[0],
+);
+const safetyNotice = [
+  'ectopic-pregnancy-warning-signs',
+  'high-risk-pregnancy',
+  'abnormal-uterine-bleeding',
+].includes(entry.data.slug)
+  ? primary?.whenToSeek
+  : undefined;
 const socialImage = entry.data.featuredImage
   ? publicAssetUrl(entry.data.featuredImage.src, Astro.site || site.url)
   : undefined;
 const schema = articleSchema(
   entry.data,
   Astro.url.pathname,
-  author!.data.name,
-  reviewer!.data.name,
+  author.data.name,
+  reviewer.data.name,
   socialImage,
-  author!.data.entityType,
+  author.data.entityType,
+  {
+    author:
+      author.data.entityType === 'Organization'
+        ? site.url
+        : author.data.profileUrl,
+    reviewer:
+      reviewer.id === 'dr-vasundara'
+        ? site.url + '/blog/authors/dr-vasundara/'
+        : reviewer.data.profileUrl,
+    section: category.name,
+  },
 );
-const relatedServices = approvedServices.filter((s) =>
-  entry.data.relatedServices.includes(s.slug),
+schema['@graph'].push(
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Journal', path: '/blog/' },
+    { name: category.name, path: categoryPath(category.id) },
+    { name: entry.data.title, path: Astro.url.pathname },
+  ]) as never,
 );
+const showToc =
+  articleReadingTime(entry) >= 2 &&
+  headings.filter((h) => h.depth === 2).length >= 4;
 ---
 
 <Base
@@ -48,121 +84,134 @@ const relatedServices = approvedServices.filter((s) =>
   image={socialImage}
   imageAlt={entry.data.imageAlt}
 >
-  <article class="container article-page">
-    <Breadcrumbs label={entry.data.title} />
-    <span class="eyebrow">{entry.data.category}</span>
-    <h1>{entry.data.title}</h1>
-    <p class="lead">{entry.data.excerpt}</p>
-    {entry.data.authorship === 'ai-assisted' && (
-      <p class="authorship-disclosure">
-        Prepared with AI assistance; clinically reviewed as identified below.
-      </p>
-    )}
-    <p>
-      By {author?.data.name} · {readingTime(entry.body)} min read
-    </p>
-    <p>
-      Published{' '}
-      <time datetime={entry.data.publishedAt.toISOString()}>
-        {entry.data.publishedAt.toLocaleDateString('en-IN')}
-      </time>
-      {entry.data.updatedAt && (
-        <>
-          {' '}
-          · Updated{' '}
-          <time datetime={entry.data.updatedAt.toISOString()}>
-            {entry.data.updatedAt.toLocaleDateString('en-IN')}
-          </time>
-        </>
+  <article class="container journal-reading-page">
+    <Breadcrumbs
+      label={entry.data.title}
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Journal', href: '/blog/' },
+        { label: category.name, href: categoryPath(category.id) },
+      ]}
+    />
+    <header class="journal-article-header">
+      <a class="eyebrow" href={categoryPath(category.id)}>
+        {category.name}
+      </a>
+      <h1>{entry.data.title}</h1>
+      <p class="lead">{entry.data.excerpt}</p>
+      {safetyNotice && (
+        <aside class="journal-safety-notice" aria-label="When to seek care">
+          <span class="eyebrow">WHEN TO SEEK CARE</span>
+          <p>{safetyNotice}</p>
+        </aside>
       )}
-    </p>
-    <p>
-      Medically reviewed by {reviewer?.data.name} on{' '}
-      {entry.data.medicalReviewedAt?.toLocaleDateString('en-IN')}
-      {reviewer?.data.medicalRegistration && (
-        <span>
-          {' '}
-          · {reviewer.data.medicalRegistration.authority}:{' '}
-          {reviewer.data.medicalRegistration.number}
-        </span>
-      )}
-    </p>
+      <EditorialByline entry={entry} />
+      <ReadingTools headings={headings} showToc={showToc} />
+    </header>
     {entry.data.featuredImage && (
-      <Image
-        src={entry.data.featuredImage}
-        alt={entry.data.imageAlt || ''}
-        width={1100}
-      />
+      <figure class="journal-article-cover">
+        <Image
+          src={entry.data.featuredImage}
+          alt={entry.data.imageAlt || ''}
+          width={1100}
+          widths={[440, 760, 1100]}
+          sizes="(max-width: 767px) 92vw, 80vw"
+          loading="lazy"
+        />
+        {entry.data.imageCredit && (
+          <figcaption>{entry.data.imageCredit}</figcaption>
+        )}
+      </figure>
     )}
-    <div class="article-takeaways">
-      <span class="eyebrow">KEY TAKEAWAYS</span>
-      <ul>
-        {entry.data.keyTakeaways.map((takeaway) => (
-          <li>{takeaway}</li>
-        ))}
-      </ul>
-    </div>
-    <p class="article-introduction">{entry.data.introduction}</p>
-    <div class="prose">
-      <Content />
-    </div>
-    {entry.data.medicalFaqs.length > 0 && (
-      <section class="article-faqs">
-        <h2>Questions, with context.</h2>
-        <div class="faq-list">
-          {entry.data.medicalFaqs
-            .filter((f) => f.reviewed)
-            .map((f) => (
-              <details>
-                <summary>
-                  {f.question}
-                  <span aria-hidden="true">+</span>
-                </summary>
-                <p>{f.answer}</p>
-              </details>
+    <div class:list={['journal-reading-layout', { 'has-toc': showToc }]}>
+      {showToc && (
+        <nav class="article-toc-desktop" aria-label="On this page">
+          <span class="eyebrow">ON THIS PAGE</span>
+          {headings
+            .filter((h) => h.depth === 2 || h.depth === 3)
+            .map((h) => (
+              <a href={`#${h.slug}`}>{h.text}</a>
             ))}
+          <a href="#article-questions">Questions</a>
+          <a href="#article-references">References</a>
+        </nav>
+      )}
+      <div class="journal-article-content">
+        <section class="article-takeaways" aria-labelledby="takeaway-title">
+          <span class="eyebrow" id="takeaway-title">
+            KEY TAKEAWAYS
+          </span>
+          <ul>
+            {entry.data.keyTakeaways.map((t) => {
+              const question = entry.data.medicalFaqs.find(
+                (f) => f.answer === t,
+              )?.question;
+              return (
+                <li>
+                  {question && <strong>{question} </strong>}
+                  {t}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+        <p class="article-introduction">{entry.data.introduction}</p>
+        <div class="prose reading-prose">
+          <Content />
         </div>
+        <section id="article-questions" class="article-faqs">
+          <span class="eyebrow">QUESTIONS, WITH CONTEXT</span>
+          <h2>What you may be wondering.</h2>
+          <MedicalFAQs items={articleKnowledge(entry)} />
+        </section>
+        <section id="article-references" class="article-reference-section">
+          <span class="eyebrow">SUPPORTING READING</span>
+          <h2>Sources and references.</h2>
+          <ol>
+            {entry.data.sources.map((s) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener noreferrer">
+                  {s.title}
+                  <span class="sr-only"> (opens a new tab)</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <p class="journal-reference-note">
+            References provide context for this educational overview. Your
+            clinician can explain how guidance applies to your circumstances.
+          </p>
+        </section>
+        <section class="article-services">
+          <h2>Related care information.</h2>
+          <nav aria-label="Related services">
+            {services.map((s) => (
+              <a href={`/services/${s.slug}/`}>
+                {s.name}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </nav>
+        </section>
+        <section class="article-appointment">
+          <span class="eyebrow">A CONVERSATION ABOUT YOU</span>
+          <h2>Your questions deserve attention.</h2>
+          <AppointmentCTA />
+        </section>
+        <p class="notice article-disclaimer">{entry.data.clinicalDisclaimer}</p>
+        <p class="journal-policy-note">
+          <a href="/blog/editorial-policy/">
+            Our editorial and medical review approach
+          </a>
+        </p>
+      </div>
+    </div>
+    {related.length > 0 && (
+      <section class="journal-related-articles">
+        <span class="eyebrow">READ NEXT</span>
+        <h2>Another perspective.</h2>
+        <ArticleCollection articles={related} />
       </section>
     )}
-    <h2>Sources & references</h2>
-    <ol>
-      {entry.data.sources.map((s) => (
-        <li>
-          <a href={s.url} target="_blank" rel="noopener noreferrer">
-            {s.title}
-            <span class="sr-only"> (new tab)</span>
-          </a>
-        </li>
-      ))}
-    </ol>
-    {related.length > 0 && (
-      <aside>
-        <h2>Related insights</h2>
-        {related.map((a) => (
-          <p>
-            <a href={`/blog/${a.data.slug}/`}>{a.data.title}</a>
-          </p>
-        ))}
-      </aside>
-    )}
-    {relatedServices.length > 0 && (
-      <aside>
-        <h2>Related care information.</h2>
-        {relatedServices.map((service) => (
-          <p>
-            <a href={`/services/${service.slug}/`}>{service.name}</a>
-          </p>
-        ))}
-      </aside>
-    )}
-    <section class="article-appointment">
-      <h2>A conversation about your concerns.</h2>
-      <AppointmentCTA />
-    </section>
-    <p class="notice">
-      This article provides general educational information and cannot replace
-      individual medical advice. Seek professional assessment for your
-      circumstances. Appointment requests are not intended for emergencies.
-    </p>
   </article>
 </Base>

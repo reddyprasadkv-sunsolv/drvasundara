@@ -1,0 +1,110 @@
+---
+import { journalCategories } from '../../utils/journal-data';
+import { publicArticles } from '../../utils/articles';
+import { categoryId } from '../../utils/journal.mjs';
+const articles = await publicArticles();
+const categories = journalCategories.filter((c) =>
+  articles.some((a) => categoryId(a.data) === c.id),
+);
+const indexUrl = import.meta.env.BASE_URL + 'blog/search-index.json';
+---
+
+<form
+  class="journal-search"
+  data-journal-search
+  data-index-url={indexUrl}
+  role="search"
+  aria-label="Search the journal"
+>
+  <fieldset disabled>
+    <legend class="sr-only">Find an article</legend>
+    <div>
+      <label for="journal-query">Search the journal</label>
+      <input
+        id="journal-query"
+        name="q"
+        type="search"
+        placeholder="Try periods, pregnancy or menopause"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+    <div>
+      <label for="journal-category">Filter by topic</label>
+      <select id="journal-category" name="category">
+        <option value="">All topics</option>
+        {categories.map((c) => (
+          <option value={c.id}>{c.name}</option>
+        ))}
+      </select>
+    </div>
+    <button class="text-link" type="reset">
+      Clear filters <span aria-hidden="true">↗</span>
+    </button>
+  </fieldset>
+  <p
+    class="journal-search-status"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    Browse the articles below while search loads.
+  </p>
+  <noscript>
+    <p>
+      Search requires JavaScript. The articles and topic pages remain available
+      below.
+    </p>
+  </noscript>
+</form>
+<p class="journal-no-results" data-no-results hidden>
+  No articles match your search. Try another word or clear the topic filter.
+</p>
+<script>
+  import {
+    filterSearchIndex,
+    type SearchArticle,
+  } from '../../utils/journal.mjs';
+  const form = document.querySelector<HTMLFormElement>('[data-journal-search]');
+  if (form) {
+    const input = form.querySelector<HTMLInputElement>('input')!;
+    const select = form.querySelector<HTMLSelectElement>('select')!;
+    const status = form.querySelector<HTMLElement>('[role="status"]')!;
+    const cards = [
+      ...document.querySelectorAll<HTMLElement>(
+        '[data-article-collection] [data-article-slug]',
+      ),
+    ];
+    const empty = document.querySelector<HTMLElement>('[data-no-results]')!;
+    fetch(form.dataset.indexUrl!)
+      .then((r) => {
+        if (!r.ok) throw new Error('Index unavailable');
+        return r.json();
+      })
+      .then((index: SearchArticle[]) => {
+        const update = () => {
+          const matches = filterSearchIndex(index, input.value, select.value);
+          const slugs = new Set(matches.map((a) => a.slug));
+          cards.forEach(
+            (card) => (card.hidden = !slugs.has(card.dataset.articleSlug!)),
+          );
+          empty.hidden = matches.length > 0;
+          status.textContent = `${matches.length} ${matches.length === 1 ? 'article' : 'articles'} found.`;
+        };
+        form.querySelector<HTMLFieldSetElement>('fieldset')!.disabled = false;
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          update();
+        });
+        input.addEventListener('input', update);
+        select.addEventListener('change', update);
+        form.addEventListener('reset', () => setTimeout(update, 0));
+        update();
+      })
+      .catch(
+        () =>
+          (status.textContent =
+            'Search is temporarily unavailable. Browse all articles or choose a topic above.'),
+      );
+  }
+</script>

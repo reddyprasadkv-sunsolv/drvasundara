@@ -1,0 +1,52 @@
+---
+import Page from '../../layouts/Page.astro';
+---
+
+<Page
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Journal', href: '/blog/' },
+  ]}
+  title="How this journal is prepared"
+  eyebrow="OUR EDITORIAL APPROACH"
+  description="Understand the distinction between authorship, AI assistance and medical review in The Women’s Health Journal."
+>
+  <div class="prose editorial-policy">
+    <h2>Clear information starts with clear attribution.</h2>
+    <p>
+      Each article identifies its actual author or editorial publisher, medical
+      reviewer and recorded publication and review dates. Medical review is a
+      separate role from writing.
+    </p>
+    <h2>AI assistance, disclosed.</h2>
+    <p>
+      Where AI assists editorial preparation, that assistance is labelled.
+      AI-assisted articles are not presented as personally written by the doctor
+      unless genuine authorship is established.
+    </p>
+    <h2>Reviewed before publication.</h2>
+    <p>
+      Medical content follows a draft, medical review, approval and publication
+      process. References, clinical explanations and the scope of the review are
+      considered before a page is published. The review date shown is a recorded
+      review event, not the date you visit the page.
+    </p>
+    <h2>Sources and updates.</h2>
+    <p>
+      Sources accompany each article. Guidance and individual circumstances can
+      differ. A published date, a substantive update and a medical review are
+      recorded separately; a visual design change does not create a new medical
+      review date.
+    </p>
+    <h2>Information for a conversation.</h2>
+    <p>
+      The journal offers general educational information. It cannot diagnose
+      your circumstances or replace individual medical advice. Appointment
+      requests are not intended for emergencies.
+    </p>
+    <p>
+      <a href="/blog/">Explore the journal</a> ·{' '}
+      <a href="/blog/authors/dr-vasundara/">Meet the medical reviewer</a>
+    </p>
+  </div>
+</Page>

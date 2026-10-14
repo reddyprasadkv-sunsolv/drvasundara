@@ -1,0 +1,26 @@
+---
+import { uniqueKnowledge, type KnowledgeFAQ } from '../../utils/faqs';
+interface Props {
+  items: KnowledgeFAQ[];
+}
+const items = uniqueKnowledge(Astro.props.items);
+---
+
+<div class="faq-list">
+  {items.map((f) => (
+    <details id={f.id ? `faq-${f.id}` : undefined}>
+      <summary>
+        {f.question}
+        <span aria-hidden="true">+</span>
+      </summary>
+      <p>{f.answer}</p>
+      {f.sourcePath && (
+        <p class="faq-source">
+          <a href={f.sourcePath}>
+            Read the reviewed explanation <span aria-hidden="true">↗</span>
+          </a>
+        </p>
+      )}
+    </details>
+  ))}
+</div>

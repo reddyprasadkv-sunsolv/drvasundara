@@ -1,0 +1,62 @@
+---
+import Page from '../../../layouts/Page.astro';
+import { publicArticles } from '../../../utils/articles';
+import { categoryId } from '../../../utils/journal.mjs';
+import { journalCategories } from '../../../utils/journal-data';
+import { approvedServices } from '../../../data/services';
+import CategoryNav from '../../../components/journal/CategoryNav.astro';
+import ArticleCollection from '../../../components/journal/ArticleCollection.astro';
+import AppointmentCTA from '../../../components/ui/AppointmentCTA.astro';
+export async function getStaticPaths() {
+  const all = await publicArticles();
+  return journalCategories
+    .map((category) => ({
+      params: { category: category.id },
+      props: {
+        category,
+        articles: all.filter((a) => categoryId(a.data) === category.id),
+      },
+    }))
+    .filter((p) => p.props.articles.length > 0);
+}
+const { category, articles } = Astro.props;
+const services = approvedServices.filter((s) =>
+  category.services.includes(s.slug),
+);
+---
+
+<Page
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Journal', href: '/blog/' },
+  ]}
+  title={`${category.name} journal`}
+  eyebrow="EXPLORE THE JOURNAL"
+  description={category.description}
+  noindex={articles.length < 2}
+>
+  <CategoryNav current={category.id} />
+  <section class="journal-category-collection">
+    <h2>Reading for your questions.</h2>
+    <ArticleCollection articles={articles} />
+  </section>
+  {services.length > 0 && (
+    <section class="journal-category-services">
+      <span class="eyebrow">RELATED CARE INFORMATION</span>
+      <h2>Continue the conversation.</h2>
+      <nav aria-label="Related services">
+        {services.map((s) => (
+          <a href={`/services/${s.slug}/`}>
+            {s.name}
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </nav>
+      <AppointmentCTA />
+    </section>
+  )}
+  <p class="journal-policy-note">
+    <a href="/blog/editorial-policy/">Read our editorial approach</a> ·{' '}
+    <a href="/blog/authors/dr-vasundara/">Meet the medical reviewer</a>
+  </p>
+</Page>

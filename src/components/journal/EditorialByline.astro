@@ -1,0 +1,71 @@
+---
+import { getEntry } from 'astro:content';
+import type { PublicArticle } from '../../utils/articles';
+import { articleReadingTime } from '../../utils/articles';
+interface Props {
+  entry: PublicArticle;
+}
+const { entry } = Astro.props;
+const author = (await getEntry(entry.data.author))!;
+const reviewer = (await getEntry(entry.data.reviewer))!;
+const format = (date: Date) =>
+  date.toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+const reviewerUrl =
+  reviewer.id === 'dr-vasundara'
+    ? '/blog/authors/dr-vasundara/'
+    : reviewer.data.profileUrl;
+const updated = entry.data.updatedAt || entry.data.lastUpdated;
+---
+
+<div class="editorial-byline">
+  <dl>
+    <div>
+      <dt>
+        {entry.data.authorship === 'ai-assisted'
+          ? 'Editorial publication'
+          : 'Written by'}
+      </dt>
+      <dd>{author.data.name}</dd>
+    </div>
+    <div>
+      <dt>Medically reviewed by</dt>
+      <dd>
+        {reviewerUrl ? (
+          <a href={reviewerUrl}>{reviewer.data.name}</a>
+        ) : (
+          reviewer.data.name
+        )}
+      </dd>
+    </div>
+    {entry.data.editorialAssistance && (
+      <div>
+        <dt>Editorial assistance</dt>
+        <dd>{entry.data.editorialAssistance}</dd>
+      </div>
+    )}
+  </dl>
+  <div class="editorial-dates">
+    <span>
+      Published{' '}
+      <time datetime={entry.data.publishedAt.toISOString()}>
+        {format(entry.data.publishedAt)}
+      </time>
+    </span>
+    {updated && (
+      <span>
+        Updated <time datetime={updated.toISOString()}>{format(updated)}</time>
+      </span>
+    )}
+    <span>
+      Medical review{' '}
+      <time datetime={entry.data.medicalReviewedAt.toISOString()}>
+        {format(entry.data.medicalReviewedAt)}
+      </time>
+    </span>
+    <span>{articleReadingTime(entry)} min read</span>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
-import { isPublicArticle } from './editorial.mjs';
+import { canPublishArticleRecord } from './publication.mjs';
 export type PublicArticle = CollectionEntry<'blog'> & {
   data: CollectionEntry<'blog'>['data'] & {
+    author: NonNullable<CollectionEntry<'blog'>['data']['author']>;
     publishedAt: Date;
     approvedAt: Date;
     medicalReviewedAt: Date;
@@ -12,20 +13,18 @@ export async function publicArticles(): Promise<PublicArticle[]> {
   const all = await getCollection('blog');
   const entries = await Promise.all(
     all.map(async (entry) => {
-      if (
-        !isPublicArticle({ ...entry.data, reviewer: entry.data.reviewer?.id })
-      )
-        return null;
-      const author = await getEntry(entry.data.author);
+      const author = entry.data.author
+        ? await getEntry(entry.data.author)
+        : undefined;
       const reviewer = entry.data.reviewer
         ? await getEntry(entry.data.reviewer)
         : undefined;
-      return author?.data.verified &&
-        reviewer?.data.verified &&
-        reviewer.data.canReviewMedicalContent &&
-        reviewer.data.entityType === 'Person' &&
-        (entry.data.authorship !== 'doctor-authored' ||
-          author.data.canReviewMedicalContent)
+      return canPublishArticleRecord(
+        entry.data,
+        entry.body,
+        author?.data,
+        reviewer?.data,
+      )
         ? (entry as PublicArticle)
         : null;
     }),
@@ -39,3 +38,13 @@ export async function publicArticles(): Promise<PublicArticle[]> {
 }
 export const readingTime = (body: string = '') =>
   Math.max(1, Math.ceil(body.split(/\s+/).length / 200));
+
+export const articleReadingTime = (entry: PublicArticle) =>
+  readingTime(
+    [
+      entry.body,
+      entry.data.introduction,
+      ...entry.data.keyTakeaways,
+      ...entry.data.medicalFaqs.map((f) => f.question + ' ' + f.answer),
+    ].join(' '),
+  );

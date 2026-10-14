@@ -85,3 +85,7 @@ User-authorized existing videos are configured in `src/data/testimonials.ts`. Th
 The user approved deployment to `https://reddyprasadkv-sunsolv.github.io/drvasundara/` while preserving the existing WordPress domain. Set Pages source to GitHub Actions and leave Custom domain empty. The Pages workflow runs only on a manual approved dispatch or a deliberate update to `.github/pages-deployment-request.json`; normal source pushes run validation only.
 
 The preview build sets `PAGES_PREVIEW=true` for Astro's asset base, then `scripts/prepare-pages-preview.mjs` prefixes internal navigation and removes CNAME from the artifact. Test it with `PAGES_PREVIEW=true pnpm build`, `node scripts/prepare-pages-preview.mjs`, and `VERIFY_PAGES_PREVIEW=true pnpm test`. Production builds still use the original production site configuration. Preview crawling remains disabled.
+
+## Phase 3 journal
+
+See docs/PHASE3_HANDOFF.md and EDITORIAL_WORKFLOW.md. The journal has seven topic collections, published-only local search, separate authorship/review/assistance, readable article controls and a reviewer profile. Run pnpm journal:report for the ignored local status report; pnpm journal:new my-topic creates an unpublished draft. Publication dates and clinical prose remain unchanged; substantive updates need actual medical review.

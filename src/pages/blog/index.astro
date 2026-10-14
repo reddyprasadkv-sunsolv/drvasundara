@@ -1,12 +1,194 @@
 ---
-import Page from '../../layouts/Page.astro';
-import Insights from '../../components/medical/Insights.astro';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import { Image } from 'astro:assets';
+import { publicArticles, articleReadingTime } from '../../utils/articles';
+import {
+  journalCategories,
+  journalCategory,
+  categoryPath,
+} from '../../utils/journal-data';
+import { categoryId } from '../../utils/journal.mjs';
+import ArticleCollection from '../../components/journal/ArticleCollection.astro';
+import CategoryNav from '../../components/journal/CategoryNav.astro';
+import JournalSearch from '../../components/journal/JournalSearch.astro';
+import AppointmentCTA from '../../components/ui/AppointmentCTA.astro';
+import { approvedServices } from '../../data/services';
+import doctor from '../../assets/doctor.png';
+import { publicProfile } from '../../data/professional';
+const articles = await publicArticles();
+const featured = articles.find((a) => a.data.featured) || articles[0];
+const featuredCategory = featured ? journalCategory(featured.data) : undefined;
+const topics = [
+  'pregnancy-obstetrics',
+  'menstrual-health',
+  'gynecological-surgery',
+]
+  .map((id) => ({
+    category: journalCategories.find((c) => c.id === id)!,
+    articles: articles.filter((a) => categoryId(a.data) === id),
+  }))
+  .filter((t) => t.articles.length);
+const discovery = approvedServices.filter((s) =>
+  [
+    'general-gynecology',
+    'pregnancy-antenatal-care',
+    'menopause-care',
+    'fertility-consultation',
+  ].includes(s.slug),
+);
 ---
 
-<Page
+<Base
   title="The Women’s Health Journal"
-  eyebrow="THE JOURNAL"
-  description="Explore medically reviewed information on gynecology, pregnancy and women’s wellbeing, prepared with AI-assisted editorial support."
+  description="Explore reviewed perspectives on gynecology, pregnancy and reproductive health. Find an article by topic and prepare questions for an informed consultation."
 >
-  <Insights limit={12} />
-</Page>
+  <div class="container journal-page">
+    <Breadcrumbs label="The Women’s Health Journal" />
+    <section class="journal-hero">
+      <div class="journal-intro">
+        <span class="eyebrow">THE WOMEN’S HEALTH JOURNAL</span>
+        <h1>
+          Understanding your health,
+          <br />
+          <em>one conversation at a time.</em>
+        </h1>
+        <p class="lead">
+          Explore evidence-informed perspectives on gynecology, pregnancy,
+          reproductive health and women’s wellbeing, with clear explanations
+          designed to help you make informed health decisions.
+        </p>
+        <a class="text-link" href="#journal-collection">
+          Find your next read <span aria-hidden="true">↘</span>
+        </a>
+      </div>
+      {featured && (
+        <article class="journal-feature">
+          <span class="eyebrow">THE FEATURED READ</span>
+          {featured.data.featuredImage && (
+            <a
+              href={`/blog/${featured.data.slug}/`}
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <Image
+                src={featured.data.featuredImage}
+                alt={featured.data.imageAlt || ''}
+                width={760}
+                widths={[400, 760]}
+                sizes="(max-width: 767px) 90vw, 42vw"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </a>
+          )}
+          <a
+            class="journal-category-label"
+            href={categoryPath(featuredCategory!.id)}
+          >
+            {featuredCategory!.name}
+          </a>
+          <h2>
+            <a href={`/blog/${featured.data.slug}/`}>{featured.data.title}</a>
+          </h2>
+          <p>{featured.data.excerpt}</p>
+          <span class="journal-feature-meta">
+            {articleReadingTime(featured)} min read · Medical review recorded
+          </span>
+        </article>
+      )}
+    </section>
+    <CategoryNav />
+    <section id="journal-collection" class="journal-collection">
+      <div class="journal-section-heading">
+        <div>
+          <span class="eyebrow">INFORMATION, WITH CONTEXT</span>
+          <h2>
+            A little clarity.
+            <br />
+            <em>A more informed conversation.</em>
+          </h2>
+        </div>
+        <p>
+          {articles.length} reviewed guides.
+          <br />
+          Read at your own pace.
+        </p>
+      </div>
+      <JournalSearch />
+      <ArticleCollection articles={articles} />
+    </section>
+    <section class="journal-topic-collections">
+      <span class="eyebrow">EXPLORE A LITTLE FURTHER</span>
+      <h2>
+        Follow the questions
+        <br />
+        <em>that matter to you.</em>
+      </h2>
+      <div class="journal-topic-grid">
+        {topics.map((t) => (
+          <section>
+            <h3>
+              <a href={categoryPath(t.category.id)}>
+                {t.category.name} <span aria-hidden="true">↗</span>
+              </a>
+            </h3>
+            <ul>
+              {t.articles.slice(0, 3).map((a) => (
+                <li>
+                  <a href={`/blog/${a.data.slug}/`}>{a.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </section>
+    <section class="journal-reviewer-panel">
+      <Image
+        src={doctor}
+        alt="Dr. Vasundara Cheepurupalli"
+        width={300}
+        loading="lazy"
+      />
+      <div>
+        <span class="eyebrow">THE DOCTOR BEHIND THE REVIEW</span>
+        <h2>
+          Dr. Vasundara
+          <br />
+          <em>Cheepurupalli.</em>
+        </h2>
+        {publicProfile.title && <p>{publicProfile.title}</p>}
+        <p>
+          Authorship and medical review are identified separately on each
+          article. AI-assisted editorial preparation is disclosed.
+        </p>
+        <a class="text-link" href="/blog/authors/dr-vasundara/">
+          Meet the medical reviewer <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section class="journal-service-discovery">
+      <div>
+        <span class="eyebrow">FROM READING TO A CONVERSATION</span>
+        <h2>
+          Your questions.
+          <br />
+          <em>Your individual context.</em>
+        </h2>
+        <AppointmentCTA />
+      </div>
+      <nav aria-label="Related service information">
+        {discovery.map((s) => (
+          <a href={`/services/${s.slug}/`}>
+            {s.name}
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+        <a href="/blog/editorial-policy/">
+          How this journal is prepared<span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </section>
+  </div>
+</Base>

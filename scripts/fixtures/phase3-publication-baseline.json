@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "abnormal-uterine-bleeding",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "dea85af6f7e9f1d3d442ae4a52db2b3d45898206ee86181701de426c4c55e037",
+    "clinicalMetadataHash": "2eabe861749f90d3e8325cdfe008cfdef41be2d9536f1648c7a7aeb0f4035afc"
+  },
+  {
+    "slug": "antenatal-visit-questions",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "6b41cf6190b9cee64a48691245d13910e2d35ca317bd0342648deb2ce6bd5abd",
+    "clinicalMetadataHash": "7fdbf0eaf888ffb19846685eee321d11953a7909b6a1db6a0dffaceaacc84e3a"
+  },
+  {
+    "slug": "contraception-choices",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "adc987f532138e41101f79c1f469d24c0b3442ec99775c6138ff31e5f200f748",
+    "clinicalMetadataHash": "49cbb58a6af54ee53b3f58ff1830d5d0b2cac7c14fd5d33e4648126b8b59946b"
+  },
+  {
+    "slug": "ectopic-pregnancy-warning-signs",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "7bf514b777ef18420befa102bb69ef32741ee4b9850a6374a05280670c3c0b4e",
+    "clinicalMetadataHash": "932020680731ab5ee3087f42665d572da744608f0860da018dda8c83157d5f50"
+  },
+  {
+    "slug": "fertility-first-steps",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "b3581443afa3bf9917d6300ca4a4f6a35c894b3f1b494e0430b91f79b594a197",
+    "clinicalMetadataHash": "031e29cdc969cb4659c4442003a80d1061b5ef76d1debddf655439d6ab8ab851"
+  },
+  {
+    "slug": "high-risk-pregnancy",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "998f6f7a5ff1abdf7c513a31570c33f811c1b94a16724de865f0c93dfdcd6f99",
+    "clinicalMetadataHash": "fbdbedc929e4a3b14a720235ebd002086ec5407288ca6d0d4fb090d18f524058"
+  },
+  {
+    "slug": "irregular-periods",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "4496c577751de0b4c69701cd9c27b6fca7f83a633423ce4309c63880374e4e3b",
+    "clinicalMetadataHash": "441bea63b730f9756ddc153c5463fb63314aa8bbef3e265b626a07f732261bd5"
+  },
+  {
+    "slug": "laparoscopic-hysterectomy",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "f46f60459f2fc0356a26c2ae43b4c854b0e4b8c70c4b4b23061efd038efb9b2b",
+    "clinicalMetadataHash": "df83476a827a3a5af4330e63e5ba11877b4345dab6331104cc7d7b8f7677899a"
+  },
+  {
+    "slug": "menopause-support",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "05e7a4b5f9d6acd8ac1cb3c82f57838d8d3fe1bcdbe5c5459aa823dd055965ce",
+    "clinicalMetadataHash": "d90a590edd78d842b61a24831708a997d5d1096e5346943a063ace5a4d3421b5"
+  },
+  {
+    "slug": "ovarian-cysts",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "f5952523c1de6d70558e9cdb6cf4d07fdffb3f034b8f75b049ccf3f030a832fe",
+    "clinicalMetadataHash": "c46c43f6349c9e78a9e336b5babe075a5a3182a97cf0c4dfa0230c3ce8e0fb14"
+  },
+  {
+    "slug": "pcos-pcod-terms",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "058d7cd7b61b42578838da15857d03c76b346c878cf20486d74773e59f4f9c81",
+    "clinicalMetadataHash": "110ee5116654237edf71440e3f4e7bcbc484650ae5ba31d3c81460e9ab6d096c"
+  },
+  {
+    "slug": "robotic-gynecological-surgery",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "medicalReviewedAt": "2026-10-13",
+    "approvedAt": "2026-10-13",
+    "bodyHash": "d36fd25e1929c65bcb063571ad9666b3bd51c6699cd24868a82441846d57f0cb",
+    "clinicalMetadataHash": "dd54fb7e5afd48002c2063937902552afe50c9af6ed1010f5be90a51dc8a8c34"
+  }
+]

@@ -1,0 +1,27 @@
+---
+import { publicArticles } from '../../utils/articles';
+import { journalCategories, categoryPath } from '../../utils/journal-data';
+import { categoryId } from '../../utils/journal.mjs';
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+const articles = await publicArticles();
+const categories = journalCategories.filter((c) =>
+  articles.some((a) => categoryId(a.data) === c.id),
+);
+---
+
+<nav class="journal-category-nav" aria-label="Journal topics">
+  <a href="/blog/" aria-current={!current ? 'page' : undefined}>
+    All articles
+  </a>
+  {categories.map((c) => (
+    <a
+      href={categoryPath(c.id)}
+      aria-current={current === c.id ? 'page' : undefined}
+    >
+      {c.name}
+    </a>
+  ))}
+</nav>

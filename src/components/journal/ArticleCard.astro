@@ -1,0 +1,29 @@
+---
+import type { PublicArticle } from '../../utils/articles';
+import { articleReadingTime } from '../../utils/articles';
+import { journalCategory, categoryPath } from '../../utils/journal-data';
+interface Props {
+  entry: PublicArticle;
+  number?: number;
+}
+const { entry, number = 1 } = Astro.props;
+const category = journalCategory(entry.data);
+---
+
+<article class="journal-card" data-article-slug={entry.data.slug}>
+  <div class="journal-card-mark" aria-hidden="true">
+    <span>{String(number).padStart(2, '0')}</span>
+    <span>↗</span>
+  </div>
+  <a class="journal-category-label" href={categoryPath(category!.id)}>
+    {category!.name}
+  </a>
+  <h3>
+    <a href={`/blog/${entry.data.slug}/`}>{entry.data.title}</a>
+  </h3>
+  <p>{entry.data.excerpt}</p>
+  <div class="journal-card-meta">
+    <span>{articleReadingTime(entry)} min read</span>
+    <span>Medical review recorded</span>
+  </div>
+</article>

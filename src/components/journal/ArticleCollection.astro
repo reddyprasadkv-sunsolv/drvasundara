@@ -1,0 +1,14 @@
+---
+import type { PublicArticle } from '../../utils/articles';
+import ArticleCard from './ArticleCard.astro';
+interface Props {
+  articles: PublicArticle[];
+}
+const { articles } = Astro.props;
+---
+
+<div class="journal-card-grid" data-article-collection>
+  {articles.map((entry, i) => (
+    <ArticleCard entry={entry} number={i + 1} />
+  ))}
+</div>

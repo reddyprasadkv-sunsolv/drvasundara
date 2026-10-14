@@ -1,7 +1,7 @@
 {
   "approved": true,
   "target": "github-pages-preview",
-  "requestedAt": "2026-10-13",
-  "request": "Publish all reviewed services, profile content and twelve journal pages following the user confirmation of Dr. Vasundara’s medical review and service availability on 13 October 2026. GitHub Pages preview only.",
-  "revision": "reviewed-content-publication-2026-10-13"
+  "requestedAt": "2026-10-14",
+  "request": "Deploy completed Phase 3 journal design, static search, editorial governance and reading experience to the approved GitHub Pages preview only, preserving existing clinical content, dates, URLs and publication states.",
+  "revision": "phase3-medical-journal-2026-10-14"
 }

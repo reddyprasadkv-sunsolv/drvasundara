@@ -1,5 +1,6 @@
 import { defineCollection, reference } from 'astro:content';
 import { z } from 'zod';
+import { editorialDate } from './utils/date-fields';
 import { glob } from 'astro/loaders';
 const authors = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/authors' }),
@@ -46,7 +47,37 @@ const blog = defineCollection({
   schema: ({ image }) =>
     z
       .object({
-        title: z.string(),
+        title: z.string().min(1),
+        governanceVersion: z.literal(3).optional(),
+        authorId: z.string().optional(),
+        reviewerId: z.string().optional(),
+        approvedBy: z.string().optional(),
+        approvalRecord: z.url().optional(),
+        lastUpdated: editorialDate.optional(),
+        nextReviewDueAt: editorialDate.optional(),
+        editorialAssistance: z.string().optional(),
+        editorialStatus: z
+          .enum([
+            'draft',
+            'medical-review',
+            'doctor-review',
+            'approved',
+            'published',
+          ])
+          .optional(),
+        clinicalDisclaimer: z.string().optional(),
+        journalCategory: z
+          .enum([
+            'pregnancy-obstetrics',
+            'menstrual-health',
+            'pcos-hormonal-health',
+            'fertility-reproductive-health',
+            'gynecological-surgery',
+            'menopause-midlife-health',
+            'preventive-healthcare',
+          ])
+          .optional(),
+        featured: z.boolean().default(false),
         slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
         category: z.enum([
           'Pregnancy',
@@ -68,6 +99,15 @@ const blog = defineCollection({
         medicalFaqs: z
           .array(
             z.object({
+              id: z.string().optional(),
+              kind: z
+                .enum([
+                  'article',
+                  'general-medical',
+                  'service',
+                  'administrative',
+                ])
+                .optional(),
               question: z.string(),
               answer: z.string(),
               reviewed: z.boolean().default(false),
@@ -77,12 +117,13 @@ const blog = defineCollection({
         relatedServices: z.array(z.string()).default([]),
         featuredImage: image().optional(),
         imageAlt: z.string().optional(),
-        author: reference('authors'),
+        imageCredit: z.string().optional(),
+        author: reference('authors').optional(),
         reviewer: reference('authors').optional(),
-        publishedAt: z.coerce.date().optional(),
-        updatedAt: z.coerce.date().optional(),
-        medicalReviewedAt: z.coerce.date().optional(),
-        approvedAt: z.coerce.date().optional(),
+        publishedAt: editorialDate.optional(),
+        updatedAt: editorialDate.optional(),
+        medicalReviewedAt: editorialDate.optional(),
+        approvedAt: editorialDate.optional(),
         sources: z
           .array(z.object({ title: z.string(), url: z.url() }))
           .default([]),
@@ -105,8 +146,45 @@ const blog = defineCollection({
       })
       .superRefine((d, ctx) => {
         if (
+          (d.authorId && d.authorId !== d.author?.id) ||
+          (d.reviewerId && d.reviewerId !== d.reviewer?.id)
+        )
+          ctx.addIssue({
+            code: 'custom',
+            message: 'Identity aliases must match the author/reviewer records.',
+          });
+        if (d.editorialStatus && d.editorialStatus !== d.status)
+          ctx.addIssue({
+            code: 'custom',
+            message: 'Editorial and publication states must agree.',
+          });
+        if (d.lastUpdated && d.updatedAt && +d.lastUpdated !== +d.updatedAt)
+          ctx.addIssue({
+            code: 'custom',
+            message: 'Update date aliases must agree.',
+          });
+        if (
+          d.status === 'published' &&
+          d.governanceVersion === 3 &&
+          (!d.approvedBy ||
+            !d.approvalRecord?.startsWith('https://') ||
+            !d.clinicalDisclaimer ||
+            !d.authorId ||
+            !d.reviewerId ||
+            !d.seo.title ||
+            !d.seo.description)
+        )
+          ctx.addIssue({
+            code: 'custom',
+            message:
+              'Deliberate publication requires approval evidence, identity aliases, disclaimer and metadata.',
+          });
+        if (
           d.status === 'published' &&
           (d.contentType !== 'article' ||
+            !d.title.trim() ||
+            !d.excerpt.trim() ||
+            !d.author ||
             !d.publishedAt ||
             !d.authorshipConfirmed ||
             !d.introduction ||
@@ -132,9 +210,11 @@ const blog = defineCollection({
         if (
           d.status === 'published' &&
           d.publishedAt &&
-          ((d.approvedAt && d.approvedAt > (d.updatedAt || d.publishedAt)) ||
+          ((d.approvedAt &&
+            d.approvedAt > (d.updatedAt || d.lastUpdated || d.publishedAt)) ||
             (d.medicalReviewedAt &&
-              d.medicalReviewedAt > (d.updatedAt || d.publishedAt)))
+              d.medicalReviewedAt >
+                (d.updatedAt || d.lastUpdated || d.publishedAt)))
         )
           ctx.addIssue({
             code: 'custom',

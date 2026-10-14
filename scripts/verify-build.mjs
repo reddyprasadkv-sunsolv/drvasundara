@@ -30,6 +30,42 @@ for (const f of files) {
   assert.match(html, /rel="canonical"/);
   assert.match(html, /id="main"/);
   assert.match(html, /Skip to content/);
+  const ids = [...html.matchAll(/(?:^|\s)id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(new Set(ids).size, ids.length, `Duplicate IDs in ${f}`);
+  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
+    if (!href.includes('#') || (!href.startsWith('#') && !href.startsWith('/')))
+      continue;
+    const [destination, fragment] = href.split('#');
+    if (!fragment) continue;
+    let targetHtml = html;
+    if (destination) {
+      let pathname = destination.split('?')[0];
+      if (preview) pathname = '/' + pathname.slice(base.length);
+      const location = path.join(
+        root,
+        pathname,
+        pathname.endsWith('/') ? 'index.html' : '',
+      );
+      if (!fs.existsSync(location)) continue;
+      targetHtml = fs.readFileSync(location, 'utf8');
+    }
+    assert.ok(
+      targetHtml.includes(`id="${decodeURIComponent(fragment)}"`),
+      `Broken anchor ${href} in ${f}`,
+    );
+  }
+  for (const [, src] of html.matchAll(/<img[^>]*src="([^"]+)"/g)) {
+    if (!src.startsWith('/')) continue;
+    let imagePath = src.split('?')[0];
+    if (preview) {
+      assert.ok(imagePath.startsWith(base));
+      imagePath = '/' + imagePath.slice(base.length);
+    }
+    assert.ok(
+      fs.existsSync(path.join(root, imagePath)),
+      `Missing image ${src} in ${f}`,
+    );
+  }
   for (const [, href] of html.matchAll(/href="([^"#]+)"/g)) {
     if (!href.startsWith('/')) continue;
     let target = href.split(/[?#]/)[0];

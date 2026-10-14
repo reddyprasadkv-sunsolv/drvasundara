@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "general-gynecology",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "a63ff47797e2eaaeb105ddd1e33ae9894e739213b1c592c785e897b6e8b634fb"
+  },
+  {
+    "slug": "pcos",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "dc652ce455f5b6039c80bbbc86286e4ea496786aa2eaff93a879f6237c8fd9a7"
+  },
+  {
+    "slug": "abnormal-uterine-bleeding",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "ed67fe625f2847bfdc8b6c9200d4143fb1bc855de7aa6b9cf61f45bf4bd3ba7c"
+  },
+  {
+    "slug": "menstrual-disorders",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "db59f0c049d9c99f03537764f6f6f0704671e225c793865a716d0de174220546"
+  },
+  {
+    "slug": "ovarian-cysts",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "fd514d3e541e4f1966994b7d2cffef19dea27277dc10536e140ed9861ad9cb0d"
+  },
+  {
+    "slug": "menopause-care",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "bf4986cdfcbf331ee469cd39b7dc793af71dc29c4750948d0b71b14268cf8bce"
+  },
+  {
+    "slug": "contraception-family-planning",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "48eebd5e73144f0ca82474acfcb243c1b38f2c141f97dba211d211887cdfc932"
+  },
+  {
+    "slug": "iud-consultation-insertion",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "b564d863e57c83df1d01d5e4c7808f05f38646008ccb990bdbcba9dc763f7334"
+  },
+  {
+    "slug": "pregnancy-antenatal-care",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "fa948d561dbd7c2dbe233a07558b4a254f810d4ef8d9277546111a32ce2683b5"
+  },
+  {
+    "slug": "high-risk-pregnancy",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "e79b0869f71bdfa483429d43e10025c1e821cb6123c90b21b6aaba7affe69aef"
+  },
+  {
+    "slug": "caesarean-section",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "d14717ee0cdae4a912cb6aa4461f88f292f23380459a1380c60eafeacf9de185"
+  },
+  {
+    "slug": "ectopic-pregnancy",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "593a1a65fa25baf954aa39a39a94df49e3f59cca1beb9a09fad3afbbca7e0f9c"
+  },
+  {
+    "slug": "pregnancy-complications",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "07b4d91d7b3230f0b04c2e1d18df5d10b04f67ff28c5178db7e610c8296c4b91"
+  },
+  {
+    "slug": "postnatal-care",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "e1e92ad9419b0a1aa2819eafa9bd7e708cf18874f614f92d080bdde5f34d0e38"
+  },
+  {
+    "slug": "fertility-consultation",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "b2a24d2427eb4136304071de17d406838876e26827523f612ca24656a05aea10"
+  },
+  {
+    "slug": "primary-secondary-infertility",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "f2e87eaebb08e28ba4068b67dcfc5b10adf986146995fca394ad21ee075828a1"
+  },
+  {
+    "slug": "reproductive-health-evaluation",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "6726031dca5313eabe0fec22f2f0ab3b9bb68ef1af3690058505b05c33383252"
+  },
+  {
+    "slug": "fertility-related-investigations",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "3a6dd7d368492f9e57a7ce6feea9c4be1461dd2379488346c52f8999ce2e5c83"
+  },
+  {
+    "slug": "laparoscopic-gynecological-surgery",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "5f284b4bed0d42377fa8e52d5ce129bd67c8805d5b9665b66f0cebbcf49c0b7e"
+  },
+  {
+    "slug": "laparoscopic-hysterectomy",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "2ff9e3ca6295d16f10011c8be7d12dfb4671477212f39ec5d8cd86f812dd44dd"
+  },
+  {
+    "slug": "robotic-gynecological-surgery",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "93e08467946e15e58f3b0acb260144cea36dc087917fcb94110daa3e5b7abfbb"
+  },
+  {
+    "slug": "hysterectomy",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "b43fc7c5b7c5a2e82e80a1e41a7fc02739aa20f54a8c379232d84cc5874dca4e"
+  },
+  {
+    "slug": "ovarian-cyst-surgery",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "8096d8f520f9a1999bce1729d3b28d536e8ddbdc0fdb6de4be81d3fa1c5a7173"
+  },
+  {
+    "slug": "cosmetic-gynecology-consultation",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "c8a0473c4efacd158d9970a0a73c55fd977c7ffb9883a64c4bdd5f306b183868"
+  },
+  {
+    "slug": "vaginoplasty",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "5607cd2e5727adcf8a8e5853605df6ec253016688b814d58d479ad49b45ce1d0"
+  },
+  {
+    "slug": "preventive-womens-health",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "a567556abb2820160b75a3843814ba6be6b7912f8763a87785c0cfa47cdd2abb"
+  },
+  {
+    "slug": "reproductive-wellness",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "b25a9866be32c159723558b3578a2221fa0906e1668eeba02ec1ece5cb50d886"
+  },
+  {
+    "slug": "menopause-midlife-health",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "602063b6ef7caf895a9064fca07dc80a49287e5cb44b7c1414be3fc7120a39e7"
+  },
+  {
+    "slug": "contraception-counselling",
+    "medicalReviewedAt": "2026-10-13",
+    "hash": "472890e59c462e66a1282c9ad3134eeb461342248299722bd2f6dfcc60af6698"
+  }
+]
