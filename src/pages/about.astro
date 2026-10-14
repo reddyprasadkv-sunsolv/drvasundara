@@ -67,17 +67,30 @@ const schema = publicProfile.title
       <ProfessionalTimeline entries={publicProfile.timeline} />
     </section>
   )}
-  {publicProfile.education.length > 0 && (
-    <section class="profile-section prose">
-      <span class="eyebrow">EDUCATION & TRAINING</span>
-      <h2>Professional foundations.</h2>
-      <ul>
-        {publicProfile.education.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-    </section>
-  )}
+  <div class="profile-foundations">
+    {publicProfile.education.length > 0 && (
+      <section class="profile-section prose">
+        <span class="eyebrow">EDUCATION & TRAINING</span>
+        <h2>Professional foundations.</h2>
+        <ul>
+          {publicProfile.education.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+    {publicProfile.affiliations.length > 0 && (
+      <section class="profile-section prose">
+        <span class="eyebrow">WHERE SHE PRACTICES</span>
+        <h2>Hospital affiliations.</h2>
+        <ul>
+          {publicProfile.affiliations.map((name) => (
+            <li>{name}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
   {publicProfile.registration && (
     <section class="profile-section prose">
       <h2>Medical registration.</h2>
@@ -85,16 +98,6 @@ const schema = publicProfile.title
         {publicProfile.registration.authority} ·{' '}
         {publicProfile.registration.number}
       </p>
-    </section>
-  )}
-  {publicProfile.affiliations.length > 0 && (
-    <section class="profile-section prose">
-      <h2>Hospital affiliations.</h2>
-      <ul>
-        {publicProfile.affiliations.map((name) => (
-          <li>{name}</li>
-        ))}
-      </ul>
     </section>
   )}
   <section class="profile-section profile-guidance">
@@ -125,6 +128,24 @@ const schema = publicProfile.title
 </Page>
 
 <style>
+  .profile-foundations {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 60px;
+    align-items: start;
+  }
+  .profile-foundations .prose {
+    max-width: none;
+  }
+  .profile-foundations h2 {
+    margin-top: 0;
+  }
+  @media (max-width: 850px) {
+    .profile-foundations {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
   .profile-section {
     border-top: 0;
   }

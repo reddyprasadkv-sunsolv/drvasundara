@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Reduce homepage section spacing and remove doubled gaps between services and health insights while preserving other pages on the approved preview.",
-  "revision": "homepage-spacing-2026-10-14"
+  "request": "Place Hospital affiliations alongside Education and Training on larger screens, stacked on mobile, on the approved preview.",
+  "revision": "about-foundations-columns-2026-10-14"
 }
