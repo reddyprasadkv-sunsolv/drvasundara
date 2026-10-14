@@ -34,7 +34,13 @@
     },
     {
       "id": "qualifications",
-      "value": ["DNB", "DGO", "FMAS", "CIMP", "GCP"],
+      "value": [
+        "DNB",
+        "DGO",
+        "FMAS",
+        "CIMP",
+        "GCP"
+      ],
       "sources": [
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
       ],
@@ -66,6 +72,7 @@
       "value": [
         "Gynecology",
         "Obstetrics and Pregnancy Care",
+        "Urogynecology",
         "Laparoscopic Gynecological Surgery",
         "Robotic Gynecological Surgery",
         "Reproductive Health",
@@ -80,13 +87,16 @@
       "doctorApprovalStatus": "approved",
       "approvedForPublication": true,
       "approvedBy": "Dr. Vasundara Cheepurupalli",
-      "approvedAt": "2026-10-13",
-      "sourceVerificationStatus": "corroborated",
-      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/PUBLICATION_APPROVAL.md"
+      "approvedAt": "2026-10-14",
+      "sourceVerificationStatus": "Existing interests retain prior verification; Urogynecology reflects user-relayed clinician review and availability confirmation on 14 October 2026.",
+      "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/UROGYNECOLOGY_PUBLICATION_APPROVAL.md"
     },
     {
       "id": "hospital-affiliations",
-      "value": ["KIMS Hospitals, Secunderabad", "KIMS Cuddles, Secunderabad"],
+      "value": [
+        "KIMS Hospitals, Secunderabad",
+        "KIMS Cuddles, Secunderabad"
+      ],
       "sources": [
         "https://drvasundaragynec.com/",
         "https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/"
@@ -102,7 +112,9 @@
     {
       "id": "education-mbbs",
       "value": "MBBS, Andhra Medical College, Visakhapatnam, 2007",
-      "sources": ["https://drvasundaragynec.com/about/"],
+      "sources": [
+        "https://drvasundaragynec.com/about/"
+      ],
       "verificationStatus": "clinician-confirmed",
       "doctorApprovalStatus": "approved",
       "approvedForPublication": true,
@@ -114,7 +126,9 @@
     {
       "id": "education-postgraduate",
       "value": "Postgraduation, Kurnool Medical College, 2013",
-      "sources": ["https://drvasundaragynec.com/about/"],
+      "sources": [
+        "https://drvasundaragynec.com/about/"
+      ],
       "verificationStatus": "clinician-confirmed",
       "doctorApprovalStatus": "approved",
       "approvedForPublication": true,
@@ -171,7 +185,9 @@
     {
       "id": "clinical-approach",
       "value": "Listening, individualized assessment, evidence-informed decisions, respectful conversations and clear patient education.",
-      "sources": ["https://drvasundaragynec.com/"],
+      "sources": [
+        "https://drvasundaragynec.com/"
+      ],
       "verificationStatus": "clinician-confirmed",
       "doctorApprovalStatus": "approved",
       "approvedForPublication": true,
