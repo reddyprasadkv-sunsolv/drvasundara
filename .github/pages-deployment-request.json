@@ -1,7 +1,8 @@
 {
   "approved": true,
-  "target": "github-pages-preview",
-  "requestedAt": "2026-10-14",
-  "request": "Add the confirmed Urogynecology consultation area to the About page clinical interests.",
-  "revision": "about-urogynecology-2026-10-14"
+  "target": "github-pages-production",
+  "productionIndexing": false,
+  "requestedAt": "2026-10-15",
+  "request": "User requested pushing and deploying the tested typography improvements. Deploy the root build to the already configured custom domain; preserve indexing disabled and all DNS/domain settings.",
+  "revision": "typography-root-2026-10-15"
 }

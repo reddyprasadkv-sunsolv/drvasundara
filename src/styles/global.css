@@ -3266,3 +3266,83 @@ h3 {
     display: block;
   }
 }
+
+/* Readability refinements within the existing editorial type system. */
+@media screen {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  .hero-copy,
+  .service-hero > div,
+  .service-row > div {
+    min-width: 0;
+  }
+  .eyebrow,
+  .hero-copy .eyebrow,
+  .welcome > .eyebrow,
+  .section-heading .eyebrow,
+  .page-heading .eyebrow,
+  .footer-contact .eyebrow,
+  .portrait-signature .eyebrow,
+  .patient-video > .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+  .desktop-nav a {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .button,
+  .header-cta .button,
+  .hero-actions .button,
+  .text-link,
+  .hero-actions .text-link,
+  .patient-video > .text-link {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+  .portrait-caption-detail,
+  .hero-caption,
+  .wellness-credit,
+  .authorship-disclosure,
+  .editorial-dates {
+    font-size: 0.8125rem;
+    line-height: 1.75;
+  }
+  .portrait-side-note,
+  .editorial-byline dt,
+  .journal-article-cover figcaption,
+  .footer-bottom {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+  .footer-contact a,
+  .service-contents a,
+  .article-toc-desktop {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .philosophy-strip .container {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+  .hero .phase-two-headline {
+    line-height: 1.2;
+  }
+  @media (max-width: 600px) {
+    .philosophy-strip .container {
+      flex-wrap: wrap;
+    }
+    .page-heading h1,
+    .article-page h1,
+    .service-hero h1 {
+      font-size: clamp(2rem, 10vw, 2.375rem);
+    }
+  }
+}
