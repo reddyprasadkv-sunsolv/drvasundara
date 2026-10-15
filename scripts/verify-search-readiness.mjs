@@ -26,11 +26,6 @@ for (const file of fs
       /role="search"/,
       'Only local journal search may render a form',
     );
-  // No withheld patient identifiers in links, embeds, text or metadata.
-  assert.doesNotMatch(
-    html,
-    /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/,
-  );
   const route =
     file === '404.html'
       ? '/404/'
@@ -160,8 +155,28 @@ const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal([...home.matchAll(/data-video-kind="educational"/g)].length, 5);
 assert.equal(
   [...home.matchAll(/data-video-kind="patient-experience"/g)].length,
-  0,
+  3,
 );
+const experiences = fs.readFileSync(
+  path.join(root, 'testimonials/index.html'),
+  'utf8',
+);
+assert.equal(
+  [...experiences.matchAll(/data-video-kind="patient-experience"/g)].length,
+  5,
+);
+for (const id of [
+  'LQ5VBo9wZhw',
+  'ZjGuZZEki4w',
+  'Tn6soQyuW68',
+  'FcWkoQz6dko',
+  'gyG40rv_UOQ',
+])
+  assert(
+    experiences.includes(`data-video-id="${id}"`),
+    `Missing restored patient video ${id}`,
+  );
+assert.doesNotMatch(experiences, /<iframe[^>]*youtube/);
 assert.doesNotMatch(home, /<iframe[^>]*youtube/);
 assert.match(home, /https:\/\/wa\.me\/919346825723/);
 assert.doesNotMatch(home, /wa\.me\/[^"\s]*\?/);

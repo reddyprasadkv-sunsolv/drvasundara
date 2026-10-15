@@ -21,16 +21,8 @@ export const site = {
   contact: {
     phone: publicPractice?.phone || '',
     email: publicPractice?.email || '',
-    address: publicPractice
-      ? [
-          publicPractice.streetAddress || publicPractice.practiceName,
-          publicPractice.city,
-          publicPractice.region,
-          publicPractice.postalCode,
-        ]
-          .filter(Boolean)
-          .join(', ')
-      : '',
+    // Facility/city display label supplied by the project owner.
+    address: 'KIMS Hospital, Secunderabad',
     mapUrl: publicPractice?.mapUrl || '',
   },
   socials: [
