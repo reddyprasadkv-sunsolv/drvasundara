@@ -1,3 +1,8 @@
+import { expectedRobots, configuredIndexing } from './indexing-release.mjs';
+import {
+  robotsText,
+  isIndexingExcluded,
+} from '../src/utils/indexing-policy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -39,7 +44,10 @@ for (const file of files) {
     html.match(/property="og:url" content="([^"]+)"/)?.[1],
     canonical,
   );
-  assert.match(html, /name="robots" content="noindex, nofollow"/);
+  assert.equal(
+    html.match(/name="robots" content="([^"]+)"/)?.[1],
+    expectedRobots(file, preview),
+  );
   for (const [, json] of html.matchAll(
     /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
   ))
@@ -71,10 +79,14 @@ const sitemap = fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8');
 const entries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
   (m) => new URL(m[1]),
 );
-assert.equal(entries.length, 58);
+assert.equal(entries.length, 53);
 for (const url of entries) {
   assert.equal(url.origin, sitemapOrigin);
   assert(url.pathname.startsWith(base));
+  assert(
+    !isIndexingExcluded('/' + url.pathname.slice(base.length)),
+    `Excluded route in sitemap: ${url}`,
+  );
   assert(
     fs.existsSync(
       path.join(root, url.pathname.slice(base.length), 'index.html'),
@@ -84,11 +96,10 @@ for (const url of entries) {
 const index = fs.readFileSync(path.join(root, 'sitemap-index.xml'), 'utf8');
 assert(index.includes(`${sitemapOrigin}${base}sitemap-0.xml`));
 const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
-assert.match(robots, /Disallow: \//);
-assert(!robots.includes('Allow: /'));
+assert.equal(robots, robotsText({ preview, indexing: configuredIndexing() }));
 if (preview) assert(!robots.includes('Sitemap:'));
 else assert(robots.includes(`Sitemap: ${origin}/sitemap-index.xml`));
 assert.equal(files.length, 59);
 console.log(
-  `Verified ${files.length - 1} public pages plus 404, ${entries.length} sitemap entries and ${schemaUrls} production schema URLs; www host consistent and ${preview ? 'preview' : 'production'} noindex retained.`,
+  `Verified ${files.length - 1} public pages plus 404, ${entries.length} sitemap entries and ${schemaUrls} production schema URLs; www host consistent and ${preview ? 'preview protected' : `production indexing=${configuredIndexing()}`}.`,
 );

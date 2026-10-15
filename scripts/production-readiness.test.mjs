@@ -149,3 +149,38 @@ test('production deployment requires both-mode CI validation before artifact pub
       command,
     );
 });
+
+test('deployment approval guard checks the controlled indexing release before building', () => {
+  const deploy = yaml.parse(
+    fs.readFileSync('.github/workflows/pages.yml', 'utf8'),
+  );
+  const steps = deploy.jobs.build.steps;
+  const gate = steps.findIndex(
+    (s) => s.run === 'node scripts/verify-indexing-release.mjs',
+  );
+  assert(gate >= 0);
+  assert(gate < steps.findIndex((s) => s.run === 'pnpm build'));
+});
+
+test('both indexing states run isolated output validation without site deployment', () => {
+  const validation = yaml.parse(
+    fs.readFileSync('.github/workflows/validate.yml', 'utf8'),
+  );
+  const job = validation.jobs['indexing-states'];
+  assert.deepEqual(job.strategy.matrix.state, ['disabled', 'enabled']);
+  assert(
+    job.steps.some(
+      (s) =>
+        s.run === 'node scripts/test-indexing-states.mjs ${{ matrix.state }}',
+    ),
+  );
+  assert(
+    !job.steps.some((s) =>
+      /deploy-pages|upload-pages-artifact|configure-pages/.test(s.uses || ''),
+    ),
+  );
+  assert.equal(
+    job.steps.find((s) => s.uses === 'actions/upload-artifact@v4').with.path,
+    'qa/indexing-fixtures/',
+  );
+});

@@ -1,3 +1,4 @@
+import { isIndexingExcluded } from './src/utils/indexing-policy.mjs';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -11,6 +12,14 @@ export default defineConfig({
     : 'https://www.drvasundaragynec.com',
   output: 'static',
   trailingSlash: 'always',
-  integrations: [mdx(), sitemap({ filter: (url) => !url.endsWith('/404/') })],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (url) =>
+        !isIndexingExcluded(
+          new URL(url).pathname.replace(/^\/drvasundara(?=\/)/, ''),
+        ),
+    }),
+  ],
   vite: { plugins: [tailwindcss()] },
 });

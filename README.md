@@ -9,3 +9,5 @@ The production workflow validates production and preview builds, Astro/TypeScrip
 The premium design, self-hosted Playfair Display/Open Sans, 28 services, 12 articles, five educational videos and current URLs remain intact. WhatsApp is the only public clinic contact channel, configured in `src/config/site.ts` and reused through shared components. Five patient-experience videos were restored by explicit project-owner instruction; individual permission evidence remains unverified. Production and preview indexing remain disabled.
 
 Publication records: [clinic decision sheet](docs/CLINIC_PUBLICATION_APPROVAL_CHECKLIST.md), [privacy approval draft](docs/CLINIC_PRIVACY_POLICY_DRAFT.md), [existing clinical approval](docs/PUBLICATION_APPROVAL.md), [scoped Urogynecology approval](docs/UROGYNECOLOGY_PUBLICATION_APPROVAL.md). Do not store sensitive records in this public repository.
+
+The 16 October indexing preparation branch proposes withholding the five patient videos again under the latest instruction, with live production unchanged while approvals remain unresolved. See [release preparation](docs/INDEXING_RELEASE_PREPARATION.md).

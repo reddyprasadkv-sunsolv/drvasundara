@@ -1,3 +1,4 @@
+import { expectedRobots } from './indexing-release.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -16,6 +17,11 @@ for (const file of fs
   .readdirSync(root, { recursive: true })
   .filter((f) => String(f).endsWith('.html'))) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
+  assert.doesNotMatch(
+    html,
+    /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/,
+    `Withheld video in ${file}`,
+  );
   assert.doesNotMatch(
     html,
     /(?:href|action)="(?:mailto:|tel:|https:\/\/(?:forms\.gle|docs\.google\.com\/forms))/,
@@ -38,7 +44,10 @@ for (const file of fs
   );
   assert(!seen.has(canonical));
   seen.add(canonical);
-  assert.match(html, /name="robots" content="noindex, nofollow"/);
+  assert.equal(
+    html.match(/name="robots" content="([^"]+)"/)?.[1],
+    expectedRobots(file, preview),
+  );
   if (preview)
     assert.doesNotMatch(
       html,
@@ -155,7 +164,7 @@ const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal([...home.matchAll(/data-video-kind="educational"/g)].length, 5);
 assert.equal(
   [...home.matchAll(/data-video-kind="patient-experience"/g)].length,
-  3,
+  0,
 );
 const experiences = fs.readFileSync(
   path.join(root, 'testimonials/index.html'),
@@ -163,19 +172,8 @@ const experiences = fs.readFileSync(
 );
 assert.equal(
   [...experiences.matchAll(/data-video-kind="patient-experience"/g)].length,
-  5,
+  0,
 );
-for (const id of [
-  'LQ5VBo9wZhw',
-  'ZjGuZZEki4w',
-  'Tn6soQyuW68',
-  'FcWkoQz6dko',
-  'gyG40rv_UOQ',
-])
-  assert(
-    experiences.includes(`data-video-id="${id}"`),
-    `Missing restored patient video ${id}`,
-  );
 assert.doesNotMatch(experiences, /<iframe[^>]*youtube/);
 assert.doesNotMatch(home, /<iframe[^>]*youtube/);
 assert.match(home, /https:\/\/wa\.me\/919346825723/);

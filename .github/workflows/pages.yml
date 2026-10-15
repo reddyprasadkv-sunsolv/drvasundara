@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       approval:
-        description: 'Type APPROVED to deploy the root website with indexing disabled'
+        description: 'Type APPROVED to deploy; indexing also requires recorded clinic and indexing approvals'
         required: true
         type: string
 permissions:
@@ -32,7 +32,7 @@ jobs:
           node-version: '24'
           cache: pnpm
       - name: Verify explicit production deployment request
-        run: node -e "const r=require('./.github/pages-deployment-request.json'); if(r.approved!==true || r.target!=='github-pages-production' || r.productionIndexing!==false) process.exit(1)"
+        run: node scripts/verify-indexing-release.mjs
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm build

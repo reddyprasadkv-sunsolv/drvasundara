@@ -67,3 +67,32 @@ The owner has not supplied a medical council registration number/issuing authori
 The project owner subsequently clarified: “doctor medical council registration number is not required to display”. Keep that number off the website; it is not an outstanding public-display requirement. No registration-verification claim is created by this decision. Exact address and consultation hours still need supplied values before display.
 
 The project owner then supplied the display location “KIMS Hospital, Secunderabad”. Publish that facility/city label exactly, shared through the existing site contact configuration. No street address, postcode, coordinates, map destination, registration number or consultation hours were supplied or inferred. This owner-provided label is not an independent address verification or new local-business structured-data approval.
+## Final readiness classification — latest baseline `eb2fb6a`
+
+The project owner has now confirmed: WhatsApp is the only public contact; enquiries remain in the clinic WhatsApp account; relevant information may be copied to hospital management software or spreadsheets; no public email is needed; the site is static without an on-site patient database. These facts supersede earlier “downstream handling unverified” statements only to that extent. The 15 October 2026 “Approve all” decision remains general publication intent, with its original wording/date/scope unchanged.
+
+| Item | Classification | Current action / exact remaining decision |
+| --- | --- | --- |
+| Official WhatsApp contact, static website, account storage and possible software/spreadsheet copies | Confirmed and complete | Preserve centralized contact configuration; owner confirmation is recorded, not independently audited. |
+| Disclosure of account storage and possible copies | Requires a nonclinical disclosure correction | Proposed wording is in `CLINIC_PRIVACY_POLICY_DRAFT.md`; no unsupported storage/security claim is added. Final public policy awaits the operational decisions below. |
+| WhatsApp enquiry retention | Requires explicit clinic operational confirmation | Supply actual duration or criteria. |
+| Retention of hospital/software/spreadsheet copies | Requires explicit clinic operational confirmation | Supply actual per-destination retention/deletion/backup practices. |
+| Staff and third-party record access | Requires explicit clinic operational confirmation | Confirm actual roles/providers and access arrangements. |
+| Access/correction/deletion requests | Requires explicit clinic operational confirmation | Confirm responsible role, request verification and operational handling across all destinations, including real exceptions/limitations. |
+| Final privacy policy | Requires explicit clinic operational confirmation | Approve final accurate wording after those facts are supplied; record actual approver/date and non-sensitive reference. |
+| Five patient-experience videos | Safe to withhold from publication | Continue withholding all five; no permission is inferred. Their absence need not block indexing of otherwise approved content. |
+| Registration number/authority, exact address and conflicting hours | Safe to withhold from publication | Keep unverified fields unpublished; no fabricated verification, address or schedule is needed to proceed. |
+| Current 28 services, 12 articles, profile and five educational videos | Existing scoped publication approvals retained | No medical copy, author/reviewer attribution or approval dates changed. General intent allows keeping existing public content subject to recorded conditions. |
+| High-priority clinical source queue | Requires clinician review before indexing | Clinician confirms the listed P1 scope/urgency/terminology/source-applicability questions as written, requests a reviewed revision, or identifies specific claims/pages to withhold. No new adverse clinical finding is asserted; no mandatory review is silently marked complete. |
+
+Existing reviews dated 13 October and scoped Urogynecology approval dated 14 October are not expanded or redated. Current source-review questions identify scope/currency limitations rather than a newly validated unsafe recommendation; no clinical prose is silently rewritten or automatically withdrawn. If the clinician identifies a claim requiring mandatory revision, withhold the affected claim/page before an indexing release and update its inventory.
+
+**Outcome:** technical preparation can continue; indexing cannot activate while the final privacy policy and scoped clinician indexing-readiness decision remain open. `.github/publication-readiness.json` records these gates as unapproved. It contains no private records and must not be filled with invented sign-offs. The missing patient-video permissions are addressed by withholding, not by treating general publication intent as consent.
+
+## Latest instruction and release state — 16 October 2026
+
+The attached Steps 1–3 instruction again requires withholding all five patient-experience videos pending individual evidence, while leaving live production unchanged if privacy or clinical readiness is unresolved. This supersedes the prior restoration direction **for the proposed branch**. No production removal or indexing activation is deployed by this preparation. The supplied location label “KIMS Hospital, Secunderabad” remains; registration number stays off by owner choice and no consultation hours are invented.
+
+Latest fetched main is `d0bad71`: it changes the site flag to true, while the deployment request still says false. Live production was separately checked and still disallows crawling with noindex metadata. This PR aligns its proposed configuration back to disabled mode pending real approvals, rather than treating that isolated flag edit as completed privacy or clinical approval.
+
+The exact unresolved decisions remain: (1) WhatsApp enquiry retention duration/criteria; (2) retention/deletion/backup handling for hospital-software and spreadsheet copies; (3) staff and third-party access; (4) responsible role and actual access/correction/deletion request procedure; (5) final accurate privacy wording with real clinic approval; (6) clinician disposition of the outstanding P1 scope/urgency/source-applicability questions. Patient permissions are addressed by proposed withholding, not by fabricated consent. No new mandatory clinical error is inferred, no medical recommendations are rewritten, and existing 13/14 October review dates remain unchanged.
