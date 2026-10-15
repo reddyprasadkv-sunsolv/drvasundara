@@ -56,4 +56,45 @@ import { site, navigation } from '../../config/site';
     </div>
     <span>Care. Clarity. Confidence.</span>
   </div>
+  <div class="container">
+    <p class="development-credit">
+      Thoughtfully Designed &amp; Developed by{' '}
+      <a
+        href="https://www.sunsolv.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="SunSolv Technologies (opens in a new tab)"
+      >
+        SunSolv Technologies
+      </a>
+    </p>
+  </div>
 </footer>
+
+<style>
+  .development-credit {
+    margin: 0;
+    padding-block: 0.75rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    line-height: 1.75;
+    text-align: right;
+  }
+  .development-credit a {
+    display: inline-block;
+    padding-block: 0.5rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .development-credit a:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+  @media (max-width: 600px) {
+    .development-credit {
+      text-align: center;
+    }
+  }
+</style>

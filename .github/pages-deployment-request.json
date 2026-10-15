@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "User requested pushing and deploying the tested typography improvements. Deploy the root build to the already configured custom domain; preserve indexing disabled and all DNS/domain settings.",
-  "revision": "typography-root-2026-10-15"
+  "request": "User requested adding the SunSolv Technologies footer development credit and deploying through the approved production workflow. Preserve existing domain, DNS and disabled indexing.",
+  "revision": "footer-development-credit-2026-10-15"
 }
