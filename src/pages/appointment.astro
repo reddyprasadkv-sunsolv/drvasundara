@@ -1,9 +1,6 @@
 ---
-import { safeFormUrl } from '../utils/editorial.mjs';
-import { site } from '../config/site';
 import Page from '../layouts/Page.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
-const available = safeFormUrl(site.appointmentFormUrl);
 ---
 
 <Page
@@ -18,7 +15,6 @@ const available = safeFormUrl(site.appointmentFormUrl);
       arrangements. The clinic will confirm your appointment.
     </p>
     <AppointmentCTA />
-    {available && <AppointmentCTA useForm label="Open appointment form" />}
     <p>
       Share only the information needed to arrange a consultation. Avoid sending
       detailed medical histories, reports or sensitive health information in an

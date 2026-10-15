@@ -121,3 +121,31 @@ test('complete production inventory preserves every public destination and Urogy
     'Urogynecology must retain an inbound internal link',
   );
 });
+
+test('production deployment requires both-mode CI validation before artifact publication', () => {
+  const deploy = yaml.parse(
+    fs.readFileSync('.github/workflows/pages.yml', 'utf8'),
+  );
+  const validation = yaml.parse(
+    fs.readFileSync('.github/workflows/validate.yml', 'utf8'),
+  );
+  assert.equal(deploy.jobs.validation.uses, './.github/workflows/validate.yml');
+  assert.equal(deploy.jobs.build.needs, 'validation');
+  assert.equal(deploy.jobs.deploy.needs, 'build');
+  assert('workflow_call' in validation.on);
+  assert.deepEqual(validation.jobs.validate.strategy.matrix.mode, [
+    'production',
+    'preview',
+  ]);
+  for (const command of [
+    'pnpm check',
+    'pnpm build',
+    'pnpm test',
+    'pnpm seo:audit',
+    'pnpm test:accessibility',
+  ])
+    assert(
+      validation.jobs.validate.steps.some((s) => s.run === command),
+      command,
+    );
+});

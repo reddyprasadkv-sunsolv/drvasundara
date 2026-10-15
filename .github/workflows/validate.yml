@@ -3,15 +3,25 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_call:
 permissions:
   contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [production, preview]
     env:
       ASTRO_TELEMETRY_DISABLED: '1'
+      PAGES_PREVIEW: ${{ matrix.mode == 'preview' && 'true' || 'false' }}
+      VERIFY_PAGES_PREVIEW: ${{ matrix.mode == 'preview' && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v5
         with:
@@ -20,9 +30,24 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm build
-      - run: pnpm test
-      - name: Validate project preview mode
-        run: pnpm build && node scripts/prepare-pages-preview.mjs && pnpm test
-        env:
-          PAGES_PREVIEW: 'true'
-          VERIFY_PAGES_PREVIEW: 'true'
+      - name: Prepare project preview paths
+        if: matrix.mode == 'preview'
+        run: node scripts/prepare-pages-preview.mjs
+      - name: Metadata, schema, links and publication safety
+        run: pnpm test
+      - name: SEO inventory and orphan-page audit
+        run: pnpm seo:audit
+      - name: Install CI browser
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Responsive accessibility and contact regression
+        run: pnpm test:accessibility
+      - name: Retain validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-${{ matrix.mode }}
+          path: |
+            playwright-report/
+            test-results/
+            qa/phase4/crawl-*.json
+          retention-days: 14

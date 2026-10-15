@@ -1,6 +1,6 @@
 ---
 import Page from '../layouts/Page.astro';
-import { site } from '../config/site';
+import WhatsAppContact from '../components/ui/WhatsAppContact.astro';
 ---
 
 <Page
@@ -21,10 +21,7 @@ import { site } from '../config/site';
     </p>
     <p>
       <strong>
-        WhatsApp:{' '}
-        <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
-          +91 93468 25723<span class="sr-only"> (opens a new tab)</span>
-        </a>
+        WhatsApp: <WhatsAppContact />
       </strong>
     </p>
     <p>

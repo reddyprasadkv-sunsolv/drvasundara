@@ -1,5 +1,7 @@
 import { publicProfile } from '../data/professional';
 import { publicPractice } from './local-seo';
+// Single verified public contact number; derive URL and readable label together.
+const whatsappNumber = '919346825723';
 export const site = {
   name: 'Dr. Vasundara Cheepurupalli',
   url: 'https://www.drvasundaragynec.com',
@@ -14,8 +16,8 @@ export const site = {
     clinicalApproach: publicProfile.approach,
     portraitApproved: true,
   },
-  appointmentFormUrl: '',
-  whatsappUrl: 'https://wa.me/919346825723',
+  whatsappUrl: `https://wa.me/${whatsappNumber}`,
+  whatsappLabel: `+${whatsappNumber.slice(0, 2)} ${whatsappNumber.slice(2, 7)} ${whatsappNumber.slice(7)}`,
   contact: {
     phone: publicPractice?.phone || '',
     email: publicPractice?.email || '',

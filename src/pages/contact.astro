@@ -1,5 +1,6 @@
 ---
 import Page from '../layouts/Page.astro';
+import WhatsAppContact from '../components/ui/WhatsAppContact.astro';
 import { site } from '../config/site';
 import { publicPractice } from '../config/local-seo';
 import { clinicSchema } from '../utils/schema';
@@ -21,26 +22,14 @@ import { clinicSchema } from '../utils/schema';
 >
   <div class="prose">
     <h2>Connect with the clinic.</h2>
-    {site.contact.phone && (
-      <p>
-        <a href={`tel:${site.contact.phone}`}>{site.contact.phone}</a>
-      </p>
-    )}
-    {site.contact.email && (
-      <p>
-        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-      </p>
-    )}
+    <p>Contact the clinic through our official WhatsApp channel:</p>
+    <p>
+      <WhatsAppContact />
+    </p>
     {site.contact.address && <address>{site.contact.address}</address>}
     {site.contact.mapUrl && (
       <p>
         <a href={site.contact.mapUrl}>View clinic location</a>
-      </p>
-    )}
-    {!site.contact.phone && !site.contact.email && !site.contact.address && (
-      <p>
-        Clinic contact details and location are awaiting verification. They will
-        be added here once approved.
       </p>
     )}
     <a class="text-link" href="/appointment/">
