@@ -31,7 +31,24 @@ export const site = {
       : '',
     mapUrl: publicPractice?.mapUrl || '',
   },
-  socials: [] as { label: string; url: string }[],
+  socials: [
+    {
+      label: 'YouTube',
+      url: 'https://www.youtube.com/@DrVasundaraCheepurupalli',
+    },
+    {
+      label: 'Facebook',
+      url: 'https://www.facebook.com/DrVasundaraCheepurupalli',
+    },
+    {
+      label: 'Instagram',
+      url: 'https://www.instagram.com/dr_vasundara_cheepurupalli',
+    },
+    {
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/dr-vasundara-cheepurupalli',
+    },
+  ] as { label: string; url: string }[],
   productionIndexing: false,
 };
 export const navigation = [
