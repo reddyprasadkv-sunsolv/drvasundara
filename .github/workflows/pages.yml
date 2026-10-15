@@ -1,4 +1,4 @@
-name: Deploy approved GitHub Pages preview
+name: Deploy approved production website
 on:
   push:
     branches: [main]
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       approval:
-        description: 'Type APPROVED to deploy to the GitHub Pages address only'
+        description: 'Type APPROVED to deploy the root website with indexing disabled'
         required: true
         type: string
 permissions:
@@ -27,17 +27,18 @@ jobs:
         with:
           node-version: '24'
           cache: pnpm
-      - name: Verify explicit preview request
-        run: node -e "const r=require('./.github/pages-deployment-request.json'); if(r.approved!==true || r.target!=='github-pages-preview') process.exit(1)"
+      - name: Verify explicit production deployment request
+        run: node -e "const r=require('./.github/pages-deployment-request.json'); if(r.approved!==true || r.target!=='github-pages-production' || r.productionIndexing!==false) process.exit(1)"
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm build
         env:
-          PAGES_PREVIEW: 'true'
-      - run: node scripts/prepare-pages-preview.mjs
+          PAGES_PREVIEW: 'false'
       - run: pnpm test
         env:
-          VERIFY_PAGES_PREVIEW: 'true'
+          VERIFY_PAGES_PREVIEW: 'false'
+      - run: pnpm release:prepare
+      - run: pnpm release:verify
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
@@ -52,6 +53,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/configure-pages@v5
-      - name: Deploy approved preview
+      - name: Deploy approved root website
         id: deployment
         uses: actions/deploy-pages@v4
