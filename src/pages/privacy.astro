@@ -1,5 +1,6 @@
 ---
 import Page from '../layouts/Page.astro';
+import { site } from '../config/site';
 ---
 
 <Page
@@ -13,15 +14,32 @@ import Page from '../layouts/Page.astro';
       processing or on-site medical intake. No analytics or marketing scripts
       have been added.
     </p>
-    <h2>WhatsApp contact</h2>
+    <h2>Contacting Us About Your Privacy</h2>
     <p>
-      The contact buttons open WhatsApp in a new tab. Messages are handled
-      through WhatsApp and the clinic, rather than this website. WhatsApp’s
-      privacy terms apply.
+      For questions about how your personal information is handled, or to
+      request access, correction or deletion of information you have shared with
+      the clinic, please contact us through our official WhatsApp channel:
     </p>
     <p>
-      Share only the details needed to arrange a consultation. Avoid sending
-      sensitive medical details in an initial message.
+      <strong>
+        WhatsApp:{' '}
+        <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+          +91 93468 25723<span class="sr-only"> (opens a new tab)</span>
+        </a>
+      </strong>
+    </p>
+    <p>
+      WhatsApp is a third-party messaging service. Messages are handled through
+      that platform and may be subject to its privacy practices.
+    </p>
+    <p>
+      Please avoid sharing sensitive medical records or detailed health
+      information through an initial WhatsApp enquiry. WhatsApp is not intended
+      for medical emergencies.
+    </p>
+    <p>
+      Privacy-related requests will be reviewed by the clinic in accordance with
+      its applicable obligations and confirmed data-handling procedures.
     </p>
     <h2>Videos</h2>
     <p>
@@ -38,9 +56,9 @@ import Page from '../layouts/Page.astro';
     </p>
     <h2>Before production launch</h2>
     <p>
-      The clinic’s privacy contact, retention period, access arrangements and
-      consent wording are awaiting approval. A final clinic-approved privacy
-      policy will replace this information before production cutover.
+      The clinic’s retention period, access arrangements and final consent
+      wording are awaiting approval. A final clinic-approved privacy policy will
+      replace this information before production cutover.
     </p>
   </div>
 </Page>
