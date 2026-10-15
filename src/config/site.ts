@@ -30,7 +30,7 @@ export const site = {
         ]
           .filter(Boolean)
           .join(', ')
-      : '',
+      : 'KIMS Hospital, Secunderabad',
     mapUrl: publicPractice?.mapUrl || '',
   },
   socials: [

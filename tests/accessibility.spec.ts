@@ -49,6 +49,11 @@ for (const route of routes) {
         'a[href^="mailto:"], a[href^="tel:"], a[href*="forms.gle"], a[href*="docs.google.com/forms"], form:not([role="search"])',
       ),
     ).toHaveCount(0);
+    if (route === '/contact/') {
+      await expect(page.locator('main address')).toHaveText(
+        'KIMS Hospital, Secunderabad',
+      );
+    }
     if (['/contact/', '/privacy/'].includes(route)) {
       const contact = page
         .locator('main a[data-contact-channel="whatsapp"]')
