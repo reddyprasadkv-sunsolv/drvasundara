@@ -1,4 +1,5 @@
 ---
+import { site } from '../../config/site';
 import AppointmentCTA from '../ui/AppointmentCTA.astro';
 import Botanical from '../ui/Botanical.astro';
 ---
@@ -13,8 +14,8 @@ import Botanical from '../ui/Botanical.astro';
         <em>deserve attention.</em>
       </h2>
       <p>
-        Connect with the clinic on WhatsApp to discuss consultation
-        availability.
+        Connect with the clinic on WhatsApp to discuss consultation availability
+        at {site.contact.address}.
       </p>
     </div>
     <div class="appointment-action">

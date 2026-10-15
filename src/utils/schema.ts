@@ -8,6 +8,8 @@ export const doctorEntity = () => ({
   '@id': doctorId,
   name: site.doctor.name,
   url: site.url + '/about/',
+  sameAs: site.socials.map(({ url }) => url),
+  workLocation: { '@type': 'Place', name: site.contact.address },
   ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
   ...(publicProfile.affiliations.length
     ? {
@@ -44,6 +46,24 @@ export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({
     item: canonicalUrl(item.path),
   })),
 });
+export function webPageSchema(page: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  const url = canonicalUrl(page.path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url + '#webpage',
+    url,
+    name: page.title,
+    description: page.description,
+    inLanguage: 'en-IN',
+    isPartOf: { '@id': site.url + '/#website' },
+    about: { '@id': doctorId },
+  };
+}
 export function personProfileSchema() {
   return {
     '@context': 'https://schema.org',
