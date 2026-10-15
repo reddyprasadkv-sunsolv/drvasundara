@@ -149,3 +149,15 @@ test('production deployment requires both-mode CI validation before artifact pub
       command,
     );
 });
+
+test('deployment approval guard checks the controlled indexing release before building', () => {
+  const deploy = yaml.parse(
+    fs.readFileSync('.github/workflows/pages.yml', 'utf8'),
+  );
+  const steps = deploy.jobs.build.steps;
+  const gate = steps.findIndex(
+    (s) => s.run === 'node scripts/verify-indexing-release.mjs',
+  );
+  assert(gate >= 0);
+  assert(gate < steps.findIndex((s) => s.run === 'pnpm build'));
+});

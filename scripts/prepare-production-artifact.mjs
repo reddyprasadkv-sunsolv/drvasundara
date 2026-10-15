@@ -1,3 +1,4 @@
+import { configuredIndexing } from './indexing-release.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -17,7 +18,7 @@ const manifest = {
   formatVersion: 1,
   mode: 'production-readiness',
   deploymentAuthorized: false,
-  productionIndexing: false,
+  productionIndexing: configuredIndexing(),
   canonicalOrigin: 'https://www.drvasundaragynec.com',
   basePath: '/',
   sourceCommit:

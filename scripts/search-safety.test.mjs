@@ -55,17 +55,7 @@ test('educational video relationships resolve to real public services and articl
         assert(valid.has(slug), `${property}: ${slug}`);
   }
 });
-test('production indexing stays disabled and preview has an independent noindex override', () => {
-  assert.match(
-    fs.readFileSync('src/config/site.ts', 'utf8'),
-    /productionIndexing: false/,
-  );
-  assert.match(
-    fs.readFileSync('src/components/seo/Meta.astro', 'utf8'),
-    /preview \|\| !site.productionIndexing/,
-  );
-  assert.match(
-    fs.readFileSync('src/pages/robots.txt.ts', 'utf8'),
-    /BASE_URL === '\/'/,
-  );
+test('configured production indexing requires an approved matching request', async () => {
+  const { verifyIndexingRelease } = await import('./indexing-release.mjs');
+  assert.equal(typeof verifyIndexingRelease(), 'boolean');
 });

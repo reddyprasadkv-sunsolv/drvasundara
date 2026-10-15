@@ -1,0 +1,21 @@
+{
+  "generalPublicationDecision": {
+    "wording": "Approve all",
+    "communicatedAt": "2026-10-15",
+    "scope": "Project-owner relayed general publication intent; not individual consent, professional verification or approval of unknown privacy practices."
+  },
+  "privacyPolicy": {
+    "approved": false,
+    "approvedBy": null,
+    "approvedAt": null,
+    "evidenceRef": null
+  },
+  "clinicalReadiness": {
+    "approved": false,
+    "approvedBy": null,
+    "approvedAt": null,
+    "evidenceRef": null
+  },
+  "publicationInventorySha256": null,
+  "patientVideos": "withheld"
+}

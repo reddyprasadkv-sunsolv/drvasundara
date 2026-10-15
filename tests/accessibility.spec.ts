@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { expectedRobots } from '../scripts/indexing-release.mjs';
 import AxeBuilder from '@axe-core/playwright';
 const base = process.env.PAGES_PREVIEW === 'true' ? '/drvasundara' : '';
 const routes = [
@@ -39,7 +40,10 @@ for (const route of routes) {
     ).toBe(true);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
       'content',
-      'noindex, nofollow',
+      expectedRobots(
+        route === '/' ? 'index.html' : route.slice(1) + 'index.html',
+        process.env.PAGES_PREVIEW === 'true',
+      ),
     );
     await expect(
       page.locator('[data-video-kind="patient-experience"]'),

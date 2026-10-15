@@ -1,3 +1,5 @@
+import { expectedRobots, configuredIndexing } from './indexing-release.mjs';
+import { robotsText } from '../src/utils/indexing-policy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -26,7 +28,10 @@ for (const f of files) {
     1,
     `Expected one H1 in ${f}`,
   );
-  assert.match(html, /name="robots" content="noindex, nofollow"/);
+  assert.equal(
+    html.match(/name="robots" content="([^"]+)"/)?.[1],
+    expectedRobots(f, preview),
+  );
   assert.match(html, /rel="canonical"/);
   assert.match(html, /id="main"/);
   assert.match(html, /Skip to content/);
@@ -101,9 +106,9 @@ if (preview)
     'Preview must not claim the production domain',
   );
 assert.doesNotMatch(sitemap, /\/404\//);
-assert.match(
+assert.equal(
   fs.readFileSync(path.join(root, 'robots.txt'), 'utf8'),
-  /Disallow: \//,
+  robotsText({ preview, indexing: configuredIndexing() }),
 );
 console.log(
   `Verified ${files.length} pages, ${links} internal links, metadata, structured data, 404, sitemap and staging robots policy.`,

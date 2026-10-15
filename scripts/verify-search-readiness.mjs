@@ -1,3 +1,4 @@
+import { expectedRobots } from './indexing-release.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -43,7 +44,10 @@ for (const file of fs
   );
   assert(!seen.has(canonical));
   seen.add(canonical);
-  assert.match(html, /name="robots" content="noindex, nofollow"/);
+  assert.equal(
+    html.match(/name="robots" content="([^"]+)"/)?.[1],
+    expectedRobots(file, preview),
+  );
   if (preview)
     assert.doesNotMatch(
       html,
