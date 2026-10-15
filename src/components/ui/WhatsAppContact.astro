@@ -1,0 +1,14 @@
+---
+import { site } from '../../config/site';
+import { safeWhatsAppUrl } from '../../utils/editorial.mjs';
+---
+
+<a
+  href={safeWhatsAppUrl(site.whatsappUrl) || '/appointment/'}
+  data-contact-channel="whatsapp"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {site.whatsappLabel}
+  <span class="sr-only"> (opens WhatsApp in a new tab)</span>
+</a>

@@ -15,7 +15,11 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
+  validation:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.approval == 'APPROVED')
+    uses: ./.github/workflows/validate.yml
   build:
+    needs: validation
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.approval == 'APPROVED')
     runs-on: ubuntu-latest
     env:
@@ -37,6 +41,7 @@ jobs:
       - run: pnpm test
         env:
           VERIFY_PAGES_PREVIEW: 'false'
+      - run: pnpm seo:audit
       - run: pnpm release:prepare
       - run: pnpm release:verify
       - uses: actions/upload-pages-artifact@v4

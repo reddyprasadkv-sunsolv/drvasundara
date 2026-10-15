@@ -1,33 +1,22 @@
 ---
-import { safeFormUrl, safeWhatsAppUrl } from '../../utils/editorial.mjs';
+import { safeWhatsAppUrl } from '../../utils/editorial.mjs';
 import { site } from '../../config/site';
 interface Props {
   label?: string;
   light?: boolean;
-  useForm?: boolean;
 }
-const {
-  useForm = false,
-  label = 'Talk to Us',
-  light = false,
-} = Astro.props;
-const form = useForm ? safeFormUrl(site.appointmentFormUrl) : null;
-const url = form || safeWhatsAppUrl(site.whatsappUrl) || '/appointment/';
+const { label = 'Talk to Us', light = false } = Astro.props;
+const url = safeWhatsAppUrl(site.whatsappUrl) || '/appointment/';
 ---
 
 <a
   class:list={['button', { 'button-light': light }]}
   href={url}
-  data-contact-channel={form ? 'form' : 'whatsapp'}
+  data-contact-channel="whatsapp"
   target="_blank"
   rel="noopener noreferrer"
 >
   {label}
   <span aria-hidden="true">↗</span>
-  <span class="sr-only">
-    {' '}
-    {form
-      ? '(opens Google Forms in a new tab)'
-      : '(opens WhatsApp in a new tab)'}
-  </span>
+  <span class="sr-only"> (opens WhatsApp in a new tab)</span>
 </a>

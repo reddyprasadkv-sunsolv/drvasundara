@@ -10,3 +10,6 @@ qa-tools/
 public/images/journal/
 
 release/
+
+playwright-report/
+test-results/

@@ -16,8 +16,21 @@ for (const file of fs
   .readdirSync(root, { recursive: true })
   .filter((f) => String(f).endsWith('.html'))) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
+  assert.doesNotMatch(
+    html,
+    /(?:href|action)="(?:mailto:|tel:|https:\/\/(?:forms\.gle|docs\.google\.com\/forms))/,
+  );
+  for (const [form] of html.matchAll(/<form\b[^>]*>/gi))
+    assert.match(
+      form,
+      /role="search"/,
+      'Only local journal search may render a form',
+    );
   // No withheld patient identifiers in links, embeds, text or metadata.
-  assert.doesNotMatch(html, /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/);
+  assert.doesNotMatch(
+    html,
+    /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/,
+  );
   const route =
     file === '404.html'
       ? '/404/'

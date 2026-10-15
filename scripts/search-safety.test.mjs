@@ -19,16 +19,12 @@ test('WhatsApp accepts a clean international clinic number and rejects sensitive
   ])
     assert.equal(safeWhatsAppUrl(value), null);
 });
-test('a blank or unsafe form remains unavailable and allowed forms remain explicitly opt-in', () => {
+test('legacy form URL validator rejects blank and unsafe inputs', () => {
   assert.equal(safeFormUrl(''), null);
   assert.equal(safeFormUrl('https://docs.google.com.evil.test/forms/'), null);
   assert.equal(
     safeFormUrl('https://forms.gle/clinic'),
     'https://forms.gle/clinic',
-  );
-  assert.match(
-    fs.readFileSync('src/components/ui/AppointmentCTA.astro', 'utf8'),
-    /useForm = false/,
   );
 });
 test('educational video relationships resolve to real public services and articles', () => {

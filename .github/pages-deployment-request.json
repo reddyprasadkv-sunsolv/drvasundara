@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "Publish requested privacy introduction and remove hosting/access and pre-launch sections. Keep indexing disabled and patient videos withheld; no other settings changes.",
-  "revision": "privacy-copy-update-2026-10-15"
+  "request": "Deploy GitHub-only validation gates and shared verified WhatsApp contact interfaces. Keep indexing disabled and patient videos withheld. No DNS or Pages settings changes.",
+  "revision": "github-only-workflow-2026-10-15"
 }

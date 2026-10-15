@@ -1,4 +1,5 @@
 ---
+import WhatsAppContact from '../ui/WhatsAppContact.astro';
 import { site, navigation } from '../../config/site';
 // Bootstrap Icons v1.11.3 (MIT); see public/licenses/bootstrap-icons.txt.
 import youtube from '../../assets/social-icons/youtube.svg?raw';
@@ -33,22 +34,10 @@ const socialIcons: Record<string, string> = {
     </nav>
     <div class="footer-contact">
       <span class="eyebrow">GET IN TOUCH</span>
-      {site.contact.phone && (
-        <a href={`tel:${site.contact.phone}`}>{site.contact.phone}</a>
-      )}
-      {site.contact.email && (
-        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-      )}
+      <WhatsAppContact />
       {site.contact.address && <p>{site.contact.address}</p>}
       {site.contact.mapUrl && (
         <a href={site.contact.mapUrl}>Find the clinic ↗</a>
-      )}
-      {!site.contact.phone && !site.contact.email && (
-        <p>
-          Verified clinic details will
-          <br />
-          be available here soon.
-        </p>
       )}
       <nav class="footer-socials" aria-label="Social media">
         {site.socials.map((s) => (
