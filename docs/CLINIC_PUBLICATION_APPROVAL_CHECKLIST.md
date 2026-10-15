@@ -57,3 +57,25 @@ No privacy facts, registration, exact address/hours, clinical approval dates or 
 ## Privacy contact wording — 15 October 2026
 
 The project owner supplied the “Contacting Us About Your Privacy” wording and official WhatsApp +91 93468 25723 for access, correction and deletion requests. The wording is used as supplied, with the number linked to the existing WhatsApp channel and an accessible new-tab notice. It describes third-party processing, discourages initial sharing of medical records, excludes emergency use and says requests will be reviewed under applicable obligations and confirmed procedures. It does not establish a retention period, staff/device access arrangements, deletion execution or a completed data-handling policy. Earlier pending-contact statements above describe the evidence available at the earlier review; this update resolves the public contact route only. Indexing remains disabled, patient videos remain withheld and clinical review dates are unchanged.
+
+## Final readiness classification — latest baseline `eb2fb6a`
+
+The project owner has now confirmed: WhatsApp is the only public contact; enquiries remain in the clinic WhatsApp account; relevant information may be copied to hospital management software or spreadsheets; no public email is needed; the site is static without an on-site patient database. These facts supersede earlier “downstream handling unverified” statements only to that extent. The 15 October 2026 “Approve all” decision remains general publication intent, with its original wording/date/scope unchanged.
+
+| Item | Classification | Current action / exact remaining decision |
+| --- | --- | --- |
+| Official WhatsApp contact, static website, account storage and possible software/spreadsheet copies | Confirmed and complete | Preserve centralized contact configuration; owner confirmation is recorded, not independently audited. |
+| Disclosure of account storage and possible copies | Requires a nonclinical disclosure correction | Proposed wording is in `CLINIC_PRIVACY_POLICY_DRAFT.md`; no unsupported storage/security claim is added. Final public policy awaits the operational decisions below. |
+| WhatsApp enquiry retention | Requires explicit clinic operational confirmation | Supply actual duration or criteria. |
+| Retention of hospital/software/spreadsheet copies | Requires explicit clinic operational confirmation | Supply actual per-destination retention/deletion/backup practices. |
+| Staff and third-party record access | Requires explicit clinic operational confirmation | Confirm actual roles/providers and access arrangements. |
+| Access/correction/deletion requests | Requires explicit clinic operational confirmation | Confirm responsible role, request verification and operational handling across all destinations, including real exceptions/limitations. |
+| Final privacy policy | Requires explicit clinic operational confirmation | Approve final accurate wording after those facts are supplied; record actual approver/date and non-sensitive reference. |
+| Five patient-experience videos | Safe to withhold from publication | Continue withholding all five; no permission is inferred. Their absence need not block indexing of otherwise approved content. |
+| Registration number/authority, exact address and conflicting hours | Safe to withhold from publication | Keep unverified fields unpublished; no fabricated verification, address or schedule is needed to proceed. |
+| Current 28 services, 12 articles, profile and five educational videos | Existing scoped publication approvals retained | No medical copy, author/reviewer attribution or approval dates changed. General intent allows keeping existing public content subject to recorded conditions. |
+| High-priority clinical source queue | Requires clinician review before indexing | Clinician confirms the listed P1 scope/urgency/terminology/source-applicability questions as written, requests a reviewed revision, or identifies specific claims/pages to withhold. No new adverse clinical finding is asserted; no mandatory review is silently marked complete. |
+
+Existing reviews dated 13 October and scoped Urogynecology approval dated 14 October are not expanded or redated. Current source-review questions identify scope/currency limitations rather than a newly validated unsafe recommendation; no clinical prose is silently rewritten or automatically withdrawn. If the clinician identifies a claim requiring mandatory revision, withhold the affected claim/page before an indexing release and update its inventory.
+
+**Outcome:** technical preparation can continue; indexing cannot activate while the final privacy policy and scoped clinician indexing-readiness decision remain open. `.github/publication-readiness.json` records these gates as unapproved. It contains no private records and must not be filled with invented sign-offs. The missing patient-video permissions are addressed by withholding, not by treating general publication intent as consent.

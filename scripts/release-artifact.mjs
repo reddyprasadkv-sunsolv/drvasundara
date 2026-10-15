@@ -1,3 +1,9 @@
+import {
+  expectedRobots,
+  configuredIndexing,
+  verifyIndexingRelease,
+} from './indexing-release.mjs';
+import { robotsText } from '../src/utils/indexing-policy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -49,6 +55,7 @@ export function inventoryFiles(root) {
   return files.sort((a, b) => a.path.localeCompare(b.path));
 }
 export function assertRootReadiness(root) {
+  verifyIndexingRelease();
   const files = inventoryFiles(root);
   const pages = files.filter((f) => f.path.endsWith('.html'));
   assert.equal(
@@ -64,7 +71,10 @@ export function assertRootReadiness(root) {
   );
   for (const file of pages) {
     const html = fs.readFileSync(path.join(root, file.path), 'utf8');
-    assert.match(html, /name="robots" content="noindex, nofollow"/);
+    assert.equal(
+      html.match(/name="robots" content="([^"]+)"/)?.[1],
+      expectedRobots(file.path),
+    );
     assert.match(
       html,
       /rel="canonical" href="https:\/\/www\.drvasundaragynec\.com\//,
@@ -72,9 +82,9 @@ export function assertRootReadiness(root) {
     assert.doesNotMatch(html, /(?:href|src)="\/drvasundara\//);
     assert.doesNotMatch(html, /(?:href|src)="http:\/\//);
   }
-  assert.match(
+  assert.equal(
     fs.readFileSync(path.join(root, 'robots.txt'), 'utf8'),
-    /Disallow: \//,
+    robotsText({ indexing: configuredIndexing() }),
   );
   assert.doesNotMatch(
     fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8'),
@@ -92,7 +102,7 @@ export function verifyArtifact(root) {
   );
   assert.equal(manifest.mode, 'production-readiness');
   assert.equal(manifest.deploymentAuthorized, false);
-  assert.equal(manifest.productionIndexing, false);
+  assert.equal(manifest.productionIndexing, configuredIndexing());
   const actual = inventoryFiles(path.join(root, 'site'));
   assert.deepEqual(
     actual,
