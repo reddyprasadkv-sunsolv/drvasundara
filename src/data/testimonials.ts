@@ -33,10 +33,6 @@ export const testimonials = [
   },
 ];
 
-// No individual permission evidence has been established. Do not populate this
-// allowlist from general publication approval; retain only non-sensitive evidence
-// references in the approval record before restoring any video.
-const permissionVerifiedIds: ReadonlySet<string> = new Set();
-export const publishedTestimonials = testimonials.filter((video) =>
-  permissionVerifiedIds.has(video.id),
-);
+// Restored by explicit project-owner instruction on 15 October 2026.
+// This records publication direction, not independently verified patient consent.
+export const publishedTestimonials = testimonials;

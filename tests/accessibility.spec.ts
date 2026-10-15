@@ -43,7 +43,7 @@ for (const route of routes) {
     );
     await expect(
       page.locator('[data-video-kind="patient-experience"]'),
-    ).toHaveCount(0);
+    ).toHaveCount(route === '/' ? 3 : route === '/testimonials/' ? 5 : 0);
     await expect(
       page.locator(
         'a[href^="mailto:"], a[href^="tel:"], a[href*="forms.gle"], a[href*="docs.google.com/forms"], form:not([role="search"])',
