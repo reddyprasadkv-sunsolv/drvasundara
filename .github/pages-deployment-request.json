@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "Publish supplied clinic privacy contact wording and official WhatsApp link. Keep indexing disabled and patient videos withheld; no DNS or Pages settings changes.",
-  "revision": "privacy-contact-wording-2026-10-15"
+  "request": "Publish requested privacy introduction and remove hosting/access and pre-launch sections. Keep indexing disabled and patient videos withheld; no other settings changes.",
+  "revision": "privacy-copy-update-2026-10-15"
 }
