@@ -27,12 +27,21 @@ export function publicationInventorySha256() {
     hash.update(file).update('\0').update(fs.readFileSync(file)).update('\0');
   return hash.digest('hex');
 }
+// Readiness dates are clinic calendar dates, not UTC build-server dates.
+export function clinicDate(now = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+}
 export function assertIndexingApproval({
   indexing,
   request,
   readiness,
   inventorySha256,
-  today = new Date().toISOString().slice(0, 10),
+  today = clinicDate(),
 }) {
   assert.equal(
     request.approved,

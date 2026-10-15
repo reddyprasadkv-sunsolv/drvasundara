@@ -8,6 +8,7 @@ import {
 } from '../src/utils/indexing-policy.mjs';
 import {
   assertIndexingApproval,
+  clinicDate,
   publicationInventorySha256,
 } from './indexing-release.mjs';
 import { loadEditorial } from './editorial-lib.mjs';
@@ -109,4 +110,9 @@ test('indexing release rejects missing/partial approvals, configuration mismatch
   disabled.readiness.privacyPolicy.approved = false;
   disabled.readiness.clinicalReadiness.approved = false;
   assert.doesNotThrow(() => assertIndexingApproval(disabled));
+});
+
+test('clinic confirmation dates follow India calendar rather than UTC build dates', () => {
+  assert.equal(clinicDate(new Date('2026-10-15T18:29:59Z')), '2026-10-15');
+  assert.equal(clinicDate(new Date('2026-10-15T18:30:00Z')), '2026-10-16');
 });

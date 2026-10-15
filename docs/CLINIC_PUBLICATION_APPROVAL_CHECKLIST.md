@@ -96,3 +96,17 @@ The attached Steps 1–3 instruction again requires withholding all five patient
 Latest fetched main is `d0bad71`: it changes the site flag to true, while the deployment request still says false. Live production was separately checked and still disallows crawling with noindex metadata. This PR aligns its proposed configuration back to disabled mode pending real approvals, rather than treating that isolated flag edit as completed privacy or clinical approval.
 
 The exact unresolved decisions remain: (1) WhatsApp enquiry retention duration/criteria; (2) retention/deletion/backup handling for hospital-software and spreadsheet copies; (3) staff and third-party access; (4) responsible role and actual access/correction/deletion request procedure; (5) final accurate privacy wording with real clinic approval; (6) clinician disposition of the outstanding P1 scope/urgency/source-applicability questions. Patient permissions are addressed by proposed withholding, not by fabricated consent. No new mandatory clinical error is inferred, no medical recommendations are rewritten, and existing 13/14 October review dates remain unchanged.
+
+## Readiness resolution — clinic confirmation received 16 October 2026
+
+The project owner relayed the clinic's approval of the supplied privacy wording and confirmation that high-priority clinical content has been reviewed for public search indexing, with identified exceptions withheld. The exact wording and its scope are recorded in `INDEXING_PUBLICATION_APPROVAL_2026-10-16.md`.
+
+| Earlier open decision | Confirmed scope |
+| --- | --- |
+| Retention of routine enquiries and relevant copies | Purpose-based retention only as long as necessary for communication/appointment coordination; medical records follow applicable hospital retention requirements. No numerical period is inferred. |
+| Access | Dr. Vasundara and authorized clinic/hospital staff manage enquiries and relevant records. No additional identities or vendors are inferred. |
+| Access/correction/deletion requests | Official WhatsApp is the request route; authorized staff review requests subject to medical recordkeeping obligations. No unconditional deletion promise is made. |
+| Final privacy wording | Clinic-approved supplied wording is published on the privacy page. |
+| High-priority clinical review | Clinic confirms readiness for public search indexing with identified exceptions withheld; this is a relayed attestation, not new independently verified per-page review dates. |
+
+The previously recorded blockers are resolved for this release by that confirmation, without fabricating missing facts. Five patient videos remain withheld. Existing medical dates/scopes, registration display choice and owner-provided KIMS location remain unchanged. The approved release now aligns the site flag, deployment request, real readiness references and source inventory digest for production indexing. Historical pending statements above describe prior states and are not the current readiness decision. No sitemap submission or claim of actual search-engine indexing is made by this record.

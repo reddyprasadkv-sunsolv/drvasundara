@@ -43,7 +43,7 @@ export const site = {
       url: 'https://www.linkedin.com/in/dr-vasundara-cheepurupalli',
     },
   ] as { label: string; url: string }[],
-  productionIndexing: false,
+  productionIndexing: true,
 };
 export const navigation = [
   { label: 'Home', href: '/' },
