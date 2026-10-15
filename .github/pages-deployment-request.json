@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "User requested adding the SunSolv Technologies footer development credit and deploying through the approved production workflow. Preserve existing domain, DNS and disabled indexing.",
-  "revision": "footer-development-credit-2026-10-15"
+  "request": "Add the four user-supplied professional social profile links to the existing footer and deploy through the approved workflow. Preserve indexing, domain and DNS settings.",
+  "revision": "footer-social-links-2026-10-15"
 }
