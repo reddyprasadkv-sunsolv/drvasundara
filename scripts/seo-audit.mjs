@@ -4,7 +4,7 @@ const root = path.resolve('dist');
 const preview = process.env.VERIFY_PAGES_PREVIEW === 'true';
 const origin = preview
   ? 'https://reddyprasadkv-sunsolv.github.io'
-  : 'https://drvasundaragynec.com';
+  : 'https://www.drvasundaragynec.com';
 const base = preview ? '/drvasundara/' : '/';
 const pages = fs
   .readdirSync(root, { recursive: true })

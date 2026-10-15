@@ -65,7 +65,8 @@ test('complete production inventory preserves every public destination and Urogy
   const urls = pages
     .map(
       (p) =>
-        'https://drvasundaragynec.com/' + p.path.replace(/index\.html$/, ''),
+        'https://www.drvasundaragynec.com/' +
+        p.path.replace(/index\.html$/, ''),
     )
     .sort();
   const report = fs.readFileSync(
@@ -73,7 +74,7 @@ test('complete production inventory preserves every public destination and Urogy
     'utf8',
   );
   const listed = [
-    ...report.matchAll(/^\| (https:\/\/drvasundaragynec\.com\/\S*) \|/gm),
+    ...report.matchAll(/^\| (https:\/\/www\.drvasundaragynec\.com\/\S*) \|/gm),
   ]
     .map((m) => m[1])
     .sort();
@@ -103,7 +104,7 @@ test('complete production inventory preserves every public destination and Urogy
     process.env.VERIFY_PAGES_PREVIEW === 'true' ? '/drvasundara' : '';
   const origin = base
     ? 'https://reddyprasadkv-sunsolv.github.io'
-    : 'https://drvasundaragynec.com';
+    : 'https://www.drvasundaragynec.com';
   assert(
     fs
       .readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8')

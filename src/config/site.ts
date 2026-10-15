@@ -2,7 +2,7 @@ import { publicProfile } from '../data/professional';
 import { publicPractice } from './local-seo';
 export const site = {
   name: 'Dr. Vasundara Cheepurupalli',
-  url: 'https://drvasundaragynec.com',
+  url: 'https://www.drvasundaragynec.com',
   description:
     'A thoughtful introduction to Dr. Vasundara Cheepurupalli and women’s healthcare. Explore the practice and appointment request information.',
   // Add only clinic-verified information. Empty fields are never rendered.

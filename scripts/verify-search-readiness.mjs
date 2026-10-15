@@ -11,7 +11,7 @@ let articles = 0,
   services = 0,
   assets = 0;
 const inventory = loadEditorial();
-const doctorId = 'https://drvasundaragynec.com/#doctor';
+const doctorId = 'https://www.drvasundaragynec.com/#doctor';
 for (const file of fs
   .readdirSync(root, { recursive: true })
   .filter((f) => String(f).endsWith('.html'))) {
@@ -23,7 +23,7 @@ for (const file of fs
   const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
   assert.equal(
     canonical,
-    'https://drvasundaragynec.com' + route,
+    'https://www.drvasundaragynec.com' + route,
     `Canonical mismatch: ${file}`,
   );
   assert(!seen.has(canonical));
@@ -74,7 +74,7 @@ for (const file of fs
   assert.equal(website.about['@id'], doctorId);
   assert.equal(
     website.publisher['@id'],
-    'https://drvasundaragynec.com/#publisher',
+    'https://www.drvasundaragynec.com/#publisher',
   );
   if (file.startsWith('services/') && file !== 'services/index.html') {
     services++;
@@ -91,7 +91,7 @@ for (const file of fs
     assert.equal(article.author['@type'], 'Organization');
     assert.equal(
       article.author['@id'],
-      'https://drvasundaragynec.com/#publisher',
+      'https://www.drvasundaragynec.com/#publisher',
     );
     const source = inventory.records.find(
       (r) => file === `blog/${r.data.slug}/index.html`,

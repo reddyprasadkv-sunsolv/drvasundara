@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "Replace footer social-platform words with recognizable, accessible logo-only links and deploy through the existing approved workflow. Preserve link destinations, indexing and DNS settings.",
-  "revision": "footer-social-icons-2026-10-15"
+  "request": "Align canonical, sitemap, Open Graph and structured-data URLs to the existing preferred www host. Keep production indexing disabled; do not change DNS or Pages custom-domain settings.",
+  "revision": "www-canonical-alignment-2026-10-15"
 }

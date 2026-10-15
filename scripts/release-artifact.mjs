@@ -67,7 +67,7 @@ export function assertRootReadiness(root) {
     assert.match(html, /name="robots" content="noindex, nofollow"/);
     assert.match(
       html,
-      /rel="canonical" href="https:\/\/drvasundaragynec\.com\//,
+      /rel="canonical" href="https:\/\/www\.drvasundaragynec\.com\//,
     );
     assert.doesNotMatch(html, /(?:href|src)="\/drvasundara\//);
     assert.doesNotMatch(html, /(?:href|src)="http:\/\//);
@@ -82,7 +82,7 @@ export function assertRootReadiness(root) {
   );
   assert.equal(
     fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim(),
-    'drvasundaragynec.com',
+    'www.drvasundaragynec.com',
   );
   return { files, pageCount: pages.length };
 }
