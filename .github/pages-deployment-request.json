@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "Add the four user-supplied professional social profile links to the existing footer and deploy through the approved workflow. Preserve indexing, domain and DNS settings.",
-  "revision": "footer-social-links-2026-10-15"
+  "request": "Replace footer social-platform words with recognizable, accessible logo-only links and deploy through the existing approved workflow. Preserve link destinations, indexing and DNS settings.",
+  "revision": "footer-social-icons-2026-10-15"
 }
