@@ -1,15 +1,11 @@
-# Clinic privacy wording — approval draft, not public policy
+# Clinic privacy policy — approved disclosure record, 16 October 2026
 
-The public privacy page retains the project owner's supplied contact wording and factual website/video behavior. The verified official WhatsApp contact is configured centrally; no email or Google Form is proposed.
+The clinic approved the supplied wording through the project owner on 16 October 2026. Exact confirmation and its limited scope: [publication approval](INDEXING_PUBLICATION_APPROVAL_2026-10-16.md). This supersedes the earlier pending draft; no independent audit is claimed.
 
-Before completing the policy, the clinic must supply actual answers and an approver/date for:
+The public privacy page retains the static website, centralized WhatsApp contact, third-party WhatsApp processing, initial-enquiry minimization, emergency-use warning and click-to-load YouTube disclosures. It now also publishes the clinic's supplied operational wording:
 
-| Decision | Clinic answer / approval |
-| --- | --- |
-| Who owns the WhatsApp account and which staff, devices or linked sessions access enquiries? | Unconfirmed — clinic to supply. |
-| Where are messages, attachments, exports and backups stored or copied? Which providers receive them? | Unconfirmed — clinic to supply. |
-| How long is each category retained, including staff/device and backup copies? | Unconfirmed — clinic to supply; no default period proposed. |
-| Who handles access/correction/deletion requests and what actual process, limitations and exceptions apply? | Unconfirmed — clinic to supply; no deletion deadline or guarantee proposed. |
-| What final notice accurately describes these confirmed practices and external WhatsApp processing? | Clinic-approved wording and actual approval date pending. |
+- Dr. Vasundara and authorized clinic/hospital staff manage WhatsApp enquiries; relevant records may be copied to hospital software or spreadsheets for patient communication and appointment coordination.
+- Routine enquiries are retained only as long as necessary for those purposes; medical records follow applicable hospital record-retention requirements.
+- Patients can request access, correction or deletion through official WhatsApp. Authorized staff review requests subject to applicable medical recordkeeping obligations.
 
-Do not publish these placeholders as facts. Keep private records outside the public repository and provide only non-sensitive approval references. General “Approve all” publication intent does not establish these practices or individual patient-video permissions. Patient videos remain withheld and indexing remains disabled. Existing clinical priority reviews remain open; this draft creates no new medical approval.
+No fixed retention duration, universal deletion commitment, staff identity, software vendor, new contact channel or on-site database is added. The purpose-based criteria and limitations are those supplied by the clinic, not invented safeguards. WhatsApp remains configured centrally; no number is duplicated across components.

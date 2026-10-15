@@ -1,0 +1,21 @@
+{
+  "generalPublicationDecision": {
+    "wording": "Approve all",
+    "communicatedAt": "2026-10-15",
+    "scope": "Project-owner relayed general publication intent; not individual consent, professional verification or approval of unknown privacy practices."
+  },
+  "privacyPolicy": {
+    "approved": true,
+    "approvedBy": "Clinic — confirmation relayed by project owner",
+    "approvedAt": "2026-10-16",
+    "evidenceRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md"
+  },
+  "clinicalReadiness": {
+    "approved": true,
+    "approvedBy": "Clinic — confirmation relayed by project owner",
+    "approvedAt": "2026-10-16",
+    "evidenceRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md"
+  },
+  "publicationInventorySha256": "c5baf8c57ef203c730290d0228c3572f9eb712f1cffe56b108013832dcd304fe",
+  "patientVideos": "withheld"
+}

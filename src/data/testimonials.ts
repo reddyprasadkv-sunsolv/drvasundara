@@ -33,6 +33,6 @@ export const testimonials = [
   },
 ];
 
-// Restored by explicit project-owner instruction on 15 October 2026.
-// This records publication direction, not independently verified patient consent.
-export const publishedTestimonials = testimonials;
+// The 16 October indexing instructions require withholding again pending
+// individual permission evidence. Preserve all original source records.
+export const publishedTestimonials = testimonials.filter(() => false);

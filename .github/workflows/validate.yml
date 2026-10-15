@@ -51,3 +51,33 @@ jobs:
             test-results/
             qa/phase4/crawl-*.json
           retention-days: 14
+  indexing-states:
+    name: Indexing integration (${{ matrix.state }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        state: [disabled, enabled]
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Test real production and preview outputs in disposable repositories
+        run: node scripts/test-indexing-states.mjs ${{ matrix.state }}
+      - name: Retain test evidence only, never indexable site artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexing-fixture-reports-${{ matrix.state }}
+          path: qa/indexing-fixtures/
+          retention-days: 14

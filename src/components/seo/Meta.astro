@@ -1,4 +1,8 @@
 ---
+import {
+  robotsDirective,
+  isIndexingExcluded,
+} from '../../utils/indexing-policy.mjs';
 import { site } from '../../config/site';
 import { canonicalUrl, publicAssetUrl } from '../../utils/urls';
 interface Props {
@@ -39,11 +43,11 @@ const socialImage =
 <link rel="canonical" href={canonical} />
 <meta
   name="robots"
-  content={
-    preview || !site.productionIndexing || noindex
-      ? 'noindex, nofollow'
-      : 'index, follow'
-  }
+  content={robotsDirective({
+    preview,
+    indexing: site.productionIndexing,
+    excluded: noindex || isIndexingExcluded(new URL(canonical).pathname),
+  })}
 />
 <meta property="og:type" content={article ? 'article' : 'website'} />
 <meta property="og:title" content={fullTitle} />
