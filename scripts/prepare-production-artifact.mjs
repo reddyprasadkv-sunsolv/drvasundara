@@ -18,7 +18,7 @@ const manifest = {
   mode: 'production-readiness',
   deploymentAuthorized: false,
   productionIndexing: false,
-  canonicalOrigin: 'https://drvasundaragynec.com',
+  canonicalOrigin: 'https://www.drvasundaragynec.com',
   basePath: '/',
   sourceCommit:
     process.env.GITHUB_SHA ||

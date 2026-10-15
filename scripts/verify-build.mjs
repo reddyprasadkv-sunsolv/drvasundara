@@ -92,7 +92,7 @@ assert.ok(
   sitemap.includes(
     preview
       ? 'https://reddyprasadkv-sunsolv.github.io/drvasundara/'
-      : 'https://drvasundaragynec.com/',
+      : 'https://www.drvasundaragynec.com/',
   ),
 );
 if (preview)

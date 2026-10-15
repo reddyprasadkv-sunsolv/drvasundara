@@ -8,7 +8,7 @@ export default defineConfig({
   devToolbar: { enabled: false },
   site: preview
     ? 'https://reddyprasadkv-sunsolv.github.io'
-    : 'https://drvasundaragynec.com',
+    : 'https://www.drvasundaragynec.com',
   output: 'static',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap({ filter: (url) => !url.endsWith('/404/') })],
