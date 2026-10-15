@@ -1,5 +1,16 @@
 ---
 import { site, navigation } from '../../config/site';
+// Bootstrap Icons v1.11.3 (MIT); see public/licenses/bootstrap-icons.txt.
+import youtube from '../../assets/social-icons/youtube.svg?raw';
+import facebook from '../../assets/social-icons/facebook.svg?raw';
+import instagram from '../../assets/social-icons/instagram.svg?raw';
+import linkedin from '../../assets/social-icons/linkedin.svg?raw';
+const socialIcons: Record<string, string> = {
+  YouTube: youtube,
+  Facebook: facebook,
+  Instagram: instagram,
+  LinkedIn: linkedin,
+};
 ---
 
 <footer class="site-footer">
@@ -39,12 +50,24 @@ import { site, navigation } from '../../config/site';
           be available here soon.
         </p>
       )}
-      {site.socials.map((s) => (
-        <a href={s.url} rel="noopener noreferrer" target="_blank">
-          {s.label}
-          <span class="sr-only"> (new tab)</span>
-        </a>
-      ))}
+      <nav class="footer-socials" aria-label="Social media">
+        {site.socials.map((s) => (
+          <a
+            class="social-link"
+            href={s.url}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={`${s.label} (opens in a new tab)`}
+            title={s.label}
+          >
+            <span
+              class="social-logo"
+              aria-hidden="true"
+              set:html={socialIcons[s.label]}
+            />
+          </a>
+        ))}
+      </nav>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -72,6 +95,28 @@ import { site, navigation } from '../../config/site';
 </footer>
 
 <style>
+  .footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .footer-contact .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--ink);
+  }
+  .social-logo {
+    display: flex;
+  }
+  .social-logo :global(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
   .development-credit {
     margin: 0;
     padding-block: 0.75rem;
