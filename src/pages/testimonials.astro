@@ -4,12 +4,15 @@ import PatientVideos from '../components/medical/PatientVideos.astro';
 ---
 
 <Page
+  noindex={true}
   title="Patient experiences"
   eyebrow="IN THEIR OWN WORDS"
   description="Personal perspectives shared on Dr. Vasundara Cheepurupalli’s YouTube channel, brought together from the existing clinic website."
 >
   <section aria-labelledby="patient-videos-heading">
-    <h2 id="patient-videos-heading" class="sr-only">Patient experience videos</h2>
+    <h2 id="patient-videos-heading" class="sr-only">
+      Patient experience videos
+    </h2>
     <PatientVideos />
   </section>
 </Page>
