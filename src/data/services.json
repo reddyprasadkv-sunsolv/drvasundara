@@ -118,7 +118,9 @@
         "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome"
       }
     ],
-    "relatedArticles": ["pcos-pcod-terms"],
+    "relatedArticles": [
+      "pcos-pcod-terms"
+    ],
     "relatedServices": [
       "general-gynecology",
       "abnormal-uterine-bleeding",
@@ -185,8 +187,14 @@
         "url": "https://www.nice.org.uk/guidance/ng88/chapter/Recommendations"
       }
     ],
-    "relatedArticles": ["abnormal-uterine-bleeding"],
-    "relatedServices": ["general-gynecology", "pcos", "menstrual-disorders"],
+    "relatedArticles": [
+      "abnormal-uterine-bleeding"
+    ],
+    "relatedServices": [
+      "general-gynecology",
+      "pcos",
+      "menstrual-disorders"
+    ],
     "image": null,
     "seo": {
       "title": "Abnormal Uterine Bleeding",
@@ -248,7 +256,9 @@
         "url": "https://www.nhs.uk/symptoms/irregular-periods/"
       }
     ],
-    "relatedArticles": ["irregular-periods"],
+    "relatedArticles": [
+      "irregular-periods"
+    ],
     "relatedServices": [
       "general-gynecology",
       "pcos",
@@ -315,7 +325,9 @@
         "url": "https://www.nhs.uk/conditions/ovarian-cyst/"
       }
     ],
-    "relatedArticles": ["ovarian-cysts"],
+    "relatedArticles": [
+      "ovarian-cysts"
+    ],
     "relatedServices": [
       "general-gynecology",
       "pcos",
@@ -382,7 +394,9 @@
         "url": "https://www.nhs.uk/conditions/menopause-and-perimenopause/"
       }
     ],
-    "relatedArticles": ["menopause-support"],
+    "relatedArticles": [
+      "menopause-support"
+    ],
     "relatedServices": [
       "general-gynecology",
       "pcos",
@@ -449,7 +463,9 @@
         "url": "https://www.nhs.uk/contraception/"
       }
     ],
-    "relatedArticles": ["contraception-choices"],
+    "relatedArticles": [
+      "contraception-choices"
+    ],
     "relatedServices": [
       "general-gynecology",
       "pcos",
@@ -583,7 +599,9 @@
         "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
       }
     ],
-    "relatedArticles": ["antenatal-visit-questions"],
+    "relatedArticles": [
+      "antenatal-visit-questions"
+    ],
     "relatedServices": [
       "high-risk-pregnancy",
       "caesarean-section",
@@ -650,7 +668,9 @@
         "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations"
       }
     ],
-    "relatedArticles": ["high-risk-pregnancy"],
+    "relatedArticles": [
+      "high-risk-pregnancy"
+    ],
     "relatedServices": [
       "pregnancy-antenatal-care",
       "caesarean-section",
@@ -784,8 +804,13 @@
         "url": "https://www.nhs.uk/conditions/ectopic-pregnancy/"
       }
     ],
-    "relatedArticles": ["ectopic-pregnancy-warning-signs"],
-    "relatedServices": ["pregnancy-antenatal-care", "high-risk-pregnancy"],
+    "relatedArticles": [
+      "ectopic-pregnancy-warning-signs"
+    ],
+    "relatedServices": [
+      "pregnancy-antenatal-care",
+      "high-risk-pregnancy"
+    ],
     "image": null,
     "seo": {
       "title": "Ectopic Pregnancy",
@@ -981,7 +1006,9 @@
         "url": "https://www.who.int/news-room/fact-sheets/detail/infertility"
       }
     ],
-    "relatedArticles": ["fertility-first-steps"],
+    "relatedArticles": [
+      "fertility-first-steps"
+    ],
     "relatedServices": [
       "primary-secondary-infertility",
       "reproductive-health-evaluation",
@@ -1324,7 +1351,9 @@
         "url": "https://www.nhs.uk/tests-and-treatments/hysterectomy/"
       }
     ],
-    "relatedArticles": ["laparoscopic-hysterectomy"],
+    "relatedArticles": [
+      "laparoscopic-hysterectomy"
+    ],
     "relatedServices": [
       "laparoscopic-gynecological-surgery",
       "robotic-gynecological-surgery",
@@ -1395,7 +1424,9 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/32826597/"
       }
     ],
-    "relatedArticles": ["robotic-gynecological-surgery"],
+    "relatedArticles": [
+      "robotic-gynecological-surgery"
+    ],
     "relatedServices": [
       "laparoscopic-gynecological-surgery",
       "laparoscopic-hysterectomy",
@@ -1605,7 +1636,9 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["vaginoplasty"],
+    "relatedServices": [
+      "vaginoplasty"
+    ],
     "image": null,
     "seo": {
       "title": "Cosmetic Gynecology Consultation",
@@ -1672,7 +1705,9 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["cosmetic-gynecology-consultation"],
+    "relatedServices": [
+      "cosmetic-gynecology-consultation"
+    ],
     "image": null,
     "seo": {
       "title": "Vaginoplasty",
@@ -1739,7 +1774,9 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["reproductive-wellness"],
+    "relatedServices": [
+      "reproductive-wellness"
+    ],
     "image": null,
     "seo": {
       "title": "Preventive Gynecological Consultation",
@@ -1802,7 +1839,9 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["preventive-womens-health"],
+    "relatedServices": [
+      "preventive-womens-health"
+    ],
     "image": null,
     "seo": {
       "title": "Reproductive Wellness",
@@ -1865,7 +1904,10 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["preventive-womens-health", "reproductive-wellness"],
+    "relatedServices": [
+      "preventive-womens-health",
+      "reproductive-wellness"
+    ],
     "image": null,
     "seo": {
       "title": "Menopause and Midlife Health",
@@ -1928,7 +1970,10 @@
       }
     ],
     "relatedArticles": [],
-    "relatedServices": ["preventive-womens-health", "reproductive-wellness"],
+    "relatedServices": [
+      "preventive-womens-health",
+      "reproductive-wellness"
+    ],
     "image": null,
     "seo": {
       "title": "Contraception Counseling",
@@ -1936,6 +1981,80 @@
     },
     "reviewNotes": [
       "Medical review and availability confirmed by the user on 13 October 2026."
+    ]
+  },
+  {
+    "slug": "urogynecology-consultation",
+    "name": "Urogynecology Consultation",
+    "category": "urogynecology",
+    "kind": "consultation",
+    "description": "Urogynecology focuses on bladder symptoms and pelvic floor concerns, including urinary leakage and pelvic organ prolapse.",
+    "approved": true,
+    "availabilityConfirmed": true,
+    "contentReviewed": true,
+    "status": "published",
+    "approvedBy": "Dr. Vasundara Cheepurupalli",
+    "approvedAt": "2026-10-14",
+    "medicalReviewedBy": "Dr. Vasundara Cheepurupalli",
+    "medicalReviewedAt": "2026-10-14",
+    "approvalRecord": "https://github.com/reddyprasadkv-sunsolv/drvasundara/blob/main/docs/UROGYNECOLOGY_PUBLICATION_APPROVAL.md",
+    "aliasOf": null,
+    "introduction": "Urogynecology brings together gynecological and urinary concerns affecting pelvic floor function. A consultation can explore symptoms, their effect on daily life and questions about assessment and care.",
+    "understanding": "Urinary leakage may occur with coughing or activity, or alongside a sudden need to pass urine. Pelvic organ prolapse can cause a vaginal bulge or a feeling of pressure and may be associated with difficulty emptying the bladder. These symptoms can have different causes; an individual assessment helps clarify the concern.",
+    "reasons": [
+      "Urinary leakage with coughing, sneezing or activity",
+      "Sudden urinary urgency or frequent urination",
+      "Vaginal bulge, heaviness or pelvic pressure",
+      "Concern about bladder emptying or pelvic floor changes"
+    ],
+    "whenToSeek": "Persistent leakage, a vaginal bulge or changes in bladder function deserve assessment. Sudden inability to pass urine, severe pain or other acute symptoms require prompt medical attention rather than waiting for a routine consultation.",
+    "evaluation": "The clinician may ask about urinary and bowel symptoms, medicines, previous pregnancies or pelvic surgery and how symptoms affect daily life. A bladder diary may help describe patterns. Any examination should be explained and performed with consent; further tests depend on the findings.",
+    "benefitsRisks": "Care depends on the symptoms, examination and personal priorities. Options may include specialist pelvic floor support, bladder training, medicines or selected procedures. Not everyone needs surgery. Discuss the purpose, alternatives, limitations and potential risks of any recommendation. Availability of specific assessments and treatments must be confirmed with the clinic.",
+    "faqs": [
+      {
+        "id": "urogynecology-consultation-clinical-1",
+        "kind": "service",
+        "question": "Is urinary leakage always a normal part of ageing?",
+        "answer": "Urinary leakage is common but should not simply be accepted as inevitable. An assessment can help identify the type of problem and discuss appropriate care."
+      },
+      {
+        "id": "urogynecology-consultation-clinical-2",
+        "kind": "service",
+        "question": "Does pelvic organ prolapse always require surgery?",
+        "answer": "No. Care depends on symptoms, the examination and individual preferences. Some people may not need treatment, while others may discuss non-surgical or surgical options."
+      },
+      {
+        "id": "urogynecology-consultation-clinical-3",
+        "kind": "service",
+        "question": "What can I bring to the consultation?",
+        "answer": "Bring relevant previous reports and a list of medicines. Notes about symptoms, their timing and their effect on daily activities can help guide the conversation."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NHS: Urinary incontinence",
+        "url": "https://www.nhs.uk/conditions/urinary-incontinence/"
+      },
+      {
+        "title": "NHS: Pelvic organ prolapse",
+        "url": "https://www.nhs.uk/conditions/pelvic-organ-prolapse/"
+      }
+    ],
+    "relatedArticles": [
+      "menopause-support"
+    ],
+    "relatedServices": [
+      "general-gynecology",
+      "postnatal-care",
+      "menopause-care"
+    ],
+    "image": null,
+    "seo": {
+      "title": "Urogynecology Consultation",
+      "description": "Understand bladder symptoms and pelvic floor concerns, with consultation preparation, assessment questions and balanced care information."
+    },
+    "reviewNotes": [
+      "User-relayed confirmation on 14 October 2026: Dr. Vasundara reviewed this guide today and confirmed consultation availability."
     ]
   }
 ]

@@ -50,7 +50,7 @@ Small screens use an independent single-column hero, compact header and native d
 
 Edit `src/config/site.ts`. Leave unknown values empty. Qualifications, specialization, experience, clinical approach, telephone, email, address, map and verified social links render only when supplied. The original portrait was copied from the existing client workspace, whose image notes identify it as client-selected. No AI-edited portrait is used. Set `doctor.portraitApproved=false` for the neutral, botanical monogram fallback; the layout stays intact.
 
-Services are schema-validated from src/data/services.json. Twenty-nine approved entries across six groups have confirmed availability, reviewed clinical sections and recorded approval; two aliases leave 27 canonical service pages. Two aliases avoid duplicate pages. Profile and local practice data have separate evidence/approval gates; unknown data remain hidden. FAQs live in src/data/faqs.ts.
+Services are schema-validated from src/data/services.json. Thirty approved entries across six groups have confirmed availability, reviewed clinical sections and recorded approval; two aliases leave 28 canonical service pages. Two aliases avoid duplicate pages. Profile and local practice data have separate evidence/approval gates; unknown data remain hidden. FAQs live in src/data/faqs.ts.
 
 ## Editorial workflow
 

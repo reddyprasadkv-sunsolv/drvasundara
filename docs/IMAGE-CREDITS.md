@@ -16,3 +16,7 @@ The client-selected original `src/assets/doctor.png` appears in the homepage Mee
 ## Post-Phase-3 image updates and Phase 4
 
 The original Pexels wellness image is retained in source but is no longer the homepage hero or journal illustration. The current `hero-clinic.jpg` and retained `journal-wellbeing.jpg` were supplied by the user for publication; the latter is no longer emitted after topic-specific article images were selected. Publication permission is user-provided, not an independent ownership/release audit. Botanical/banner and twelve topic SVGs were created within this repository. Phase 4 generates PNG social derivatives from these same SVGs at build time; no image ownership claim or new clinical approval is inferred.
+
+## Updated hospital portrait — 14 October 2026
+
+The user supplied Professional Hospital Portrait.png and requested replacing the shared doctor portrait on Home and About. src/assets/doctor-hospital.jpg is an optimized copy; the shared reviewer portrait also uses this component. The original doctor.png remains in source. No retouching or clinical attribution changes were made.

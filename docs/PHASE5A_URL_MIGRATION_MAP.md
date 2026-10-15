@@ -11,7 +11,7 @@ Read-only audit14 Oct2026: current WordPress Home/About/Services retrieved by th
 | https://drvasundaragynec.com/testimonials/ | Exact original navigation link           | https://drvasundaragynec.com/testimonials/ | Preserve; direct retrieval unavailable                 |
 | https://drvasundaragynec.com/gallery/      | Exact original navigation link           | Not implemented                            | Missing-content review; no arbitrary redirect selected |
 
-No old individual service/blog URL was discovered from the accessible pages. The new27 services/12 articles are not evidence that matching historical paths existed. Appointment links point to old Contact plus in-page booking flows, not a separately verified old appointment pathname. No guessed /appointment legacy redirect is created. Original media URLs under wp-content/uploads need an actual export/inbound-link inventory; the absence of a complete media map is a launch blocker.
+No old individual service/blog URL was discovered from the accessible pages. The current 28 services/12 articles are not evidence that matching historical paths existed. Appointment links point to old Contact plus in-page booking flows, not a separately verified old appointment pathname. No guessed /appointment legacy redirect is created. Original media URLs under wp-content/uploads need an actual export/inbound-link inventory; the absence of a complete media map is a launch blocker.
 
 Before Phase5B, obtain full sitemap/WordPress XML export, public page/post/media permalink inventory, GSC indexed/page/link reports, existing redirects and important external links. Keep exports private; publish only individually reviewed non-sensitive URL mappings. An XML export is content inventory, not a full WordPress restoration backup.
 
@@ -20,3 +20,7 @@ Proposed Cloudflare-compatible rule structure (not activated): exact source http
 Preflight validate: target exists and matches intent; source ≠ target; no target is another redirect source; no http/www normalization chain; preserve necessary query semantics without copying sensitive intake parameters; no wildcard catches that shadow assets or existing routes. Cloudflare Bulk Redirects require compatible zone/proxy settings; initially DNS-only requests bypass Cloudflare edge redirect rules. Decide when proxying is safely enabled after TLS origin validation, or select another explicitly approved redirect-capable hosting approach. GitHub Pages alone cannot supply arbitrary server redirects. No loop-prone meta-refresh substitute is silently installed.
 
 Mapping is assessed, not clinic-approved or complete. Gallery/media and any indexed historical service/blog URLs remain unresolved. No redirects activated in5A.
+
+## Updated destination baseline — 15 October 2026
+
+PHASE5A_BASELINE_URL_INVENTORY.md lists all 58 public destinations measured from latest main. Preserve `/services/urogynecology-consultation/` in the root artifact, sitemap, structured data and internal-link validation. No historical counterpart is verified; do not invent a legacy Urogynecology redirect. Its separate approval remains scoped to the existing consultation guide and confirmed availability. The 404 error document is tracked separately from public destination pages. Historical public-source observations above have not been repeated during this continuation.

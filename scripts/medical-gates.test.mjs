@@ -13,7 +13,7 @@ const services = JSON.parse(
 const profile = JSON.parse(
   readFileSync(new URL('../src/data/doctor-profile.json', import.meta.url)),
 );
-const now = new Date('2026-10-13T12:00:00Z');
+const now = new Date('2026-10-14T12:00:00Z');
 test('approved service and profile records publish while aliases and missing records stay hidden', () => {
   assert.ok(services.length >= 29);
   assert.equal(new Set(services.map((s) => s.slug)).size, services.length);

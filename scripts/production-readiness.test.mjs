@@ -54,5 +54,69 @@ test('hashed inventory is deterministic and rejects private exports and symlinks
 test('production artifact preparation rejects a project preview build', () => {
   if (process.env.VERIFY_PAGES_PREVIEW === 'true')
     assert.throws(() => assertRootReadiness('dist'));
-  else assert.equal(assertRootReadiness('dist').pageCount, 58);
+  else assert.equal(assertRootReadiness('dist').pageCount, 59);
+});
+
+test('complete production inventory preserves every public destination and Urogynecology contracts', () => {
+  const root = 'dist';
+  const pages = inventoryFiles(root).filter(
+    (f) => f.path.endsWith('.html') && f.path !== '404.html',
+  );
+  const urls = pages
+    .map(
+      (p) =>
+        'https://drvasundaragynec.com/' + p.path.replace(/index\.html$/, ''),
+    )
+    .sort();
+  const report = fs.readFileSync(
+    'docs/PHASE5A_BASELINE_URL_INVENTORY.md',
+    'utf8',
+  );
+  const listed = [
+    ...report.matchAll(/^\| (https:\/\/drvasundaragynec\.com\/\S*) \|/gm),
+  ]
+    .map((m) => m[1])
+    .sort();
+  assert.deepEqual(
+    listed,
+    urls,
+    'Public URL inventory must match the complete build',
+  );
+  const route = '/services/urogynecology-consultation/';
+  const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');
+  const nodes = [
+    ...html.matchAll(
+      /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+    ),
+  ].flatMap((m) => {
+    const graph = JSON.parse(m[1]);
+    return graph['@graph'] || [graph];
+  });
+  const service = JSON.parse(
+    fs.readFileSync('src/data/services.json', 'utf8'),
+  ).find((s) => s.slug === 'urogynecology-consultation');
+  assert.equal(
+    nodes.find((n) => n['@type'] === 'MedicalWebPage').lastReviewed,
+    service.medicalReviewedAt,
+  );
+  const base =
+    process.env.VERIFY_PAGES_PREVIEW === 'true' ? '/drvasundara' : '';
+  const origin = base
+    ? 'https://reddyprasadkv-sunsolv.github.io'
+    : 'https://drvasundaragynec.com';
+  assert(
+    fs
+      .readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8')
+      .includes(`<loc>${origin}${base}${route}</loc>`),
+  );
+  assert(
+    pages.some(
+      (p) =>
+        p.path !== 'services/urogynecology-consultation/index.html' &&
+        fs
+          .readFileSync(path.join(root, p.path), 'utf8')
+          .includes(`href="${base}${route}"`),
+    ),
+    'Urogynecology must retain an inbound internal link',
+  );
 });

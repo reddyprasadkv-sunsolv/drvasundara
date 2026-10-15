@@ -1,6 +1,6 @@
 # Phase 5A clinic confirmation checklist
 
-Existing source approvals are retained: user confirmed Dr. Vasundara reviewed content and service availability on13 Oct2026. This is not an independent registration verification, signed new approval or a blanket production/legal approval.
+Existing source approvals are retained: user confirmed Dr. Vasundara reviewed content and service availability on13 Oct2026. The Urogynecology consultation guide and availability retain their separate 14 October 2026 user-relayed approval in UROGYNECOLOGY_PUBLICATION_APPROVAL.md, including the subsequently requested About interest. Neither record expands approval to additional procedures or production cutover. This is not an independent registration verification, signed new approval or a blanket production/legal approval.
 
 | Item                      | Verified / retained                                          | Remaining clinic action                                                               |
 | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ Existing source approvals are retained: user confirmed Dr. Vasundara reviewed co
 | Map                       | Existing approved maps.app.goo.gl/Mp7sSuD7TtSdGEd48          | Confirm exact facility matches                                                        |
 | GBP                       | No approved profile URL/ownership                            | Owner confirms business details and permissions; no edit in5A                         |
 | Form                      | Empty; user selected WhatsApp                                | Keep optional; no forced connection                                                   |
-| Medical review            | Genuine13 Oct dates retained                                 | Renew restricted/source-scope questions and choose next-review dates                  |
+| Medical review            | Genuine 13 Oct and scoped 14 Oct dates retained                                 | Renew restricted/source-scope questions and choose next-review dates                  |
 | Media                     | User-supplied imagery and existing10 videos retained         | Confirm rights/releases, clinical/advertising suitability and withdrawal arrangements |
 
 Twelve article next-review deadlines remain unscheduled. Current source-scope/clinical differentiation requests are in PHASE4_MEDICAL_CONTENT_SEO. Any substantive medical update requires fresh actual review, not a technical preparation timestamp. No new clinical material is published.

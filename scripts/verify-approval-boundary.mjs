@@ -52,11 +52,11 @@ assert.match(about, /Senior Consultant Gynaecologist/);
 assert.ok(
   existsSync('dist/services/cosmetic-gynecology-consultation/index.html'),
 );
-assert.equal(services.filter((s) => isPublicService(s)).length, 27);
+assert.equal(services.filter((s) => isPublicService(s)).length, 28);
 for (const service of services.filter((s) => isPublicService(s))) {
   assert.ok(existsSync(join('dist', 'services', service.slug, 'index.html')));
   assert.ok(sitemap.includes('/services/' + service.slug + '/'));
 }
 console.log(
-  'Verified 27 approved canonical services, approved profile display and withdrawn-content exclusion.',
+  'Verified 28 approved canonical services, approved profile display and withdrawn-content exclusion.',
 );

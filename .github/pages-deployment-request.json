@@ -2,6 +2,6 @@
   "approved": true,
   "target": "github-pages-preview",
   "requestedAt": "2026-10-14",
-  "request": "Deploy Phase 4 metadata, stable medical entity identity, social image derivatives, contextual expert-video links and search-safety checks to the approved GitHub Pages preview only; retain noindex and all current design/content/media/WhatsApp behavior.",
-  "revision": "phase4-search-readiness-2026-10-14-preserved-imagery"
+  "request": "Add the confirmed Urogynecology consultation area to the About page clinical interests.",
+  "revision": "about-urogynecology-2026-10-14"
 }

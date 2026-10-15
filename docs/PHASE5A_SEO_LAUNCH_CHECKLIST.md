@@ -1,6 +1,6 @@
 # Phase 5A SEO and indexing activation checklist
 
-Verified in both root/project build artifacts: all58 HTML noindex/nofollow; production-root canonical intent; no broken links/anchors/assets;12 true article dates/reviewer/publisher identities;27 services; seven categories; sitemap and robots; original clinical gates/aliases; social PNGs/fonts/favicon; root URL isolation. productionIndexing stays false. No engine submission or GBP change.
+Verified in both root/project build artifacts: all 59 HTML noindex/nofollow; production-root canonical intent; no broken links/anchors/assets;12 true article dates/reviewer/publisher identities;28 services including Urogynecology Consultation; seven categories; sitemap and robots; original clinical gates/aliases; social PNGs/fonts/favicon; root URL isolation. productionIndexing stays false. No engine submission or GBP change.
 
 Reserved for explicit Phase5B approval:
 

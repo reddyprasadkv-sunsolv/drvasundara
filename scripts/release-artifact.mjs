@@ -51,7 +51,17 @@ export function inventoryFiles(root) {
 export function assertRootReadiness(root) {
   const files = inventoryFiles(root);
   const pages = files.filter((f) => f.path.endsWith('.html'));
-  assert(pages.length >= 58, 'Expected full site output');
+  assert.equal(
+    pages.length,
+    59,
+    'Expected updated baseline: 58 public pages plus 404',
+  );
+  assert(
+    pages.some(
+      (f) => f.path === 'services/urogynecology-consultation/index.html',
+    ),
+    'Approved Urogynecology destination missing',
+  );
   for (const file of pages) {
     const html = fs.readFileSync(path.join(root, file.path), 'utf8');
     assert.match(html, /name="robots" content="noindex, nofollow"/);

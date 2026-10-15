@@ -9,6 +9,10 @@ on:
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'astro.config.mjs'
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'docs/PHASE5A*'
 permissions:
   contents: read
 jobs:

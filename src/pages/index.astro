@@ -23,7 +23,7 @@ import { approvedServiceGroups } from '../data/services';
         <span class="eyebrow">
           <span class="fine-line"></span>
           {publicProfile.title
-            ? 'GYNECOLOGY • OBSTETRICS • WOMEN’S HEALTH'
+            ? 'GYNECOLOGY • OBSTETRICS • UROGYNECOLOGY • FERTILITY • WOMEN’S HEALTH'
             : 'WOMEN’S HEALTH • INFORMATION • CONSULTATION'}
         </span>
         <h1 class="phase-two-headline">
@@ -218,6 +218,16 @@ import { approvedServiceGroups } from '../data/services';
 </Base>
 
 <style>
+  .homepage .hero-copy .eyebrow {
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 600px) {
+    .homepage .hero-copy .eyebrow {
+      font-size: 11px;
+    }
+  }
   .homepage {
     --section: clamp(40px, 4.5vw, 64px);
   }
