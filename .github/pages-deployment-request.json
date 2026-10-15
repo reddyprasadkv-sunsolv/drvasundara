@@ -3,6 +3,6 @@
   "target": "github-pages-production",
   "productionIndexing": false,
   "requestedAt": "2026-10-15",
-  "request": "Align canonical, sitemap, Open Graph and structured-data URLs to the existing preferred www host. Keep production indexing disabled; do not change DNS or Pages custom-domain settings.",
-  "revision": "www-canonical-alignment-2026-10-15"
+  "request": "Withhold five patient videos without established individual permissions. Retain noindex and blocked crawling; privacy evidence remains unresolved. No indexing activation.",
+  "revision": "patient-video-publication-hold-2026-10-15"
 }

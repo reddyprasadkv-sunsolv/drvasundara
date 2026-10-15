@@ -16,6 +16,8 @@ for (const file of fs
   .readdirSync(root, { recursive: true })
   .filter((f) => String(f).endsWith('.html'))) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
+  // No withheld patient identifiers in links, embeds, text or metadata.
+  assert.doesNotMatch(html, /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/);
   const route =
     file === '404.html'
       ? '/404/'
@@ -145,7 +147,7 @@ const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal([...home.matchAll(/data-video-kind="educational"/g)].length, 5);
 assert.equal(
   [...home.matchAll(/data-video-kind="patient-experience"/g)].length,
-  3,
+  0,
 );
 assert.doesNotMatch(home, /<iframe[^>]*youtube/);
 assert.match(home, /https:\/\/wa\.me\/919346825723/);
