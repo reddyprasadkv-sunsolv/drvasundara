@@ -18,7 +18,9 @@
     "journal:report": "node scripts/editorial-report.mjs",
     "journal:validate": "node scripts/editorial-report.mjs --check",
     "journal:new": "node scripts/new-article.mjs",
-    "seo:audit": "node scripts/seo-audit.mjs"
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "release:prepare": "node scripts/prepare-production-artifact.mjs",
+    "release:verify": "node scripts/verify-production-artifact.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "8.0.3",
