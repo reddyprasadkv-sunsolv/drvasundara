@@ -1,3 +1,4 @@
+import { approvedPatientVideoIds } from '../src/utils/patient-video-policy.mjs';
 import { expectedRobots } from './indexing-release.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -12,15 +13,31 @@ let articles = 0,
   services = 0,
   assets = 0;
 const inventory = loadEditorial();
+const approvedVideos = approvedPatientVideoIds(
+  JSON.parse(
+    fs.readFileSync('src/data/patient-video-publication.json', 'utf8'),
+  ),
+);
 const doctorId = 'https://www.drvasundaragynec.com/#doctor';
 for (const file of fs
   .readdirSync(root, { recursive: true })
   .filter((f) => String(f).endsWith('.html'))) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
-  assert.doesNotMatch(
-    html,
-    /LQ5VBo9wZhw|ZjGuZZEki4w|Tn6soQyuW68|FcWkoQz6dko|gyG40rv_UOQ/,
-    `Withheld video in ${file}`,
+  const patientStages = [
+    ...html.matchAll(
+      /data-video-kind="patient-experience"[\s\S]*?data-video-id="([^"]+)"/g,
+    ),
+  ].map((m) => m[1]);
+  const allowed =
+    file === 'index.html'
+      ? approvedVideos.slice(0, 3)
+      : file === 'testimonials/index.html'
+        ? approvedVideos
+        : [];
+  assert.deepEqual(
+    patientStages,
+    allowed,
+    `Patient-video scope mismatch in ${file}`,
   );
   assert.doesNotMatch(
     html,
@@ -164,7 +181,7 @@ const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.equal([...home.matchAll(/data-video-kind="educational"/g)].length, 5);
 assert.equal(
   [...home.matchAll(/data-video-kind="patient-experience"/g)].length,
-  0,
+  approvedVideos.slice(0, 3).length,
 );
 const experiences = fs.readFileSync(
   path.join(root, 'testimonials/index.html'),
@@ -172,7 +189,7 @@ const experiences = fs.readFileSync(
 );
 assert.equal(
   [...experiences.matchAll(/data-video-kind="patient-experience"/g)].length,
-  0,
+  approvedVideos.length,
 );
 assert.doesNotMatch(experiences, /<iframe[^>]*youtube/);
 assert.doesNotMatch(home, /<iframe[^>]*youtube/);

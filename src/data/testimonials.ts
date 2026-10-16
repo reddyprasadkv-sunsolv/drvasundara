@@ -1,3 +1,5 @@
+import publication from './patient-video-publication.json';
+import { approvedPatientVideoIds } from '../utils/patient-video-policy.mjs';
 // Existing public videos from the clinic website. Reuse requested by the user.
 // Neutral topic labels describe the source titles, without promising outcomes.
 export const testimonials = [
@@ -33,6 +35,8 @@ export const testimonials = [
   },
 ];
 
-// The 16 October indexing instructions require withholding again pending
-// individual permission evidence. Preserve all original source records.
-export const publishedTestimonials = testimonials.filter(() => false);
+// Publish only the exact recordings covered by the owner-relayed clinic attestation.
+const approvedIds = new Set(approvedPatientVideoIds(publication));
+export const publishedTestimonials = testimonials.filter((video) =>
+  approvedIds.has(video.id),
+);
