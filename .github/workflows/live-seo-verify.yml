@@ -1,7 +1,7 @@
 name: Live production SEO verification
 on:
   workflow_run:
-    workflows: ["Deploy approved production website"]
+    workflows: ['Deploy approved production website']
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -16,6 +16,21 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Verify approved indexing and build expected production inventory
+        run: |
+          node scripts/verify-indexing-release.mjs
+          pnpm build
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          PAGES_PREVIEW: 'false'
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
