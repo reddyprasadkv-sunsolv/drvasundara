@@ -108,6 +108,10 @@ for (const route of routes) {
       }
       const appointment = page.locator('main .experience-button');
       await appointment.focus();
+      // The player test uses a pointer first; exercise real keyboard navigation
+      // before asserting the keyboard-only :focus-visible treatment.
+      await page.keyboard.press('Tab');
+      await page.keyboard.press('Shift+Tab');
       await expect(appointment).toBeFocused();
       await expect(appointment).toHaveCSS('outline-style', 'solid');
       const columns = await page
