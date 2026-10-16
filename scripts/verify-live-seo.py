@@ -37,6 +37,8 @@ def fetch(url):
             with urllib.request.urlopen(req, timeout=20) as resp:
                 body = resp.read(5_000_000)
                 return resp.status, resp.geturl(), body.decode("utf-8","replace"), dict(resp.headers)
+        except urllib.error.HTTPError as exc:
+            return exc.code, exc.geturl(), exc.read(5_000_000).decode("utf-8","replace"), dict(exc.headers)
         except Exception as exc:
             error = f"{type(exc).__name__}: {exc}"
             if attempt < 2: time.sleep(2 * (attempt + 1))
