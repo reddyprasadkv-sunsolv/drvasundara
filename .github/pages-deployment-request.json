@@ -3,10 +3,12 @@
   "target": "github-pages-production",
   "productionIndexing": true,
   "requestedAt": "2026-10-16",
-  "request": "Publish all five existing patient videos following the project owner\u2019s reviewed website-publication confirmation. Retain existing featured homepage placement, click-to-load privacy controls, testimonials noindex, 53 sitemap entries, six exclusions and all other approvals. No DNS/domain/HTTPS changes.",
-  "revision": "approved-patient-video-publication-2026-10-16",
+  "request": "Enable search indexing for the approved five-video Patient Experiences page following the project owner\u2019s explicit instruction. Add /testimonials/ to the production sitemap (54 URLs); retain noindex for 404 and four excluded categories, preview protections and all publication permissions. No DNS/domain/HTTPS or medical-content changes.",
+  "revision": "index-approved-testimonials-2026-10-16",
   "indexingApproved": true,
   "indexingApprovalRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md",
   "patientVideoPublicationApproved": true,
-  "patientVideoApprovalRef": "docs/PATIENT_VIDEO_PUBLICATION_CONFIRMATION_2026-10-16.md"
+  "patientVideoApprovalRef": "docs/PATIENT_VIDEO_PUBLICATION_CONFIRMATION_2026-10-16.md",
+  "testimonialsIndexingApproved": true,
+  "testimonialsIndexingApprovalRef": "docs/TESTIMONIALS_INDEXING_AUTHORIZATION_2026-10-16.md"
 }

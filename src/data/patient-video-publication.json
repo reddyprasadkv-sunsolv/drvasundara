@@ -1,7 +1,7 @@
 {
   "approved": true,
   "websitePublication": true,
-  "approvedBy": "Project owner — clinic publication confirmation",
+  "approvedBy": "Project owner \u2014 clinic publication confirmation",
   "approvedAt": "2026-10-16",
   "evidenceRef": "docs/PATIENT_VIDEO_PUBLICATION_CONFIRMATION_2026-10-16.md",
   "videoIds": [
@@ -10,5 +10,11 @@
     "Tn6soQyuW68",
     "FcWkoQz6dko",
     "gyG40rv_UOQ"
-  ]
+  ],
+  "testimonialsIndexing": {
+    "approved": true,
+    "approvedBy": "Project owner",
+    "approvedAt": "2026-10-16",
+    "evidenceRef": "docs/TESTIMONIALS_INDEXING_AUTHORIZATION_2026-10-16.md"
+  }
 }

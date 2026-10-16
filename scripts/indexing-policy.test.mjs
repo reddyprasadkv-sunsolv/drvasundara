@@ -38,7 +38,22 @@ test('production/preview indexing and intentional page exclusions remain indepen
           );
       }
   assert(isIndexingExcluded('/404/'));
-  assert(isIndexingExcluded('/testimonials/'));
+  assert.equal(isIndexingExcluded('/testimonials/'), false);
+  assert.equal(
+    robotsDirective({
+      indexing: true,
+      excluded: isIndexingExcluded('/testimonials/'),
+    }),
+    'index, follow',
+  );
+  assert.equal(
+    robotsDirective({
+      preview: true,
+      indexing: true,
+      excluded: isIndexingExcluded('/testimonials/'),
+    }),
+    'noindex, nofollow',
+  );
 });
 test('single-article category exclusions match the actual publication inventory', () => {
   const { records } = loadEditorial();

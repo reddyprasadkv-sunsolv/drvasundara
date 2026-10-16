@@ -79,7 +79,8 @@ const sitemap = fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8');
 const entries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
   (m) => new URL(m[1]),
 );
-assert.equal(entries.length, 53);
+assert.equal(entries.length, 54);
+assert(entries.some((url) => url.pathname === base + 'testimonials/'));
 for (const url of entries) {
   assert.equal(url.origin, sitemapOrigin);
   assert(url.pathname.startsWith(base));
