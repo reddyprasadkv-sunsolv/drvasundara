@@ -1,13 +1,33 @@
 ---
 import Page from '../layouts/Page.astro';
 import { publishedTestimonials } from '../data/testimonials';
+import PatientVideos from '../components/medical/PatientVideos.astro';
 
 const themes = [
-  { label: 'Pregnancy and birth', description: 'Every pregnancy and delivery experience is personal. Explore the clinic’s pregnancy-care information while individual patient accounts remain under permission review.', link: '/services/', action: 'Explore pregnancy care' },
-  { label: 'Gynecological care', description: 'People seek gynecological care for many different concerns. Learn about consultation and treatment topics in the reviewed services section.', link: '/services/', action: 'Explore gynecological services' },
-  { label: 'Consultation and recovery', description: 'A consultation can help clarify available options and next steps. Actual treatment choices and recovery vary from person to person.', link: '/appointment/', action: 'Ask about an appointment' },
+  {
+    label: 'Pregnancy and birth',
+    description:
+      'Explore the reviewed pregnancy and antenatal care guide and questions to discuss during a consultation.',
+    link: '/services/pregnancy-antenatal-care/',
+    action: 'Explore pregnancy care',
+  },
+  {
+    label: 'Gynecological care',
+    description:
+      'Find reviewed information about gynecological consultations and preparing the questions you would like to discuss.',
+    link: '/services/general-gynecology/',
+    action: 'Explore gynecological care',
+  },
+  {
+    label: 'Preparing for a consultation',
+    description:
+      'Find out how to ask about consultation availability and appointment arrangements through the clinic’s official WhatsApp channel.',
+    link: '/appointment/',
+    action: 'View appointment information',
+  },
 ];
 ---
+
 <Page
   noindex={true}
   title="Patient experiences"
@@ -19,56 +39,148 @@ const themes = [
     <h2 id="experiences-heading">Every patient’s experience is their own.</h2>
     <p>
       We value the perspectives people share about their healthcare journeys.
-      Patient stories and videos will appear here when the individuals involved
-      have confirmed that they can be published on this website.
+      Personal stories are shared only with appropriate permission for this
+      website, with respect for each person’s privacy.
     </p>
     <p>
-      In the meantime, you can explore the clinic’s reviewed care information,
-      learn about services, or contact the clinic about arranging a consultation.
+      Explore the reviewed care guides below, prepare questions for a
+      consultation, or contact the clinic about appointment arrangements.
     </p>
   </section>
 
-  {publishedTestimonials.length === 0 && (
-    <section class="experience-themes" aria-labelledby="experience-themes-title">
-      <h2 id="experience-themes-title">Explore care topics</h2>
-      <div class="experience-grid">
-        {themes.map((theme) => (
-          <article class="experience-card">
-            <span class="eyebrow">WOMEN'S HEALTH</span>
-            <h3>{theme.label}</h3>
-            <p>{theme.description}</p>
-            <a class="text-link" href={theme.link}>{theme.action} →</a>
-          </article>
-        ))}
-      </div>
+  {publishedTestimonials.length > 0 && (
+    <section
+      class="experience-stories"
+      aria-labelledby="experience-stories-title"
+    >
+      <h2 id="experience-stories-title">Individual patient stories</h2>
+      <PatientVideos />
     </section>
   )}
 
-  <section class="experience-contact" aria-labelledby="experience-contact-title">
+  <section class="experience-themes" aria-labelledby="experience-themes-title">
+    <h2 id="experience-themes-title">Explore reviewed care guides</h2>
+    <div class="experience-grid">
+      {themes.map((theme) => (
+        <article class="experience-card">
+          <span class="eyebrow">WOMEN'S HEALTH</span>
+          <h3>{theme.label}</h3>
+          <p>{theme.description}</p>
+          <a class="text-link" href={theme.link}>
+            {theme.action} →
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section
+    class="experience-contact"
+    aria-labelledby="experience-contact-title"
+  >
     <h2 id="experience-contact-title">Have a question about your own care?</h2>
-    <p>Individual experiences are not a prediction of treatment results. Speak with the clinic about your personal situation and consultation availability.</p>
-    <a class="experience-button" href="/appointment/">Appointment information →</a>
-    <p class="experience-privacy">To protect confidentiality, we do not publish identifiable patient stories without appropriate permission. <a href="/privacy/">Read our privacy information</a>.</p>
+    <p>
+      Individual experiences are not a prediction of treatment results. Speak
+      with the clinic about your personal situation and consultation
+      availability.
+    </p>
+    <a class="button experience-button" href="/appointment/">
+      Appointment information →
+    </a>
+    <p class="experience-privacy">
+      To protect confidentiality, we do not publish identifiable patient stories
+      without appropriate permission.{' '}
+      <a href="/privacy/">Read our privacy information</a>.
+    </p>
   </section>
 </Page>
 
 <style>
-  .experience-intro { max-width: 760px; margin: 0 auto 56px; text-align: center; }
-  .experience-intro h2, .experience-themes h2, .experience-contact h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; line-height: 1.2; }
-  .experience-intro h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin: 14px 0 20px; }
-  .experience-intro p, .experience-card p, .experience-contact p { line-height: 1.8; }
-  .experience-themes { margin: 0 0 60px; }
-  .experience-themes h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 24px; }
-  .experience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-  .experience-card { background: #fff8fb; border: 1px solid #f0dfe9; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; }
-  .experience-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; line-height: 1.25; margin: 0; }
-  .experience-card p { margin: 0 0 8px; flex: 1; }
-  .experience-card a { align-self: flex-start; text-decoration: underline; text-underline-offset: 4px; }
-  .experience-contact { background: linear-gradient(120deg, #fff7fa, #f0f5ff); border-radius: 18px; text-align: center; padding: clamp(26px, 5vw, 54px); margin-bottom: 36px; }
-  .experience-contact h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
-  .experience-button { display: inline-block; background: #64416d; color: #fff; padding: 12px 23px; border-radius: 999px; margin: 14px 0; text-decoration: none; }
-  .experience-button:hover, .experience-button:focus-visible { background: #4d3154; color: #fff; }
-  .experience-privacy { font-size: .9rem; margin: 18px auto 0; max-width: 600px; }
-  .experience-privacy a { text-decoration: underline; }
-  @media (max-width: 850px) { .experience-grid { grid-template-columns: 1fr; } }
+  .experience-intro {
+    max-width: 760px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .experience-intro h2,
+  .experience-themes h2,
+  .experience-contact h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .experience-intro h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin: 14px 0 20px;
+  }
+  .experience-intro p,
+  .experience-card p,
+  .experience-contact p {
+    line-height: 1.8;
+  }
+  .experience-themes {
+    margin: 0 0 60px;
+  }
+  .experience-themes h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin-bottom: 24px;
+  }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .experience-card {
+    background: #fff8fb;
+    border: 1px solid #f0dfe9;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .experience-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .experience-card p {
+    margin: 0 0 8px;
+    flex: 1;
+  }
+  .experience-card a {
+    align-self: flex-start;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .experience-contact {
+    background: linear-gradient(120deg, #fff7fa, #f0f5ff);
+    border-radius: 18px;
+    text-align: center;
+    padding: clamp(26px, 5vw, 54px);
+    margin-bottom: 36px;
+  }
+  .experience-contact h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+  .experience-button {
+    margin: 14px 0;
+    text-decoration: none;
+  }
+  .experience-stories {
+    margin-bottom: 60px;
+  }
+  .experience-privacy {
+    font-size: 0.9rem;
+    margin: 18px auto 0;
+    max-width: 600px;
+  }
+  .experience-privacy a {
+    text-decoration: underline;
+  }
+  @media (max-width: 850px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
