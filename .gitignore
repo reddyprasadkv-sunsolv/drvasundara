@@ -13,3 +13,6 @@ release/
 
 playwright-report/
 test-results/
+
+__pycache__/
+live-seo-report/
