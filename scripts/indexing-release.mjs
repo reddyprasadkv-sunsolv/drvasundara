@@ -134,18 +134,39 @@ export function assertIndexingApproval({
 }
 export function verifyIndexingRelease() {
   const indexing = configuredIndexing();
+  const request = JSON.parse(
+    fs.readFileSync('.github/pages-deployment-request.json', 'utf8'),
+  );
+  const patientVideoApproval = JSON.parse(
+    fs.readFileSync('src/data/patient-video-publication.json', 'utf8'),
+  );
+  if (indexing && !isIndexingExcluded('/testimonials/')) {
+    const approval = patientVideoApproval.testimonialsIndexing;
+    assert.equal(
+      request.testimonialsIndexingApproved,
+      true,
+      'Explicit testimonials indexing authorization required',
+    );
+    assert.equal(approval?.approved, true);
+    assert(approval?.evidenceRef?.trim());
+    assert.equal(request.testimonialsIndexingApprovalRef, approval.evidenceRef);
+    assert(
+      /^\d{4}-\d{2}-\d{2}$/.test(approval.approvedAt || '') &&
+        approval.approvedAt <= clinicDate(),
+    );
+    assert.equal(
+      new Date(approval.approvedAt).toISOString().slice(0, 10),
+      approval.approvedAt,
+    );
+  }
   assertIndexingApproval({
     indexing,
-    request: JSON.parse(
-      fs.readFileSync('.github/pages-deployment-request.json', 'utf8'),
-    ),
+    request,
     readiness: JSON.parse(
       fs.readFileSync('.github/publication-readiness.json', 'utf8'),
     ),
     inventorySha256: publicationInventorySha256(),
-    patientVideoApproval: JSON.parse(
-      fs.readFileSync('src/data/patient-video-publication.json', 'utf8'),
-    ),
+    patientVideoApproval,
   });
   return indexing;
 }

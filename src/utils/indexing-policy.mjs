@@ -2,7 +2,6 @@
 // The four category routes currently contain only one article each.
 export const excludedIndexingPaths = [
   '/404/',
-  '/testimonials/',
   '/blog/category/pcos-hormonal-health/',
   '/blog/category/fertility-reproductive-health/',
   '/blog/category/menopause-midlife-health/',
