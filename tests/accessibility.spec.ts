@@ -1,4 +1,10 @@
-import approval from '../src/data/patient-video-publication.json';
+import fs from 'node:fs';
+const approval = JSON.parse(
+  fs.readFileSync(
+    new URL('../src/data/patient-video-publication.json', import.meta.url),
+    'utf8',
+  ),
+);
 import { approvedPatientVideoIds } from '../src/utils/patient-video-policy.mjs';
 import { test, expect } from '@playwright/test';
 import { expectedRobots } from '../scripts/indexing-release.mjs';
