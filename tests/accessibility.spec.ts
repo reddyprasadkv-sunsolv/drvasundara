@@ -1,6 +1,15 @@
+import fs from 'node:fs';
+const approval = JSON.parse(
+  fs.readFileSync(
+    new URL('../src/data/patient-video-publication.json', import.meta.url),
+    'utf8',
+  ),
+);
+import { approvedPatientVideoIds } from '../src/utils/patient-video-policy.mjs';
 import { test, expect } from '@playwright/test';
 import { expectedRobots } from '../scripts/indexing-release.mjs';
 import AxeBuilder from '@axe-core/playwright';
+const approvedVideos = approvedPatientVideoIds(approval);
 const base = process.env.PAGES_PREVIEW === 'true' ? '/drvasundara' : '';
 const routes = [
   '/',
@@ -47,13 +56,41 @@ for (const route of routes) {
     );
     await expect(
       page.locator('[data-video-kind="patient-experience"]'),
-    ).toHaveCount(0);
+    ).toHaveCount(
+      route === '/testimonials/'
+        ? approvedVideos.length
+        : route === '/'
+          ? approvedVideos.slice(0, 3).length
+          : 0,
+    );
     await expect(
       page.locator(
         'a[href^="mailto:"], a[href^="tel:"], a[href*="forms.gle"], a[href*="docs.google.com/forms"], form:not([role="search"])',
       ),
     ).toHaveCount(0);
     if (route === '/testimonials/') {
+      await expect(page.locator('main iframe')).toHaveCount(0);
+      if (approvedVideos.length) {
+        await page.route('https://www.youtube-nocookie.com/**', (route) =>
+          route.fulfill({
+            status: 200,
+            contentType: 'text/html',
+            body: '<html lang="en"><title>Intercepted player fixture</title></html>',
+          }),
+        );
+        const preview = page
+          .locator('[data-video-kind="patient-experience"] .video-preview')
+          .first();
+        await preview.click();
+        await expect(page.locator('main iframe')).toHaveAttribute(
+          'src',
+          `https://www.youtube-nocookie.com/embed/${approvedVideos[0]}`,
+        );
+        await expect(page.locator('main iframe')).toHaveAttribute(
+          'referrerpolicy',
+          'strict-origin-when-cross-origin',
+        );
+      }
       const cards = page.locator('main .experience-card');
       await expect(cards).toHaveCount(3);
       await expect(page.locator('main')).not.toContainText(
@@ -71,6 +108,10 @@ for (const route of routes) {
       }
       const appointment = page.locator('main .experience-button');
       await appointment.focus();
+      // The player test uses a pointer first; exercise real keyboard navigation
+      // before asserting the keyboard-only :focus-visible treatment.
+      await page.keyboard.press('Tab');
+      await page.keyboard.press('Shift+Tab');
       await expect(appointment).toBeFocused();
       await expect(appointment).toHaveCSS('outline-style', 'solid');
       const columns = await page

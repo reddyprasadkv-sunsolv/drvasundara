@@ -1,3 +1,4 @@
+import { approvedPatientVideoIds } from '../src/utils/patient-video-policy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -42,6 +43,7 @@ export function assertIndexingApproval({
   readiness,
   inventorySha256,
   today = clinicDate(),
+  patientVideoApproval,
 }) {
   assert.equal(
     request.approved,
@@ -54,11 +56,36 @@ export function assertIndexingApproval({
     indexing,
     'Deployment request and site indexing flag disagree',
   );
-  assert.equal(
-    readiness.patientVideos,
-    'withheld',
-    'This release may not restore patient videos',
+  assert(
+    ['withheld', 'approved'].includes(readiness.patientVideos),
+    'Unknown patient-video publication state',
   );
+  const patientIds = approvedPatientVideoIds(patientVideoApproval, today);
+  if (readiness.patientVideos === 'approved') {
+    assert(
+      patientIds.length > 0,
+      'Patient videos require a valid scoped publication attestation',
+    );
+    assert.equal(
+      request.patientVideoPublicationApproved,
+      true,
+      'Explicit patient-video release authorization required',
+    );
+    assert.equal(
+      request.patientVideoApprovalRef,
+      patientVideoApproval.evidenceRef,
+    );
+    assert.equal(
+      readiness.patientVideoApprovalRef,
+      patientVideoApproval.evidenceRef,
+    );
+  } else {
+    assert.equal(
+      patientIds.length,
+      0,
+      'Approved source videos conflict with withheld release state',
+    );
+  }
   assert.equal(
     request.indexingApproved,
     indexing,
@@ -116,6 +143,9 @@ export function verifyIndexingRelease() {
       fs.readFileSync('.github/publication-readiness.json', 'utf8'),
     ),
     inventorySha256: publicationInventorySha256(),
+    patientVideoApproval: JSON.parse(
+      fs.readFileSync('src/data/patient-video-publication.json', 'utf8'),
+    ),
   });
   return indexing;
 }

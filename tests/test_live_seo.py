@@ -57,6 +57,14 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(live.html_result(response,200,True)[0],'FAIL')
         self.assertTrue(live.schema_errors(['{bad json']))
 
+    def test_patient_video_approval_is_exact_and_placement_scoped(self):
+        response=self.page()
+        response.body+='<article data-video-kind="patient-experience"><div data-video-id="'+live.PATIENT_IDS[0]+'"></div></article>'
+        self.assertEqual(live.html_result(response,200,True,approved_videos=[live.PATIENT_IDS[0]])[0],'PASS')
+        self.assertEqual(live.html_result(response,200,True,approved_videos=[live.PATIENT_IDS[1]])[0],'FAIL')
+        response.url=response.final=live.BASE+'/contact/'
+        self.assertEqual(live.html_result(response,200,True,approved_videos=[live.PATIENT_IDS[0]])[0],'FAIL')
+
     def test_inventory_count_is_derived_and_exclusions_not_indexable(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'sitemap-index.xml').write_text('<sitemapindex/>')
@@ -78,7 +86,7 @@ class VerificationTests(unittest.TestCase):
             sitemap=live.Response(live.BASE+'/sitemap-0.xml',200,live.BASE+'/sitemap-0.xml','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+live.BASE+'/</loc></url></urlset>',{'content-type':'application/xml'})
             apex=live.Response('https://drvasundaragynec.com/',200,live.BASE+'/',redirects=[{'status':301}])
             data={r.url:r for r in [normal,missing,robots,index,sitemap,apex]}
-            with patch.object(sys,'argv',['verify','--expected-dir',str(root)]),patch.dict(live.os.environ,{'LIVE_SEO_OUTPUT':str(root/'out')}),patch.object(live,'fetch',side_effect=lambda u:data[u]),patch.object(live.socket,'getaddrinfo',return_value=[]):
+            with patch.object(sys,'argv',['verify','--expected-dir',str(root)]),patch.dict(live.os.environ,{'LIVE_SEO_OUTPUT':str(root/'out')}),patch.object(live,'fetch',side_effect=lambda u:data[u]),patch.object(live.socket,'getaddrinfo',return_value=[]),patch.object(live,'approved_patient_ids',return_value=[]):
                 self.assertEqual(live.main(),1)
             report=json.loads((root/'out/results.json').read_text())
             links=next(c for c in report['checks'] if c['check']=='Internal links')
@@ -86,7 +94,7 @@ class VerificationTests(unittest.TestCase):
             self.assertEqual(sum(c['check']=='HTML' for c in report['checks']),2)
             self.assertTrue(all(c['status']=='PASS' for c in report['checks'] if c['check']=='HTML'))
             normal.body=normal.body.replace('<a href="/404/">broken destination</a>','')
-            with patch.object(sys,'argv',['verify','--expected-dir',str(root)]),patch.dict(live.os.environ,{'LIVE_SEO_OUTPUT':str(root/'out')}),patch.object(live,'fetch',side_effect=lambda u:data[u]),patch.object(live.socket,'getaddrinfo',return_value=[]):
+            with patch.object(sys,'argv',['verify','--expected-dir',str(root)]),patch.dict(live.os.environ,{'LIVE_SEO_OUTPUT':str(root/'out')}),patch.object(live,'fetch',side_effect=lambda u:data[u]),patch.object(live.socket,'getaddrinfo',return_value=[]),patch.object(live,'approved_patient_ids',return_value=[]):
                 self.assertEqual(live.main(),0)
 
 if __name__=='__main__': unittest.main()

@@ -3,8 +3,10 @@
   "target": "github-pages-production",
   "productionIndexing": true,
   "requestedAt": "2026-10-16",
-  "request": "Publish the project-owner authorized informational Patient Experiences page from PR17, with reviewed care-guide links, appointment guidance and privacy context. Individual patient-publication permission is not evidenced in the reviewed records; keep all five videos withheld and preserve noindex, all 53 eligible URLs and existing publication/indexing approvals. No DNS/domain/HTTPS changes.",
-  "revision": "patient-experiences-information-2026-10-16",
+  "request": "Publish all five existing patient videos following the project owner\u2019s reviewed website-publication confirmation. Retain existing featured homepage placement, click-to-load privacy controls, testimonials noindex, 53 sitemap entries, six exclusions and all other approvals. No DNS/domain/HTTPS changes.",
+  "revision": "approved-patient-video-publication-2026-10-16",
   "indexingApproved": true,
-  "indexingApprovalRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md"
+  "indexingApprovalRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md",
+  "patientVideoPublicationApproved": true,
+  "patientVideoApprovalRef": "docs/PATIENT_VIDEO_PUBLICATION_CONFIRMATION_2026-10-16.md"
 }

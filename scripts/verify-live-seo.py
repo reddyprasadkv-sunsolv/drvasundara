@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import re
 import socket
+from zoneinfo import ZoneInfo
 import sys
 import time
 from urllib import error, parse, request, robotparser
@@ -18,6 +19,18 @@ import xml.etree.ElementTree as ET
 BASE = 'https://www.drvasundaragynec.com'
 UA = 'DrVasundaraLiveSeoCheck/2.0 (GitHub Actions; read-only)'
 PATIENT_IDS = ('LQ5VBo9wZhw', 'ZjGuZZEki4w', 'Tn6soQyuW68', 'FcWkoQz6dko', 'gyG40rv_UOQ')
+
+def approved_patient_ids():
+    try:
+        record = json.loads((Path(__file__).resolve().parents[1] / 'src/data/patient-video-publication.json').read_text())
+        today = datetime.now(ZoneInfo('Asia/Kolkata')).date().isoformat()
+        date = record.get('approvedAt', '')
+        ids = record.get('videoIds', [])
+        valid = record.get('approved') is True and record.get('websitePublication') is True and isinstance(record.get('approvedBy'), str) and record['approvedBy'].strip() and isinstance(record.get('evidenceRef'), str) and record['evidenceRef'].strip() and datetime.strptime(date, '%Y-%m-%d').date().isoformat() == date and date <= today and isinstance(ids, list) and len(ids) == len(set(ids)) and len(ids) > 0 and all(isinstance(i, str) and re.fullmatch(r'[\w-]{11}', i) for i in ids)
+        return ids if valid else []
+    except (OSError, ValueError, TypeError):
+        return []
+
 
 @dataclass
 class Response:
@@ -128,7 +141,7 @@ def schema_errors(raw, url=None):
         failures.append('Invalid/missing structured data: ' + str(exc))
     return failures
 
-def html_result(response, expected, should_index, robots=None):
+def html_result(response, expected, should_index, robots=None, approved_videos=None):
     if response.status is None:
         return 'UNVERIFIED', ['HTTPS retrieval exhausted bounded retries: ' + '; '.join(response.errors)], None
     problems = []
@@ -148,7 +161,11 @@ def html_result(response, expected, should_index, robots=None):
         for agent in ('Googlebot', 'Bingbot', '*'):
             if not robots.can_fetch(agent, response.url): problems.append('robots.txt blocks ' + agent)
     problems.extend(schema_errors(head.schemas, response.url))
-    if any(video in response.body for video in PATIENT_IDS) or 'data-video-kind="patient-experience"' in response.body: problems.append('Withheld patient video published')
+    approved = approved_videos or []
+    route = parse.urlsplit(response.url).path
+    allowed = approved[:3] if route == '/' else approved if route == '/testimonials/' else []
+    emitted = re.findall(r'data-video-kind="patient-experience"[\s\S]*?data-video-id="([^"]+)"', response.body)
+    if emitted != allowed or any(video in response.body for video in PATIENT_IDS if video not in allowed): problems.append('Unauthorized or missing patient-video publication')
     return ('FAIL' if problems else 'PASS'), problems, head
 
 def load_inventory(directory):
@@ -169,6 +186,7 @@ def main():
     args = parser.parse_args()
     output = Path(os.environ.get('LIVE_SEO_OUTPUT', 'live-seo-report')); output.mkdir(parents=True, exist_ok=True)
     checks, responses, heads = [], {}, {}
+    approved_videos = approved_patient_ids()
     def record(name, status, detail, url=None):
         checks.append({'check': name, 'status': status, 'url': url, 'detail': detail})
         print(status, name, detail)
@@ -221,7 +239,7 @@ def main():
     with ThreadPoolExecutor(max_workers=6) as pool:
         for response in pool.map(fetch, urls): responses[response.url] = response
     for url in urls:
-        state, problems, head = html_result(responses[url], excluded.get(url, 200), url not in excluded, robots)
+        state, problems, head = html_result(responses[url], excluded.get(url, 200), url not in excluded, robots, approved_videos)
         heads[url] = head
         if robots is None and state == 'PASS' and url not in excluded: state, problems = 'UNVERIFIED', ['Page passed; robots.txt could not be verified']
         record('HTML', state, {'http': responses[url].status, 'title': head.title if head else None, 'robots': head.robots if head else None, 'canonical': head.canonicals if head else None, 'problems': problems}, url)
