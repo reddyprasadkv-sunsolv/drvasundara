@@ -1,10 +1,14 @@
 ---
+import ConsultationLocation from '../components/ui/ConsultationLocation.astro';
+import { site } from '../config/site';
 import Page from '../layouts/Page.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
 ---
 
 <Page
   title="Begin with a conversation"
+  seoTitle="Gynecology appointment enquiries in Secunderabad"
+  seoDescription={`Ask about consultations with Dr. Vasundara Cheepurupalli at ${site.contact.address} through the clinic’s official WhatsApp. Appointments require confirmation.`}
   eyebrow="CONNECT WITH THE CLINIC"
   description="Contact the clinic on WhatsApp to discuss consultation availability."
 >
@@ -14,6 +18,7 @@ import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
       Message the clinic to ask about consultation availability and
       arrangements. The clinic will confirm your appointment.
     </p>
+    <ConsultationLocation />
     <AppointmentCTA />
     <p>
       Share only the information needed to arrange a consultation. Avoid sending

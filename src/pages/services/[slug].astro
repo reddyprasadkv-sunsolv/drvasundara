@@ -1,4 +1,5 @@
 ---
+import { site } from '../../config/site';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import ServiceEditorial from '../../components/medical/ServiceEditorial.astro';
@@ -32,8 +33,8 @@ const schema = {
 ---
 
 <Base
-  title={service.seo.title || service.name}
-  description={service.seo.description}
+  title={`${service.seo.title || service.name} in Secunderabad`}
+  description={`${service.name}: reviewed information and consultation enquiries at ${site.contact.address}. Ask about availability on WhatsApp.`}
   schema={schema}
 >
   <div class="container">

@@ -5,6 +5,7 @@ import { publicArticles } from '../../utils/articles';
 import { relevantReading } from '../../utils/journal.mjs';
 import { serviceKnowledge } from '../../utils/faqs';
 import MedicalFAQs from './MedicalFAQs.astro';
+import ConsultationLocation from '../ui/ConsultationLocation.astro';
 import AppointmentCTA from '../ui/AppointmentCTA.astro';
 interface Props {
   service: Service;
@@ -136,6 +137,7 @@ const category = serviceCategories.find((c) => c.id === service.category)?.name;
     </section>
     <section class="service-appointment">
       <h2>Your questions deserve attention.</h2>
+      <ConsultationLocation />
       <p>
         Request an appointment to discuss your individual concerns. Requests are
         subject to clinic confirmation and are not intended for medical
