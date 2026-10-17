@@ -16,7 +16,7 @@
     "approvedAt": "2026-10-16",
     "evidenceRef": "docs/INDEXING_PUBLICATION_APPROVAL_2026-10-16.md"
   },
-  "publicationInventorySha256": "31d355cea9b538874fd9ac69f4602fbfd283d74fe133852d01cdf2f2cc271818",
+  "publicationInventorySha256": "d43a501da27668281888601f6cec8c2473f009b92e470b9b50c7cac704010d97",
   "patientVideos": "approved",
   "patientVideoApprovalRef": "docs/PATIENT_VIDEO_PUBLICATION_CONFIRMATION_2026-10-16.md"
 }
