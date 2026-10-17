@@ -32,6 +32,25 @@ const general = selected.flatMap((a) =>
     <h2>Appointment questions.</h2>
     <FaqList />
   </section>
+  <section class="faq-knowledge-section" aria-labelledby="care-topics-heading">
+    <h2 id="care-topics-heading">Questions about specific care topics?</h2>
+    <p>
+      Each reviewed service guide includes questions relevant to that topic.
+      Choose a guide below to read its existing clinician-reviewed information.
+    </p>
+    <ul>
+      <li><a href="/services/pcos/">PCOS / PCOD questions</a></li>
+      <li><a href="/services/high-risk-pregnancy/">High-risk pregnancy questions</a></li>
+      <li><a href="/services/menopause-care/">Menopause questions</a></li>
+      <li><a href="/services/urogynecology-consultation/">Urogynecology questions</a></li>
+      <li><a href="/services/laparoscopic-gynecological-surgery/">Laparoscopic surgery questions</a></li>
+      <li><a href="/services/robotic-gynecological-surgery/">Robotic surgery questions</a></li>
+    </ul>
+    <p>
+      These guides are educational and cannot determine an individual diagnosis.
+      <a href="/appointment/">Ask about consultation arrangements</a>.
+    </p>
+  </section>
   {general.length > 0 && (
     <section class="faq-knowledge-section">
       <h2>General medical information.</h2>
