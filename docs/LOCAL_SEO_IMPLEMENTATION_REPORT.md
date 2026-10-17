@@ -52,3 +52,49 @@ Post-deployment: compare live metadata, JSON-LD, robots, sitemap, assets and int
 [Audit](LOCAL_SEO_AUDIT.md): prioritize doctor website, existing Google listing and hospital profile. Review stale mirror display name and third-party credential/response claims with their owners. No mass directory submissions or unsupported correction claims.
 
 Monthly: review Search Console sitemap/index coverage, Google-selected www canonicals, unexpected noindex/404/redirect reports, service-intent queries and mobile performance; inspect owner-access GBP performance and public-field changes; reconcile source approvals/availability and citation corrections. Keep sensitive evidence outside GitHub. AI/Maps visibility and improved rankings are not guaranteed.
+
+## Priority 1 growth update — 17 October 2026
+
+Baseline: fetched latest main `a8796894e6b8652e9cff57c040ae05a8149c50c2`; branch `codex/priority-one-search-growth`. This section supersedes the historical counts and external-access status above: 54 sitemap URLs, five noindex exclusions, five approved patient videos published, 28 services and 12 reviewed articles. The prior audit and live-verification sections remain dated evidence, not current inventory assertions.
+
+### Evidence and scope
+
+Authenticated Search Console, Web search, 28-day selector, observed 17 October: **2 clicks, 60 impressions, 3.3% CTR, average position 4.5**; last update three hours earlier. The chart currently contains only **14 October 2026**. Ten disclosed queries are mostly name variants; “best gynecologist near me” has one impression and zero clicks. Query-row totals need not equal property totals. These are sparse baseline observations, not current rankings for the requested eight keyword groups or proof of non-branded demand. No Search Console configuration, indexing requests or sitemap submissions were changed.
+
+Reviewed all 28 public service records and 12 article frontmatters and existing shared templates against the four requested audit/mapping/report/verification documents. Existing strengths: stable www canonicals/entity IDs, reviewed FAQs and references, clinician review dates, semantic headings, article/service relationships, shared doctor/contact/location links, WhatsApp and production/preview safety. Surgery articles already link to their relevant services even where the older keyword-map table left cells blank. No duplicate links, replacement FAQs, new clinical answers or special AI schema are needed. Google states that ordinary SEO best practices apply to AI search and no special AI files/schema are required: https://developers.google.com/search/docs/appearance/ai-features . Eligibility does not guarantee inclusion.
+
+### Implemented improvements and page mapping
+
+Each condition/procedure query maps to its existing canonical service. Broad “gynecologist in Secunderabad / Hyderabad” remains homepage discovery intent; the general-gynecology service answers consultation intent. Hyderabad denotes the wider metro context of the existing Secunderabad hospital, not a second location. These are candidate opportunities, not measured keyword volumes or demonstrated rankings. The existing complete keyword map remains the primary inventory.
+
+Seven priority service meta descriptions now describe the specific page topic and actual consultation location, rather than repeating a generic template. PCOS, high-risk pregnancy and menopause titles clarify consultation intent; general consultation wording is shortened. All H1s and clinical text are retained. The other 21 public services keep their exact rendered descriptions, migrated into their existing `seo.description` field so the shared template uses one metadata source. No new module or dependency is introduced.
+
+| Canonical service | Target intent | Before title (before doctor suffix) | After title (before doctor suffix) | Description characters before → after |
+| --- | --- | --- | --- | --- |
+| `/services/general-gynecology/` | General Gynecological Consultation consultation in Secunderabad / Hyderabad | General Gynecological Consultation in Secunderabad | General Gynecology Consultation in Secunderabad | 151 → 146 |
+| `/services/pcos/` | PCOS / PCOD consultation in Secunderabad / Hyderabad | PCOS / PCOD in Secunderabad | PCOS / PCOD Consultation in Secunderabad | 128 → 143 |
+| `/services/menopause-care/` | Menopause Care consultation in Secunderabad / Hyderabad | Menopause Care in Secunderabad | Menopause Consultation in Secunderabad | 131 → 142 |
+| `/services/high-risk-pregnancy/` | High-Risk Pregnancy consultation in Secunderabad / Hyderabad | High-Risk Pregnancy in Secunderabad | High-Risk Pregnancy Consultation in Secunderabad | 136 → 142 |
+| `/services/laparoscopic-gynecological-surgery/` | Laparoscopic Gynecological Surgery consultation in Secunderabad / Hyderabad | Laparoscopic Gynecological Surgery in Secunderabad | Laparoscopic Gynecological Surgery in Secunderabad | 151 → 143 |
+| `/services/robotic-gynecological-surgery/` | Robotic Gynecological Surgery consultation in Secunderabad / Hyderabad | Robotic Gynecological Surgery in Secunderabad | Robotic Gynecological Surgery in Secunderabad | 146 → 139 |
+| `/services/urogynecology-consultation/` | Urogynecology Consultation consultation in Secunderabad / Hyderabad | Urogynecology Consultation in Secunderabad | Urogynecology Consultation in Secunderabad | 143 → 139 |
+
+Title measurements above exclude the existing doctor-name suffix; snippet display is controlled by Google. All seven new descriptions are under 160 characters, a readability target rather than a ranking requirement.
+
+All 28 service appointment sections now link directly to the existing appointment-information page, in the existing paragraph. Existing doctor/contact links and WhatsApp buttons remain. This lets visitors review enquiry and clinic-confirmation expectations before opening WhatsApp; it does not promise instant booking. No new sections, CSS, layout, fonts, media or testimonials. No clinical claims, FAQs, sources, approval dates or professional credentials change, so no new clinical review is represented. Future expanded answers, treatment comparisons or new claims require clinician review before publication.
+
+Publication digest refreshed only for this owner-authorized nonclinical change; original clinic/clinical/privacy/video attestations and dates retained. Production indexing remains true, testimonials remain indexable, preview remains protected. Deployment uses only the existing GitHub Actions workflow with an explicit release revision.
+
+### GBP proposal — requires explicit approval, no edits in this update
+
+Authenticated owner editor observed 17 October in the immediately preceding task: primary Obstetrician-gynecologist; additional Doctor, Surgical Clinic, Gynecologist, Women’s health clinic. Keep primary; propose removing broad Doctor and Surgical Clinic if this remains an individual practitioner listing; review whether Gynecologist and Women’s health clinic add an accurate distinct category before retaining. Do not add IVF, oncology, hospital or urology categories. Google recommends the fewest accurate categories: https://support.google.com/business/answer/3038177?hl=en . These are proposals, not a finding that the practitioner lacks a specialty.
+
+Service review proposal: remove “Recurrent Heel Pains” after clinic confirmation; verify Cervical and Endometrial Cancer, Endometrial Cancer, Radical Hysterectomy, Intrauterine Insemination, Male Factor Evaluation and other specific procedures against actual offered scope before endorsing them. Consolidate duplicate symptom/procedure entries only after approval (Abnormal Vaginal Bleeding / Heavy Uterine Bleeding; Ovarian Cyst / Ovarian Cysts and Masses; PCOS / Polycystic Ovarian Disease). Correct Meno Pause to Menopause Care; review Placentia Previa spelling clinically. Add Urogynecology Consultation and Robotic Gynecological Surgery if missing, using approved website names. Do not accept the outstanding Google service-update list wholesale. Keep original service records until approved changes are applied.
+
+The current request confirms Minister Road and Mon–Sat 9 am–5 pm, but the owner editor previously showed main hours 8 am–4 pm and separate online hours 9 am–5 pm. Record this discrepancy for owner reconciliation; do not repeat or silently change live hours/address, categories or services. Website retains its existing approved facility/city label and clinic-confirmation pathway. Previously saved official website/services/WhatsApp/description changes need no repeated update.
+
+### Monitoring and completion evidence
+
+Compare equal 28-day periods once sufficient data is available: non-branded query/page impressions, clicks, CTR and average position; service versus article intent; mobile results; unexpected canonical/indexing exclusions; GBP website interactions and confirmed appointment enquiries. No new tracking, analytics, rankings, AI citations or conversion counts are invented. Review cannibalization before adding pages. Preserve 54 eligible URLs and five exclusions.
+
+Validation and final PR/deployment evidence accompany the completion report. Required existing CI covers Astro/TypeScript, production/preview builds, metadata/schema/internal links, publication gates, sitemap/robots, responsive axe/contact regressions and enabled/disabled indexing fixtures. Merge only after both validation and production-artifact preparation pass; production workflow revalidates before Pages deployment, then the existing live SEO workflow checks actual HTTP responses.

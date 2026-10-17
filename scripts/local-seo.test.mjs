@@ -34,6 +34,7 @@ test('every service connects local consultation intent to the existing contact a
     assert.match(section, /href="(?:\/drvasundara)?\/about\/"/);
     assert.match(section, /href="(?:\/drvasundara)?\/contact\/"/);
     assert.match(section, /https:\/\/wa\.me\//);
+    assert.match(section, /href="(?:\/drvasundara)?\/appointment\/"/);
   }
 });
 
@@ -78,5 +79,29 @@ test('administrative FAQs answer location and confirmation questions without add
       html,
       /Ask the clinic on WhatsApp to confirm current availability before travelling/,
     );
+  }
+});
+
+// Check rendered metadata and clinical identity together, in both build modes.
+test('priority consultation snippets retain clinical headings and local context', () => {
+  const priority = [
+    'general-gynecology',
+    'pcos',
+    'high-risk-pregnancy',
+    'urogynecology-consultation',
+    'menopause-care',
+    'laparoscopic-gynecological-surgery',
+    'robotic-gynecological-surgery',
+  ];
+  for (const slug of priority) {
+    const service = services.find((s) => s.slug === slug);
+    const html = htmlAt(`services/${slug}`);
+    const description = html.match(/name="description" content="([^"]+)"/)[1];
+    assert.equal(description, service.seo.description);
+    assert.match(description, /KIMS Hospital, Secunderabad, Hyderabad/);
+    assert(description.length <= 160);
+    assert(html.includes(`<h1>${service.name}</h1>`));
+    assert.match(html, /Sources and medical review/);
+    assert.match(html, /id="service-faqs"/);
   }
 });
