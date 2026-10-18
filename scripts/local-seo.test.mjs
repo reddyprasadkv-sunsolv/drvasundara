@@ -154,3 +154,51 @@ test('discovery metadata and profile links describe the real practice without ra
     assert(linked.includes(`/services/${slug}/`));
   }
 });
+
+test('llms overview links only to published pages and retains the sitemap inventory', () => {
+  const content = fs.readFileSync('dist/llms.txt', 'utf8');
+  assert.match(content, /^# Dr\. Vasundara Cheepurupalli\n\n> /);
+  assert.match(content, /KIMS Hospital, Secunderabad/);
+  assert.match(content, /Qualifications: DNB, DGO, FMAS, CIMP, GCP\./);
+  const urls = [...content.matchAll(/\]\((https:\/\/[^)]+)\)/g)].map(
+    (m) => m[1],
+  );
+  assert.equal(new Set(urls).size, urls.length);
+  const origin = 'https://www.drvasundaragynec.com';
+  for (const url of urls) {
+    if (
+      url ===
+      'https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/'
+    )
+      continue;
+    assert.equal(new URL(url).origin, origin);
+    assert(
+      fs.existsSync(path.join('dist', new URL(url).pathname, 'index.html')),
+      url,
+    );
+  }
+  for (const service of services)
+    assert(urls.includes(`${origin}/services/${service.slug}/`));
+  const articles = JSON.parse(
+    fs.readFileSync('dist/blog/search-index.json', 'utf8'),
+  );
+  assert.equal(articles.length, 13);
+  for (const article of articles)
+    assert(urls.includes(`${origin}/blog/${article.slug}/`));
+  for (const route of [
+    'about',
+    'services',
+    'blog',
+    'faqs',
+    'appointment',
+    'privacy',
+  ])
+    assert(urls.includes(`${origin}/${route}/`));
+  assert.doesNotMatch(
+    content,
+    /github\.com|approvalRecord|patient-video|github\.io/,
+  );
+  const sitemap = fs.readFileSync('dist/sitemap-0.xml', 'utf8');
+  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 56);
+  assert(!sitemap.includes('llms.txt'));
+});
