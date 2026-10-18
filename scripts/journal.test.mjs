@@ -18,7 +18,7 @@ const repo = loadEditorial();
 const baseline = JSON.parse(
   readFileSync('scripts/fixtures/phase3-publication-baseline.json', 'utf8'),
 );
-const now = new Date('2026-10-14T12:00:00Z');
+const now = new Date('2026-10-18T12:00:00Z');
 const ready = repo.records[0];
 test('Phase 3 preserves every existing slug, clinical narrative, publication state and real date', () => {
   assert.ok(repo.records.length >= baseline.length);
@@ -233,4 +233,28 @@ test('schema dates reject null, numeric coercion and impossible calendar dates',
   for (const value of [null, true, 42, '', '2026-02-30', '2026-13-01'])
     assert.equal(editorialDate.safeParse(value).success, false);
   assert.equal(editorialDate.safeParse('2026-10-13').success, true);
+});
+
+
+test('PR22 publishes approved prose without duplicate bleeding or menopause pages', () => {
+  const draft = readFileSync('docs/DRAFT_PATIENT_FRIENDLY_JOURNAL_ARTICLES_2026-10-18.md', 'utf8');
+  const drafts = draft.split(/^# Article \d: /m).slice(1);
+  const slugs = ['abnormal-uterine-bleeding', 'menopause-support', 'urine-leakage-in-women'];
+  const normalize = (v) => v.replace(/[#*]/g, '').replace(/\s+/g, ' ').trim();
+  assert.equal(repo.records.filter(r => r.data.status === 'published').length, 13);
+  for (const [i, slug] of slugs.entries()) {
+    const matches = repo.records.filter(r => r.data.slug === slug);
+    assert.equal(matches.length, 1);
+    const r = matches[0];
+    assert.equal(r.data.approvedAt, '2026-10-18');
+    assert.equal(r.data.medicalReviewedAt, '2026-10-18');
+    assert.match(r.data.approvalRecord, /DRAFT_PATIENT_FRIENDLY_JOURNAL_ARTICLES_2026-10-18/);
+    const approved = drafts[i].split('\n---')[0].split('**Suggested description:** ')[1].split('\n\n').slice(1).join('\n\n').split(/\*\*Internal link/)[0].trim();
+    const published = normalize([r.data.introduction, r.body, ...r.data.medicalFaqs.map(f => f.question+' '+f.answer)].join(' '));
+    for (const paragraph of approved.split(/\n\n+/)) {
+      if (paragraph.trim() === '## Common questions') continue;
+      assert(published.includes(normalize(paragraph)), slug+': approved paragraph must be retained: '+paragraph);
+    }
+    assert(canPublishArticleRecord(r.data, r.body, r.author, r.reviewer, now));
+  }
 });

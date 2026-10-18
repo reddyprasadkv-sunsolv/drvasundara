@@ -1,11 +1,10 @@
 // Shared by page metadata, robots, sitemap and generated-site validation.
-// The four category routes currently contain only one article each.
+// The three category routes currently contain only one article each.
 export const excludedIndexingPaths = [
   '/404/',
   '/blog/category/pcos-hormonal-health/',
   '/blog/category/fertility-reproductive-health/',
   '/blog/category/menopause-midlife-health/',
-  '/blog/category/preventive-healthcare/',
 ];
 export function isIndexingExcluded(pathname) {
   return excludedIndexingPaths.includes(pathname);

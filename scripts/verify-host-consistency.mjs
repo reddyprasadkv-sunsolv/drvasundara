@@ -79,7 +79,7 @@ const sitemap = fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8');
 const entries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
   (m) => new URL(m[1]),
 );
-assert.equal(entries.length, 54);
+assert.equal(entries.length, 56);
 assert(entries.some((url) => url.pathname === base + 'testimonials/'));
 for (const url of entries) {
   assert.equal(url.origin, sitemapOrigin);
@@ -100,7 +100,7 @@ const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
 assert.equal(robots, robotsText({ preview, indexing: configuredIndexing() }));
 if (preview) assert(!robots.includes('Sitemap:'));
 else assert(robots.includes(`Sitemap: ${origin}/sitemap-index.xml`));
-assert.equal(files.length, 59);
+assert.equal(files.length, 60);
 console.log(
   `Verified ${files.length - 1} public pages plus 404, ${entries.length} sitemap entries and ${schemaUrls} production schema URLs; www host consistent and ${preview ? 'preview protected' : `production indexing=${configuredIndexing()}`}.`,
 );

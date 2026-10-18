@@ -217,8 +217,8 @@ assert.doesNotMatch(
   fs.readFileSync(path.join(root, 'appointment/index.html'), 'utf8'),
   /requests are submitted|request submitted/,
 );
-assert.equal(articles, 12);
+assert.equal(articles, 13);
 assert.equal(services, 28);
 console.log(
-  `Verified ${preview ? 'preview' : 'production-root'} SEO contracts: ${seen.size} canonicals, ${assets} asset references, 28 services, 12 article schemas, 5 expert videos, WhatsApp and disabled analytics.`,
+  `Verified ${preview ? 'preview' : 'production-root'} SEO contracts: ${seen.size} canonicals, ${assets} asset references, 28 services, 13 article schemas, 5 expert videos, WhatsApp and disabled analytics.`,
 );
