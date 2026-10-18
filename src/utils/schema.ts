@@ -1,6 +1,8 @@
 import { site } from '../config/site';
 import { publicProfile } from '../data/professional';
 import { canonicalUrl } from './urls';
+export const officialHospitalProfileUrl =
+  'https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/';
 export const doctorId = site.url + '/#doctor';
 export const publisherId = site.url + '/#publisher';
 export const doctorEntity = () => ({
@@ -8,7 +10,7 @@ export const doctorEntity = () => ({
   '@id': doctorId,
   name: site.doctor.name,
   url: site.url + '/about/',
-  sameAs: site.socials.map(({ url }) => url),
+  sameAs: [...site.socials.map(({ url }) => url), officialHospitalProfileUrl],
   workLocation: { '@type': 'Place', name: site.contact.address },
   ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
   ...(publicProfile.interests.length

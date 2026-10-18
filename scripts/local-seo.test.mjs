@@ -50,14 +50,16 @@ test('local discovery preserves one Person identity without manufacturing a clin
       '@type': 'Place',
       name: 'KIMS Hospital, Secunderabad',
     });
-    assert.equal(new Set(person.sameAs).size, 4);
-    assert(
-      person.sameAs.every((url) =>
-        /^https:\/\/(www\.)?(youtube|facebook|instagram|linkedin)\.com\//.test(
-          url,
-        ),
-      ),
-    );
+    const expectedSameAs = [
+      'https://www.youtube.com/@DrVasundaraCheepurupalli',
+      'https://www.facebook.com/DrVasundaraCheepurupalli',
+      'https://www.instagram.com/dr_vasundara_cheepurupalli',
+      'https://www.linkedin.com/in/dr-vasundara-cheepurupalli',
+      'https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/',
+    ];
+    assert.equal(person.sameAs.length, expectedSameAs.length);
+    assert.deepEqual([...person.sameAs].sort(), [...expectedSameAs].sort());
+    assert.equal(new Set(person.sameAs).size, expectedSameAs.length);
     const raw = JSON.stringify(nodes);
     assert.doesNotMatch(
       raw,
@@ -131,6 +133,14 @@ test('discovery metadata and profile links describe the real practice without ra
   ).value;
   const person = graphs(about).find((n) => n['@type'] === 'WebSite').about;
   assert.deepEqual(person.knowsAbout, interests);
+  const hospitalLink = about.match(
+    new RegExp(
+      '<a[^>]+href="https://www[.]kimshospitals[.]com/doctor-profile/dr-vasundara-cheepurupalli/"[^>]*>',
+    ),
+  )?.[0];
+  assert(hospitalLink);
+  assert(hospitalLink.includes('target="_blank"'));
+  assert(hospitalLink.includes('rel="noopener noreferrer"'));
   const linked = about.split('class="profile-interests"')[1].split('</ul>')[0];
   for (const slug of [
     'general-gynecology',

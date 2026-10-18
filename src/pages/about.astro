@@ -6,7 +6,10 @@ import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
 import ProfessionalTimeline from '../components/medical/ProfessionalTimeline.astro';
 import { approvedServices } from '../data/services';
 import { publicProfile } from '../data/professional';
-import { personProfileSchema } from '../utils/schema';
+import {
+  personProfileSchema,
+  officialHospitalProfileUrl,
+} from '../utils/schema';
 const schema = personProfileSchema();
 const interestServices: Record<string, string> = {
   Gynecology: 'general-gynecology',
@@ -105,6 +108,16 @@ const interestServices: Record<string, string> = {
             <li>{name}</li>
           ))}
         </ul>
+        <p>
+          <a
+            href={officialHospitalProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Official KIMS Hospitals doctor profile
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </p>
       </section>
     )}
   </div>
