@@ -27,6 +27,7 @@ Generated from the production-root build of main 3d375a3 on 15 October 2026. 58 
 | https://www.drvasundaragynec.com/blog/laparoscopic-hysterectomy/ | Preserve destination; verify legacy source mapping against exports. |
 | https://www.drvasundaragynec.com/blog/menopause-support/ | Preserve destination; verify legacy source mapping against exports. |
 | https://www.drvasundaragynec.com/blog/ovarian-cysts/ | Preserve destination; verify legacy source mapping against exports. |
+| https://www.drvasundaragynec.com/blog/urine-leakage-in-women/ | New approved article, 18 October 2026; no legacy URL mapping asserted. |
 | https://www.drvasundaragynec.com/blog/pcos-pcod-terms/ | Preserve destination; verify legacy source mapping against exports. |
 | https://www.drvasundaragynec.com/blog/robotic-gynecological-surgery/ | Preserve destination; verify legacy source mapping against exports. |
 | https://www.drvasundaragynec.com/contact/ | Preserve destination; verify legacy source mapping against exports. |

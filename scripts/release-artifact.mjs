@@ -60,8 +60,8 @@ export function assertRootReadiness(root) {
   const pages = files.filter((f) => f.path.endsWith('.html'));
   assert.equal(
     pages.length,
-    59,
-    'Expected updated baseline: 58 public pages plus 404',
+    60,
+    'Expected updated baseline: 59 public pages plus 404',
   );
   assert(
     pages.some(

@@ -54,7 +54,7 @@ test('hashed inventory is deterministic and rejects private exports and symlinks
 test('production artifact preparation rejects a project preview build', () => {
   if (process.env.VERIFY_PAGES_PREVIEW === 'true')
     assert.throws(() => assertRootReadiness('dist'));
-  else assert.equal(assertRootReadiness('dist').pageCount, 59);
+  else assert.equal(assertRootReadiness('dist').pageCount, 60);
 });
 
 test('complete production inventory preserves every public destination and Urogynecology contracts', () => {
