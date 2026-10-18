@@ -11,6 +11,9 @@ export const doctorEntity = () => ({
   sameAs: site.socials.map(({ url }) => url),
   workLocation: { '@type': 'Place', name: site.contact.address },
   ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
+  ...(publicProfile.interests.length
+    ? { knowsAbout: publicProfile.interests }
+    : {}),
   ...(publicProfile.affiliations.length
     ? {
         affiliation: publicProfile.affiliations.map((name) => ({

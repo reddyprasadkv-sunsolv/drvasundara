@@ -105,3 +105,42 @@ test('priority consultation snippets retain clinical headings and local context'
     assert.match(html, /id="service-faqs"/);
   }
 });
+
+test('discovery metadata and profile links describe the real practice without ranking claims', () => {
+  const home = htmlAt('');
+  const about = htmlAt('about');
+  const servicesPage = htmlAt('services');
+  for (const html of [home, about, servicesPage]) {
+    const title = html.match(/<title>([^<]+)<\/title>/)[1];
+    const description = html.match(/name="description" content="([^"]+)"/)[1];
+    assert.match(description, /Secunderabad, Hyderabad, Telangana/);
+    assert.doesNotMatch(
+      title + ' ' + description,
+      /\b(?:best|top|No\.?\s*1)\b/i,
+    );
+  }
+  assert.match(
+    home.match(/<title>([^<]+)<\/title>/)[1],
+    /Gynecologist in Hyderabad/,
+  );
+  const profile = JSON.parse(
+    fs.readFileSync('src/data/doctor-profile.json', 'utf8'),
+  );
+  const interests = profile.claims.find(
+    (c) => c.id === 'specializations',
+  ).value;
+  const person = graphs(about).find((n) => n['@type'] === 'WebSite').about;
+  assert.deepEqual(person.knowsAbout, interests);
+  const linked = about.split('class="profile-interests"')[1].split('</ul>')[0];
+  for (const slug of [
+    'general-gynecology',
+    'pregnancy-antenatal-care',
+    'urogynecology-consultation',
+    'laparoscopic-gynecological-surgery',
+    'robotic-gynecological-surgery',
+    'reproductive-health-evaluation',
+    'cosmetic-gynecology-consultation',
+  ]) {
+    assert(linked.includes(`/services/${slug}/`));
+  }
+});

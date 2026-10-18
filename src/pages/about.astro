@@ -4,15 +4,25 @@ import Page from '../layouts/Page.astro';
 import DoctorPortrait from '../components/medical/DoctorPortrait.astro';
 import AppointmentCTA from '../components/ui/AppointmentCTA.astro';
 import ProfessionalTimeline from '../components/medical/ProfessionalTimeline.astro';
+import { approvedServices } from '../data/services';
 import { publicProfile } from '../data/professional';
 import { personProfileSchema } from '../utils/schema';
 const schema = personProfileSchema();
+const interestServices: Record<string, string> = {
+  Gynecology: 'general-gynecology',
+  'Obstetrics and Pregnancy Care': 'pregnancy-antenatal-care',
+  Urogynecology: 'urogynecology-consultation',
+  'Laparoscopic Gynecological Surgery': 'laparoscopic-gynecological-surgery',
+  'Robotic Gynecological Surgery': 'robotic-gynecological-surgery',
+  'Reproductive Health': 'reproductive-health-evaluation',
+  'Cosmetic Gynecology': 'cosmetic-gynecology-consultation',
+};
 ---
 
 <Page
   title="Meet Dr. Vasundara Cheepurupalli"
-  seoTitle="Dr. Vasundara Cheepurupalli | Gynecologist Profile"
-  seoDescription={`Meet Dr. Vasundara Cheepurupalli at ${site.contact.address}. Read her approved professional profile, hospital affiliations and areas of clinical interest.`}
+  seoTitle="Dr. Vasundara Cheepurupalli | Qualifications and Clinical Interests"
+  seoDescription={`Meet Dr. Vasundara Cheepurupalli at ${site.contact.address}, Hyderabad, Telangana. Read her qualifications, hospital affiliations and clinical interests.`}
   eyebrow="THE DOCTOR BEHIND THE CARE"
   description="Explore the professional profile of Dr. Vasundara Cheepurupalli and information to help you prepare for a consultation."
   schema={schema}
@@ -50,9 +60,20 @@ const schema = personProfileSchema();
       <span class="eyebrow">CLINICAL EXPERTISE</span>
       <h2>Areas of clinical interest.</h2>
       <ul class="profile-interests">
-        {publicProfile.interests.map((interest) => (
-          <li>{interest}</li>
-        ))}
+        {publicProfile.interests.map((interest) => {
+          const service = approvedServices.find(
+            (s) => s.slug === interestServices[interest],
+          );
+          return (
+            <li>
+              {service ? (
+                <a href={`/services/${service.slug}/`}>{interest}</a>
+              ) : (
+                interest
+              )}
+            </li>
+          );
+        })}
       </ul>
     </section>
   )}
