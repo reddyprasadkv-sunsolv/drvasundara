@@ -8,7 +8,10 @@ export const doctorEntity = () => ({
   '@id': doctorId,
   name: site.doctor.name,
   url: site.url + '/about/',
-  sameAs: site.socials.map(({ url }) => url),
+  sameAs: [
+    ...site.socials.map(({ url }) => url),
+    'https://www.kimshospitals.com/doctor-profile/dr-vasundara-cheepurupalli/',
+  ],
   workLocation: { '@type': 'Place', name: site.contact.address },
   ...(publicProfile.title ? { jobTitle: publicProfile.title } : {}),
   ...(publicProfile.affiliations.length
